@@ -70,15 +70,11 @@ cdef class DayCounter:
 
 def _get_daycounter_type_from_name(name):
     """ Returns a tuple (counter type, convention) from the DayCounter name. """
-    DAYCOUNTER_NAME_PATTERN = '(.*) \((.*)\)'
-    import re
-    match = re.match(DAYCOUNTER_NAME_PATTERN, name)
-
-    if match is not None:
-        return match.groups()
+    if " " not in name:
+        return name
     else:
-        return (name, None)
-
+        dc, convention = name.split(" ", 1)
+        return (dc, convention[1:-1])
 
 cdef _daycounter.DayCounter* daycounter_from_name(basestring name, basestring convention):
     """ Returns a new DayCounter pointer.
