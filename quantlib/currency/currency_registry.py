@@ -1,23 +1,14 @@
-from quantlib.currency.currencies import (
-    USDCurrency, EURCurrency, GBPCurrency, JPYCurrency, CHFCurrency,
-    AUDCurrency, DKKCurrency, INRCurrency, HKDCurrency, NOKCurrency,
-    NZDCurrency, PLNCurrency, SEKCurrency, SGDCurrency, ZARCurrency
-)
+import quantlib.currency.currencies
 from quantlib.util.object_registry import ObjectRegistry
-
-REGISTERED_CURRENCY = [
-    USDCurrency, EURCurrency, GBPCurrency, JPYCurrency, CHFCurrency,
-    AUDCurrency, DKKCurrency, INRCurrency, HKDCurrency, NOKCurrency,
-    NZDCurrency, PLNCurrency, SEKCurrency, SGDCurrency, ZARCurrency
-]
 
 def initialize_currency_registry():
 
     registry = ObjectRegistry('Currency')
 
-    for currency_cls in REGISTERED_CURRENCY:
-        currency = currency_cls()
-        registry.register(currency.code, currency)
+    for currency_cls in dir(quantlib.currency.currencies):
+        if not currency_cls.startswith('__'):
+            currency = getattr(quantlib.currency.currencies, currency_cls)()
+            registry.register(currency.code, currency)
 
     return registry
 
