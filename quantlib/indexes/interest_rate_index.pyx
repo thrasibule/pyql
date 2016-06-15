@@ -53,11 +53,9 @@ cdef class InterestRateIndex(Index):
         def __get__(self):
 
             cdef _pe.Period qlp = get_iri(self).tenor()
-            # FIX ME: this should be more efficient but does not work
-            # p = Period()
-            # p._thisptr = new shared_ptr[_pe.Period](&qlp)
-            # return p
-            return Period(qlp.length(),qlp.units())
+            cdef Period p = Period.__new__(Period)
+            p._thisptr = shared_ptr[_pe.Period](new _pe.Period(qlp))
+            return p
 
     property fixing_days:
         def __get__(self):
@@ -70,17 +68,17 @@ cdef class InterestRateIndex(Index):
             return dc
 
     def fixing_date(self, Date valueDate):
-        cdef _dt.Date dt = deref(valueDate._thisptr.get())
-        cdef _dt.Date fixing_date = get_iri(self).fixingDate(dt)
+        cdef _dt.Date fixing_date = (get_iri(self).
+                                     fixingDate(deref(valueDate._thisptr)))
         return date_from_qldate(fixing_date)
 
 
     def value_date(self, Date fixingDate):
-        cdef _dt.Date dt = deref(fixingDate._thisptr.get())
-        cdef _dt.Date value_date = get_iri(self).valueDate(dt)
+        cdef _dt.Date value_date = (get_iri(self).
+                                    valueDate(deref(fixingDate._thisptr)))
         return date_from_qldate(value_date)
 
     def maturity_date(self, Date valueDate):
-        cdef _dt.Date dt = deref(valueDate._thisptr.get())
-        cdef _dt.Date maturity_date = get_iri(self).maturityDate(dt)
+        cdef _dt.Date maturity_date = (get_iri(self).
+                                       maturityDate(deref(valueDate._thisptr)))
         return date_from_qldate(maturity_date)

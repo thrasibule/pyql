@@ -42,13 +42,13 @@ cdef class Index:
 
     def is_valid_fixing_date(self, Date fixingDate):
         return self._thisptr.get().isValidFixingDate(
-            deref(fixingDate._thisptr.get()))
+            deref(fixingDate._thisptr))
 
     def fixing(self, Date fixingDate, bool forecastTodaysFixing):
         return self._thisptr.get().fixing(
-            deref(fixingDate._thisptr.get()), forecastTodaysFixing)
+            deref(fixingDate._thisptr), forecastTodaysFixing)
 
     def add_fixing(self, Date fixingDate, Real fixing, bool forceOverwrite):
         self._thisptr.get().addFixing(
-            deref(fixingDate._thisptr.get()), fixing, forceOverwrite
+            deref(fixingDate._thisptr), fixing, forceOverwrite
         )

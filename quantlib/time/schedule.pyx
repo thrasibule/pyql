@@ -43,6 +43,7 @@ cdef public enum Rule:
 cdef class Schedule:
     """ Payment schedule. """
 
+<<<<<<< HEAD
     def __init__(self, Date effective_date not None, Date termination_date not None,
             Period tenor not None, Calendar calendar not None,
             BusinessDayConvention business_day_convention=Following,
@@ -56,9 +57,9 @@ cdef class Schedule:
                 DeprecationWarning)
 
             self._thisptr = new _schedule.Schedule(
-                deref(effective_date._thisptr.get()),
-                deref(termination_date._thisptr.get()),
-                deref(tenor._thisptr.get()),
+                deref(effective_date._thisptr),
+                deref(termination_date._thisptr),
+                deref(tenor._thisptr),
                 deref(calendar._thisptr),
                 business_day_convention,
                 termination_date_convention,
@@ -77,7 +78,7 @@ cdef class Schedule:
         # convert lists to vectors
         cdef vector[_date.Date] _dates = vector[_date.Date]()
         for date in dates:
-            _dates.push_back(deref((<Date>date)._thisptr.get()))
+            _dates.push_back(deref((<Date>date)._thisptr))
 
         cdef Schedule instance = cls.__new__(cls)
         instance._thisptr = new _schedule.Schedule(
@@ -86,7 +87,7 @@ cdef class Schedule:
             business_day_convention,
             optional[BusinessDayConvention](
                 termination_date_convention),
-            make_optional[_calendar.Period](tenor is not None, deref(tenor._thisptr.get())),
+            make_optional[_calendar.Period](tenor is not None, deref(tenor._thisptr)),
             optional[_schedule.Rule](<_schedule.Rule>date_generation_rule),
             optional[bool](end_of_month),
             is_regular
@@ -102,9 +103,9 @@ cdef class Schedule:
             int date_generation_rule=Forward, bool end_of_month=False):
         cdef Schedule instance = cls.__new__(cls)
         instance._thisptr = new _schedule.Schedule(
-                deref(effective_date._thisptr.get()),
-                deref(termination_date._thisptr.get()),
-                deref(tenor._thisptr.get()),
+                deref(effective_date._thisptr),
+                deref(termination_date._thisptr),
+                deref(tenor._thisptr),
                 deref(calendar._thisptr),
                 business_day_convention,
                 termination_date_convention,
@@ -126,13 +127,13 @@ cdef class Schedule:
 
     def next_date(self, Date reference_date):
         cdef _date.Date dt = self._thisptr.nextDate(
-            deref(reference_date._thisptr.get())
+            deref(reference_date._thisptr)
         )
         return date_from_qldate(dt)
 
     def previous_date(self, Date reference_date):
         cdef _date.Date dt = self._thisptr.previousDate(
-            deref(reference_date._thisptr.get())
+            deref(reference_date._thisptr)
         )
         return date_from_qldate(dt)
 
