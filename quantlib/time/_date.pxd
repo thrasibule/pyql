@@ -54,6 +54,7 @@ cdef extern from "ql/time/date.hpp" namespace "QuantLib":
 
     cdef cppclass Date:
         Date() except +
+        Date(Date&)
         Date(long serialnumber) except +
         Date(int d, int m, int y) except +
         Day dayOfMonth() except +
@@ -89,6 +90,3 @@ cdef extern from "ql/time/date.hpp" namespace "QuantLib":
     cdef Date Date_nextWeekday 'QuantLib::Date::nextWeekday'(Date& d, Weekday w) except +
     cdef Date Date_nthWeekday 'QuantLib::Date::nthWeekday'(Size n, Weekday w,
             Month m, Year y) except +
-
-
-

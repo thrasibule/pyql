@@ -29,6 +29,7 @@ cdef extern from 'ql/time/period.hpp' namespace "QuantLib":
     cdef cppclass Period:
 
         Period()
+        Period(Period&)
         Period (Integer n, TimeUnit units)
         Period (Frequency f)
 
