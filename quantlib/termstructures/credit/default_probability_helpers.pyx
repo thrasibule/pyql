@@ -97,7 +97,7 @@ cdef class SpreadCdsHelper(CdsHelper):
         """
         """
 
-        self._thisptr = new shared_ptr[_ci.CdsHelper](\
+        self._thisptr = shared_ptr[_ci.CdsHelper](\
             new _ci.SpreadCdsHelper(running_spread, deref(tenor._thisptr.get()),
                 settlement_days, deref(calendar._thisptr), <Frequency>frequency,
                 <BusinessDayConvention>paymentConvention, <Rule>date_generation_rule,
