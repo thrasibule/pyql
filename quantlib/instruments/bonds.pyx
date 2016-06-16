@@ -186,7 +186,7 @@ cdef class FixedRateBond(Bond):
                 # empty issue rate seem to break some of the computation with
                 # segfaults. Do we really want to let the user do that ? Or
                 # shall we default on the first date of the schedule ?
-                self._thisptr = new shared_ptr[_instrument.Instrument](
+                self._thisptr = shared_ptr[_instrument.Instrument](
                     new _bonds.FixedRateBond(settlement_days,
                         face_amount, deref(_fixed_bonds_schedule), coupons,
                         deref(_accrual_day_counter),
@@ -196,7 +196,7 @@ cdef class FixedRateBond(Bond):
             else:
                 _issue_date = <_date.Date*>((<Date>issue_date)._thisptr.get())
 
-                self._thisptr = new shared_ptr[_instrument.Instrument](\
+                self._thisptr = shared_ptr[_instrument.Instrument](\
                     new _bonds.FixedRateBond(settlement_days,
                         face_amount, deref(_fixed_bonds_schedule),
                         coupons,
@@ -231,7 +231,7 @@ cdef class ZeroCouponBond(Bond):
             Date bond was issued"""
             
         if issue_date is not None:
-            self._thisptr = new shared_ptr[_instrument.Instrument](
+            self._thisptr = shared_ptr[_instrument.Instrument](
                 new _bonds.ZeroCouponBond(
                     <Natural> settlement_days, deref(calendar._thisptr),
                     <Real>face_amount, deref(maturity_date._thisptr.get()),
@@ -287,7 +287,7 @@ cdef class FloatingRateBond(Bond):
         cdef QlDayCounter* _accrual_day_counter = <QlDayCounter*>accrual_day_counter._thisptr
         
         
-        self._thisptr = new shared_ptr[_instrument.Instrument](
+        self._thisptr = shared_ptr[_instrument.Instrument](
             new _bonds.FloatingRateBond(
                 <Natural> settlement_days, <Real> face_amount, deref(_float_bonds_schedule),deref(<shared_ptr[_ii.IborIndex]*> ibor_index._thisptr),
                 deref(_accrual_day_counter), <BusinessDayConvention> payment_convention, 

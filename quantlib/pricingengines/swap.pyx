@@ -19,13 +19,13 @@ cdef class DiscountingSwapEngine(PricingEngine):
 
         if includeSettlementDateFlows is None and settlementDate is None and \
            npvDate is None:
-            self._thisptr = new shared_ptr[_pe.PricingEngine](
+            self._thisptr = shared_ptr[_pe.PricingEngine](
                 new _swap.DiscountingSwapEngine(discount_curve._thisptr)
             )
         elif includeSettlementDateFlows is not None and \
              settlementDate is not None and \
              npvDate is not None:
-            self._thisptr = new shared_ptr[_pe.PricingEngine](
+            self._thisptr = shared_ptr[_pe.PricingEngine](
                 new _swap.DiscountingSwapEngine(
                     discount_curve._thisptr,
                     includeSettlementDateFlows,

@@ -145,7 +145,7 @@ cdef class VanillaSwap(Swap):
 
 
         if payment_convention is None:
-             self._thisptr = new shared_ptr[_instrument.Instrument](\
+             self._thisptr = shared_ptr[_instrument.Instrument](\
                 new _vanillaswap.VanillaSwap(<_vanillaswap.Type>type, nominal,
                          deref(_fixed_schedule), fixed_rate,
                          deref(fixed_daycount._thisptr),
@@ -156,7 +156,7 @@ cdef class VanillaSwap(Swap):
                 )
             )
         else:
-            self._thisptr = new shared_ptr[_instrument.Instrument](\
+            self._thisptr = shared_ptr[_instrument.Instrument](\
                 new _vanillaswap.VanillaSwap(<_vanillaswap.Type>type, nominal,
                          deref(_fixed_schedule), fixed_rate,
                          deref(fixed_daycount._thisptr),
@@ -217,4 +217,3 @@ cdef class VanillaSwap(Swap):
             itemlist.append((_thiscf.get().amount(), _thisdate))
 
         return SimpleLeg(itemlist)
-

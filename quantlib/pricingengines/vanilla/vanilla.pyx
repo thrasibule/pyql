@@ -34,7 +34,7 @@ cdef class AnalyticEuropeanEngine(VanillaOptionEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](\
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.AnalyticEuropeanEngine(process_ptr)
         )
 
@@ -47,7 +47,7 @@ cdef class BaroneAdesiWhaleyApproximationEngine(VanillaOptionEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BaroneAdesiWhaleyApproximationEngine(process_ptr)
         )
 
@@ -55,7 +55,7 @@ cdef class AnalyticHestonEngine(PricingEngine):
 
     def __init__(self, HestonModel model, int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticHestonEngine(
                 deref(model._thisptr),
                 <Size>integration_order
@@ -73,7 +73,7 @@ cdef class AnalyticBSMHullWhiteEngine(PricingEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticBSMHullWhiteEngine(
                 equity_short_rate_correlation,
                 process_ptr,
@@ -88,7 +88,7 @@ cdef class AnalyticHestonHullWhiteEngine(PricingEngine):
                  HullWhite hw_model,
                  int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticHestonHullWhiteEngine(
                 deref(heston_model._thisptr),
                 deref(<shared_ptr[_hw.HullWhite]*> hw_model._thisptr),
@@ -110,7 +110,7 @@ cdef class FdHestonHullWhiteVanillaEngine(PricingEngine):
             bool control_variate,
             FdmSchemeDesc desc):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.FdHestonHullWhiteVanillaEngine(
                 deref(heston_model._thisptr),
                 deref(hw_process._thisptr),
@@ -132,7 +132,7 @@ cdef class BatesEngine(AnalyticHestonEngine):
 
     def __init__(self, BatesModel model, int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesEngine(
                 deref(<shared_ptr[_bm.BatesModel]*> model._thisptr),
                 <Size>integration_order
@@ -143,7 +143,7 @@ cdef class BatesDetJumpEngine(BatesEngine):
 
     def __init__(self, BatesDetJumpModel model, int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDetJumpEngine(
                 deref(<shared_ptr[_bm.BatesDetJumpModel]*> model._thisptr),
                 <Size>integration_order))
@@ -152,7 +152,7 @@ cdef class BatesDoubleExpEngine(AnalyticHestonEngine):
 
     def __init__(self, BatesDoubleExpModel model, int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDoubleExpEngine(
                 deref(<shared_ptr[_bm.BatesDoubleExpModel]*> model._thisptr),
                 <Size>integration_order))
@@ -161,7 +161,7 @@ cdef class BatesDoubleExpDetJumpEngine(BatesDoubleExpEngine):
 
     def __init__(self, BatesDoubleExpDetJumpModel model, int integration_order=144):
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDoubleExpDetJumpEngine(
                 deref(<shared_ptr[_bm.BatesDoubleExpDetJumpModel]*> model._thisptr),
                 <Size>integration_order))
@@ -176,7 +176,7 @@ cdef class AnalyticDividendEuropeanEngine(PricingEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](\
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.AnalyticDividendEuropeanEngine(process_ptr)
         )
 
@@ -192,7 +192,7 @@ cdef class FDDividendAmericanEngine(PricingEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](\
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.FDDividendAmericanEngine[_vanilla.CrankNicolson](
                 process_ptr, timesteps, gridpoints
             )
@@ -208,10 +208,8 @@ cdef class FDAmericanEngine(PricingEngine):
                 deref(process._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_vanilla.PricingEngine](\
+        self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.FDAmericanEngine[_vanilla.CrankNicolson](
                 process_ptr, timesteps, gridpoints
             )
         )
-
-

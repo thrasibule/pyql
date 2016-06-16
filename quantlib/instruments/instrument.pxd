@@ -8,4 +8,4 @@ cimport quantlib.pricingengines._pricing_engine as _pe
 cdef class Instrument:
 
     cdef cbool _has_pricing_engine
-    cdef shared_ptr[_instrument.Instrument]* _thisptr
+    cdef shared_ptr[_instrument.Instrument] _thisptr

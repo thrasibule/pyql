@@ -35,10 +35,7 @@ cdef class CalibrationHelper:
         raise ValueError('Cannot instantiate a CalibrationHelper')
 
     def set_pricing_engine(self, PricingEngine engine):
-        cdef shared_ptr[_pe.PricingEngine] pengine = \
-            shared_ptr[_pe.PricingEngine](<shared_ptr[_pe.PricingEngine] &>deref(engine._thisptr))
-
-        self._thisptr.get().setPricingEngine(pengine)
+        self._thisptr.get().setPricingEngine(engine._thisptr)
 
 
     def model_value(self):
@@ -62,4 +59,3 @@ cdef class CalibrationHelper:
         accuracy, maxEvaluations, minVol, maxVol)
 
         return vol
-

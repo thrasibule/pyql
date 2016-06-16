@@ -47,5 +47,4 @@ cdef class MCVanillaEngine(PricingEngine):
           requiredSamples,
           seed)
 
-        self._thisptr = new shared_ptr[_pe.PricingEngine](engine)
-
+        self._thisptr = shared_ptr[_pe.PricingEngine](engine)

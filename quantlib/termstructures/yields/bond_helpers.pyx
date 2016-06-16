@@ -3,7 +3,7 @@ include '../../types.pxi'
 from cython.operator cimport dereference as deref
 from libcpp.vector cimport vector
 
-from quantlib.handle cimport shared_ptr, Handle
+from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
 
 cimport quantlib.instruments._bonds as _bonds
 cimport quantlib.time._calendar as _calendar
@@ -31,7 +31,7 @@ cdef class BondHelper(RateHelper):
         self._thisptr = new shared_ptr[_bh.RateHelper](
             new _bh.BondHelper(
                 price_handle,
-                deref(<shared_ptr[_bonds.Bond]*> bond._thisptr)
+                static_pointer_cast[_bonds.Bond](bond._thisptr)
             ))
 
 

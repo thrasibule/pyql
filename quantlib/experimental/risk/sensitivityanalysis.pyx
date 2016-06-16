@@ -47,7 +47,7 @@ def bucket_analysis(quotes_vvsq, instruments,
 	
 	
     for qlinstrument in instruments:
-        instrument_sp = deref((<Instrument>qlinstrument)._thisptr)
+        instrument_sp = (<Instrument>qlinstrument)._thisptr
         vsp_instruments.push_back(instrument_sp)
 
     for qlsq_out in quotes_vvsq:

@@ -92,7 +92,7 @@ cdef class CreditDefaultSwap(Instrument):
         """Credit default swap as running-spread only
         """
 
-        self._thisptr = new shared_ptr[_instrument.Instrument](
+        self._thisptr = shared_ptr[_instrument.Instrument](
             new _cds.CreditDefaultSwap(
                 <_cds.Side>side, notional, spread, deref(schedule._thisptr),
                 <_calendar.BusinessDayConvention>payment_convention,

@@ -25,7 +25,7 @@ cdef class JamshidianSwaptionEngine(PricingEngine):
     def __init__(self, HullWhite model,
                  YieldTermStructure ts=YieldTermStructure()):
 
-        self._thisptr = new shared_ptr[_pe.PricingEngine](
+        self._thisptr = shared_ptr[_pe.PricingEngine](
             new _swaption.JamshidianSwaptionEngine(
                 deref(<shared_ptr[_ofm.OneFactorAffineModel]*> model._thisptr),
                 ts._thisptr))
