@@ -31,11 +31,6 @@ cdef class Vasicek(OneFactorAffineModel):
     def __cinit__(self):
         pass
 
-    def __dealloc(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     def __init__(self,
        Rate r0,
        Real a=0,
@@ -43,7 +38,7 @@ cdef class Vasicek(OneFactorAffineModel):
        Real sigma=0,
        Real Lambda=0):
 
-        self._thisptr = new shared_ptr[_mo.CalibratedModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _va.Vasicek(
                 r0, a, b, sigma, Lambda
 		)

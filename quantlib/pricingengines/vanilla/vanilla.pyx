@@ -4,7 +4,7 @@ from libcpp.vector cimport vector
 from libcpp cimport bool
 
 from cython.operator cimport dereference as deref
-from quantlib.handle cimport shared_ptr
+from quantlib.handle cimport shared_ptr, static_pointer_cast
 cimport quantlib.processes._black_scholes_process as _bsp
 cimport quantlib.models.equity._bates_model as _bm
 cimport quantlib.models.shortrate.onefactormodels._hullwhite as _hw
@@ -62,7 +62,7 @@ cdef class AnalyticBSMHullWhiteEngine(PricingEngine):
             new _vanilla.AnalyticBSMHullWhiteEngine(
                 equity_short_rate_correlation,
                 process._thisptr,
-                deref(<shared_ptr[_hw.HullWhite]*> hw_model._thisptr)
+                static_pointer_cast[_hw.HullWhite](hw_model._thisptr)
             )
         )
     
@@ -76,7 +76,7 @@ cdef class AnalyticHestonHullWhiteEngine(PricingEngine):
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticHestonHullWhiteEngine(
                 deref(heston_model._thisptr),
-                deref(<shared_ptr[_hw.HullWhite]*> hw_model._thisptr),
+                static_pointer_cast[_hw.HullWhite](hw_model._thisptr),
                 <Size>integration_order
             )
         )

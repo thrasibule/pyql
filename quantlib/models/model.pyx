@@ -20,10 +20,6 @@ cdef class CalibratedModel:
     def __cinit__(self):
         pass
 
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __init__(self):
         raise ValueError('Cannot instantiate a CalibratedModel')
 

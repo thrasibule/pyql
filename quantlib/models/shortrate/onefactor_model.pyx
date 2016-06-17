@@ -17,7 +17,3 @@ cdef class OneFactorAffineModel(CalibratedModel):
     def __init__(self):
         raise ValueError('Cannot instantiate OneFactorAffineModel')
 
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
