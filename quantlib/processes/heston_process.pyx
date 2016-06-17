@@ -57,7 +57,7 @@ cdef class HestonProcess:
             return
 
         #create handles
-        cdef Handle[_qt.Quote] s0_handle = Handle[_qt.Quote](deref(s0._thisptr))
+        cdef Handle[_qt.Quote] s0_handle = Handle[_qt.Quote](s0._thisptr)
 
         self._thisptr = new shared_ptr[_hp.HestonProcess](
             new _hp.HestonProcess(

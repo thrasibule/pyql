@@ -62,10 +62,10 @@ cdef class FlatForward(YieldTermStructure):
 
         if reference_date is not None:
             if isinstance(forward, Quote):
-                quote_handle = Handle[_qt.Quote](deref( (<Quote>forward)._thisptr))
+                quote_handle = Handle[_qt.Quote]((<Quote>forward)._thisptr)
 
                 _forward = shared_ptr[ffwd.YieldTermStructure](new ffwd.FlatForward(
-                    deref(reference_date._thisptr.get()),
+                    deref(reference_date._thisptr),
                     quote_handle,
                     deref(daycounter._thisptr),
                     <ffwd.Compounding>compounding,
@@ -73,7 +73,7 @@ cdef class FlatForward(YieldTermStructure):
                 ))
             else:
                 _forward = shared_ptr[ffwd.YieldTermStructure](new ffwd.FlatForward(
-                        deref(reference_date._thisptr.get()),
+                        deref(reference_date._thisptr),
                         <ffwd.Rate>forward,
                         deref(daycounter._thisptr),
                         <ffwd.Compounding>compounding,
@@ -83,7 +83,7 @@ cdef class FlatForward(YieldTermStructure):
             calendar is not None:
 
             if isinstance(forward, Quote):
-                quote_handle = Handle[_qt.Quote](deref( (<Quote>forward)._thisptr))
+                quote_handle = Handle[_qt.Quote]((<Quote>forward)._thisptr)
 
                 _forward = shared_ptr[ffwd.YieldTermStructure](new ffwd.FlatForward(
                         <ffwd.Natural>settlement_days,

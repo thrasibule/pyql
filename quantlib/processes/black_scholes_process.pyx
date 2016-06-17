@@ -35,7 +35,7 @@ cdef class BlackScholesProcess(GeneralizedBlackScholesProcess):
                  BlackVolTermStructure black_vol_ts):
 
         cdef Handle[_qt.Quote] x0_handle = Handle[_qt.Quote](
-            deref(x0._thisptr)
+            x0._thisptr
         )
         cdef Handle[_bvts.BlackVolTermStructure] black_vol_ts_handle = \
             Handle[_bvts.BlackVolTermStructure](
@@ -59,7 +59,7 @@ cdef class BlackScholesMertonProcess(GeneralizedBlackScholesProcess):
         BlackVolTermStructure black_vol_ts):
 
         cdef Handle[_qt.Quote] x0_handle = Handle[_qt.Quote](
-            deref(x0._thisptr)
+            x0._thisptr
         )
 
         cdef Handle[_bvts.BlackVolTermStructure] black_vol_ts_handle = \

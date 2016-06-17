@@ -49,7 +49,7 @@ cdef class SwaptionHelper(CalibrationHelper):
         cdef QlDayCounter* _floating_leg_daycounter = <QlDayCounter*>floating_leg_daycounter._thisptr
 
         cdef Handle[_qt.Quote] volatility_handle = \
-                Handle[_qt.Quote](deref(volatility._thisptr))
+                Handle[_qt.Quote](volatility._thisptr)
 
         if strike is None:
             strike = QL_NULL_REAL

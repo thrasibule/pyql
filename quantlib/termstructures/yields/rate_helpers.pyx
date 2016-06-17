@@ -76,7 +76,7 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
                 )
             elif isinstance(rate, SimpleQuote):
                 self._thisptr = new shared_ptr[_rh.RateHelper](
-                    new _rh.DepositRateHelper(Handle[_qt.Quote](deref((<SimpleQuote>rate)._thisptr)),
+                    new _rh.DepositRateHelper(Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                                               deref(<shared_ptr[_ib.IborIndex]*> index._thisptr)
                     )
                 )
@@ -90,7 +90,7 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
                 self._thisptr = new shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(
                         <Rate>rate,
-                        deref(tenor._thisptr.get()),
+                        deref(tenor._thisptr),
                         <int>fixing_days,
                         deref(calendar._thisptr),
                         <_rh.BusinessDayConvention>convention,
@@ -101,8 +101,8 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
             elif isinstance(rate, SimpleQuote):
                 self._thisptr = new shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(
-                        Handle[_qt.Quote](deref((<SimpleQuote>rate)._thisptr)),
-                        deref(tenor._thisptr.get()),
+                        Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
+                        deref(tenor._thisptr),
                         <int>fixing_days,
                         deref(calendar._thisptr),
                         <_rh.BusinessDayConvention>convention,
@@ -139,7 +139,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         Period fwdStart = Period(0, Days)):
 
         cdef Handle[_qt.Quote] spread_handle = \
-            Handle[_qt.Quote](deref((<SimpleQuote>spread)._thisptr))
+            Handle[_qt.Quote]((<SimpleQuote>spread)._thisptr)
 
         cdef SwapRateHelper instance = cls(from_classmethod=True)
 
@@ -147,20 +147,20 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
             instance.set_ptr(new shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     <Rate>rate,
-                    deref(tenor._thisptr.get()),
+                    deref(tenor._thisptr),
                     deref(calendar._thisptr),
                     <Frequency> fixedFrequency,
                     <_rh.BusinessDayConvention> fixedConvention,
                     deref(fixedDayCount._thisptr),
                     deref(<shared_ptr[_ib.IborIndex]*> iborIndex._thisptr),
                     spread_handle,
-                    deref(fwdStart._thisptr.get()))
+                    deref(fwdStart._thisptr))
                   )
               )
         elif isinstance(rate, SimpleQuote):
             instance.set_ptr(new shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
-                    Handle[_qt.Quote](deref((<SimpleQuote>rate)._thisptr)),
+                    Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                     deref(tenor._thisptr.get()),
                     deref(calendar._thisptr),
                     <Frequency> fixedFrequency,
@@ -168,7 +168,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     deref(fixedDayCount._thisptr),
                     deref(<shared_ptr[_ib.IborIndex]*> iborIndex._thisptr),
                     spread_handle,
-                    deref(fwdStart._thisptr.get()))
+                    deref(fwdStart._thisptr))
                 )
             )
         else:
@@ -179,7 +179,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
     @classmethod
     def from_index(cls, rate, SwapIndex index, spread = SimpleQuote(0), Period fwdStart = Period(0, Days)):
         cdef Handle[_qt.Quote] spread_handle = \
-            Handle[_qt.Quote](deref((<SimpleQuote>spread)._thisptr))
+            Handle[_qt.Quote]((<SimpleQuote>spread)._thisptr)
         cdef Handle[_qt.Quote] rate_handle
         cdef SwapRateHelper instance = cls(from_classmethod=True)
 
@@ -194,13 +194,13 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
             )
         )
         elif isinstance(rate, SimpleQuote):
-            rate_handle = Handle[_qt.Quote](deref((<SimpleQuote>rate)._thisptr))
+            rate_handle = Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr)
             instance.set_ptr(new shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     rate_handle,
                     deref(<shared_ptr[_si.SwapIndex]*>index._thisptr),
                     spread_handle,
-                    deref(fwdStart._thisptr.get())
+                    deref(fwdStart._thisptr)
                 )
             )
         )
@@ -233,7 +233,7 @@ cdef class FraRateHelper(RelativeDateRateHelper):
         elif isinstance(rate, SimpleQuote):
             self._thisptr = new shared_ptr[_rh.RateHelper](
                 new _rh.FraRateHelper(
-                    Handle[_qt.Quote](deref((<SimpleQuote>rate)._thisptr)),
+                    Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                     months_to_start,
                     months_to_end,
                     fixing_days,
@@ -259,7 +259,7 @@ cdef class FuturesRateHelper(RateHelper):
             self._thisptr = new shared_ptr[_rh.RateHelper](
                 new _rh.FuturesRateHelper(
                     <Real>price,
-                    deref(imm_date._thisptr.get()),
+                    deref(imm_date._thisptr),
                     length_in_months,
                     deref(calendar._thisptr),
                     <_rh.BusinessDayConvention> convention,
@@ -271,8 +271,8 @@ cdef class FuturesRateHelper(RateHelper):
         elif isinstance(price, SimpleQuote):
             self._thisptr = new shared_ptr[_rh.RateHelper](
                 new _rh.FuturesRateHelper(
-                    Handle[_qt.Quote](deref((<SimpleQuote>price)._thisptr)),
-                    deref(imm_date._thisptr.get()),
+                    Handle[_qt.Quote]((<SimpleQuote>price)._thisptr),
+                    deref(imm_date._thisptr),
                     length_in_months,
                     deref(calendar._thisptr),
                     <_rh.BusinessDayConvention> convention,
