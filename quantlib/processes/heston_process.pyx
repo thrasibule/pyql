@@ -35,11 +35,6 @@ cdef class HestonProcess:
     def __cinit__(self):
         pass
 
-    def __dealloc(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     def __init__(self,
        YieldTermStructure risk_free_rate_ts=YieldTermStructure(),
        YieldTermStructure dividend_ts=YieldTermStructure(),
@@ -53,13 +48,12 @@ cdef class HestonProcess:
        **kwargs):
 
         if 'noalloc' in kwargs:
-            self._thisptr = NULL
             return
 
         #create handles
         cdef Handle[_qt.Quote] s0_handle = Handle[_qt.Quote](s0._thisptr)
 
-        self._thisptr = new shared_ptr[_hp.HestonProcess](
+        self._thisptr = shared_ptr[_hp.HestonProcess](
             new _hp.HestonProcess(
                 risk_free_rate_ts._thisptr,
                 dividend_ts._thisptr,

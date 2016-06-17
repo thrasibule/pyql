@@ -59,7 +59,7 @@ cdef class HestonModelHelper(CalibrationHelper):
 
         self._thisptr = new shared_ptr[_ch.CalibrationHelper](
             new _hm.HestonModelHelper(
-                deref(maturity._thisptr.get()),
+                deref(maturity._thisptr),
                 deref(calendar._thisptr),
                 s0,
                 strike_price,
@@ -82,15 +82,13 @@ cdef class HestonModel:
     def __init__(self, HestonProcess process):
 
         self._thisptr = new shared_ptr[_hm.HestonModel](
-            new _hm.HestonModel(deref(process._thisptr))
+            new _hm.HestonModel(process._thisptr)
         )
 
     def process(self):
         process = HestonProcess(noalloc=True)
-        cdef shared_ptr[_hp.HestonProcess] hp_ptr = self._thisptr.get().process()
-        cdef shared_ptr[_hp.HestonProcess]* hp_pt = new shared_ptr[_hp.HestonProcess](hp_ptr)
-        process._thisptr = hp_pt
-
+        process._thisptr = self._thisptr.get().process()
+        
         return process
 
     property theta:

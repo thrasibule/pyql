@@ -32,9 +32,6 @@ cdef class BatesProcess(HestonProcess):
     def __cinit__(self):
         pass
 
-    def __dealloc(self):
-        pass
-
     def __init__(self,
        YieldTermStructure risk_free_rate_ts=YieldTermStructure(),
        YieldTermStructure dividend_ts=YieldTermStructure(),
@@ -51,21 +48,12 @@ cdef class BatesProcess(HestonProcess):
        **kwargs):
 
         if 'noalloc' in kwargs:
-            self._thisptr = NULL
             return
 
         #create handles
-<<<<<<< HEAD
-        cdef Handle[_qt.Quote] s0_handle = Handle[_qt.Quote](deref(s0._thisptr))
-=======
         cdef Handle[_qt.Quote] s0_handle = Handle[_qt.Quote](s0._thisptr)
-        cdef Handle[_ff.YieldTermStructure] dividend_ts_handle = \
-                deref(dividend_ts._thisptr.get())
-        cdef Handle[_ff.YieldTermStructure] risk_free_rate_ts_handle = \
-                deref(risk_free_rate_ts._thisptr.get())
->>>>>>> Use shared_ptr directly for Quote
 
-        self._thisptr = new shared_ptr[_hp.HestonProcess](
+        self._thisptr = shared_ptr[_hp.HestonProcess](
             new _hp.BatesProcess(
                 risk_free_rate_ts._thisptr,
                 dividend_ts._thisptr,

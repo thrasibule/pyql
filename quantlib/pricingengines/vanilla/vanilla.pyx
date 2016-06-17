@@ -29,26 +29,16 @@ cdef class AnalyticEuropeanEngine(VanillaOptionEngine):
 
     def __init__(self, GeneralizedBlackScholesProcess process):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
-
         self._thisptr = shared_ptr[_vanilla.PricingEngine](\
-            new _vanilla.AnalyticEuropeanEngine(process_ptr)
+            new _vanilla.AnalyticEuropeanEngine(process._thisptr)
         )
 
 cdef class BaroneAdesiWhaleyApproximationEngine(VanillaOptionEngine):
 
     def __init__(self, GeneralizedBlackScholesProcess process):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
-
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
-            new _vanilla.BaroneAdesiWhaleyApproximationEngine(process_ptr)
+            new _vanilla.BaroneAdesiWhaleyApproximationEngine(process._thisptr)
         )
 
 cdef class AnalyticHestonEngine(PricingEngine):
@@ -68,15 +58,10 @@ cdef class AnalyticBSMHullWhiteEngine(PricingEngine):
             GeneralizedBlackScholesProcess process,
             HullWhite hw_model):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
-
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticBSMHullWhiteEngine(
                 equity_short_rate_correlation,
-                process_ptr,
+                process._thisptr,
                 deref(<shared_ptr[_hw.HullWhite]*> hw_model._thisptr)
             )
         )
@@ -113,7 +98,7 @@ cdef class FdHestonHullWhiteVanillaEngine(PricingEngine):
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.FdHestonHullWhiteVanillaEngine(
                 deref(heston_model._thisptr),
-                deref(hw_process._thisptr),
+                hw_process._thisptr,
                 corr_equity_short_rate,
                 t_grid,
                 x_grid, 
@@ -171,13 +156,8 @@ cdef class AnalyticDividendEuropeanEngine(PricingEngine):
 
     def __init__(self, GeneralizedBlackScholesProcess process):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
-
         self._thisptr = shared_ptr[_vanilla.PricingEngine](\
-            new _vanilla.AnalyticDividendEuropeanEngine(process_ptr)
+            new _vanilla.AnalyticDividendEuropeanEngine(process._thisptr)
         )
 
 
@@ -187,14 +167,10 @@ cdef class FDDividendAmericanEngine(PricingEngine):
 
         # FIXME: first implementation using a fixed scheme!
         print 'Warning : rough implementation using CrankNicolson schema'
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.FDDividendAmericanEngine[_vanilla.CrankNicolson](
-                process_ptr, timesteps, gridpoints
+                process._thisptr, timesteps, gridpoints
             )
         )
 
@@ -203,13 +179,9 @@ cdef class FDAmericanEngine(PricingEngine):
     def __init__(self, scheme, GeneralizedBlackScholesProcess process, timesteps, gridpoints):
 
         # FIXME: first implementation using a fixed scheme!
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(process._thisptr)
-            )
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](\
             new _vanilla.FDAmericanEngine[_vanilla.CrankNicolson](
-                process_ptr, timesteps, gridpoints
+                process._thisptr, timesteps, gridpoints
             )
         )

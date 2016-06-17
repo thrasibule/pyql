@@ -198,13 +198,8 @@ cdef class VanillaOption(OneAssetOption):
         GeneralizedBlackScholesProcess process, Real accuracy, Size max_evaluations,
         Volatility min_vol, Volatility max_vol):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(<shared_ptr[_bsp.GeneralizedBlackScholesProcess]*>process._thisptr)
-        )
-
         vol = (<_option.VanillaOption *> self._thisptr.get()).impliedVolatility(
-            target_value, process_ptr, accuracy, max_evaluations, min_vol, max_vol)
+            target_value, process._thisptr, accuracy, max_evaluations, min_vol, max_vol)
 
         return vol
 
@@ -249,7 +244,7 @@ cdef class DividendVanillaOption(OneAssetOption):
         # convert the list of PyQL dates into a vector of QL dates
         cdef vector[_date.Date] _dividend_dates
         for date in dividend_dates:
-            _dividend_dates.push_back(deref((<Date>date)._thisptr.get()))
+            _dividend_dates.push_back(deref((<Date>date)._thisptr))
 
         self._thisptr = shared_ptr[_instrument.Instrument]( \
             new _option.DividendVanillaOption(
@@ -263,12 +258,9 @@ cdef class DividendVanillaOption(OneAssetOption):
         GeneralizedBlackScholesProcess process, Real accuracy, Size max_evaluations,
         Volatility min_vol, Volatility max_vol):
 
-        cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
-            shared_ptr[_bsp.GeneralizedBlackScholesProcess](
-                deref(<shared_ptr[_bsp.GeneralizedBlackScholesProcess]*>process._thisptr)
-        )
 
         vol = (<_option.DividendVanillaOption *> self._thisptr.get()).impliedVolatility(
-            target_value, process_ptr, accuracy, max_evaluations, min_vol, max_vol)
+            target_value, process._thisptr, accuracy, max_evaluations, min_vol, max_vol)
+
 
         return vol

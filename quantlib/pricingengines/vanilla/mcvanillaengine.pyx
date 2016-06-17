@@ -41,7 +41,7 @@ cdef class MCVanillaEngine(PricingEngine):
         cdef shared_ptr[_pe.PricingEngine] engine = _mc_ve.mc_vanilla_engine_factory(
           traits_string,
           generator_string,
-          deref(process._thisptr),
+          process._thisptr,
           doAntitheticVariate,
           stepsPerYear,
           requiredSamples,

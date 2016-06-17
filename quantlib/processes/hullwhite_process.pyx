@@ -23,17 +23,12 @@ cdef class HullWhiteProcess:
     def __cinit__(self):
         pass
 
-    def __dealloc(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     def __init__(self,
        YieldTermStructure risk_free_rate_ts,
        Real a,
        Real sigma):
 
-        self._thisptr = new shared_ptr[_hw.HullWhiteProcess](
+        self._thisptr = shared_ptr[_hw.HullWhiteProcess](
             new _hw.HullWhiteProcess(
                 risk_free_rate_ts._thisptr,
                 a, sigma))

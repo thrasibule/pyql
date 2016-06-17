@@ -12,7 +12,7 @@ from cython.operator cimport dereference as deref
 cimport _bates_model as _bm
 cimport _heston_model as _hm
 cimport quantlib.processes._heston_process as _hp
-from quantlib.handle cimport Handle, shared_ptr
+from quantlib.handle cimport Handle, shared_ptr, static_pointer_cast
 from quantlib.processes.heston_process cimport HestonProcess
 from quantlib.processes.bates_process cimport BatesProcess
 from .heston_model cimport HestonModel
@@ -26,7 +26,7 @@ cdef class BatesModel(HestonModel):
     def __init__(self, BatesProcess process):
         self._thisptr = new shared_ptr[_hm.HestonModel](
             new _bm.BatesModel(
-            deref(<shared_ptr[_hp.BatesProcess]*> process._thisptr)))
+            static_pointer_cast[_hp.BatesProcess](process._thisptr)))
 
     def __str__(self):
         return 'Bates model\nv0: %f kappa: %f theta: %f sigma: %f\nrho: %f lambda: %f nu: %f delta: %f' % \
@@ -35,9 +35,7 @@ cdef class BatesModel(HestonModel):
 
     def process(self):
         process = BatesProcess(noalloc=True)
-        cdef shared_ptr[_hp.HestonProcess] bp_ptr = self._thisptr.get().process()
-        cdef shared_ptr[_hp.HestonProcess]* bp_pt = new shared_ptr[_hp.HestonProcess](bp_ptr)
-        process._thisptr = bp_pt
+        process._thisptr = self._thisptr.get().process()
         
         return process
 
@@ -62,7 +60,7 @@ cdef class BatesDetJumpModel(BatesModel):
                  kappaLambda=1.0, thetaLambda=0.1):
         self._thisptr = new shared_ptr[_hm.HestonModel](
         new _bm.BatesDetJumpModel(
-        deref(<shared_ptr[_hp.BatesProcess]*> process._thisptr),
+        static_pointer_cast[_hp.BatesProcess](process._thisptr),
                                   kappaLambda,
                                   thetaLambda))
 
@@ -90,7 +88,7 @@ cdef class BatesDoubleExpModel(HestonModel):
                  nuUp=0.1, nuDown=0.1,
                  p=0.5):
         self._thisptr = new shared_ptr[_hm.HestonModel](
-            new _bm.BatesDoubleExpModel(deref(process._thisptr),
+            new _bm.BatesDoubleExpModel(process._thisptr,
                                         Lambda, nuUp, nuDown, p))
 
     def __str__(self):
@@ -125,7 +123,7 @@ cdef class BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
                  nuUp=0.1, nuDown=0.1,
                  p=0.5, kappaLambda=1.0, thetaLambda=.1):
         self._thisptr = new shared_ptr[_hm.HestonModel](
-            new _bm.BatesDoubleExpDetJumpModel(deref(process._thisptr),
+            new _bm.BatesDoubleExpDetJumpModel(process._thisptr,
                                         Lambda, nuUp, nuDown, p, kappaLambda, thetaLambda))
 
     def __str__(self):

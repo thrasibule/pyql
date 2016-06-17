@@ -14,13 +14,6 @@ from quantlib.termstructures.volatility.equityfx.black_vol_term_structure cimpor
 
 cdef class GeneralizedBlackScholesProcess:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     property x0:
         def __get__(self):
             return self._thisptr.get().x0()
@@ -42,7 +35,7 @@ cdef class BlackScholesProcess(GeneralizedBlackScholesProcess):
                 deref(black_vol_ts._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \
+        self._thisptr = shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \
             _bsp.BlackScholesProcess(
                 x0_handle,
                 risk_free_ts._thisptr,
@@ -67,7 +60,7 @@ cdef class BlackScholesMertonProcess(GeneralizedBlackScholesProcess):
                 deref(black_vol_ts._thisptr)
             )
 
-        self._thisptr = new shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \
+        self._thisptr = shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \
             _bsp.BlackScholesMertonProcess(
                 x0_handle,
                 dividend_ts._thisptr,

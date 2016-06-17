@@ -65,10 +65,10 @@ cdef class ImpliedVolatilityHelper:
         res = GeneralizedBlackScholesProcess()
         cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] bsp_ptr
 
-        bsp_ptr = _iv.IVH_clone(deref(process._thisptr),
+        bsp_ptr = _iv.IVH_clone(process._thisptr,
                          quote_ptr)
 
-        res._thisptr = new shared_ptr[_bsp.GeneralizedBlackScholesProcess]( \
+        res._thisptr = shared_ptr[_bsp.GeneralizedBlackScholesProcess]( \
             bsp_ptr)
 
         return res
