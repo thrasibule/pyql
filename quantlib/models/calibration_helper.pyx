@@ -27,10 +27,6 @@ cdef class CalibrationHelper:
     def __cinit__(self):
         pass
 
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __init__(self):
         raise ValueError('Cannot instantiate a CalibrationHelper')
 
@@ -54,8 +50,7 @@ cdef class CalibrationHelper:
         Real accuracy, Size maxEvaluations,
         Volatility minVol, Volatility maxVol):
 
-        vol = \
-        (<_ch.CalibrationHelper *> self._thisptr.get()).impliedVolatility(targetValue,
+        vol = self._thisptr.get().impliedVolatility(targetValue,
         accuracy, maxEvaluations, minVol, maxVol)
 
         return vol

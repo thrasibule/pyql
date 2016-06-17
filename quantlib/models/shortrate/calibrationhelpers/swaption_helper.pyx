@@ -45,24 +45,21 @@ cdef class SwaptionHelper(CalibrationHelper):
                  Real nominal=1.0):
 
 
-        cdef QlDayCounter* _fixed_leg_daycounter = <QlDayCounter*>fixed_leg_daycounter._thisptr
-        cdef QlDayCounter* _floating_leg_daycounter = <QlDayCounter*>floating_leg_daycounter._thisptr
-
         cdef Handle[_qt.Quote] volatility_handle = \
                 Handle[_qt.Quote](volatility._thisptr)
 
         if strike is None:
             strike = QL_NULL_REAL
-
-        self._thisptr = new shared_ptr[_ch.CalibrationHelper](
+            
+        self._thisptr = shared_ptr[_ch.CalibrationHelper](
             new _sh.SwaptionHelper(
-                deref(maturity._thisptr.get()),
-                deref(length._thisptr.get()),
+                deref(maturity._thisptr),
+                deref(length._thisptr),
                 volatility_handle,
                 deref(<shared_ptr[_ii.IborIndex]*> index._thisptr),
-                deref(fixed_leg_tenor._thisptr.get()),
-                deref(_fixed_leg_daycounter),
-                deref(_floating_leg_daycounter),
+                deref(fixed_leg_tenor._thisptr),
+                deref(fixed_leg_daycounter._thisptr),
+                deref(floating_leg_daycounter._thisptr),
                 ts._thisptr,
                 <_ch.CalibrationErrorType>error_type,
                 strike,

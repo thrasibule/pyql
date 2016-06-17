@@ -80,7 +80,7 @@ cdef class HullWhite(Vasicek):
 
         cdef shared_ptr[_ch.CalibrationHelper] chelper
         for helper in helpers:
-            chelper = deref((<CalibrationHelper>helper)._thisptr)
+            chelper = (<CalibrationHelper>helper)._thisptr
             helpers_vector.push_back(chelper)
 
         (<_hw.HullWhite*> self._thisptr.get()).calibrate(

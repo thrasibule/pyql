@@ -13,5 +13,5 @@ from quantlib.handle cimport shared_ptr
 
 cdef class CalibrationHelper:
 
-    cdef shared_ptr[_ch.CalibrationHelper]* _thisptr
+    cdef shared_ptr[_ch.CalibrationHelper] _thisptr
 
