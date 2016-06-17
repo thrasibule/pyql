@@ -13,13 +13,6 @@ from quantlib.instruments.bonds cimport Bond
 cimport quantlib._cashflow as _cf
 cdef class IborCouponPricer:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __init__(self):
         raise ValueError(
             'IborCouponPricer cannot be directly instantiated!'
@@ -30,11 +23,10 @@ cdef class BlackIborCouponPricer(IborCouponPricer):
     def __init__(self,
         OptionletVolatilityStructure ovs
     ):
-        ovs_handle = new Handle[_ovs.OptionletVolatilityStructure](deref(ovs._thisptr))
-        self._thisptr = new shared_ptr[_cp.FloatingRateCouponPricer](
-            new _cp.BlackIborCouponPricer(
-                deref(ovs_handle)
-            )
+        cdef Handle[_ovs.OptionletVolatilityStructure] ovs_handle = \
+                Handle[_ovs.OptionletVolatilityStructure](deref(ovs._thisptr))
+        self._thisptr = shared_ptr[_cp.FloatingRateCouponPricer](
+            new _cp.BlackIborCouponPricer(ovs_handle)
         )
 
 def set_coupon_pricer(Bond frb, pricer):
@@ -44,9 +36,8 @@ def set_coupon_pricer(Bond frb, pricer):
             Bond object to be used to extract cashflows
         2) pricer : FloatingRateCouponPricer 
             BlackIborCouponPricer has been exposed"""
-    cdef shared_ptr[_cp.FloatingRateCouponPricer] pricer_sp
-    pricer_sp = deref((<FloatingRateCouponPricer>pricer)._thisptr)
     bond_leg = (<_bonds.Bond*>frb._thisptr.get()).cashflows()
-    _cp.setCouponPricer(bond_leg, pricer_sp)
-    
-    
+    _cp.setCouponPricer(bond_leg,
+                        (<FloatingRateCouponPricer>pricer)._thisptr)
+
+
