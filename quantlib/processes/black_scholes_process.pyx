@@ -32,7 +32,7 @@ cdef class BlackScholesProcess(GeneralizedBlackScholesProcess):
         )
         cdef Handle[_bvts.BlackVolTermStructure] black_vol_ts_handle = \
             Handle[_bvts.BlackVolTermStructure](
-                deref(black_vol_ts._thisptr)
+                black_vol_ts._thisptr
             )
 
         self._thisptr = shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \
@@ -57,7 +57,7 @@ cdef class BlackScholesMertonProcess(GeneralizedBlackScholesProcess):
 
         cdef Handle[_bvts.BlackVolTermStructure] black_vol_ts_handle = \
             Handle[_bvts.BlackVolTermStructure](
-                deref(black_vol_ts._thisptr)
+                black_vol_ts._thisptr
             )
 
         self._thisptr = shared_ptr[_bsp.GeneralizedBlackScholesProcess]( new \

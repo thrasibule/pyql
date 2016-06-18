@@ -8,13 +8,6 @@ from quantlib.time.daycounter cimport DayCounter
 
 cdef class BlackVolTermStructure:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __init__(self):
         raise ValueError(
             'BlackVolTermStructure cannot be directly instantiated!'
@@ -30,9 +23,9 @@ cdef class BlackConstantVol(BlackVolTermStructure):
         DayCounter daycounter
     ):
 
-        self._thisptr = new shared_ptr[_bv.BlackVolTermStructure](
+        self._thisptr = shared_ptr[_bv.BlackVolTermStructure](
             new _bv.BlackConstantVol(
-                deref(reference_date._thisptr.get()),
+                deref(reference_date._thisptr),
                 deref(calendar._thisptr),
                 volatility,
                 deref(daycounter._thisptr)
