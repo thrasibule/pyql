@@ -34,28 +34,20 @@ EXERCISE_TO_STR = {
 
 cdef class Exercise:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     def __str__(self):
         return 'Exercise type: %s' % EXERCISE_TO_STR[self._thisptr.get().type()]
 
-    cdef set_exercise(self, shared_ptr[_exercise.Exercise] exc):
+    cdef set_exercise(self, const shared_ptr[_exercise.Exercise]& exc):
         if exc.get() == NULL:
             raise ValueError('Setting the exercise with a null pointer.')
-        self._thisptr = new shared_ptr[_exercise.Exercise](exc)
+        self._thisptr = exc
 
 cdef class EuropeanExercise(Exercise):
 
     def __init__(self, Date exercise_date):
-        self._thisptr = new shared_ptr[_exercise.Exercise]( \
+        self._thisptr = shared_ptr[_exercise.Exercise]( \
             new _exercise.EuropeanExercise(
-                deref(exercise_date._thisptr.get())
+                deref(exercise_date._thisptr)
             )
         )
 
@@ -69,16 +61,16 @@ cdef class AmericanExercise(Exercise):
 
         """
         if earliest_exercise_date is not None:
-            self._thisptr = new shared_ptr[_exercise.Exercise]( \
+            self._thisptr = shared_ptr[_exercise.Exercise]( \
                 new _exercise.AmericanExercise(
-                    deref(earliest_exercise_date._thisptr.get()),
-                    deref(latest_exercise_date._thisptr.get())
+                    deref(earliest_exercise_date._thisptr),
+                    deref(latest_exercise_date._thisptr)
                 )
             )
         else:
-            self._thisptr = new shared_ptr[_exercise.Exercise]( \
+            self._thisptr = shared_ptr[_exercise.Exercise]( \
                 new _exercise.AmericanExercise(
-                    deref(latest_exercise_date._thisptr.get())
+                    deref(latest_exercise_date._thisptr)
                 )
             )
 
@@ -183,13 +175,9 @@ cdef class VanillaOption(OneAssetOption):
             static_pointer_cast[_payoffs.StrikedTypePayoff](
                     payoff._thisptr)
 
-        cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
-            shared_ptr[_exercise.Exercise](
-                deref(exercise._thisptr)
-            )
 
         self._thisptr = shared_ptr[_instrument.Instrument]( \
-            new _option.VanillaOption(payoff_ptr, exercise_ptr)
+            new _option.VanillaOption(payoff_ptr, exercise._thisptr)
         )
 
 
@@ -215,13 +203,8 @@ cdef class EuropeanOption(VanillaOption):
             static_pointer_cast[_payoffs.StrikedTypePayoff](
                     payoff._thisptr)
 
-        cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
-            shared_ptr[_exercise.Exercise](
-                deref(exercise._thisptr)
-            )
-
         self._thisptr = shared_ptr[_instrument.Instrument]( \
-            new _option.EuropeanOption(payoff_ptr, exercise_ptr)
+            new _option.EuropeanOption(payoff_ptr, exercise._thisptr)
         )
 
 cdef class DividendVanillaOption(OneAssetOption):
@@ -233,10 +216,6 @@ cdef class DividendVanillaOption(OneAssetOption):
             static_pointer_cast[_payoffs.StrikedTypePayoff](
                     payoff._thisptr)
 
-        cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
-            shared_ptr[_exercise.Exercise](
-                deref(exercise._thisptr)
-        )
 
         # convert the list of PyQL dates into a vector of QL dates
         cdef vector[_date.Date] _dividend_dates
@@ -245,7 +224,7 @@ cdef class DividendVanillaOption(OneAssetOption):
 
         self._thisptr = shared_ptr[_instrument.Instrument]( \
             new _option.DividendVanillaOption(
-                payoff_ptr, exercise_ptr, _dividend_dates,
+                payoff_ptr, exercise._thisptr, _dividend_dates,
                 dividends
             )
         )
