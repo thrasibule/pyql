@@ -28,17 +28,12 @@ cdef class InterestRate:
     """
 
 
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     def __cinit__(self, double rate, DayCounter dc, int compounding, int frequency, **kwargs):
 
         if 'noalloc' in kwargs:
             return
 
-        self._thisptr = new shared_ptr[_ir.InterestRate](
+        self._thisptr = shared_ptr[_ir.InterestRate](
             new _ir.InterestRate(
                 <Rate>rate, deref(dc._thisptr), <_ir.Compounding>compounding,
                 <_ir.Frequency>frequency

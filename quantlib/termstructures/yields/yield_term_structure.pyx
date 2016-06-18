@@ -88,12 +88,12 @@ cdef class YieldTermStructure:
         cdef shared_ptr[_yts.YieldTermStructure] term_structure = self._thisptr.currentLink()
 
         cdef _ir.InterestRate ql_zero_rate = term_structure.get().zeroRate(
-            deref(date._thisptr.get()), deref(day_counter._thisptr),
+            deref(date._thisptr), deref(day_counter._thisptr),
             <_ir.Compounding>compounding, <_ir.Frequency>frequency,
             extrapolate)
 
         zero_rate = InterestRate(0, None, 0, 0, noalloc=True)
-        zero_rate._thisptr = new shared_ptr[_ir.InterestRate](
+        zero_rate._thisptr = shared_ptr[_ir.InterestRate](
             new _ir.InterestRate(
                 ql_zero_rate.rate(),
                 ql_zero_rate.dayCounter(),
@@ -137,7 +137,7 @@ cdef class YieldTermStructure:
             <_ir.Frequency>frequency, extrapolate)
 
         forward_rate = InterestRate(0, None, 0, 0, noalloc=True)
-        forward_rate._thisptr = new shared_ptr[_ir.InterestRate](
+        forward_rate._thisptr = shared_ptr[_ir.InterestRate](
             new _ir.InterestRate(
                 ql_forward_rate.rate(),
                 ql_forward_rate.dayCounter(),
@@ -157,7 +157,7 @@ cdef class YieldTermStructure:
 
         if isinstance(value, Date):
             discount_value = term_structure.discount(
-                deref((<Date>value)._thisptr.get()), extrapolate)
+                deref((<Date>value)._thisptr), extrapolate)
         elif isinstance(value, float):
             discount_value = term_structure.discount(
                 <Time>value, extrapolate)
