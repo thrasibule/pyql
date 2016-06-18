@@ -47,7 +47,7 @@ cdef class AnalyticHestonEngine(PricingEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticHestonEngine(
-                deref(model._thisptr),
+                model._thisptr,
                 <Size>integration_order
             )
         )
@@ -75,7 +75,7 @@ cdef class AnalyticHestonHullWhiteEngine(PricingEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.AnalyticHestonHullWhiteEngine(
-                deref(heston_model._thisptr),
+                heston_model._thisptr,
                 static_pointer_cast[_hw.HullWhite](hw_model._thisptr),
                 <Size>integration_order
             )
@@ -97,7 +97,7 @@ cdef class FdHestonHullWhiteVanillaEngine(PricingEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.FdHestonHullWhiteVanillaEngine(
-                deref(heston_model._thisptr),
+                heston_model._thisptr,
                 hw_process._thisptr,
                 corr_equity_short_rate,
                 t_grid,
@@ -119,7 +119,7 @@ cdef class BatesEngine(AnalyticHestonEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesEngine(
-                deref(<shared_ptr[_bm.BatesModel]*> model._thisptr),
+                static_pointer_cast[_bm.BatesModel](model._thisptr),
                 <Size>integration_order
             )
         )
@@ -130,7 +130,7 @@ cdef class BatesDetJumpEngine(BatesEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDetJumpEngine(
-                deref(<shared_ptr[_bm.BatesDetJumpModel]*> model._thisptr),
+                static_pointer_cast[_bm.BatesDetJumpModel]( model._thisptr),
                 <Size>integration_order))
 
 cdef class BatesDoubleExpEngine(AnalyticHestonEngine):
@@ -139,7 +139,7 @@ cdef class BatesDoubleExpEngine(AnalyticHestonEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDoubleExpEngine(
-                deref(<shared_ptr[_bm.BatesDoubleExpModel]*> model._thisptr),
+                static_pointer_cast[_bm.BatesDoubleExpModel](model._thisptr),
                 <Size>integration_order))
 
 cdef class BatesDoubleExpDetJumpEngine(BatesDoubleExpEngine):
@@ -148,7 +148,7 @@ cdef class BatesDoubleExpDetJumpEngine(BatesDoubleExpEngine):
 
         self._thisptr = shared_ptr[_vanilla.PricingEngine](
             new _vanilla.BatesDoubleExpDetJumpEngine(
-                deref(<shared_ptr[_bm.BatesDoubleExpDetJumpModel]*> model._thisptr),
+                static_pointer_cast[_bm.BatesDoubleExpDetJumpModel](model._thisptr),
                 <Size>integration_order))
 
 

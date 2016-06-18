@@ -72,16 +72,9 @@ cdef class HestonModelHelper(CalibrationHelper):
 
 cdef class HestonModel:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __init__(self, HestonProcess process):
 
-        self._thisptr = new shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_hm.HestonModel](
             new _hm.HestonModel(process._thisptr)
         )
 
@@ -119,7 +112,7 @@ cdef class HestonModel:
 
         cdef shared_ptr[_ch.CalibrationHelper] chelper
         for helper in helpers:
-            chelper = deref((<HestonModelHelper>helper)._thisptr)
+            chelper = (<HestonModelHelper>helper)._thisptr
             helpers_vector.push_back(chelper)
 
         if constraint is None:

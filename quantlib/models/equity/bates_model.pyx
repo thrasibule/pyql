@@ -20,11 +20,8 @@ from .bates_model cimport BatesModel
 
 cdef class BatesModel(HestonModel):
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
     def __init__(self, BatesProcess process):
-        self._thisptr = new shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_hm.HestonModel](
             new _bm.BatesModel(
             static_pointer_cast[_hp.BatesProcess](process._thisptr)))
 
@@ -53,12 +50,9 @@ cdef class BatesModel(HestonModel):
 
 cdef class BatesDetJumpModel(BatesModel):
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
     def __init__(self, BatesProcess process,
                  kappaLambda=1.0, thetaLambda=0.1):
-        self._thisptr = new shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_hm.HestonModel](
         new _bm.BatesDetJumpModel(
         static_pointer_cast[_hp.BatesProcess](process._thisptr),
                                   kappaLambda,
@@ -80,14 +74,11 @@ cdef class BatesDetJumpModel(BatesModel):
 
 cdef class BatesDoubleExpModel(HestonModel):
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
     def __init__(self, HestonProcess process,
                  Lambda=0.1,
                  nuUp=0.1, nuDown=0.1,
                  p=0.5):
-        self._thisptr = new shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_hm.HestonModel](
             new _bm.BatesDoubleExpModel(process._thisptr,
                                         Lambda, nuUp, nuDown, p))
 
@@ -115,14 +106,11 @@ cdef class BatesDoubleExpModel(HestonModel):
 
 cdef class BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
     def __init__(self, HestonProcess process,
                  Lambda=0.1,
                  nuUp=0.1, nuDown=0.1,
                  p=0.5, kappaLambda=1.0, thetaLambda=.1):
-        self._thisptr = new shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_hm.HestonModel](
             new _bm.BatesDoubleExpDetJumpModel(process._thisptr,
                                         Lambda, nuUp, nuDown, p, kappaLambda, thetaLambda))
 

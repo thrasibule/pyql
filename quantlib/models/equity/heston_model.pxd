@@ -19,5 +19,5 @@ cdef class HestonModelHelper(CalibrationHelper):
 
 cdef class HestonModel:
 
-    cdef shared_ptr[_hm.HestonModel]* _thisptr
+    cdef shared_ptr[_hm.HestonModel] _thisptr
 
