@@ -14,7 +14,7 @@ cimport quantlib.time._date as _date
 cimport quantlib.pricingengines._pricing_engine as _pe
 cimport quantlib.processes._black_scholes_process as _bsp
 
-from quantlib.handle cimport shared_ptr
+from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.instruments.instrument cimport Instrument
 from quantlib.instruments.payoffs cimport Payoff, PlainVanillaPayoff
 from quantlib.time.date cimport Date
@@ -180,9 +180,8 @@ cdef class VanillaOption(OneAssetOption):
     def __init__(self, PlainVanillaPayoff payoff, Exercise exercise):
 
         cdef shared_ptr[_payoffs.StrikedTypePayoff] payoff_ptr = \
-            shared_ptr[_payoffs.StrikedTypePayoff](
-                deref(<shared_ptr[_payoffs.StrikedTypePayoff]*>payoff._thisptr)
-        )
+            static_pointer_cast[_payoffs.StrikedTypePayoff](
+                    payoff._thisptr)
 
         cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
             shared_ptr[_exercise.Exercise](
@@ -213,9 +212,8 @@ cdef class EuropeanOption(VanillaOption):
     def __init__(self, PlainVanillaPayoff payoff, Exercise exercise):
 
         cdef shared_ptr[_payoffs.StrikedTypePayoff] payoff_ptr = \
-            shared_ptr[_payoffs.StrikedTypePayoff](
-                deref(<shared_ptr[_payoffs.StrikedTypePayoff]*>payoff._thisptr)
-        )
+            static_pointer_cast[_payoffs.StrikedTypePayoff](
+                    payoff._thisptr)
 
         cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
             shared_ptr[_exercise.Exercise](
@@ -232,9 +230,8 @@ cdef class DividendVanillaOption(OneAssetOption):
     def __init__(self, PlainVanillaPayoff payoff, Exercise exercise, dividend_dates, vector[Real] dividends):
 
         cdef shared_ptr[_payoffs.StrikedTypePayoff] payoff_ptr = \
-            shared_ptr[_payoffs.StrikedTypePayoff](
-                deref(<shared_ptr[_payoffs.StrikedTypePayoff]*>payoff._thisptr)
-        )
+            static_pointer_cast[_payoffs.StrikedTypePayoff](
+                    payoff._thisptr)
 
         cdef shared_ptr[_exercise.Exercise] exercise_ptr = \
             shared_ptr[_exercise.Exercise](

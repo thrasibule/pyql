@@ -22,24 +22,14 @@ def str_to_option_type(name):
 
 cdef class Payoff:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-
     def __str__(self):
-        if self._thisptr is not NULL:
+        if self._thisptr.get() is not NULL:
             return 'Payoff: %s' % self._thisptr.get().name().decode('utf-8')
 
-    cdef set_payoff(self, shared_ptr[_payoffs.Payoff] payoff):
-        if self._thisptr != NULL:
-            del self._thisptr
-            self._thisptr = NULL
+    cdef set_payoff(self, const shared_ptr[_payoffs.Payoff]& payoff):
         if payoff.get() == NULL:
             raise ValueError('Setting the payoff with a null pointer.')
-        self._thisptr = new shared_ptr[_payoffs.Payoff](payoff)
+        self._thisptr = payoff
 
 cdef _payoffs.PlainVanillaPayoff* _get_payoff(PlainVanillaPayoff payoff):
 
@@ -72,7 +62,7 @@ cdef class PlainVanillaPayoff(Payoff):
             option_type = str_to_option_type(option_type)
 
         if not from_qlpayoff:
-            self._thisptr = new shared_ptr[_payoffs.Payoff]( \
+            self._thisptr = shared_ptr[_payoffs.Payoff]( \
                 new _payoffs.PlainVanillaPayoff(
                     <_option.Type>option_type, <Real>strike
                 )
