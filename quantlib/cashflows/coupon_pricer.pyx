@@ -24,7 +24,7 @@ cdef class BlackIborCouponPricer(IborCouponPricer):
         OptionletVolatilityStructure ovs
     ):
         cdef Handle[_ovs.OptionletVolatilityStructure] ovs_handle = \
-                Handle[_ovs.OptionletVolatilityStructure](deref(ovs._thisptr))
+                Handle[_ovs.OptionletVolatilityStructure](ovs._thisptr)
         self._thisptr = shared_ptr[_cp.FloatingRateCouponPricer](
             new _cp.BlackIborCouponPricer(ovs_handle)
         )
