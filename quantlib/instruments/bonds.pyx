@@ -15,7 +15,7 @@ cimport quantlib.time._date as _date
 from cython.operator cimport dereference as deref
 from libcpp.vector cimport vector
 from libcpp cimport bool
-from quantlib.handle cimport Handle, shared_ptr, RelinkableHandle
+from quantlib.handle cimport Handle, shared_ptr, RelinkableHandle, static_pointer_cast
 from quantlib.instruments.instrument cimport Instrument
 from quantlib.pricingengines.engine cimport PricingEngine
 from quantlib.time._businessdayconvention cimport BusinessDayConvention, Following
@@ -116,7 +116,7 @@ cdef class Bond(Instrument):
         if settlement_date is not None:
             return get_bond(self).clean_yield(
                 clean_price, deref(dc._thisptr), <_bonds.Compounding>comp,
-                <_bonds.Frequency>freq, deref(settlement_date._thisptr.get()),
+                <_bonds.Frequency>freq, deref(settlement_date._thisptr),
                 accuracy, max_evaluations
             )
 
@@ -125,7 +125,7 @@ cdef class Bond(Instrument):
     def accrued_amount(self, Date date=None):
         """ Returns the bond accrued amount at the given date. """
         if date is not None:
-            amount = get_bond(self).accruedAmount(deref(date._thisptr.get()))
+            amount = get_bond(self).accruedAmount(deref(date._thisptr))
         else:
             amount = get_bond(self).accruedAmount()
         return amount
@@ -177,32 +177,26 @@ cdef class FixedRateBond(Bond):
                 Date bond was issued
             """
            
-            cdef QlSchedule* _fixed_bonds_schedule = <QlSchedule*>fixed_bonds_schedule._thisptr
-            cdef QlDayCounter* _accrual_day_counter = <QlDayCounter*>accrual_day_counter._thisptr
-
-            cdef _date.Date* _issue_date
-
             if issue_date is None:
                 # empty issue rate seem to break some of the computation with
                 # segfaults. Do we really want to let the user do that ? Or
                 # shall we default on the first date of the schedule ?
                 self._thisptr = shared_ptr[_instrument.Instrument](
                     new _bonds.FixedRateBond(settlement_days,
-                        face_amount, deref(_fixed_bonds_schedule), coupons,
-                        deref(_accrual_day_counter),
+                        face_amount, deref(fixed_bonds_schedule._thisptr),
+                        coupons,
+                        deref(accrual_day_counter._thisptr),
                         <BusinessDayConvention>payment_convention,
                         redemption)
                 )
             else:
-                _issue_date = <_date.Date*>((<Date>issue_date)._thisptr.get())
-
                 self._thisptr = shared_ptr[_instrument.Instrument](\
                     new _bonds.FixedRateBond(settlement_days,
-                        face_amount, deref(_fixed_bonds_schedule),
+                        face_amount, deref(fixed_bonds_schedule._thisptr),
                         coupons,
-                        deref(_accrual_day_counter),
+                        deref(accrual_day_counter._thisptr),
                         <BusinessDayConvention>payment_convention,
-                        redemption, deref(_issue_date)
+                        redemption, deref(issue_date._thisptr)
                     )
                 )
 
@@ -246,12 +240,12 @@ cdef class ZeroCouponBond(Bond):
 
 cdef class FloatingRateBond(Bond): 
     """ Floating rate bond """ 
-    def __init__(self, int settlement_days, double face_amount, Schedule float_schedule, 
-        IborIndex ibor_index, DayCounter accrual_day_counter, int fixing_days, 
-        vector[Real] gearings, vector[Spread] spreads, vector[Rate] caps, vector[Rate] floors,
-        BusinessDayConvention payment_convention=Following, double redemption=100.0,
-        Date issue_date=None
-        ):
+    def __init__(self, int settlement_days, double face_amount,
+            Schedule float_schedule, IborIndex ibor_index not None,
+            DayCounter accrual_day_counter, int fixing_days, 
+            vector[Real] gearings, vector[Spread] spreads, vector[Rate] caps,
+            vector[Rate] floors, payment_convention=Following, redemption=100.0, 
+            Date issue_date=None):
         """ Floating rate bond (constructor)
         Parameters
         ----------
@@ -283,15 +277,15 @@ cdef class FloatingRateBond(Bond):
             Date bond was issued
         """
     
-        cdef QlSchedule* _float_bonds_schedule = <QlSchedule*>float_schedule._thisptr
-        cdef QlDayCounter* _accrual_day_counter = <QlDayCounter*>accrual_day_counter._thisptr
-        
-        
         self._thisptr = shared_ptr[_instrument.Instrument](
             new _bonds.FloatingRateBond(
-                <Natural> settlement_days, <Real> face_amount, deref(_float_bonds_schedule),deref(<shared_ptr[_ii.IborIndex]*> ibor_index._thisptr),
-                deref(_accrual_day_counter), <BusinessDayConvention> payment_convention, 
-                <Natural> fixing_days, gearings, spreads, caps, floors, True, redemption, deref(issue_date._thisptr.get())
+                <Natural> settlement_days, <Real> face_amount,
+                deref(float_schedule._thisptr),
+                static_pointer_cast[_ii.IborIndex](ibor_index._thisptr),
+                deref(accrual_day_counter._thisptr),
+                <BusinessDayConvention> payment_convention, 
+                <Natural> fixing_days, gearings, spreads, caps, floors,
+                True, redemption, deref(issue_date._thisptr)
                 )
             )       
                

@@ -13,7 +13,7 @@ from libcpp.string cimport string
 
 from quantlib.index cimport Index
 from quantlib.indexes.ibor_index cimport IborIndex
-from quantlib.handle cimport shared_ptr
+from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.time.date cimport Period
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.currency.currency cimport Currency
@@ -37,17 +37,17 @@ cdef class SwapIndex(Index):
         # convert the Python str to C++ string
         cdef string family_name_string = family_name.encode('utf-8')
 
-        self._thisptr = new shared_ptr[_in.Index](
+        self._thisptr = shared_ptr[_in.Index](
             new _si.SwapIndex(
                 family_name_string,
-                deref(tenor._thisptr.get()),
+                deref(tenor._thisptr),
                 <Natural> settlement_days,
                 deref(currency._thisptr),
                 deref(calendar._thisptr),
-                deref(fixed_leg_tenor._thisptr.get()),
+                deref(fixed_leg_tenor._thisptr),
                 <BusinessDayConvention> fixed_leg_convention,
                 deref(fixed_leg_daycounter._thisptr),
-                deref(<shared_ptr[_ii.IborIndex]*> ibor_index._thisptr)
+                static_pointer_cast[_ii.IborIndex](ibor_index._thisptr)
             )
         )
 

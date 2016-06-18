@@ -11,7 +11,7 @@ from cython.operator cimport dereference as deref
 from libcpp cimport bool
 
 cimport _rate_helpers as _rh
-from quantlib.handle cimport shared_ptr, Handle
+from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
 cimport quantlib._quote as _qt
 cimport quantlib.indexes._ibor_index as _ib
 cimport quantlib.indexes._swap_index as _si
@@ -72,12 +72,12 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
             if isinstance(rate, float):
                 self._thisptr = new shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(<Rate>rate,
-                                              deref(<shared_ptr[_ib.IborIndex]*> index._thisptr))
+                                              static_pointer_cast[_ib.IborIndex](index._thisptr))
                 )
             elif isinstance(rate, SimpleQuote):
                 self._thisptr = new shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
-                                              deref(<shared_ptr[_ib.IborIndex]*> index._thisptr)
+                                              static_pointer_cast[_ib.IborIndex](index._thisptr)
                     )
                 )
             else:
@@ -152,7 +152,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     <Frequency> fixedFrequency,
                     <_rh.BusinessDayConvention> fixedConvention,
                     deref(fixedDayCount._thisptr),
-                    deref(<shared_ptr[_ib.IborIndex]*> iborIndex._thisptr),
+                    static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
                     spread_handle,
                     deref(fwdStart._thisptr))
                   )
@@ -166,7 +166,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     <Frequency> fixedFrequency,
                     <_rh.BusinessDayConvention> fixedConvention,
                     deref(fixedDayCount._thisptr),
-                    deref(<shared_ptr[_ib.IborIndex]*> iborIndex._thisptr),
+                    static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
                     spread_handle,
                     deref(fwdStart._thisptr))
                 )
@@ -187,9 +187,9 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
             instance.set_ptr(new shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     <Rate>rate,
-                    deref(<shared_ptr[_si.SwapIndex]*>index._thisptr),
+                    static_pointer_cast[_si.SwapIndex](index._thisptr),
                     spread_handle,
-                    deref(fwdStart._thisptr.get())
+                    deref(fwdStart._thisptr)
                 )
             )
         )
@@ -198,7 +198,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
             instance.set_ptr(new shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     rate_handle,
-                    deref(<shared_ptr[_si.SwapIndex]*>index._thisptr),
+                    static_pointer_cast[_si.SwapIndex](index._thisptr),
                     spread_handle,
                     deref(fwdStart._thisptr)
                 )

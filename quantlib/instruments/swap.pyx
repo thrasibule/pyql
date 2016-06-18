@@ -21,7 +21,8 @@ from cython.operator cimport dereference as deref
 from libcpp.vector cimport vector
 from libcpp cimport bool
 
-from quantlib.handle cimport Handle, shared_ptr, RelinkableHandle
+from quantlib.handle cimport (Handle, shared_ptr,
+        RelinkableHandle, static_pointer_cast, optional)
 from quantlib.instruments.instrument cimport Instrument
 from quantlib.pricingengines.engine cimport PricingEngine
 from quantlib.time._businessdayconvention cimport BusinessDayConvention
@@ -140,31 +141,20 @@ cdef class VanillaSwap(Swap):
                      DayCounter floating_daycount,
                      payment_convention=None):
 
-        cdef QlSchedule* _fixed_schedule = <QlSchedule*>fixed_schedule._thisptr
-        cdef QlSchedule* _float_schedule = <QlSchedule*>float_schedule._thisptr
 
-
-        if payment_convention is None:
-             self._thisptr = shared_ptr[_instrument.Instrument](\
+        cdef optional[BusinessDayConvention] c_payment_convetion
+        if payment_convention is not None:
+            c_payment_convention = <BusinessDayConvention>payment_convention
+        
+        self._thisptr = shared_ptr[_instrument.Instrument](\
                 new _vanillaswap.VanillaSwap(<_vanillaswap.Type>type, nominal,
-                         deref(_fixed_schedule), fixed_rate,
+                         deref(fixed_schedule._thisptr), fixed_rate,
                          deref(fixed_daycount._thisptr),
-                         deref(_float_schedule),
-                         deref(<shared_ptr[_ib.IborIndex]*> ibor_index._thisptr),
-                         spread,
-                         deref(floating_daycount._thisptr)
-                )
-            )
-        else:
-            self._thisptr = shared_ptr[_instrument.Instrument](\
-                new _vanillaswap.VanillaSwap(<_vanillaswap.Type>type, nominal,
-                         deref(_fixed_schedule), fixed_rate,
-                         deref(fixed_daycount._thisptr),
-                         deref(_float_schedule),
-                         deref(<shared_ptr[_ib.IborIndex]*> ibor_index._thisptr),
+                         deref(float_schedule._thisptr),
+                         static_pointer_cast[_ib.IborIndex](ibor_index._thisptr),
                          spread,
                          deref(floating_daycount._thisptr),
-                         <BusinessDayConvention>payment_convention
+                         c_payment_convention
                 )
             )
 
