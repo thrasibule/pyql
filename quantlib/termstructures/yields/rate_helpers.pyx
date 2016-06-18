@@ -28,14 +28,6 @@ from quantlib.indexes.swap_index cimport SwapIndex
 
 cdef class RateHelper:
 
-    def __cinit__(self):
-        self._thisptr = NULL
-
-    def __dealloc__(self):
-        if self._thisptr is not NULL:
-            del self._thisptr
-            self._thisptr = NULL
-
     property quote:
         def __get__(self):
             cdef shared_ptr[_qt.Quote] quote_ptr = self._thisptr.get().quote().currentLink()
@@ -70,12 +62,12 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
 
         if index is not None:
             if isinstance(rate, float):
-                self._thisptr = new shared_ptr[_rh.RateHelper](
+                self._thisptr = shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(<Rate>rate,
                                               static_pointer_cast[_ib.IborIndex](index._thisptr))
                 )
             elif isinstance(rate, SimpleQuote):
-                self._thisptr = new shared_ptr[_rh.RateHelper](
+                self._thisptr = shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                                               static_pointer_cast[_ib.IborIndex](index._thisptr)
                     )
@@ -87,7 +79,7 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
                     and deposit_day_counter is not None), \
                     "Both tenor, calendar and deposit_day_counter have to be provided"
             if isinstance(rate, float):
-                self._thisptr = new shared_ptr[_rh.RateHelper](
+                self._thisptr = shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(
                         <Rate>rate,
                         deref(tenor._thisptr),
@@ -99,7 +91,7 @@ cdef class DepositRateHelper(RelativeDateRateHelper):
                     )
                 )
             elif isinstance(rate, SimpleQuote):
-                self._thisptr = new shared_ptr[_rh.RateHelper](
+                self._thisptr = shared_ptr[_rh.RateHelper](
                     new _rh.DepositRateHelper(
                         Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                         deref(tenor._thisptr),
@@ -128,7 +120,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                 ' from_index or from_tenor'
             )
 
-    cdef set_ptr(self, shared_ptr[_rh.RateHelper]* ptr):
+    cdef set_ptr(self, const shared_ptr[_rh.RateHelper]& ptr):
         self._thisptr = ptr
 
     @classmethod
@@ -144,7 +136,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         cdef SwapRateHelper instance = cls(from_classmethod=True)
 
         if isinstance(rate, float):
-            instance.set_ptr(new shared_ptr[_rh.RateHelper](
+            instance.set_ptr(shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     <Rate>rate,
                     deref(tenor._thisptr),
@@ -158,7 +150,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                   )
               )
         elif isinstance(rate, SimpleQuote):
-            instance.set_ptr(new shared_ptr[_rh.RateHelper](
+            instance.set_ptr(shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                     deref(tenor._thisptr.get()),
@@ -184,7 +176,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         cdef SwapRateHelper instance = cls(from_classmethod=True)
 
         if isinstance(rate, float):
-            instance.set_ptr(new shared_ptr[_rh.RateHelper](
+            instance.set_ptr(shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     <Rate>rate,
                     static_pointer_cast[_si.SwapIndex](index._thisptr),
@@ -195,7 +187,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         )
         elif isinstance(rate, SimpleQuote):
             rate_handle = Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr)
-            instance.set_ptr(new shared_ptr[_rh.RateHelper](
+            instance.set_ptr(shared_ptr[_rh.RateHelper](
                 new _rh.SwapRateHelper(
                     rate_handle,
                     static_pointer_cast[_si.SwapIndex](index._thisptr),
@@ -218,7 +210,7 @@ cdef class FraRateHelper(RelativeDateRateHelper):
             DayCounter day_counter):
 
         if isinstance(rate, float):
-            self._thisptr = new shared_ptr[_rh.RateHelper](
+            self._thisptr = shared_ptr[_rh.RateHelper](
                 new _rh.FraRateHelper(
                     <Rate>rate,
                     months_to_start,
@@ -231,7 +223,7 @@ cdef class FraRateHelper(RelativeDateRateHelper):
                 )
                  )
         elif isinstance(rate, SimpleQuote):
-            self._thisptr = new shared_ptr[_rh.RateHelper](
+            self._thisptr = shared_ptr[_rh.RateHelper](
                 new _rh.FraRateHelper(
                     Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
                     months_to_start,
@@ -256,7 +248,7 @@ cdef class FuturesRateHelper(RateHelper):
             DayCounter day_counter, double convexity_adjustment = 0):
 
         if isinstance(price, float):
-            self._thisptr = new shared_ptr[_rh.RateHelper](
+            self._thisptr = shared_ptr[_rh.RateHelper](
                 new _rh.FuturesRateHelper(
                     <Real>price,
                     deref(imm_date._thisptr),
@@ -269,7 +261,7 @@ cdef class FuturesRateHelper(RateHelper):
                 )
              )
         elif isinstance(price, SimpleQuote):
-            self._thisptr = new shared_ptr[_rh.RateHelper](
+            self._thisptr = shared_ptr[_rh.RateHelper](
                 new _rh.FuturesRateHelper(
                     Handle[_qt.Quote]((<SimpleQuote>price)._thisptr),
                     deref(imm_date._thisptr),

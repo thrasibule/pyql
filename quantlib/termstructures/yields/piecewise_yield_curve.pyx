@@ -65,7 +65,7 @@ cdef class PiecewiseYieldCurve(YieldTermStructure):
 
         for helper in helpers:
             instruments.push_back(
-                deref((<RateHelper?> helper)._thisptr)
+                (<RateHelper?> helper)._thisptr
             )
 
         if trait == Discount:
@@ -131,7 +131,7 @@ cdef class PiecewiseYieldCurve(YieldTermStructure):
         cdef PiecewiseYieldCurve instance = cls.__new__(cls)
         for helper in helpers:
             instruments.push_back(
-                deref((<RateHelper?> helper)._thisptr)
+                (<RateHelper?> helper)._thisptr
             )
 
         instance._trait = trait
