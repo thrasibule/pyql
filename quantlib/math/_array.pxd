@@ -6,11 +6,13 @@
  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
+include '../types.pxi'
 
 cdef extern from 'ql/math/array.hpp' namespace 'QuantLib':
     cdef cppclass Array:
         Array()
+        Array(const Array&)
         Array(size_t size)
         Array(size_t size, double value)
-        double at(size_t i) except +
-        size_t size() except +
+        Real at(size_t i) except +IndexError
+        size_t size()
