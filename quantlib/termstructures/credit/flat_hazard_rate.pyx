@@ -42,7 +42,7 @@ cdef class FlatHazardRate(DefaultProbabilityTermStructure):
                 new _fhr.FlatHazardRate(
                     settlement_days,
                     deref(calendar._thisptr),
-                    Handle[_qt.Quote](deref((<SimpleQuote>hazard_rate)._thisptr)),
+                    Handle[_qt.Quote]((<SimpleQuote>hazard_rate)._thisptr),
                     deref(day_counter._thisptr)))
         else:
             raise TypeError("hazard_rate needs to be a float or a Quote")
@@ -73,7 +73,7 @@ cdef class FlatHazardRate(DefaultProbabilityTermStructure):
              instance._thisptr =  shared_ptr[_dts.DefaultProbabilityTermStructure](
                 new _fhr.FlatHazardRate(
                     deref(reference_date._thisptr.get()),
-                    Handle[_qt.Quote](deref((<SimpleQuote>hazard_rate)._thisptr)),
+                    Handle[_qt.Quote]((<SimpleQuote>hazard_rate)._thisptr),
                     deref(day_counter._thisptr)))
         else:
             raise TypeError("hazard_rate needs to be a float or a Quote")
