@@ -8,7 +8,7 @@ from libcpp.string cimport string
 
 cimport _piecewise_default_curve as _pdc
 
-from quantlib.handle cimport shared_ptr
+from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.time.date cimport Date, date_from_qldate
 cimport quantlib.time._date as _date
 from quantlib.time.daycounter cimport DayCounter
@@ -41,7 +41,7 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
 
         for helper in helpers:
             instruments.push_back(
-                <shared_ptr[_ch.DefaultProbabilityHelper]>deref((<CdsHelper?>helper)._thisptr)
+                static_pointer_cast[_ch.DefaultProbabilityHelper]((<CdsHelper?>helper)._thisptr)
             )
 
         self._trait = trait
@@ -110,7 +110,7 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
         cdef PiecewiseDefaultCurve instance = cls.__new__(cls)
         for helper in helpers:
             instruments.push_back(
-                <shared_ptr[_ch.DefaultProbabilityHelper]>deref((<CdsHelper?>helper)._thisptr)
+                static_pointer_cast[_ch.DefaultProbabilityHelper]((<CdsHelper?>helper)._thisptr)
             )
 
         instance._trait = trait
