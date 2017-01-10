@@ -119,8 +119,8 @@ cdef class UpfrontCdsHelper(CdsHelper):
         """
         """
 
-        self._thisptr = new shared_ptr[_ci.CdsHelper](\
-            new _ci.UpfrontCdsHelper(upfront, running_spread, deref(tenor._thisptr.get()),
+        self._thisptr = shared_ptr[_ci.CdsHelper](\
+            new _ci.UpfrontCdsHelper(upfront, running_spread, deref(tenor._thisptr),
                 settlement_days, deref(calendar._thisptr), <Frequency>frequency,
                 <BusinessDayConvention>paymentConvention, <Rule>date_generation_rule,
                 deref(daycounter._thisptr), recovery_rate, discount_curve._thisptr,

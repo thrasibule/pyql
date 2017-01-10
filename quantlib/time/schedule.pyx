@@ -43,7 +43,6 @@ cdef public enum Rule:
 cdef class Schedule:
     """ Payment schedule. """
 
-<<<<<<< HEAD
     def __init__(self, Date effective_date not None, Date termination_date not None,
             Period tenor not None, Calendar calendar not None,
             BusinessDayConvention business_day_convention=Following,

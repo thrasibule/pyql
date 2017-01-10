@@ -141,13 +141,13 @@ cdef class CreditDefaultSwap(Instrument):
         """
 
         cdef CreditDefaultSwap instance = cls.__new__(cls)
-        instance._thisptr = new shared_ptr[_instrument.Instrument](
+        instance._thisptr = shared_ptr[_instrument.Instrument](
             new _cds.CreditDefaultSwap(
                 <_cds.Side>side, notional, upfront, spread, deref(schedule._thisptr),
                 <_calendar.BusinessDayConvention>payment_convention,
                 deref(day_counter._thisptr), settles_accrual, pays_at_default_time,
-                deref(protection_start._thisptr.get()),
-                deref(upfront_date._thisptr.get()))
+                deref(protection_start._thisptr),
+                deref(upfront_date._thisptr))
         )
         return instance
 
