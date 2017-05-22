@@ -74,7 +74,7 @@ class BondTestCase(unittest.TestCase):
 
 
 	    #Rate
-        fixed_bond_schedule = Schedule(
+        fixed_bond_schedule = Schedule.from_rule(
             issue_date,
             maturity_date,
             Period(Semiannual),
@@ -146,7 +146,7 @@ class BondTestCase(unittest.TestCase):
         coupon_rate = 0.05
         redemption = 100.0
 
-        fixed_bond_schedule = Schedule(
+        fixed_bond_schedule = Schedule.from_rule(
             effective_date,
             termination_date,
             Period(Annual),
@@ -248,7 +248,7 @@ class BondTestCase(unittest.TestCase):
         coupon_rate = 0.05
         redemption = 100.0
 
-        float_bond_schedule = Schedule(
+        float_bond_schedule = Schedule.from_rule(
             effective_date,
             termination_date,
             Period(Annual),
