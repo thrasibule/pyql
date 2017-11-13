@@ -1,3 +1,5 @@
+from libcpp cimport bool
+
 from quantlib.time._daycounter cimport DayCounter
 from quantlib.time._calendar cimport Calendar
 from libcpp cimport bool

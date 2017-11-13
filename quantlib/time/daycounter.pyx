@@ -15,7 +15,7 @@ cdef class DayCounter:
 
     '''
 
-    def __cinit__(self, *args):
+    def __cinit__(self):
         self._thisptr = new _daycounter.DayCounter()
 
     def __dealloc__(self):
@@ -31,7 +31,7 @@ cdef class DayCounter:
         return self.name
 
     def __repr__(self):
-        return "DayCounter('{0}')".format(self.name)
+        return "DayCounter('{0}')".format(self._thisptr.name().decode('utf-8'))
 
     def year_fraction(self, Date date1 not None, Date date2 not None,
             Date ref_start=Date(), Date ref_end=Date()):
@@ -45,16 +45,13 @@ cdef class DayCounter:
         ''' Returns the number of days between two dates.'''
         return self._thisptr.dayCount(deref(date1._thisptr), deref(date2._thisptr))
 
-    def __richcmp__(self, other_counter, int val):
-
-        if not isinstance(other_counter, DayCounter):
-            return NotImplemented
+    def __richcmp__(self, DayCounter other_counter, int val):
 
         # we only support testing for equality and inequality
         if val == 2:
-            return deref((<DayCounter>other_counter)._thisptr) == deref((<DayCounter>self)._thisptr)
+            return deref(other_counter._thisptr) == deref((<DayCounter>self)._thisptr)
         elif val == 3:
-            return deref((<DayCounter>other_counter)._thisptr) != deref((<DayCounter>self)._thisptr)
+            return deref(other_counter._thisptr) != deref((<DayCounter>self)._thisptr)
         else:
             return False
 
@@ -90,10 +87,7 @@ cdef _daycounter.DayCounter* daycounter_from_name(basestring name, basestring co
 
     cdef _daycounter.DayCounter* cnt = NULL
     if name_u in ['ACTUAL360', 'ACTUAL/360', 'ACT/360']:
-        if convention == 'inc':
-            cnt = new _simple.Actual360(True)
-        else:
-            cnt = new _simple.Actual360()
+        cnt = new _simple.Actual360(convention == 'inc')
     elif name_u in ['ACTUAL365FIXED', 'ACTUAL/365', 'ACT/365']:
         cnt = new _simple.Actual365Fixed()
     elif name_u == 'BUSINESS252':

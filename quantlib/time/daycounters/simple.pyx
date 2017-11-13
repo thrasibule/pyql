@@ -2,45 +2,36 @@
 a convention"""
 
 from cython.operator cimport dereference as deref
-
-cimport quantlib.time._daycounter as _daycounter
-cimport _simple
-from quantlib.time.daycounter cimport DayCounter
-cimport quantlib.time.calendars._target as _tg
-cimport quantlib.time._calendar as _calendar
-from quantlib.time.calendar cimport Calendar
 from libcpp cimport bool
+
+cimport _simple
+from quantlib.time.calendar cimport Calendar, TARGET
 
 cdef class Actual365Fixed(DayCounter):
 
-    def __cinit__(self, *args):
+    def __cinit__(self):
         self._thisptr = <_daycounter.DayCounter*> new _simple.Actual365Fixed()
 
 
 cdef class Actual360(DayCounter):
 
-    def __cinit__(self, bool include_last_day = False):
+    def __cinit__(self, bool include_last_day=False):
         self._thisptr = <_daycounter.DayCounter*> new _simple.Actual360(include_last_day)
 
 
 cdef class Business252(DayCounter):
 
-    def __cinit__(self, *args, calendar=None):
-        cdef _calendar.Calendar* cl
-        if calendar is None:
-           cl = new _tg.TARGET()
-        else:
-           cl = (<Calendar>calendar)._thisptr
-        self._thisptr = <_daycounter.DayCounter*> new _simple.Business252(deref(cl))
+    def __cinit__(self, Calendar calendar=TARGET()):
+        self._thisptr = <_daycounter.DayCounter*> new _simple.Business252(deref(calendar._thisptr))
 
 
 cdef class OneDayCounter(DayCounter):
 
-    def __cinit__(self, *args):
+    def __cinit__(self):
         self._thisptr = <_daycounter.DayCounter*> new _simple.OneDayCounter()
 
 
 cdef class SimpleDayCounter(DayCounter):
 
-    def __cinit__(self, *args):
+    def __cinit__(self):
         self._thisptr = <_daycounter.DayCounter*> new _simple.SimpleDayCounter()
