@@ -100,13 +100,12 @@ class VanillaOptionTestCase(unittest.TestCase):
 
         exercise = EuropeanExercise(self.maturity)
         exercise_str = str(exercise)
-        self.assertEqual('Exercise type: European', exercise_str)
+        self.assertEqual('European', exercise_str)
 
         option = VanillaOption(self.payoff, exercise)
-        self.assertEqual('Exercise type: European', str(option.exercise))
+        self.assertEqual('European', str(option.exercise))
         vanilla_str = str(option)
-        self.assertEqual('VanillaOption Exercise type: European ' +
-                         'Vanilla', vanilla_str)
+        self.assertEqual('VanillaOption European Vanilla', vanilla_str)
 
     def test_european_vanilla_option_usage(self):
 
