@@ -28,16 +28,13 @@ cpdef enum OptionType:
     Call = _option.Type.Call
     Put  = _option.Type.Put
 
-EXERCISE_TO_STR = {
-    American : 'American',
-    Bermudan : 'Bermudan',
-    European : 'European'
-}
-
 cdef class Exercise:
 
     def __str__(self):
-        return 'Exercise type: %s' % EXERCISE_TO_STR[self._thisptr.get().type()]
+        return ExerciseType(self._thisptr.get().type()).name
+
+    def type(self):
+        return ExerciseType(self._thisptr.get().type())
 
 cdef class EuropeanExercise(Exercise):
 
@@ -58,14 +55,14 @@ cdef class AmericanExercise(Exercise):
 
         """
         if earliest_exercise_date is not None:
-            self._thisptr = shared_ptr[_exercise.Exercise]( \
+            self._thisptr = shared_ptr[_exercise.Exercise](
                 new _exercise.AmericanExercise(
                     deref(earliest_exercise_date._thisptr),
                     deref(latest_exercise_date._thisptr)
                 )
             )
         else:
-            self._thisptr = shared_ptr[_exercise.Exercise]( \
+            self._thisptr = shared_ptr[_exercise.Exercise](
                 new _exercise.AmericanExercise(
                     deref(latest_exercise_date._thisptr)
                 )
@@ -93,7 +90,7 @@ cdef class OneAssetOption(Instrument):
 
     property exercise:
         def __get__(self):
-            exercise = Exercise()
+            cdef Exercise exercise = Exercise.__new__(Exercise)
             exercise._thisptr = get_option(self).exercise()
             return exercise
 
@@ -171,10 +168,6 @@ cdef class VanillaOption(OneAssetOption):
 
         return vol
 
-    property delta:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).delta()
-
 cdef class EuropeanOption(VanillaOption):
 
     def __init__(self, PlainVanillaPayoff payoff not None, Exercise exercise not None):
@@ -210,8 +203,10 @@ cdef class DividendVanillaOption(OneAssetOption):
 
 
     def implied_volatility(self, Real target_value,
-        GeneralizedBlackScholesProcess process, Real accuracy, Size max_evaluations,
-        Volatility min_vol, Volatility max_vol):
+                           GeneralizedBlackScholesProcess process not None,
+                           Real accuracy,
+                           Size max_evaluations,
+                           Volatility min_vol, Volatility max_vol):
 
         cdef shared_ptr[_bsp.GeneralizedBlackScholesProcess] process_ptr = \
             static_pointer_cast[_bsp.GeneralizedBlackScholesProcess](process._thisptr)
