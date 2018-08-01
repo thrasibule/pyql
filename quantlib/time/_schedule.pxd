@@ -61,5 +61,8 @@ cdef extern from 'ql/time/schedule.hpp' namespace 'QuantLib':
         Date previousDate(Date& refDate)
         Date nextDate(Date& refDate)
         vector[Date] dates()
+
+        bool hasTenor()
+        const Period& tenor()
         vector[Date].const_iterator begin()
         vector[Date].const_iterator end()

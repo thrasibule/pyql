@@ -1,7 +1,7 @@
 from cython.operator cimport dereference as deref, preincrement as preinc
 from libcpp cimport bool
 from libcpp.vector cimport vector
-from quantlib.handle cimport optional
+from quantlib.handle cimport optional, shared_ptr
 
 cimport quantlib.time._date as _date
 cimport quantlib.time._calendar as _calendar
@@ -10,7 +10,7 @@ import numpy as np
 cimport numpy as np
 np.import_array()
 from ._businessdayconvention cimport Following, BusinessDayConvention
-
+from quantlib.time._period cimport Period as QlPeriod
 from .calendar cimport Calendar
 from .date cimport date_from_qldate, Date, Period
 
@@ -190,3 +190,14 @@ cdef class Schedule:
             return date_from_qldate(self._thisptr.at(index))
         else:
             raise TypeError('index needs to be an integer or a slice')
+
+    @property
+    def has_tenor(self):
+        return self._thisptr.hasTenor()
+
+    @property
+    def tenor(self):
+        cdef Period p = Period.__new__(Period)
+        if self._thisptr.hasTenor():
+            p._thisptr = shared_ptr[QlPeriod](new QlPeriod(self._thisptr.tenor()))
+            return p
