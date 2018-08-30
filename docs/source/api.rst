@@ -21,23 +21,35 @@ are completely hidden being the Python layers (for example boost::shared_ptr and
 .. automodule:: quantlib.quotes
     :members:
     :undoc-members:
+    :noindex:
 
 :mod:`quantlib.cashflow`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.cashflow
     :members:
     :undoc-members:
+    :noindex:
 
 :mod:`quantlib.index`
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.index
     :members:
     :undoc-members:
+    :noindex:
 
 :mod:`quantlib.interest_rate`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.interest_rate
     :members:
+    :noindex:
+
+.. currentmodule:: quantlib.currency.currencies
+
+**Currencies**
+
+.. autosummary::
+    USDCurrency
+    EURCurrency
 
 :mod:`quantlib.currency`
 ------------------------
@@ -48,6 +60,7 @@ are completely hidden being the Python layers (for example boost::shared_ptr and
 .. automodule:: quantlib.currency.currency
     :members:
     :undoc-members:
+    :noindex:
 
 :mod:`quantlib.currency.currencies`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,6 +68,7 @@ are completely hidden being the Python layers (for example boost::shared_ptr and
 .. automodule:: quantlib.currency.currencies
     :members:
     :undoc-members:
+    :noindex:
 
 
 :mod:`quantlib.indexes`
@@ -72,15 +86,7 @@ are completely hidden being the Python layers (for example boost::shared_ptr and
     :members:
     :noindex:
 
-.. currentmodule:: quantlib.indexes.euribor
-
-.. autoclass:: Euribor
-    :members:
-    :noindex:
-
-.. currentmodule:: quantlib.indexes.libor
-
-.. autoclass:: Libor
+.. automodule:: quantlib.indexes.ibor
     :members:
     :noindex:
 
@@ -91,16 +97,19 @@ are completely hidden being the Python layers (for example boost::shared_ptr and
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.instruments.bonds
     :members:
+    :noindex:
 
 :mod:`quantlib.instruments.option`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.instruments.option
     :members:
+    :noindex:
 
 :mod:`quantlib.instruments.credit_default_swap`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.instruments.credit_default_swap
     :members:
+    :noindex:
 
 .. currentmodule:: quantlib.instruments.credit_default_swap
 .. autodata
@@ -111,6 +120,7 @@ quantlib.math
 .. automodule:: quantlib.math.optimization
     :members:
     :undoc-members:
+    :noindex:
 
 
 quantlib.model.equity
@@ -128,6 +138,7 @@ quantlib.model.equity
 
 .. automodule:: quantlib.models.equity.bates_model
     :members:
+    :noindex:
 
 :mod:`quantlib.pricingengines`
 ------------------------------
@@ -137,12 +148,14 @@ quantlib.model.equity
 .. automodule:: quantlib.pricingengines.vanilla.vanilla
    :members:
    :undoc-members:
+   :noindex:
 
 :mod:`quantlib.pricingengines.swaption`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.pricingengines.swaption
    :members:
    :undoc-members:
+   :noindex:
 
 :mod:`quantlib.processes`
 -------------------------
@@ -180,22 +193,24 @@ quantlib.model.equity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.termstructures.inflation_term_structure
    :members:
-
+   :noindex:
 
 :mod:`quantlib.termstructures.default_term_structure`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.termstructures.default_term_structure
    :members:
    :undoc-members:
+   :noindex:
 
 :mod:`~quantlib.termstructures.yield_term_structure`
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yield_term_structure
    :members:
    :undoc-members:
+   :noindex:
 
 ::mod:`quantlib.termstructures.yields`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 mod:`~quantlib.termstructures.yields.rate_helpers`
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -204,21 +219,22 @@ mod:`~quantlib.termstructures.yields.rate_helpers`
     :noindex:
 
 :mod:`~quantlib.termstructures.yields.bond_helpers`
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.bond_helpers
     :members:
     :noindex:
 
 :mod:`~quantlib.termstructures.yields.flat_forward`
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.flat_forward
     :members:
+    :noindex:
 
 :mod:`~quantlib.termstructures.yields.zero_curve`
-""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.zero_curve
     :members:
-
+    :noindex:
 
 :mod:`quantlib.termstructures.credit`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -245,6 +261,7 @@ mod:`~quantlib.termstructures.yields.rate_helpers`
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.credit.interpolated_hazardrate_curve
     :members:
+    :noindex:
 
 :mod:`quantlib.time`
 --------------------
@@ -254,19 +271,23 @@ mod:`~quantlib.termstructures.yields.rate_helpers`
 .. automodule:: quantlib.time.date
     :members:
     :undoc-members:
+    :noindex:
 .. autodata::
 
 :mod:`quantlib.time.calendar`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.time.calendar
     :members:
+    :noindex:
 
 .. autoclass:: TARGET
+    :noindex:
 
 :mod:`quantlib.time.daycounter`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.time.daycounter
    :members:
+   :noindex:
 
 :mod:`quantlib.time.daycounters`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,13 +297,16 @@ mod:`~quantlib.termstructures.yields.rate_helpers`
 .. automodule:: quantlib.time.daycounters.simple
    :members:
    :undoc-members:
+   :noindex:
 
 :mod:`~quantlib.time.daycounters.thirty360`
 """""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.time.daycounters.thirty360
    :members:
+   :noindex:
 
 :mod:`quantlib.time.schedule`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. automodule:: quantlib.time.schedule
     :members:
+    :noindex:

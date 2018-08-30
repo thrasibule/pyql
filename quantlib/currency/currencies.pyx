@@ -7,7 +7,9 @@ from . cimport _currency as _cu
 from .currency cimport Currency
 
 cdef class USDCurrency(Currency):
+    """U.S. dollar"""
     def __cinit__(self):
+        """ test test2 test3"""
         self._thisptr = <_cu.Currency*> new _cu.USDCurrency()
 
 cdef class EURCurrency(Currency):
