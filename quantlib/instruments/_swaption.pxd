@@ -12,12 +12,18 @@ cdef extern from 'ql/instruments/swaption.hpp' namespace 'QuantLib':
         enum Type:
             Physical
             Cash
-
+        enum Method:
+            PhysicalOTC
+            PhysicalCleared
+            CollateralizedCashPrice
+            ParYieldCurve
     cdef cppclass Swaption(Option):
         Swaption(const shared_ptr[VanillaSwap]& swap,
                  const shared_ptr[Exercise]& exercise,
-                 Settlement.Type delivery)# = Settlement.Physical)
+                 Settlement.Type delivery,# = Settlement.Physical)
+                 Settlement.Method settlementMethod) # = Settlement::PhysicalOTC
         Settlement.Type settlementType()
+        Settlement.Method settlementMethod()
         Volatility impliedVolatility(Real price,
                                      const Handle[YieldTermStructure]& discountCurve,
                                      Volatility guess,

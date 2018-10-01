@@ -4,7 +4,7 @@ from quantlib.indexes.swap.usd_libor_swap import UsdLiborSwapIsdaFixAm
 from quantlib.instruments.make_swaption import MakeSwaption
 from quantlib.pricingengines.api import BlackSwaptionEngine
 from quantlib.instruments.swap import Receiver
-from quantlib.instruments.swaption import Cash
+from quantlib.instruments.swaption import Cash, ParYieldCurve
 from quantlib.pricingengines.api import BlackSwaptionEngine
 from quantlib.termstructures.yields.flat_forward import FlatForward
 from quantlib.time.api import (ModifiedFollowing, Period, Years,
@@ -21,11 +21,13 @@ class TestQuantLibSwaption(unittest.TestCase):
         self.index = UsdLiborSwapIsdaFixAm(Period(10, Years), self.yc)
         self.factory = (MakeSwaption(self.index, Period(2, Years), strike=0.0206).
                         with_underlying_type(Receiver).
-                        with_settlement_type(Cash))
+                        with_settlement_type(Cash).
+                        with_settlement_method(ParYieldCurve))
 
     def test_make_swaption(self):
         swaption = self.factory()
         self.assertEqual(swaption.settlement_type, Cash)
+        self.assertEqual(swaption.settlement_method, ParYieldCurve)
         swap = swaption.underlying_swap()
         self.assertEqual(swap.type, Receiver)
         exercise_date = self.index.fixing_calendar.advance(

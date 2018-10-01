@@ -45,6 +45,10 @@ cdef class MakeSwaption:
         self._thisptr.withSettlementType(delivery)
         return self
 
+    def with_settlement_method(self, Settlement.Method settlement_method):
+        self._thisptr.withSettlementMethod(settlement_method)
+        return self
+
     def with_option_convention(self, BusinessDayConvention bdc):
         self._thisptr.withOptionConvention(bdc)
         return self
