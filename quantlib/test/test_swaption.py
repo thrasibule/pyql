@@ -27,6 +27,7 @@ class TestQuantLibSwaption(unittest.TestCase):
     def test_make_swaption(self):
         swaption = self.factory()
         self.assertEqual(swaption.settlement_type, Cash)
+        self.assertEqual(swaption.settlement_method, ParYieldCurve)
         swap = swaption.underlying_swap()
         self.assertEqual(swap.type, Receiver)
         exercise_date = self.index.fixing_calendar.advance(

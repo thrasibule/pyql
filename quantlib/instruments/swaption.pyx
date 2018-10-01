@@ -1,5 +1,6 @@
-include '../types.pxi'
+from quantlib.types cimport Natural, Real, Volatility
 from . cimport _swaption
+from ._swaption cimport Settlement
 from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.termstructures.volatility.volatilitytype cimport (
     VolatilityType, ShiftedLognormal )
@@ -10,17 +11,26 @@ from .swap cimport VanillaSwap
 from . cimport _vanillaswap
 from . cimport _instrument
 
+cpdef enum SettlementType:
+    Physical
+    Cash
+
+cpdef enum SettlementMethod:
+    PhysicalOTC
+    PhysicalCleared
+    CollateralizedCashPrice
+    ParYieldCurve
+
 cdef class Swaption(Instrument):
     def __init__(self, VanillaSwap swap not None, Exercise exercise not None,
-                 SettlementType delivery=Physical,
-                 SettlementMethod settlement_method=PhysicalOTC):
+                 SettlementType delivery=SettlementType.Physical,
+                 SettlementMethod settlement_method=SettlementMethod.PhysicalOTC):
         self._thisptr = shared_ptr[_instrument.Instrument](
             new _swaption.Swaption(
                 static_pointer_cast[_vanillaswap.VanillaSwap](swap._thisptr),
                 exercise._thisptr,
                 <Settlement.Type>delivery,
-                <Settlement.Method>settlement_method)
-        )
+                <Settlement.Method>settlement_method))
 
     def implied_volatility(self, Real price,
                            YieldTermStructure discount_curve not None,
