@@ -4,49 +4,45 @@ from quantlib.handle cimport shared_ptr
 from quantlib.models.equity._heston_model cimport HestonModel
 cimport quantlib.processes._heston_process as _hp
 
-cdef extern from 'ql/models/equity/batesmodel.hpp' namespace 'QuantLib':
+cdef extern from 'ql/models/equity/batesmodel.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass BatesModel(HestonModel):
+        BatesModel(shared_ptr[_hp.BatesProcess]& process)
 
-        BatesModel() # fake empty constructor due to Cython issue
-        BatesModel(shared_ptr[_hp.BatesProcess]& process) except +
-
-        Real Lambda 'lambda'() except + # lambda is a python keyword
-        Real nu() except +
-        Real delta() except +
+        Real Lambda 'lambda'() # lambda is a python keyword
+        Real nu()
+        Real delta()
 
     cdef cppclass BatesDetJumpModel(BatesModel):
         BatesDetJumpModel()
         BatesDetJumpModel(shared_ptr[_hp.BatesProcess]& process,
                    Real kappaLambda,
                    Real thetaLambda,
-        ) except +
+        )
 
-        Real kappaLambda() except +
-        Real thetaLambda() except +
+        Real kappaLambda()
+        Real thetaLambda()
 
     cdef cppclass BatesDoubleExpModel(HestonModel):
-        BatesDoubleExpModel()
         BatesDoubleExpModel(shared_ptr[_hp.HestonProcess] & process,
                    Real Lambda,
                    Real nuUp,
                    Real nuDown,
-                   Real p) except +
+                   Real p)
 
-        Real p() except +
-        Real nuDown() except +
-        Real nuUp() except +
-        Real Lambda 'lambda'() except +
+        Real p()
+        Real nuDown()
+        Real nuUp()
+        Real Lambda 'lambda'()
 
     cdef cppclass BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
-        BatesDoubleExpDetJumpModel()
         BatesDoubleExpDetJumpModel(shared_ptr[_hp.HestonProcess]& process,
             Real Lambda,
             Real nuUp,
             Real nuDown,
             Real p,
             Real kappaLambda,
-            Real thetaLambda) except +
+            Real thetaLambda)
 
-        Real kappaLambda() except +
-        Real thetaLambda() except +
+        Real kappaLambda()
+        Real thetaLambda()

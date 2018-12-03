@@ -35,23 +35,23 @@ cdef extern from 'ql/models/equity/hestonmodelhelper.hpp' namespace 'QuantLib':
 
 cdef extern from 'ql/models/equity/hestonmodel.hpp' namespace 'QuantLib':
 
-    cdef cppclass HestonModel:
+    cdef cppclass HestonModel nogil:
 
         HestonModel() # fake empty constructor solving Cython dep. issue
         HestonModel(shared_ptr[HestonProcess]& process)
 
-        shared_ptr[HestonProcess] process() except +
+        shared_ptr[HestonProcess] process()
         
         #variance mean reversion level
-        Real theta() except +
+        Real theta()
         #variance mean reversion speed
-        Real kappa() except +
+        Real kappa()
         # volatility of the volatility
-        Real sigma() except +
+        Real sigma()
         # correlation
-        Real rho() except +
+        Real rho()
         # spot variance
-        Real v0() except +
+        Real v0()
 
         void calibrate(
                vector[shared_ptr[_ch.CalibrationHelper]]&,
