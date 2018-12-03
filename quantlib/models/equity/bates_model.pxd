@@ -12,13 +12,20 @@ from quantlib.handle cimport shared_ptr
 from quantlib.models.equity.heston_model cimport HestonModel
 
 cdef class BatesModel(HestonModel):
-    pass
+    cdef inline double _nu(self) nogil
+    cdef inline double _delta(self) nogil
+    cdef inline double _lambda(self) nogil
 
 cdef class BatesDetJumpModel(BatesModel):
-    pass
+   cdef inline double _kappaLambda(self) nogil
+   cdef inline double _thetaLambda(self) nogil
 
 cdef class BatesDoubleExpModel(HestonModel):
-    pass
+    cdef inline double _p(self) nogil
+    cdef inline double _nuDown(self) nogil
+    cdef inline double _nuUp(self) nogil
+    cdef inline double _lambda(self) nogil
 
 cdef class BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
-    pass
+    cdef inline double _thetaLambda(self) nogil
+    cdef inline double _kappaLambda(self) nogil

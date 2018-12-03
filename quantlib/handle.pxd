@@ -1,6 +1,6 @@
 from libcpp cimport bool
 
-cdef extern from 'ql/shared_ptr.hpp' namespace 'QuantLib::ext':
+cdef extern from 'ql/shared_ptr.hpp' namespace 'QuantLib::ext' nogil:
 
     cdef cppclass shared_ptr[T]:
         shared_ptr()
@@ -23,7 +23,7 @@ cdef extern from 'boost/optional.hpp' namespace 'boost':
         bool operator!()
         optional& operator=(T&)
 
-cdef extern from 'ql/handle.hpp' namespace 'QuantLib':
+cdef extern from 'ql/handle.hpp' namespace 'QuantLib' nogil:
     cdef cppclass Handle[T]:
         Handle()
         Handle(shared_ptr[T]&)
