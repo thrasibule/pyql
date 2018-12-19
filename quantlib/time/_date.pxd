@@ -37,7 +37,6 @@ cdef extern from 'ql/time/weekday.hpp' namespace "QuantLib":
         Sat = 7
 
 cdef extern from "ql/time/date.hpp" namespace "QuantLib::Date":
-    ctypedef int_fast32_t serial_type
     cdef Date todaysDate()
     cdef Date minDate()
     cdef Date maxDate()
@@ -78,6 +77,7 @@ cdef extern from "ql/time/date.hpp" namespace "QuantLib":
         Dec = 12
 
     cdef cppclass Date:
+        ctypedef int_fast32_t serial_type
         Date() except +
         Date(serial_type serialnumber) except +
         Date(const Date&)
@@ -87,7 +87,7 @@ cdef extern from "ql/time/date.hpp" namespace "QuantLib":
         Day dayOfMonth() except +
         Month month()
         Year year()
-        serial_type serialNumber() except +
+        serial_type serialNumber() const
         Hour hours()
         Minute minutes()
         Second seconds()

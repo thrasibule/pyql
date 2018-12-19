@@ -1,6 +1,6 @@
 include '../types.pxi'
 
-from quantlib.time._date cimport Date, serial_type
+from quantlib.time._date cimport Date
 from quantlib.time._daycounter cimport DayCounter
 from quantlib._cashflow cimport CashFlow
 from quantlib._interest_rate cimport InterestRate
@@ -22,9 +22,9 @@ cdef extern from 'ql/cashflows/coupon.hpp' namespace 'QuantLib':
         const Date& referencePeriodStart()
         const Date& referencePeriodEnd()
         Time accrualPeriod()
-        serial_type accrualDays()
+        Date.serial_type accrualDays()
         Rate rate() except +
         DayCounter dayCounter()
         Time accruedPeriod(const Date&)
-        serial_type accruedDays(const Date&)
+        Date.serial_type accruedDays(const Date&)
         Real accruedAmount(const Date&)

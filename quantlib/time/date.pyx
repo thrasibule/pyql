@@ -12,7 +12,7 @@ from . cimport frequency
 from ._date cimport (
     Date as QlDate, todaysDate, nextWeekday, endOfMonth, isEndOfMonth,
     minDate, maxDate, Year, Day, Month as QlMonth, Hour, Minute, Second, Millisecond,
-    Microsecond, isLeap, Size, nthWeekday, serial_type, Integer
+    Microsecond, isLeap, Size, nthWeekday, Integer
 )
 from ._period cimport Period as QlPeriod, parse, unary_minus
 from enum import IntEnum
@@ -296,7 +296,7 @@ cdef class Date:
         elif len(args) == 1:
             arg = args[0]
             if isinstance(arg, int):
-                self._thisptr.reset(new QlDate(<serial_type> arg))
+                self._thisptr.reset(new QlDate(<QlDate.serial_type> arg))
             elif isinstance(arg, six.string_types):
                 self._thisptr.reset(new QlDate(_date.parseISO(arg.encode())))
             else:
@@ -426,7 +426,7 @@ cdef class Date:
         if isinstance(value, Period):
             add = deref((<Date?>self)._thisptr) + deref((<Period>value)._thisptr)
         elif isinstance(value, int):
-            add = deref((<Date?>self)._thisptr) + <serial_type>value
+            add = deref((<Date?>self)._thisptr) + <QlDate.serial_type>value
         else:
             return NotImplemented
         return date_from_qldate(add)
@@ -436,7 +436,7 @@ cdef class Date:
             if isinstance(value, Period):
                 self._thisptr.get().i_add(deref((<Period>value)._thisptr))
             elif isinstance(value, int):
-                self._thisptr.get().i_add(<serial_type>value)
+                self._thisptr.get().i_add(<QlDate.serial_type>value)
             return self
         else:
             return NotImplemented
@@ -446,7 +446,7 @@ cdef class Date:
         if isinstance(value, Period):
             sub = deref((<Date?>self)._thisptr) - deref((<Period>value)._thisptr)
         elif isinstance(value, int):
-            sub = deref((<Date?>self)._thisptr) - <serial_type>value
+            sub = deref((<Date?>self)._thisptr) - <QlDate.serial_type>value
         elif isinstance(value, Date):
             return _date.daysBetween(deref((<Date?>value)._thisptr),
                                      deref((<Date?>self)._thisptr))
@@ -459,7 +459,7 @@ cdef class Date:
             if isinstance(value, Period):
                 self._thisptr.get().i_sub( deref((<Period>value)._thisptr) )
             else:
-                self._thisptr.get().i_sub( <serial_type>value)
+                self._thisptr.get().i_sub( <QlDate.serial_type>value)
             return self
         else:
             return NotImplemented
