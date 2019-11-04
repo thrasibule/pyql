@@ -24,6 +24,8 @@ cdef extern from 'ql/option.hpp' namespace 'QuantLib':
         shared_ptr[Payoff] payoff()
         shared_ptr[Exercise] exercise()
 
+
+
 cdef extern from 'ql/instruments/oneassetoption.hpp' namespace 'QuantLib':
 
     cdef cppclass OneAssetOption(Option):

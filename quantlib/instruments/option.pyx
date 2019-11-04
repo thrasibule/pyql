@@ -71,14 +71,11 @@ cdef class AmericanExercise(Exercise):
                 )
             )
 
-cdef _option.Option* get_option(OneAssetOption option):
-    """ Utility function to extract a properly casted VanillaOption out of the
-    internal _thisptr attribute of the Instrument base class. """
 
-    cdef _option.Option* ref = <_option.Option*>option._thisptr.get()
-    return ref
+cdef class Option(Instrument):
 
-cdef class OneAssetOption(Instrument):
+    cdef inline _option.Option* _get_option(self):
+        return <_option.Option*>self._thisptr.get()
 
     def __init__(self):
         raise NotImplementedError(
@@ -86,66 +83,71 @@ cdef class OneAssetOption(Instrument):
             'VanillaOption'
         )
 
+    @property
+    def exercise(self):
+        cdef Exercise exercise = Exercise.__new__(Exercise)
+        exercise._thisptr = self._get_option().exercise()
+        return exercise
+
+    @property
+    def payoff(self):
+        cdef Payoff payoff = Payoff.__new__(Payoff)
+        payoff._thisptr = self._get_option().payoff()
+        return payoff
+
     def __str__(self):
         return '%s %s %s' % (
             type(self).__name__, str(self.exercise), str(self.payoff)
         )
 
-    property exercise:
-        def __get__(self):
-            exercise = Exercise()
-            exercise._thisptr = get_option(self).exercise()
-            return exercise
+cdef class OneAssetOption(Option):
 
-    property payoff:
-        def __get__(self):
-            cdef Payoff payoff = Payoff.__new__(Payoff)
-            payoff._thisptr = get_option(self).payoff()
-            return payoff
+    cdef inline _option.OneAssetOption* _get_one_asset_option(self):
+        return <_option.OneAssetOption*>self._thisptr.get()
 
-    property delta:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).delta()
+    @property
+    def delta(self):
+        return self._get_one_asset_option().delta()
 
-    property delta_forward:
-        def __get__(self):
-                return (<_option.OneAssetOption *> self._thisptr.get()).deltaForward()
+    @property
+    def delta_forward(self):
+        return self._get_one_asset_option().deltaForward()
 
-    property elasticity:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).elasticity()
+    @property
+    def elasticity(self):
+        return self._get_one_asset_option().elasticity()
 
-    property gamma:
-        def __get__(self):
-                return (<_option.OneAssetOption *> self._thisptr.get()).gamma()
+    @property
+    def gamma(self):
+        return self._get_one_asset_option().gamma()
 
-    property theta:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).theta()
+    @property
+    def theta(self):
+        return self._get_one_asset_option().theta()
 
-    property theta_per_day:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).thetaPerDay()
+    @property
+    def theta_per_day(self):
+        return self._get_one_asset_option().thetaPerDay()
 
-    property vega:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).vega()
+    @property
+    def vega(self):
+        return self._get_one_asset_option().vega()
 
-    property rho:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).rho()
+    @property
+    def rho(self):
+        return self._get_one_asset_option().rho()
 
-    property dividend_rho:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).dividendRho()
+    @property
+    def dividend_rho(self):
+        return self._get_one_asset_option().dividendRho()
 
-    property strike_sensitivity:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).strikeSensitivity()
+    @property
+    def strike_sensitivity(self):
+        return self._get_one_asset_option().strikeSensitivity()
 
-    property itm_cash_probability:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).itmCashProbability()
+    @property
+    def itm_cash_probability(self):
+        return self._get_one_asset_option().itmCashProbability()
 
 
 cdef class VanillaOption(OneAssetOption):
@@ -170,10 +172,6 @@ cdef class VanillaOption(OneAssetOption):
             target_value, process_ptr, accuracy, max_evaluations, min_vol, max_vol)
 
         return vol
-
-    property delta:
-        def __get__(self):
-            return (<_option.OneAssetOption *> self._thisptr.get()).delta()
 
 cdef class EuropeanOption(VanillaOption):
 
