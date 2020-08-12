@@ -23,7 +23,7 @@ before_install:
 install:
     make build
 script:
- - python -m unittest discover -v
-notifications:
-  email: 
-    - dpinte@enthought.com
+ - python -m unittest discover
+#notifications:
+  #email: 
+    #- dpinte@enthought.com
