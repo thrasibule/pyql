@@ -7,7 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../../types.pxi'
+from quantlib.types cimport Rate, Real, Volatility
 
 from libcpp.vector cimport vector
 from quantlib.handle cimport Handle, shared_ptr
