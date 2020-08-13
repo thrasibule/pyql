@@ -1,5 +1,5 @@
 build:
-	python setup.py build_ext --inplace
+	python setup.py build_ext --inplace -j 2
 
 build2:
 	python2 setup.py build_ext --inplace
@@ -16,7 +16,7 @@ uninstall:
 tests-preload:
 	LD_PRELOAD=/opt/QuantLib-1.1/lib/libQuantLib.so nosetests -v quantlib/test
 
-tests:
+tests: build
 	cd quantlib/test
 	python -m unittest discover -v
 
