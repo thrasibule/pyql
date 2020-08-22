@@ -27,7 +27,7 @@ from . cimport _swaption_helper as _sh
 
 from quantlib.models.calibration_helper cimport BlackCalibrationHelper
 
-from quantlib._defines cimport QL_NULL_REAL
+from quantlib.defines cimport QL_NULL_REAL
 
 cdef class SwaptionHelper(BlackCalibrationHelper):
 
