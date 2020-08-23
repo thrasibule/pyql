@@ -89,7 +89,7 @@ class VanillaOptionTestCase(unittest.TestCase):
         self.max_evaluations = 1000
         self.min_vol = 0.001
         self.max_vol = 4
-        self.target_price = 4.485992
+        self.target_price = 4.485920
 
     def test_str(self):
         quote_str = str(self.underlyingH)
