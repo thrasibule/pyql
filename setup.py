@@ -6,12 +6,14 @@ from distutils.sysconfig import customize_compiler
 import glob
 import os
 import platform
-import sys
+import sysconfig
 
 from Cython.Distutils import build_ext
 from Cython.Build import cythonize
 
-if sys.platform == 'win32':
+platform = sysconfig.get_platform()
+
+if platform.startswith('win'):
     VC_INCLUDE_REDIST = False  # Set to True to include C runtime dlls in distribution.
     from distutils import msvccompiler
     from platform import architecture
@@ -29,17 +31,16 @@ DEBUG = False
 SUPPORT_CODE_INCLUDE = './cpp_layer'
 
 QL_LIBRARY = 'QuantLib'
-
 # FIXME: would be good to be able to customize the path with environment
 # variables in place of hardcoded paths ...
-if sys.platform == 'darwin':
+if platform.startswith('darwin'):
     INCLUDE_DIRS = [
         '/usr/local/include', '.', '../sources/boost_1_55_0',
         SUPPORT_CODE_INCLUDE
     ]
     LIBRARY_DIRS = ["/usr/local/lib"]
 
-elif sys.platform == 'win32':
+elif platform.startswith('win'):
     # With MSVC2008, the library is called QuantLib.lib but with MSVC2010, the
     # naming is QuantLib-vc100-mt
     if VC_VERSION >= 10.0:
@@ -58,7 +59,7 @@ elif sys.platform == 'win32':
         '.',
         r'.\dll',
     ]
-elif sys.platform.startswith('linux'):   # 'linux' on Py3, 'linux2' on Py2
+elif platform.startswith('linux') or platform.startswith('mingw'):   # 'linux' on Py3, 'linux2' on Py2
     INCLUDE_DIRS = ['/usr/local/include', '/usr/include', '.', SUPPORT_CODE_INCLUDE]
     LIBRARY_DIRS = ['/usr/local/lib', '/usr/lib']
 
@@ -69,8 +70,7 @@ if HAS_NUMPY:
 def get_define_macros():
     #defines = [ ('HAVE_CONFIG_H', None)]
     defines = []
-    if sys.platform == 'win32':
-        # based on the SWIG wrappers
+    if platform.startswith('win'): # based on the SWIG wrappers
         defines += [
             (name, None) for name in [
                 '__WIN32__', 'WIN32', 'NDEBUG', '_WINDOWS', 'NOMINMAX', 'WINNT',
@@ -82,22 +82,21 @@ def get_define_macros():
 
 
 def get_extra_compile_args():
-    if sys.platform == 'win32':
+    if platform.startswith('win'):
         args = ['/GR', '/FD', '/Zm250', '/EHsc']
         if DEBUG:
             args.append('/Z7')
     else:
         args = []
-
     return args
 
 
 def get_extra_link_args():
-    if sys.platform == 'win32':
+    if platform.startswith('win'):
         args = ['/subsystem:windows', '/machine:%s' % ("X64" if ARCH == "x64" else "I386")]
         if DEBUG:
             args.append('/DEBUG')
-    elif sys.platform == 'darwin':
+    elif platform.startswith('darwin'):
         major, minor = [
             int(item) for item in platform.mac_ver()[0].split('.')[:2]]
         if major == 10 and minor >= 9:
@@ -192,7 +191,7 @@ class pyql_build_ext(build_ext):
         build_ext.run(self)
 
         # Find the quantlib dll and copy it to the built package
-        if sys.platform == "win32":
+        if platform == "win32":
             # Find the visual studio runtime redist dlls
             dlls = []
             if VC_INCLUDE_REDIST:
