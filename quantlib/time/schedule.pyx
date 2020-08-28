@@ -111,7 +111,7 @@ cdef class Schedule:
                   Rule date_generation_rule=Forward, bool end_of_month=False,
                   Date first_date=Date(), Date next_to_lastdate=Date()):
 
-        cdef Schedule instance = cls.__new__(cls)
+        cdef Schedule instance = Schedule.__new__(Schedule)
         instance._thisptr = new _schedule.Schedule(
             deref(effective_date._thisptr),
             deref(termination_date._thisptr),
@@ -190,3 +190,13 @@ cdef class Schedule:
             return date_from_qldate(self._thisptr.at(index))
         else:
             raise TypeError('index needs to be an integer or a slice')
+
+    def after(self, Date truncation_date):
+        cdef Schedule r = Schedule.__new__(Schedule)
+        r._thisptr = new _schedule.Schedule(self._thisptr.after(deref(truncation_date._thisptr)))
+        return r
+
+    def until(self, Date truncation_date):
+        cdef Schedule r = Schedule.__new__(Schedule)
+        r._thisptr = new _schedule.Schedule(self._thisptr.until(deref(truncation_date._thisptr)))
+        return r
