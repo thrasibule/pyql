@@ -57,13 +57,14 @@ cdef class CappedFlooredCoupon(FloatingRateCoupon):
 
     @property
     def is_floored(self):
-        return (<_cfc.CappedFlooredCoupon*>self._thisptr.get()).isFloored()
+        return self.as_ptr().isFloored()
 
     @property
     def underlying(self):
         cdef FloatingRateCoupon instance = FloatingRateCoupon.__new__(FloatingRateCoupon)
         instance._thisptr = static_pointer_cast[CashFlow](
-            (<_cfc.CappedFlooredCoupon*>self._thisptr.get()).underlying())
+            self.as_ptr().underlying()
+        )
         return instance
 
 cdef class CappedFlooredIborCoupon(CappedFlooredCoupon):

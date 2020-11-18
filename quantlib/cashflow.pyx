@@ -10,7 +10,7 @@ cimport quantlib._cashflow as _cf
 cimport quantlib.time._date as _date
 
 from quantlib.time.date cimport (
-    Date, _qldate_from_pydate, _pydate_from_qldate, date_from_qldate)
+    Date, _qldate_from_pydate, _pydate_from_qldate)
 from libcpp.vector cimport vector
 from libcpp cimport bool
 from cpython.datetime cimport date, import_datetime
@@ -26,38 +26,22 @@ cdef class CashFlow:
 
     """
 
-    def __cinit__(self):
-        if __class__ == CashFlow:
-            raise ValueError(
-                'This is an abstract class.'
-            )
+    def __init__(self):
+        raise ValueError('This is an abstract class.')
 
-    property date:
-        def __get__(self):
-            cdef:
-                _date.Date cf_date
-                _cf.CashFlow* cf = self._thisptr.get()
-            if cf:
-                cf_date = cf.date()
-                return date_from_qldate(cf_date)
-            else:
-                return None
+    @property
+    def date(self):
+        return _pydate_from_qldate(self._thisptr.get().date())
 
-    property amount:
-        def __get__(self):
-            cdef _cf.CashFlow* cf = self._thisptr.get()
-            if cf:
-                return cf.amount()
-            else:
-                return None
+    @property
+    def amount(self):
+        return self.as_ptr().amount()
 
     def has_occured(self, Date ref_date, include_ref_date=None):
-        cdef _cf.CashFlow* cf = self._thisptr.get()
         cdef optional[bool] c_include_ref_date
         if include_ref_date is not None:
             c_include_ref_date = <bool>include_ref_date
-        if cf:
-            return cf.hasOccurred(deref(ref_date._thisptr), c_include_ref_date)
+        return self._thisptr.get().hasOccurred(deref(ref_date._thisptr), c_include_ref_date)
 
 cdef class SimpleCashFlow(CashFlow):
 
