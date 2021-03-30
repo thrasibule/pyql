@@ -52,7 +52,7 @@ cdef class AnalyticHestonEngine(PricingEngine):
 
         self._thisptr = new shared_ptr[QlPricingEngine](
             new _va.AnalyticHestonEngine(
-                model._thisptr,
+                model.as_shared_ptr(),
                 <Size>integration_order
             )
         )
@@ -83,7 +83,7 @@ cdef class AnalyticHestonHullWhiteEngine(PricingEngine):
 
         self._thisptr = new shared_ptr[QlPricingEngine](
             new _va.AnalyticHestonHullWhiteEngine(
-                heston_model._thisptr,
+                heston_model.as_shared_ptr(),
                 static_pointer_cast[_hw.HullWhite](hw_model._thisptr),
                 <Size>integration_order
             )
@@ -104,7 +104,7 @@ cdef class FdHestonHullWhiteVanillaEngine(PricingEngine):
 
         self._thisptr = new shared_ptr[QlPricingEngine](
             new _va.FdHestonHullWhiteVanillaEngine(
-                heston_model._thisptr,
+                heston_model.as_shared_ptr(),
                 static_pointer_cast[_hwp.HullWhiteProcess](hw_process._thisptr),
                 corr_equity_short_rate,
                 t_grid,

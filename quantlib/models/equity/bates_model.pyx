@@ -5,24 +5,27 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
-include '../../types.pxi'
 
 from cython.operator cimport dereference as deref
+from quantlib.types cimport Real
+from quantlib.handle cimport shared_ptr
 
-from . cimport _bates_model as _bm
 from . cimport _heston_model as _hm
+from . cimport _bates_model as _bm
 cimport quantlib.processes._heston_process as _hp
 cimport quantlib._stochastic_process as _sp
 from quantlib.handle cimport Handle, shared_ptr, static_pointer_cast
 from quantlib.processes.heston_process cimport HestonProcess
 from quantlib.processes.bates_process cimport BatesProcess
-from .heston_model cimport HestonModel
-from .bates_model cimport BatesModel
+cimport quantlib.models._model as _mo
+
+cdef inline _bm.BatesModel* get_bates_model(BatesModel m) nogil:
+    return <_bm.BatesModel*>m._thisptr.get()
 
 cdef class BatesModel(HestonModel):
 
     def __init__(self, BatesProcess process):
-        self._thisptr = shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _bm.BatesModel(static_pointer_cast[_hp.BatesProcess](
                 process._thisptr)))
 
@@ -34,17 +37,17 @@ cdef class BatesModel(HestonModel):
     def process(self):
         cdef BatesProcess process = BatesProcess.__new__(BatesProcess)
         process._thisptr = static_pointer_cast[_sp.StochasticProcess](
-            self._thisptr.get().process())
+            self.as_ptr().process())
         return process
 
     cdef double _lambda(self) nogil:
-        return (<_bm.BatesModel*> self._thisptr.get()).Lambda()
+        return get_bates_model(self).Lambda()
 
     cdef double _nu(self) nogil:
-        return (<_bm.BatesModel *> self._thisptr.get()).nu()
+        return get_bates_model(self).nu()
 
     cdef double _delta(self) nogil:
-        return (<_bm.BatesModel *> self._thisptr.get()).delta()
+        return get_bates_model(self).delta()
 
     @property
     def Lambda(self):
@@ -62,7 +65,7 @@ cdef class BatesDetJumpModel(BatesModel):
 
     def __init__(self, BatesProcess process,
                  Real kappaLambda=1.0, Real thetaLambda=0.1):
-        self._thisptr = shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _bm.BatesDetJumpModel(static_pointer_cast[_hp.BatesProcess](
                 process._thisptr),
                 kappaLambda,
@@ -94,7 +97,7 @@ cdef class BatesDoubleExpModel(HestonModel):
                  Real Lambda=0.1,
                  Real nuUp=0.1, Real nuDown=0.1,
                  Real p=0.5):
-        self._thisptr = shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _bm.BatesDoubleExpModel(static_pointer_cast[_hp.HestonProcess](
                 process._thisptr), Lambda, nuUp, nuDown, p))
 
@@ -138,7 +141,7 @@ cdef class BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
                  Real Lambda=0.1,
                  Real nuUp=0.1, Real nuDown=0.1,
                  Real p=0.5, Real kappaLambda=1.0, Real thetaLambda=.1):
-        self._thisptr = shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _bm.BatesDoubleExpDetJumpModel(static_pointer_cast[_hp.HestonProcess](
                 process._thisptr),
                 Lambda, nuUp, nuDown, p, kappaLambda, thetaLambda))

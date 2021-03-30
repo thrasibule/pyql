@@ -7,11 +7,8 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-from quantlib.types cimport Real
-from libcpp cimport bool
 from cython.operator cimport dereference as deref
-
-from libcpp.vector cimport vector
+from quantlib.types cimport Real
 
 from . cimport _heston_model as _hm
 cimport quantlib.models._calibration_helper as _ch
@@ -22,8 +19,6 @@ cimport quantlib._quote as _qt
 cimport quantlib.pricingengines._pricing_engine as _pe
 
 from quantlib.handle cimport Handle, shared_ptr, static_pointer_cast
-from quantlib.math.optimization cimport (Constraint,OptimizationMethod,
-                                         EndCriteria)
 
 from quantlib.processes.heston_process cimport HestonProcess
 from quantlib.pricingengines.engine cimport PricingEngine
@@ -68,57 +63,40 @@ cdef class HestonModelHelper(BlackCalibrationHelper):
             )
         )
 
-cdef class HestonModel:
+cdef class HestonModel(CalibratedModel):
 
     def __init__(self, HestonProcess process):
 
-        self._thisptr = shared_ptr[_hm.HestonModel](
+        self._thisptr = shared_ptr[_mo.CalibratedModel](
             new _hm.HestonModel(static_pointer_cast[_hp.HestonProcess](
                 process._thisptr))
         )
 
+    cdef inline _hm.HestonModel* as_ptr(self) nogil:
+        return <_hm.HestonModel*>self._thisptr.get()
+
     def process(self):
         cdef HestonProcess process = HestonProcess.__new__(HestonProcess)
         process._thisptr = static_pointer_cast[_sp.StochasticProcess](
-            self._thisptr.get().process())
+            self.as_ptr().process())
         return process
 
     property theta:
         def __get__(self):
-            return self._thisptr.get().theta()
+            return self.as_ptr().theta()
 
     property kappa:
         def __get__(self):
-            return self._thisptr.get().kappa()
+            return self.as_ptr().kappa()
 
     property sigma:
         def __get__(self):
-            return self._thisptr.get().sigma()
+            return self.as_ptr().sigma()
 
     property rho:
         def __get__(self):
-            return self._thisptr.get().rho()
+            return self.as_ptr().rho()
 
     property v0:
         def __get__(self):
-            return self._thisptr.get().v0()
-
-    def calibrate(self, list helpers, OptimizationMethod method, EndCriteria
-                  end_criteria, Constraint constraint=Constraint(),
-                  vector[Real] weights=[], vector[bool] fix_parameters=[]):
-
-        #convert list to vector
-        cdef vector[shared_ptr[_ch.CalibrationHelper]] helpers_vector
-
-        cdef shared_ptr[_ch.CalibrationHelper] chelper
-        for helper in helpers:
-            chelper = (<HestonModelHelper>helper)._thisptr
-            helpers_vector.push_back(chelper)
-
-        self._thisptr.get().calibrate(
-            helpers_vector,
-            deref(method._thisptr),
-            deref(end_criteria._thisptr),
-            deref(constraint._thisptr),
-            weights,
-            fix_parameters)
+            return self.as_ptr().v0()

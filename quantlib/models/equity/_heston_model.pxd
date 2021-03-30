@@ -1,7 +1,7 @@
 include '../../types.pxi'
 
 from libcpp.vector cimport vector
-
+from libcpp cimport bool
 from quantlib.handle cimport Handle, shared_ptr
 from quantlib.math._optimization cimport OptimizationMethod, EndCriteria
 from quantlib.processes._heston_process cimport HestonProcess
@@ -13,6 +13,7 @@ from quantlib.models._calibration_helper cimport CalibrationHelper, CalibrationE
 from quantlib.math._optimization cimport Constraint
 
 cimport quantlib.models._calibration_helper as _ch
+from quantlib.models._model cimport CalibratedModel
 cimport quantlib._quote as _qt
 from quantlib.time._calendar cimport Calendar
 from quantlib.time._period cimport Period
@@ -24,24 +25,22 @@ cdef extern from 'ql/models/equity/hestonmodelhelper.hpp' namespace 'QuantLib':
         HestonModelHelper(
             Period& maturity,
             Calendar& calendar,
-            Real s0, 
+            Real s0,
             Real strikePrice,
             Handle[_qt.Quote]& volatility,
             Handle[YieldTermStructure]& riskFreeRate,
             Handle[YieldTermStructure]& dividendYield,
             CalibrationErrorType errorType
         ) except +
-        
+
 
 cdef extern from 'ql/models/equity/hestonmodel.hpp' namespace 'QuantLib':
 
-    cdef cppclass HestonModel nogil:
-
-        HestonModel() # fake empty constructor solving Cython dep. issue
+    cdef cppclass HestonModel(CalibratedModel) nogil:
         HestonModel(shared_ptr[HestonProcess]& process)
 
         shared_ptr[HestonProcess] process()
-        
+
         #variance mean reversion level
         Real theta()
         #variance mean reversion speed
@@ -52,16 +51,3 @@ cdef extern from 'ql/models/equity/hestonmodel.hpp' namespace 'QuantLib':
         Real rho()
         # spot variance
         Real v0()
-
-        void calibrate(
-               vector[shared_ptr[_ch.CalibrationHelper]]&,
-               OptimizationMethod& method,
-               EndCriteria& endCriteria) except +
-
-        void calibrate(
-               vector[shared_ptr[_ch.CalibrationHelper]]&,
-               OptimizationMethod& method,
-               EndCriteria& endCriteria,
-               Constraint& constraint) except +
-
-
