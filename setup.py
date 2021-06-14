@@ -10,6 +10,7 @@ import sys
 
 from Cython.Distutils import build_ext
 from Cython.Build import cythonize
+from Cython.Tempita import Template
 
 if sys.platform == 'win32':
     VC_INCLUDE_REDIST = False  # Set to True to include C runtime dlls in distribution.
@@ -111,8 +112,16 @@ def get_extra_link_args():
     return args
 
 CYTHON_DIRECTIVES = {"embedsignature": True,
-        "language_level": '3str'}
+                     "language_level": '3str'}
 
+def render_templates():
+    pass
+    # fname = "quantlib/termstructures/credit/piecewise_trait_curve.pyx.in"
+    # output = fname[:-3]
+    # if not os.path.exists(output) or (os.stat(output).st_mtime < os.stat(fname).st_mtime):
+        # template = Template.from_filename(fname, encoding="utf-8")
+        # with open(output, "wt") as f:
+            # f.write(template.substitute(traits=("HazardRate", "DefaultDensity", "SurvivalProbability")))
 
 def collect_extensions():
     """ Collect all the directories with Cython extensions and return the list
@@ -167,6 +176,7 @@ def collect_extensions():
         manual_extensions = manual_extensions[1:]
         print('Numpy is not available, multipath extension not compiled')
 
+    render_templates()
     collected_extensions = cythonize(
             manual_extensions +
             [Extension('*', ['**/*.pyx'], **kwargs)],
@@ -179,16 +189,15 @@ class pyql_build_ext(build_ext):
     Custom build command for quantlib that on Windows copies the quantlib dll
     and optionally c runtime dlls to the quantlib package.
     """
+
     def build_extensions(self):
         customize_compiler(self.compiler)
         try:
             self.compiler.compiler_so.remove("-Wstrict-prototypes")
         except (AttributeError, ValueError):
             pass
-        lto_flags=["-flto", "-flto-partition=none", "-fuse-linker-plugin",
-                   "-ffat-lto-objects"]
-        self.compiler.compiler_so = [f for f in self.compiler.compiler_so if f not in lto_flags]
-        build_ext.build_extensions(self)
+        self.compiler.compiler_so = [f for f in self.compiler.compiler_so if 'lto' not in f]
+        super().build_extensions()
 
     def run(self):
         build_ext.run(self)

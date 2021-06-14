@@ -1,6 +1,5 @@
-include '../../types.pxi'
-
-from cython.operator cimport dereference as deref
+from quantlib.types cimport Natural, Real
+from cython.operator cimport dereference as deref, preincrement as preinc
 
 from libcpp cimport bool
 from libcpp.vector cimport vector
@@ -47,52 +46,53 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
 
         if trait == HazardRate:
             if interpolator == Linear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.Linear](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.hr_lin = new HR_LIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_LIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.hr_lin)
             elif interpolator == LogLinear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.LogLinear](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.hr_loglin = new HR_LOGLIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_LOGLIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.hr_loglin)
             else:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.BackwardFlat](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.hr_backflat = new HR_BACKFLAT(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_BACKFLAT.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.hr_backflat)
         elif trait == DefaultDensity:
             if interpolator == Linear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.Linear](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.dd_lin = new DD_LIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_LIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.dd_lin)
             elif interpolator == LogLinear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                     new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.LogLinear](
-                         settlement_days, deref(calendar._thisptr), instruments,
-                         deref(daycounter._thisptr), accuracy))
+                self.curve_type.dd_loglin = new DD_LOGLIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_LOGLIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.dd_loglin)
             else:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.BackwardFlat](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.dd_backflat = new DD_BACKFLAT(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_BACKFLAT.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.dd_backflat)
         else:
             if interpolator == Linear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.Linear](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.sp_lin = new SP_LIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_LIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.sp_lin)
             elif interpolator == LogLinear:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.LogLinear](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.sp_loglin = new SP_LOGLIN(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_LOGLIN.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.sp_loglin)
             else:
-                self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.BackwardFlat](
-                        settlement_days, deref(calendar._thisptr), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                self.curve_type.sp_backflat = new SP_BACKFLAT(
+                    settlement_days, deref(calendar._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_BACKFLAT.bootstrap_type(accuracy))
+                self._thisptr.reset(self.curve_type.sp_backflat)
+
 
     @classmethod
     def from_reference_date(cls, ProbabilityTrait trait, Interpolator interpolator,
@@ -115,52 +115,52 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
 
         if trait == HazardRate:
             if interpolator == Linear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.Linear](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.hr_lin = new HR_LIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_LIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.hr_lin)
             elif interpolator == LogLinear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.LogLinear](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.hr_loglin = new HR_LOGLIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_LOGLIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.hr_loglin)
             else:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.BackwardFlat](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.hr_backflat = new HR_BACKFLAT(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), HR_BACKFLAT.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.hr_backflat)
         elif trait == DefaultDensity:
             if interpolator == Linear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.Linear](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.dd_lin = new DD_LIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_LIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.dd_lin)
             elif interpolator == LogLinear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                     new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.LogLinear](
-                        deref(reference_date._thisptr.get()),
-                        instruments, deref(daycounter._thisptr), accuracy))
+                instance.curve_type.dd_loglin = new DD_LOGLIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_LOGLIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.dd_loglin)
             else:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.BackwardFlat](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.dd_backflat = new DD_BACKFLAT(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), DD_BACKFLAT.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.dd_backflat)
         else:
             if interpolator == Linear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.Linear](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.sp_lin = new SP_LIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_LIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.sp_lin)
             elif interpolator == LogLinear:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.LogLinear](
-                        deref(reference_date._thisptr.get()),
-                        instruments, deref(daycounter._thisptr), accuracy))
+                instance.curve_type.sp_loglin = new SP_LOGLIN(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_LOGLIN.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.sp_loglin)
             else:
-                instance._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
-                    new _pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.BackwardFlat](
-                        deref(reference_date._thisptr.get()), instruments,
-                        deref(daycounter._thisptr), accuracy))
+                instance.curve_type.sp_backflat = new SP_BACKFLAT(
+                    deref(reference_date._thisptr), instruments,
+                    deref(daycounter._thisptr), SP_BACKFLAT.bootstrap_type(accuracy))
+                instance._thisptr.reset(instance.curve_type.sp_backflat)
 
         return instance
 
@@ -169,34 +169,25 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
         """list of curve times"""
         if self._trait == HazardRate:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.Linear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.hr_lin.times()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.LogLinear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.hr_loglin.times()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).times()
+                 return self.curve_type.hr_backflat.times()
         elif self._trait == DefaultDensity:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.Linear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.dd_lin.times()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.LogLinear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.dd_loglin.times()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).times()
+                 return self.curve_type.dd_backflat.times()
         else:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.Linear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.sp_lin.times()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.LogLinear]*>
-                        self._thisptr.get()).times()
+                return self.curve_type.sp_loglin.times()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).times()
+                 return self.curve_type.sp_backflat.times()
 
     @property
     def dates(self):
@@ -205,39 +196,32 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
 
         if self._trait == HazardRate:
             if self._interpolator == Linear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.Linear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.hr_lin.dates()
             elif self._interpolator == LogLinear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.LogLinear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.hr_loglin.dates()
             else:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.BackwardFlat]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.hr_backflat.dates()
         elif self._trait == DefaultDensity:
             if self._interpolator == Linear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.Linear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.dd_lin.dates()
             elif self._interpolator == LogLinear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.LogLinear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.dd_loglin.dates()
             else:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.BackwardFlat]*>
-                           self._thisptr.get()).dates()
+                 _dates = self.curve_type.dd_backflat.dates()
         else:
             if self._interpolator == Linear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.Linear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.sp_lin.dates()
             elif self._interpolator == LogLinear:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.LogLinear]*>
-                           self._thisptr.get()).dates()
+                _dates = self.curve_type.sp_loglin.dates()
             else:
-                _dates =  (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.BackwardFlat]*>
-                           self._thisptr.get()).dates()
-        cdef size_t i
+                 _dates = self.curve_type.sp_backflat.dates()
+        cdef vector[_date.Date].const_iterator it = _dates.const_begin()
         cdef list r  = []
-        cdef _date.Date qldate
-        for i in range(_dates.size()):
-            r.append(date_from_qldate(_dates[i]))
+
+        while it != _dates.const_end():
+            r.append(date_from_qldate(deref(it)))
+            preinc(it)
+
         return r
 
     @property
@@ -245,31 +229,22 @@ cdef class PiecewiseDefaultCurve(DefaultProbabilityTermStructure):
         """list of curve data"""
         if self._trait == HazardRate:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.Linear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.hr_lin.data()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.LogLinear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.hr_loglin.data()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.HazardRate,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).data()
+                 return self.hr_backflat.data()
         elif self._trait == DefaultDensity:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.Linear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.dd_lin.data()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.LogLinear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.dd_loglin.data()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.DefaultDensity,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).data()
+                 return self.curve_type.dd_backflat.data()
         else:
             if self._interpolator == Linear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.Linear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.sp_lin.data()
             elif self._interpolator == LogLinear:
-                return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.LogLinear]*>
-                        self._thisptr.get()).data()
+                return self.curve_type.sp_loglin.data()
             else:
-                 return (<_pdc.PiecewiseDefaultCurve[_pdc.SurvivalProbability,_pdc.BackwardFlat]*>
-                        self._thisptr.get()).data()
+                 return self.curve_type.sp_backflat.data()
