@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Real
 from libcpp.string cimport string
 
 from quantlib.instruments._option cimport Type as OptionType

@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Rate, Real
 
 from cython.operator cimport dereference as deref, preincrement as preinc
 from libcpp.vector cimport vector

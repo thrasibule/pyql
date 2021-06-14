@@ -1,4 +1,4 @@
-include "../../types.pxi"
+from quantlib.types cimport Rate, Real, Time, Volatility
 from quantlib.instruments._option cimport Type as OptionType
 from quantlib.time._daycounter cimport DayCounter
 from quantlib.time._date cimport Date
