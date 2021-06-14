@@ -1,4 +1,4 @@
-include '../../../types.pxi'
+from quantlib.types cimport Natural, Real, Time, Volatility
 from libcpp cimport bool
 
 from quantlib.time._date cimport Date

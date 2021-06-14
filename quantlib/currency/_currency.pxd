@@ -7,7 +7,7 @@
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 #
 
-include '../types.pxi'
+from quantlib.types cimport Integer
 from libcpp cimport bool
 from libcpp.string cimport string
 

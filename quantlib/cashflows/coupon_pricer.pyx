@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Rate
 from cython.operator cimport dereference as deref
 from quantlib.cashflow cimport Leg
 cimport quantlib.instruments._bonds as _bonds

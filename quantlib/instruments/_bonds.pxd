@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Natural, Real, Rate, Size, Spread
 from libcpp.vector cimport vector
 from libcpp cimport bool
 

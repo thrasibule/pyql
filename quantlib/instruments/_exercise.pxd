@@ -1,5 +1,3 @@
-include '../types.pxi'
-
 from libcpp cimport bool
 from libcpp.vector cimport vector
 

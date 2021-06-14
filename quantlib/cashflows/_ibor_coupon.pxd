@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Natural, Rate, Real, Spread
 
 from libcpp cimport bool
 from quantlib.handle cimport shared_ptr

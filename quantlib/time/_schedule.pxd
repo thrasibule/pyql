@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Size
 from libcpp cimport bool
 from libcpp.vector cimport vector
 from ._period cimport Period
