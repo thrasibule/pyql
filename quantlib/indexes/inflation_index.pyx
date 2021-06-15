@@ -7,8 +7,6 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
-
 from cython.operator cimport dereference as deref
 from quantlib.handle cimport Handle, shared_ptr, static_pointer_cast
 

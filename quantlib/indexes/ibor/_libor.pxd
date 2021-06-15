@@ -6,8 +6,7 @@
  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
-
-include '../../types.pxi'
+from quantlib.types cimport Natural
 from libcpp.string cimport string
 
 from quantlib.handle cimport Handle

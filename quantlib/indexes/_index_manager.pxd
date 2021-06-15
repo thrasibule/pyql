@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Real
 from quantlib.time._date cimport Date
 from libcpp cimport bool
 from libcpp.string cimport string

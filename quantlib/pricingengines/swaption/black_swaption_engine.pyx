@@ -1,4 +1,4 @@
-include '../../types.pxi'
+from quantlib.types cimport Real, Volatility
 from cython.operator cimport dereference as deref
 from quantlib.pricingengines.engine cimport PricingEngine
 cimport quantlib.pricingengines._pricing_engine as _pe

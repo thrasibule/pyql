@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../types.pxi'
-
+from quantlib.types cimport Natural
 # Cython standard cimports
 from cython.operator cimport dereference as deref
 from cpython cimport bool

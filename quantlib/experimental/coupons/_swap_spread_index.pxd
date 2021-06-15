@@ -1,4 +1,4 @@
-include '../../types.pxi'
+from quantlib.types cimport Real
 from libcpp.string cimport string
 from quantlib.handle cimport shared_ptr
 from quantlib.indexes._interest_rate_index cimport InterestRateIndex

@@ -5,8 +5,7 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
-include '../types.pxi'
-
+from quantlib.types cimport Natural, Rate, Real, Size, Spread
 cimport quantlib.instruments._bonds as _bonds
 cimport quantlib._instrument as _instrument
 cimport quantlib.pricingengines._pricing_engine as _pe

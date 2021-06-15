@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Real, Size
 
 cdef extern from 'ql/math/matrix.hpp' namespace 'QuantLib':
     cdef cppclass Matrix:

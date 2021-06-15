@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real, Size
 from quantlib.handle cimport Handle, optional, shared_ptr, static_pointer_cast
 
 from .cms_spread_coupon cimport CmsSpreadCouponPricer

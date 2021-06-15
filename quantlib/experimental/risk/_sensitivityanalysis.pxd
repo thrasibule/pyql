@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real
 from quantlib.handle cimport shared_ptr, Handle
 from quantlib._instrument cimport Instrument
 from quantlib.quotes._simplequote cimport SimpleQuote

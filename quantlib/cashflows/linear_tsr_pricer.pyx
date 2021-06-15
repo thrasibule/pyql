@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Real
 from . cimport _coupon_pricer as _cp
 cimport quantlib.termstructures.volatility.swaption._swaption_vol_structure as _svs
 from quantlib.termstructures.volatility.swaption.swaption_vol_structure \

@@ -7,7 +7,6 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 from libcpp.string cimport string

@@ -1,5 +1,4 @@
-include '../../../types.pxi'
-
+from quantlib.types cimport Natural, Time
 from libcpp.vector cimport vector
 from quantlib.time._date cimport Date, Period
 from quantlib.time._calendar cimport Calendar

@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Real
 from quantlib.handle cimport Handle
 from quantlib._quote cimport Quote
 from ._coupon_pricer cimport CmsCouponPricer

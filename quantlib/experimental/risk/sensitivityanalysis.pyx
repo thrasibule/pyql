@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real
 from cython.operator cimport dereference as deref
 from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
 from quantlib._defines cimport QL_NULL_REAL

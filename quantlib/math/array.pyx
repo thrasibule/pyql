@@ -7,8 +7,8 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
 from libcpp.utility cimport move
+from quantlib.types cimport Real, Size
 
 cdef class Array:
     """

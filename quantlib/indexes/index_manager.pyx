@@ -1,5 +1,4 @@
 # cython: c_string_type=unicode, c_string_encoding=ascii
-include '../types.pxi'
 from libcpp.string cimport string
 cimport quantlib.indexes._index_manager as _im
 from quantlib.time_series cimport TimeSeries

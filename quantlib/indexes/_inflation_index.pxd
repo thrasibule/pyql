@@ -7,7 +7,6 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
 from libcpp cimport bool
 from libcpp.string cimport string
 
@@ -28,7 +27,6 @@ cdef extern from 'ql/indexes/inflationindex.hpp' namespace 'QuantLib':
             Linear
 
     cdef cppclass InflationIndex(Index):
-        InflationIndex()
         InflationIndex(string& familyName,
                   Region& region,
                   bool revised,
@@ -46,7 +44,6 @@ cdef extern from 'ql/indexes/inflationindex.hpp' namespace 'QuantLib':
 
 
     cdef cppclass ZeroInflationIndex(Index):
-        ZeroInflationIndex()
         ZeroInflationIndex(string& familyName,
                   Region& region,
                   bool revised,

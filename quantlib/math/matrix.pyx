@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Real, Size
 from cython.operator import dereference as deref, preincrement as preinc
 from libcpp.utility cimport move
 

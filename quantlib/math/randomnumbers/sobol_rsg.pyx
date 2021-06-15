@@ -1,4 +1,5 @@
-include '../../types.pxi'
+from quantlib.types cimport Size
+
 from ._sobol_rsg cimport SobolRsg as QlSobolRsg
 
 cpdef enum DirectionIntegers:
