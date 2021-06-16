@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
-
+from quantlib.types cimport Real
 from quantlib.handle cimport Handle
 from quantlib._quote cimport Quote
 from quantlib.time._date cimport Date

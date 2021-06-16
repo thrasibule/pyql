@@ -1,6 +1,6 @@
 # cython: c_string_type=unicode, c_string_encoding=ascii
 
-include '../../types.pxi'
+from quantlib.types cimport Real
 cimport cython
 from libcpp.string cimport string
 from quantlib.indexes.swap_index cimport SwapIndex
