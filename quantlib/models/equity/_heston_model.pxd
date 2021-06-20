@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real
 from libcpp.vector cimport vector
 
 from quantlib.handle cimport Handle, shared_ptr
@@ -35,8 +34,6 @@ cdef extern from 'ql/models/equity/hestonmodelhelper.hpp' namespace 'QuantLib':
 cdef extern from 'ql/models/equity/hestonmodel.hpp' namespace 'QuantLib':
 
     cdef cppclass HestonModel(CalibratedModel):
-
-        HestonModel() # fake empty constructor solving Cython dep. issue
         HestonModel(shared_ptr[HestonProcess]& process)
 
         shared_ptr[HestonProcess] process() except +

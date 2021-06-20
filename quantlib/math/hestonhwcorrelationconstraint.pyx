@@ -7,8 +7,6 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
-
 from quantlib.handle cimport shared_ptr
 from quantlib.math.optimization cimport Constraint
 from . cimport _optimization as _opt

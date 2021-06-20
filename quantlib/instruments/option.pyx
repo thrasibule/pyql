@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Real, Size, Volatility
 # Cython imports
 from cython.operator cimport dereference as deref, preincrement as preinc
 from libcpp cimport bool

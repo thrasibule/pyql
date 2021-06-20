@@ -5,8 +5,6 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
-include '../../types.pxi'
-
 from cython.operator cimport dereference as deref
 
 from . cimport _bates_model as _bm

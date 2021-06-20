@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Natural, Real
 from . cimport _blackformula as _bf
 cimport quantlib.instruments._option as _opt
 

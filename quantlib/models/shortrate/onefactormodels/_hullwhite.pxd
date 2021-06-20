@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../../types.pxi'
-
+from quantlib.types cimport Rate, Real, Time
 from libcpp.vector cimport vector
 from quantlib.math._optimization cimport OptimizationMethod, EndCriteria
 from quantlib.models.shortrate.calibrationhelpers._swaption_helper cimport SwaptionHelper
@@ -20,9 +19,6 @@ from quantlib.models.shortrate.onefactormodels._vasicek cimport Vasicek
 cdef extern from 'ql/models/shortrate/onefactormodels/hullwhite.hpp' namespace 'QuantLib':
 
     cdef cppclass HullWhite(Vasicek):
-
-        HullWhite() # fake empty constructor due to Cython issue
-
         HullWhite(
             Handle[YieldTermStructure]& termStructure,
             Real a, Real sigma) except +

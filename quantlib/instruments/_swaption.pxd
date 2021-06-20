@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Natural, Real, Volatility
 from quantlib.handle cimport shared_ptr, optional
 from ._vanillaswap cimport VanillaSwap
 from ._option cimport Option

@@ -8,6 +8,9 @@
 """Vasiceck model"""
 
 from quantlib.types cimport Rate, Real
+from cython.operator cimport dereference as deref
+
+from quantlib.models.shortrate.onefactor_model cimport OneFactorAffineModel
 cimport quantlib.models._model as _mo
 from . cimport _vasicek as _va
 from quantlib.handle cimport shared_ptr

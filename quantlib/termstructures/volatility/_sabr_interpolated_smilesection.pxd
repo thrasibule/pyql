@@ -1,4 +1,4 @@
-include "../../types.pxi"
+from quantlib.types cimport Rate, Real, Volatility
 from ._smilesection cimport SmileSection
 from quantlib._quote cimport Quote
 from quantlib.handle cimport Handle, shared_ptr

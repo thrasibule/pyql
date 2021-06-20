@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Natural, Real, Volatility
 from . cimport _swaption
 from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.termstructures.volatility.volatilitytype cimport (

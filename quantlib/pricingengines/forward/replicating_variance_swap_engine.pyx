@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real
 from libcpp.vector cimport vector
 from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.processes.black_scholes_process cimport GeneralizedBlackScholesProcess

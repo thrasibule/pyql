@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Real
 from quantlib.handle cimport shared_ptr
 from quantlib.models.equity._heston_model cimport HestonModel
 cimport quantlib.processes._heston_process as _hp
@@ -7,8 +6,6 @@ cimport quantlib.processes._heston_process as _hp
 cdef extern from 'ql/models/equity/batesmodel.hpp' namespace 'QuantLib':
 
     cdef cppclass BatesModel(HestonModel):
-
-        BatesModel() # fake empty constructor due to Cython issue
         BatesModel(shared_ptr[_hp.BatesProcess]& process) except +
 
         Real Lambda 'lambda'() except + # lambda is a python keyword
@@ -26,7 +23,6 @@ cdef extern from 'ql/models/equity/batesmodel.hpp' namespace 'QuantLib':
         Real thetaLambda() except +
 
     cdef cppclass BatesDoubleExpModel(HestonModel):
-        BatesDoubleExpModel()
         BatesDoubleExpModel(shared_ptr[_hp.HestonProcess] & process,
                    Real Lambda,
                    Real nuUp,
@@ -39,7 +35,6 @@ cdef extern from 'ql/models/equity/batesmodel.hpp' namespace 'QuantLib':
         Real Lambda 'lambda'() except +
 
     cdef cppclass BatesDoubleExpDetJumpModel(BatesDoubleExpModel):
-        BatesDoubleExpDetJumpModel()
         BatesDoubleExpDetJumpModel(shared_ptr[_hp.HestonProcess]& process,
             Real Lambda,
             Real nuUp,

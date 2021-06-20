@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../../types.pxi'
-
+from quantlib.types cimport Real
 from quantlib.handle cimport Handle, shared_ptr
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 from quantlib.termstructures.volatility._volatilitytype cimport VolatilityType

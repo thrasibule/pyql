@@ -7,8 +7,7 @@
 
 """Utilities for implied-volatility calculation"""
 
-include '../types.pxi'
-
+from quantlib.types cimport Natural, Real, Volatility
 from cython.operator cimport dereference as deref
 from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.instrument cimport Instrument
@@ -30,7 +29,7 @@ cdef class ImpliedVolatilityHelper:
 
 
     @classmethod
-    def calculate(self, Instrument instrument,
+    def calculate(cls, Instrument instrument,
               PricingEngine engine,
               SimpleQuote volatility,
               Real target_value,
@@ -54,7 +53,7 @@ cdef class ImpliedVolatilityHelper:
     # by the passed quote.
 
     @classmethod
-    def clone(self,
+    def clone(cls,
           GeneralizedBlackScholesProcess process,
           SimpleQuote quote):
 

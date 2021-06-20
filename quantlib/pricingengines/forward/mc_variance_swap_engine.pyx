@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport BigNatural, Real, Size
 from cython.operator cimport dereference as deref
 
 from libcpp cimport bool

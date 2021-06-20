@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Rate, Real, Size
 from quantlib.instruments._bonds cimport Bond as QLBond
 from quantlib.time._date cimport Day, Month, Year, Date as QLDate
 from quantlib.time._period cimport Frequency

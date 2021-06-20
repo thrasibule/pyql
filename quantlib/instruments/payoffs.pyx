@@ -1,4 +1,4 @@
-include '../types.pxi'
+from quantlib.types cimport Real
 from cython.operator import dereference as deref
 
 # cython imports

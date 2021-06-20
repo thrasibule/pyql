@@ -1,8 +1,7 @@
+from quantlib.types cimport Real
 from .._instrument cimport Instrument
 from quantlib.time._date cimport Date
 from libcpp cimport bool
-
-include '../types.pxi'
 
 # Variance swap
 # warning This class does not manage seasoned variance swaps.

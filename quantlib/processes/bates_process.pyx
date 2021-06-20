@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../types.pxi'
-
+from quantlib.types cimport Real
 from cython.operator cimport dereference as deref
 cimport quantlib._stochastic_process as _sp
 from ._heston_process cimport BatesProcess as QlBatesProcess

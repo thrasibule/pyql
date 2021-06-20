@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport BigNatural, Real, Size
 from libcpp cimport bool
 
 from quantlib.handle cimport shared_ptr

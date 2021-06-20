@@ -1,3 +1,4 @@
+from quantlib.types cimport Natural, Rate, Real, Spread
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 from quantlib._defines cimport QL_NULL_REAL

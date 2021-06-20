@@ -1,5 +1,3 @@
-include '../types.pxi'
-
 from quantlib.handle cimport Handle, optional
 from quantlib.termstructures.yields._flat_forward cimport YieldTermStructure
 from libcpp cimport bool

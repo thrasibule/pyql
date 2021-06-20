@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Rate, Real
 from quantlib.handle cimport shared_ptr
 from quantlib.time._date cimport Date
 from quantlib.time._period cimport Period

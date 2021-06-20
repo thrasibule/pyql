@@ -7,7 +7,7 @@
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 #
 
-include '../../types.pxi'
+from quantlib.types cimport Integer, Natural, Rate, Real
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 
@@ -177,7 +177,7 @@ cdef class UpfrontCdsHelper(CdsHelper):
         if isinstance(upfront, float):
             self._thisptr = shared_ptr[_ci.DefaultProbabilityHelper](
                 new _ci.UpfrontCdsHelper(
-                    <Rate>upfront, running_spread, deref(tenor._thisptr.get()),
+                    <Rate>upfront, running_spread, deref(tenor._thisptr),
                     settlement_days, deref(calendar._thisptr), <Frequency>frequency,
                     <BusinessDayConvention>paymentConvention, <Rule>date_generation_rule,
                     deref(daycounter._thisptr),
