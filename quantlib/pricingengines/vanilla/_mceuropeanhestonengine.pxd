@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types ciport BigNatural, Real, Size
 from libcpp cimport bool
 from quantlib.processes._heston_process cimport HestonProcess
 from quantlib.pricingengines._pricing_engine cimport PricingEngine

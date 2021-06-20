@@ -1,4 +1,4 @@
-include '../../types.pxi'
+from quantlib.types cimport Real, Volatility
 from quantlib.pricingengines._pricing_engine cimport PricingEngine
 from quantlib.handle cimport Handle
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure

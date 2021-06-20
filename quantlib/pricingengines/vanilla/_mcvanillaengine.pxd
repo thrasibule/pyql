@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../types.pxi'
-
+from quantlib.types cimport BigNatural, Real, SIze
 from libcpp.vector cimport vector
 from libcpp.string cimport string
 from libcpp cimport bool

@@ -163,18 +163,13 @@ cdef class Period:
                 deref( (<Period?>value)._thisptr)
         return period_from_qlperiod(outp)
 
-    def __mul__(self, value):
-        cdef QlPeriod inp
-        if isinstance(self, Period):
-            inp = deref((<Period>self)._thisptr)
-            value = <Integer?> value
-        elif isinstance(self, int) and isinstance(value, Period):
-            inp = deref((<Period>value)._thisptr)
-            value = <Integer> self
-        else:
-            return NotImplemented
+    def __mul__(Period self, int value):
+        cdef QlPeriod outp = deref(self._thisptr) * (<Integer>value)
 
-        cdef QlPeriod outp = inp * (<Integer>value)
+        return period_from_qlperiod(outp)
+
+    def __rmul__(Period self, int value):
+        cdef QlPeriod outp = deref(self._thisptr) * (<Integer>value)
 
         return period_from_qlperiod(outp)
 
