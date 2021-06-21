@@ -20,7 +20,7 @@ cdef class Matrix:
         cdef Matrix instance = Matrix.__new__(Matrix)
         cdef Size rows = data.shape[0]
         cdef Size columns = data.shape[1]
-        instance._thisptr = QlMatrix(rows, columns, &data[0,0], &data[-1,-1] + 1)
+        instance._thisptr = move(QlMatrix(rows, columns, &data[0,0], &data[-1,-1] + 1))
         return instance
 
     @cython.boundscheck(False)
@@ -54,3 +54,15 @@ cdef class Matrix:
         cdef size_t i, j
         i, j = coord
         self._thisptr[i][j] = val
+
+cpdef enum SalvagingAlgorithm:
+    Nothing = _matrix.Nothing
+    Spectral = _matrix.Spectral
+    Hypersphere = _matrix.Hypersphere
+    LowerDiagonal = _matrix.LowerDiagonal
+    Higham = _matrix.Higham
+
+def pseudo_sqrt(Matrix m, SalvagingAlgorithm algo=Nothing):
+    cdef Matrix r = Matrix.__new__(Matrix)
+    r._thisptr = move(pseudoSqrt(m._thisptr, <_matrix.Type>algo))
+    return r
