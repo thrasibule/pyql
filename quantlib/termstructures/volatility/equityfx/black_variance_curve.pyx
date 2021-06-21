@@ -1,4 +1,4 @@
-include '../../../types.pxi'
+from quantlib.types cimport Volatility
 from cython.operator cimport dereference as deref
 
 from libcpp cimport bool

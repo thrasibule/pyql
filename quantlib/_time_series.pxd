@@ -1,4 +1,3 @@
-include 'types.pxi'
 from libcpp.map cimport map
 from quantlib.time._date cimport Date
 from libcpp.vector cimport vector

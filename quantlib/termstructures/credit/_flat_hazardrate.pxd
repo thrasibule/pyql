@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Natural, Rate
 from quantlib.termstructures._default_term_structure cimport DefaultProbabilityTermStructure
 from quantlib.time._date cimport Date
 from quantlib.time._daycounter cimport DayCounter

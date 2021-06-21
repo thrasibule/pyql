@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include 'types.pxi'
-
+from quantlib.types cimport DiscountFactor, Rate, Real, Time
 from libcpp.string cimport string
 from quantlib.time._daycounter cimport DayCounter
 from quantlib.time._period cimport Frequency

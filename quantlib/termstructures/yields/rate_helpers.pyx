@@ -6,8 +6,7 @@
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 """ deposit, FRA, futures and various swap rate helpers"""
 
-include '../../types.pxi'
-
+from quantlib.types cimport Natural, Real, Rate
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 

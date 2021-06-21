@@ -1,4 +1,4 @@
-include 'types.pxi'
+from quantlib.types cimport Size, Time
 from libcpp.vector cimport vector
 
 cdef extern from 'ql/timegrid.hpp' namespace 'QuantLib':

@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Time
 from libcpp cimport bool
 from libcpp.vector cimport vector
 from cython.operator cimport dereference as deref
@@ -61,6 +60,6 @@ cdef class DefaultProbabilityTermStructure(Observable): #not inheriting from Ter
 
     @property
     def day_counter(self):
-        cdef DayCounter dc = DayCounter()
+        cdef DayCounter dc = DayCounter.__new__(DayCounter)
         dc._thisptr = new _daycounter.DayCounter(self._thisptr.get().dayCounter())
         return dc

@@ -1,4 +1,4 @@
-from quantlib.types ciport BigNatural, Real, Size
+from quantlib.types cimport BigNatural, Real, Size
 from libcpp cimport bool
 from quantlib.processes._heston_process cimport HestonProcess
 from quantlib.pricingengines._pricing_engine cimport PricingEngine

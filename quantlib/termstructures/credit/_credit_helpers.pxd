@@ -8,7 +8,7 @@
 """
 
 
-include '../../types.pxi'
+from quantlib.types cimport Integer, Natural, Rate, Real
 from libcpp cimport bool
 
 from quantlib.handle cimport Handle, shared_ptr
@@ -32,7 +32,6 @@ cdef extern from 'ql/termstructures/credit/defaultprobabilityhelpers.hpp' namesp
                                          RelativeDateDefaultProbabilityHelper
 
     cdef cppclass CdsHelper(RelativeDateDefaultProbabilityHelper):
-        CdsHelper() # empty constructor added for Cython
         CdsHelper(Handle[Quote]& quote, Period& tenor,
                   Integer settlementDays,
                   Calendar& calendar,

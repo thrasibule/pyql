@@ -5,11 +5,12 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 """Abstract base class for indices"""
-include 'types.pxi'
 
+from quantlib.types cimport Real
 from cython.operator cimport dereference as deref
 from cpython.datetime cimport PyDate_Check, date_year, date_month, date_day, import_datetime
 from libcpp cimport bool
+from libcpp.utility cimport move
 from libcpp.vector cimport vector
 from libcpp.string cimport string
 

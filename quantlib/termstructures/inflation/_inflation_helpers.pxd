@@ -1,6 +1,3 @@
-
-include '../../types.pxi'
-
 from quantlib._quote cimport Quote
 from quantlib.handle cimport shared_ptr, Handle
 from quantlib.time.businessdayconvention cimport BusinessDayConvention

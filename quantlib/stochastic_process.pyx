@@ -1,4 +1,4 @@
-include 'types.pxi'
+from quantlib.types cimport Real, Time
 
 cdef class StochasticProcess:
     def size(self):

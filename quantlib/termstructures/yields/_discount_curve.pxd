@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport DiscountFactor, Real, Time
 from libcpp.vector cimport vector
 from libcpp.pair cimport pair
 

@@ -5,8 +5,8 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
-include 'types.pxi'
-
+from quantlib.types cimport Rate, Real, Time
+from libcpp.utility cimport move
 from cython.operator cimport dereference as deref
 
 from quantlib.handle cimport shared_ptr
@@ -28,9 +28,10 @@ cdef class InterestRate:
     def __init__(self, double rate, DayCounter dc not None, Compounding compounding,
                  int frequency):
 
-        self._thisptr = _ir.InterestRate(
+        self._thisptr = move(_ir.InterestRate(
             <Rate>rate, deref(dc._thisptr), compounding,
             <_ir.Frequency>frequency
+            )
         )
 
 
@@ -77,16 +78,18 @@ cdef class InterestRate:
                      Frequency freq,
                      Time t):
         cdef InterestRate r = InterestRate.__new__(InterestRate)
-        r._thisptr = self._thisptr.impliedRate(compound,
+        r._thisptr = move(self._thisptr.impliedRate(compound,
                                                deref(result_dc._thisptr),
                                                comp,
                                                freq,
-                                               t)
+                                               t
+                                               )
+                                            )
         return r
 
     def equivalent_rate(self, Compounding comp,
                         Frequency freq,
                         Time t):
         cdef InterestRate r = InterestRate.__new__(InterestRate)
-        r._thisptr = self._thisptr.equivalentRate(comp, freq, t)
+        r._thisptr = move(self._thisptr.equivalentRate(comp, freq, t))
         return r

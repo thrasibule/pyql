@@ -1,3 +1,4 @@
+from quantlib.types cimport Real
 from libcpp.vector cimport vector
 from libcpp cimport bool
 

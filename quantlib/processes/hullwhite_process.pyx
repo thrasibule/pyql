@@ -1,6 +1,5 @@
-"""HUll-White stochastic process"""
-include '../types.pxi'
-
+"""Hull-White stochastic process"""
+from quantlib.types cimport Real
 from cython.operator cimport dereference as deref
 from .cimport _hullwhite_process as _hw
 cimport quantlib._stochastic_process as _sp

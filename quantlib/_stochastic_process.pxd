@@ -5,8 +5,7 @@
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
-include 'types.pxi'
-
+from quantlib.types cimport Real, Size, Time
 cdef extern from 'ql/stochasticprocess.hpp' namespace 'QuantLib':
 
     cdef cppclass StochasticProcess:

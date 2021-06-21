@@ -1,4 +1,4 @@
-include '../../../types.pxi'
+from quantlib.types cimport Rate, Time
 from cython.operator cimport dereference as deref
 from quantlib.time.date cimport Date, Period
 from quantlib.handle cimport shared_ptr
