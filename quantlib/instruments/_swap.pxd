@@ -7,7 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-from quantlib.types cimport Real, Size
+from quantlib.types cimport DiscountFactor, Real, Size
 from libcpp.vector cimport vector
 from libcpp cimport bool
 

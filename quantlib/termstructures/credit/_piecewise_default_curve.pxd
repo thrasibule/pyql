@@ -7,8 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-include '../../types.pxi'
-
+from quantlib.types cimport Natural, Real, Time
 from libcpp.vector cimport vector
 
 from quantlib.handle cimport shared_ptr

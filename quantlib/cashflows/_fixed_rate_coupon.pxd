@@ -1,4 +1,4 @@
-from quantlib.types cimport Rate, Real
+from quantlib.types cimport Natural, Rate, Real
 
 from libcpp cimport bool
 from libcpp.vector cimport vector

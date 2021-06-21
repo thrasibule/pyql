@@ -1,8 +1,7 @@
+from quantlib.types cimport Rate
 from libcpp.vector cimport vector
 from cython.operator cimport dereference as deref
 from quantlib.handle cimport shared_ptr
-
-include '../../types.pxi'
 
 cimport quantlib.termstructures.credit._interpolated_hazardrate_curve as _ihc
 cimport quantlib.termstructures._default_term_structure as _dts

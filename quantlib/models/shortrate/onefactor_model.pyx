@@ -7,7 +7,7 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-from quantlib.types cimport Rate, Time
+from quantlib.types cimport Rate, Real, Time
 from quantlib.handle cimport static_pointer_cast
 from quantlib.models.model cimport CalibratedModel
 cimport quantlib.models._model as _model

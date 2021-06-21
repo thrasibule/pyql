@@ -1,7 +1,5 @@
-include '../types.pxi'
-
 from libcpp.vector cimport vector
-
+from quantlib.types cimport Real, Size
 from quantlib.handle cimport shared_ptr
 from quantlib.time._date cimport Date
 

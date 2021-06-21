@@ -1,5 +1,4 @@
-include "../../types.pxi"
-
+from quantlib.types cimport Rate, Real
 cimport quantlib.time._daycounter as _dc
 from quantlib.time.date cimport date_from_qldate
 from quantlib.time.daycounter cimport DayCounter

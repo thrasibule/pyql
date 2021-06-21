@@ -1,4 +1,4 @@
-include '../../../types.pxi'
+from quantlib.types cimport Rate, Real, Size, Spread, Time
 from libcpp.vector cimport vector
 from libcpp cimport bool
 from ._swaption_vol_structure cimport SwaptionVolatilityStructure

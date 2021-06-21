@@ -1,5 +1,4 @@
-include '../../types.pxi'
-
+from quantlib.types cimport Rate, Real, Time
 from libcpp.vector cimport vector
 
 from quantlib.termstructures._default_term_structure cimport (

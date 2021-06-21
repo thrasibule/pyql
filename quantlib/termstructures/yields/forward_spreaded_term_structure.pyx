@@ -1,5 +1,3 @@
-include '../../types.pxi'
-
 cimport quantlib.termstructures.yields._forward_spreaded_term_structure as _fsts
 
 from quantlib.handle cimport shared_ptr

@@ -1,4 +1,4 @@
-include "../../types.pxi"
+from quantlib.types cimport Rate, Real, Time
 
 cdef extern from 'ql/termstructures/volatility/sabr.hpp' namespace 'QuantLib':
     Real unsafeSabrVolatility(Rate strike,

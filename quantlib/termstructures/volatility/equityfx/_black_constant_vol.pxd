@@ -1,4 +1,4 @@
-include '../../../types.pxi'
+from quantlib.types cimport Natural, Volatility
 from quantlib.handle cimport Handle
 from quantlib._quote cimport Quote
 from quantlib.time._date cimport Date

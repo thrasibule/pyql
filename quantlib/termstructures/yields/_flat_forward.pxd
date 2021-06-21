@@ -7,7 +7,6 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
-#include "../../types.pxi"
 from quantlib.types cimport *
 from libcpp cimport bool
 from libcpp.vector cimport vector
