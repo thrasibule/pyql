@@ -8,7 +8,9 @@
 """
 
 from .ibor.libor import Libor
+from .ibor.eonia import Eonia
 from .ibor.euribor import Euribor, Euribor6M
+from .ibor.sofr import Sofr
 from .ibor.usdlibor import USDLibor
 from .ibor_index import IborIndex
 from .swap_index import SwapIndex
