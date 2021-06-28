@@ -115,13 +115,13 @@ CYTHON_DIRECTIVES = {"embedsignature": True,
                      "language_level": '3str'}
 
 def render_templates():
-    pass
-    # fname = "quantlib/termstructures/credit/piecewise_trait_curve.pyx.in"
-    # output = fname[:-3]
-    # if not os.path.exists(output) or (os.stat(output).st_mtime < os.stat(fname).st_mtime):
-        # template = Template.from_filename(fname, encoding="utf-8")
-        # with open(output, "wt") as f:
-            # f.write(template.substitute(traits=("HazardRate", "DefaultDensity", "SurvivalProbability")))
+    for ext in ("pxd", "pyx"):
+        fname = f"quantlib/termstructures/yields/piecewise_yield_curve.{ext}.in"
+        output = fname[:-3]
+        if not os.path.exists(output) or (os.stat(output).st_mtime < os.stat(fname).st_mtime):
+            template = Template.from_filename(fname, encoding="utf-8")
+            with open(output, "wt") as f:
+                f.write(template.substitute())
 
 def collect_extensions():
     """ Collect all the directories with Cython extensions and return the list

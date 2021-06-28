@@ -1,6 +1,6 @@
 from ..default_term_structure cimport DefaultProbabilityTermStructure
 from . cimport _piecewise_default_curve as _pdc
-cimport quantlib.math.interpolation as intpl
+cimport quantlib.math._interpolations as intpl
 
 cdef enum Interpolator:
     Linear
