@@ -10,6 +10,7 @@ include '../../types.pxi'
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 
+from quantlib._defines cimport QL_NULL_INTEGER
 cimport quantlib.instruments._instrument as _ins
 from quantlib.instruments.swap cimport VanillaSwap
 cimport quantlib.instruments._vanillaswap as _vs
@@ -28,6 +29,8 @@ from quantlib.time.daycounter cimport DayCounter
 from quantlib.time.date cimport Period, Date
 from quantlib.indexes.ibor_index cimport IborIndex
 from quantlib.indexes.swap_index cimport SwapIndex
+from ..yield_term_structure cimport YieldTermStructure
+from ..helpers cimport Pillar
 
 cdef class RateHelper:
 
@@ -126,10 +129,15 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
 
     @classmethod
     def from_tenor(cls, rate, Period tenor not None,
-        Calendar calendar not None, Frequency fixedFrequency,
-        BusinessDayConvention fixedConvention, DayCounter fixedDayCount not None,
-        IborIndex iborIndex not None, Quote spread=SimpleQuote(),
-        Period fwdStart=Period(0, Days)):
+                   Calendar calendar not None, Frequency fixedFrequency,
+                   BusinessDayConvention fixedConvention, DayCounter fixedDayCount not None,
+                   IborIndex iborIndex not None, Quote spread=SimpleQuote(),
+                   Period fwdStart=Period(0, Days),
+                   YieldTermStructure discounting_curve=YieldTermStructure(),
+                   Natural settlement_days=QL_NULL_INTEGER,
+                   Pillar pillar=Pillar.LastRelevantDate,
+                   Date custom_pillar_date=Date(),
+                   bool end_of_month=False):
 
         cdef Handle[_qt.Quote] spread_handle
         if spread._thisptr.get().isValid():
@@ -140,28 +148,42 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         cdef SwapRateHelper instance = SwapRateHelper.__new__(SwapRateHelper)
 
         if isinstance(rate, float):
-            instance._thisptr.reset(new _rh.SwapRateHelper(
-                <Rate>rate,
-                deref(tenor._thisptr),
-                deref(calendar._thisptr),
-                <Frequency> fixedFrequency,
-                <_rh.BusinessDayConvention> fixedConvention,
-                deref(fixedDayCount._thisptr),
-                static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
-                spread_handle,
-                deref(fwdStart._thisptr))
+            instance._thisptr.reset(
+                new _rh.SwapRateHelper(
+                    <Rate>rate,
+                    deref(tenor._thisptr),
+                    deref(calendar._thisptr),
+                    <Frequency> fixedFrequency,
+                    <_rh.BusinessDayConvention> fixedConvention,
+                    deref(fixedDayCount._thisptr),
+                    static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
+                    spread_handle,
+                    deref(fwdStart._thisptr),
+                    discounting_curve._thisptr,
+                    settlement_days,
+                    pillar,
+                    deref(custom_pillar_date._thisptr),
+                    end_of_month
+                )
             )
         elif isinstance(rate, SimpleQuote):
-            instance._thisptr.reset(new _rh.SwapRateHelper(
-                Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
-                deref(tenor._thisptr),
-                deref(calendar._thisptr),
-                <Frequency> fixedFrequency,
-                <_rh.BusinessDayConvention> fixedConvention,
-                deref(fixedDayCount._thisptr),
-                static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
-                spread_handle,
-                deref(fwdStart._thisptr))
+            instance._thisptr.reset(
+                new _rh.SwapRateHelper(
+                    Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr),
+                    deref(tenor._thisptr),
+                    deref(calendar._thisptr),
+                    <Frequency> fixedFrequency,
+                    <_rh.BusinessDayConvention> fixedConvention,
+                    deref(fixedDayCount._thisptr),
+                    static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
+                    spread_handle,
+                    deref(fwdStart._thisptr),
+                    discounting_curve._thisptr,
+                    settlement_days,
+                    pillar,
+                    deref(custom_pillar_date._thisptr),
+                    end_of_month
+                )
             )
         else:
             raise ValueError('rate needs to be a float or a SimpleQuote')
@@ -170,7 +192,11 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
 
     @classmethod
     def from_index(cls, rate, SwapIndex index not None, SimpleQuote spread=SimpleQuote(),
-                   Period fwdStart=Period(0, Days)):
+                   Period fwdStart=Period(0, Days),
+                   YieldTermStructure discounting_curve=YieldTermStructure(),
+                   Pillar pillar=Pillar.LastRelevantDate,
+                   Date custom_pillar_date=Date(),
+                   bool end_of_month=False):
         cdef Handle[_qt.Quote] spread_handle
         if spread._thisptr.get().isValid():
             spread_handle = Handle[_qt.Quote](spread._thisptr)
@@ -180,22 +206,32 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
         cdef SwapRateHelper instance = cls.__new__(cls)
 
         if isinstance(rate, float):
-            instance._thisptr.reset(new _rh.SwapRateHelper(
-                <Rate>rate,
-                static_pointer_cast[_si.SwapIndex](index._thisptr),
-                spread_handle,
-                deref(fwdStart._thisptr)
+            instance._thisptr.reset(
+                new _rh.SwapRateHelper(
+                    <Rate>rate,
+                    static_pointer_cast[_si.SwapIndex](index._thisptr),
+                    spread_handle,
+                    deref(fwdStart._thisptr),
+                    discounting_curve._thisptr,
+                    pillar,
+                    deref(custom_pillar_date._thisptr),
+                    end_of_month
                 )
             )
         elif isinstance(rate, SimpleQuote):
             rate_handle = Handle[_qt.Quote]((<SimpleQuote>rate)._thisptr)
-            instance._thisptr.reset(new _rh.SwapRateHelper(
-                rate_handle,
-                static_pointer_cast[_si.SwapIndex](index._thisptr),
-                spread_handle,
-                deref(fwdStart._thisptr)
+            instance._thisptr.reset(
+                new _rh.SwapRateHelper(
+                    rate_handle,
+                    static_pointer_cast[_si.SwapIndex](index._thisptr),
+                    spread_handle,
+                    deref(fwdStart._thisptr),
+                    discounting_curve._thisptr,
+                    pillar,
+                    deref(custom_pillar_date._thisptr),
+                    end_of_month
+                )
             )
-        )
         else:
             raise ValueError('rate needs to be a float or a SimpleQuote')
 
