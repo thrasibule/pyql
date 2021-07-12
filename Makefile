@@ -8,7 +8,7 @@ docs:
 	make -C docs html
 
 install:
-	pip install .
+	pip install . --global-option build_ext --global-option -j6
 
 uninstall:
 	pip uninstall quantlib
