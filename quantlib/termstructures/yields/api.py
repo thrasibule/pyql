@@ -7,6 +7,7 @@ from .piecewise_zerospreaded_termstructure import PiecewiseZeroSpreadedTermStruc
 from .rate_helpers import (
     RateHelper, DepositRateHelper, FraRateHelper,
     FuturesRateHelper, SwapRateHelper)
+from .overnightindexfutureratehelper import OvernightIndexFutureRateHelper, SofrFutureRateHelper
 from .discount_curve import InterpolatedDiscountCurve, DiscountCurve
 from ..yield_term_structure import YieldTermStructure
 from .zero_curve import ZeroCurve
