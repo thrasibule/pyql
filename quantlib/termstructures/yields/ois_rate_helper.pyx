@@ -6,7 +6,7 @@ from cython.operator cimport dereference as deref
 from quantlib.cashflows.rateaveraging cimport RateAveraging
 from quantlib.termstructures.helpers cimport Pillar
 from quantlib.handle cimport shared_ptr, static_pointer_cast, Handle
-from quantlib.quotes cimport Quote
+from quantlib.quote cimport Quote
 from quantlib.time.date cimport Date, Period
 from quantlib.termstructures.yields.rate_helpers cimport RelativeDateRateHelper
 from quantlib.indexes.ibor_index cimport OvernightIndex
