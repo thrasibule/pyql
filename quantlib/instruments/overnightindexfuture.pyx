@@ -10,6 +10,11 @@ from quantlib.time.date cimport Date
 cdef class OvernightIndexFuture(Instrument):
     def __init__(self, OvernightIndex overnight_index, Date value_date, Date maturity_date, Quote convexity_adjustment=Quote.__new__(Quote),
                  RateAveraging averaging_method=RateAveraging.Compound):
+        """ Future on a compounded overnight index investment.                                                                                             
+                                                                      
+           Compatible with SOFR futures and Sonia futures available on
+           CME and ICE exchanges.
+        """
         self._thisptr.reset(
             new _oif.OvernightIndexFuture(
                 static_pointer_cast[_ii.OvernightIndex](overnight_index._thisptr),
