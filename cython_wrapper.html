@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>How to wrap QuantLib classes with cython &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -26,7 +27,8 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to wrap QuantLib classes with cython</a></li> 
       </ul>
     </div>  
 
@@ -35,7 +37,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-wrap-quantlib-classes-with-cython">
+  <section id="how-to-wrap-quantlib-classes-with-cython">
 <h1>How to wrap QuantLib classes with cython<a class="headerlink" href="#how-to-wrap-quantlib-classes-with-cython" title="Permalink to this headline">¶</a></h1>
 <p>These notes provide a step by step guide to wrapping a QuantLib (QL) class
 with cython, so that it can be invoked from python.</p>
@@ -43,13 +45,13 @@ with cython, so that it can be invoked from python.</p>
 exactly mirror the QL class hierarchy. For example, QL provides a
 class named <code class="docutils literal notranslate"><span class="pre">SimpleQuote</span></code>, that represents a simple price
 measurement. The C++ class is defined as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleQuote</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Quote</span> <span class="p">{</span>
-  <span class="k">public</span><span class="o">:</span>
-    <span class="n">SimpleQuote</span><span class="p">(</span><span class="n">Real</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Null</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span>
-    <span class="n">Real</span> <span class="nf">value</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">bool</span> <span class="nf">isValid</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="n">Real</span> <span class="nf">setValue</span><span class="p">(</span><span class="n">Real</span> <span class="n">value</span> <span class="o">=</span> <span class="n">Null</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span>
-<span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">SimpleQuote</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Quote</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">SimpleQuote</span><span class="p">(</span><span class="n">Real</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Null</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="nf">value</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isValid</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Real</span><span class="w"> </span><span class="nf">setValue</span><span class="p">(</span><span class="n">Real</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Null</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span><span class="p">());</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 <p>After wrapping the C++ class, this class is now available in python:</p>
@@ -65,7 +67,7 @@ the SimpleQuote class is defined in the quote module in C++.</p></li>
 <li><p>pyql exposes QuantLib in a pythonic fashion: instead of exposing the accessor value(),
 pyql implements the property value.</p></li>
 </ul>
-<div class="section" id="the-interface-code">
+<section id="the-interface-code">
 <h2>The Interface Code<a class="headerlink" href="#the-interface-code" title="Permalink to this headline">¶</a></h2>
 <p>To expose QL class <code class="docutils literal notranslate"><span class="pre">foo</span></code>, you need to create three files. For the sake of
 standardization, they should be named as follows:</p>
@@ -81,8 +83,8 @@ standardization, they should be named as follows:</p>
 </dd>
 </dl>
 <p>The content of each file is now described in details.</p>
-</div>
-<div class="section" id="declaration-of-the-ql-classes-to-be-exposed">
+</section>
+<section id="declaration-of-the-ql-classes-to-be-exposed">
 <h2>Declaration of the QL classes to be exposed<a class="headerlink" href="#declaration-of-the-ql-classes-to-be-exposed" title="Permalink to this headline">¶</a></h2>
 <p>This file contains the declaration of the QL
 class being exposed. For example, the header file <code class="docutils literal notranslate"><span class="pre">_quotes.pxd</span></code> is
@@ -110,8 +112,8 @@ types used in declaring arguments are defined in <code class="docutils literal n
 <p>The clause ‘except +’ signals that the method may throw an exception. It
 is indispensable to append this clause to every declaration. Without it, an
 exception thrown in QL will terminate the python process.</p>
-</div>
-<div class="section" id="declaration-of-the-python-class">
+</section>
+<section id="declaration-of-the-python-class">
 <h2>Declaration of the python class<a class="headerlink" href="#declaration-of-the-python-class" title="Permalink to this headline">¶</a></h2>
 <p>The second header file declares the python classes that will be wrapping
 the QL classes. The file <code class="docutils literal notranslate"><span class="pre">quotes.pxd</span></code> is reproduced below:</p>
@@ -133,8 +135,8 @@ quote.pxd). To avoid confusion we use the following convention:</p>
 want to do any memory handling on the Python side, we always wrap the C++
 object into a boost shared pointer that is deallocated properly when
 deallocation the Cython extension.</p>
-</div>
-<div class="section" id="implementation-of-the-python-class">
+</section>
+<section id="implementation-of-the-python-class">
 <h2>Implementation of the python class<a class="headerlink" href="#implementation-of-the-python-class" title="Permalink to this headline">¶</a></h2>
 <p>The third file contains the implementation of the cython wrapper
 class. As an illustration, the implementation of the <code class="docutils literal notranslate"><span class="pre">SingleQuote</span></code>
@@ -172,8 +174,8 @@ on a <code class="docutils literal notranslate"><span class="pre">Quote</span></
 method is defined in the <code class="docutils literal notranslate"><span class="pre">SimpleQuote</span></code> concrete class,
 and the shared pointer must therefore be cast
 into a <code class="docutils literal notranslate"><span class="pre">SimpleQuote</span></code> shared pointer in order to invoke <code class="docutils literal notranslate"><span class="pre">setValue()</span></code>.</p>
-</div>
-<div class="section" id="managing-c-references-using-shared-ptr">
+</section>
+<section id="managing-c-references-using-shared-ptr">
 <h2>Managing C++ references using shared_ptr<a class="headerlink" href="#managing-c-references-using-shared-ptr" title="Permalink to this headline">¶</a></h2>
 <p>All the Cython extension references should be declared using shared_ptr. The
 <code class="docutils literal notranslate"><span class="pre">__dealloc__</span></code> method should always delete the shared_ptr but never the target
@@ -182,10 +184,11 @@ pointer!</p>
 to a local pointer variables as it might be deallocated. Always use the copy
 constructor of the shared_ptr to get a local copy of it, stack allocated (there
 is no need to use new).</p>
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -214,7 +217,7 @@ is no need to use new).</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -233,12 +236,13 @@ is no need to use new).</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">How to wrap QuantLib classes with cython</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
     </div>
   </body>
 </html>

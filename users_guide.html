@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>User’s guide &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +35,8 @@
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">User’s guide</a></li> 
       </ul>
     </div>  
 
@@ -43,13 +45,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="user-s-guide">
+  <section id="user-s-guide">
 <h1>User’s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="business-dates">
+<section id="business-dates">
 <h2>Business dates<a class="headerlink" href="#business-dates" title="Permalink to this headline">¶</a></h2>
 <p>Business dates handling capabilities is provided by the quantlib.time
 subpackage. The three core components are Date, Period and Calendar.</p>
-<div class="section" id="date">
+<section id="date">
 <h3>Date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h3>
 <p>A date in QuantLib can be constructed with the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">(</span><span class="n">serial_number</span><span class="p">)</span>
@@ -71,29 +73,29 @@ date handling is also known from Excel. The alternative is the construction via:
 Annual, Semiannual, EveryFourthMonth, Quartely, Bimonthly, Monthly,
 EveryFourthWeek, Biweekly, Weekly, Daily and OtherFrequency.</p>
 <p>Time units are constants defined in the date module: <code class="xref py py-data docutils literal notranslate"><span class="pre">Days</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Weeks</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Months</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Years</span></code>.</p>
-<p>Each <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code> object has the following properties:</p>
+<p>Each <a class="reference internal" href="reference_guide.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a> object has the following properties:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">weekday</span></code> returns the weekday using the weekday constants defined in the
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.weekday" title="quantlib.time.date.Date.weekday"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weekday</span></code></a> returns the weekday using the weekday constants defined in the
 date module (Sunday to Saturday and Sun to Sat).</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code> returns the day of the month</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">day_of_year</span></code> returns the day of the year</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code> returns the month</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code> returns the year</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code> returns a the serial number of this date</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.day" title="quantlib.time.date.Date.day"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code></a> returns the day of the month</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.day_of_year" title="quantlib.time.date.Date.day_of_year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day_of_year</span></code></a> returns the day of the year</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.month" title="quantlib.time.date.Date.month"><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code></a> returns the month</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.year" title="quantlib.time.date.Date.year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code></a> returns the year</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.serial" title="quantlib.time.date.Date.serial"><code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code></a> returns a the serial number of this date</p></li>
 </ul>
 </div></blockquote>
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code> module has some useful static functions,
+<p>The <a class="reference internal" href="reference_guide.html#module-quantlib.time.date" title="quantlib.time.date"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code></a> module has some useful static functions,
 which give general results, such as whether a given year is a leap
 year or a given date is the end of the month. The currently available
 functions are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code>: earliest possible Date in QuantLib</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code>: latest possible Date in QuantLib</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code>: is year a leap year?</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code>: what is the end of the current month the date is in?</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.today" title="quantlib.time.date.today"><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></a></p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.mindate" title="quantlib.time.date.mindate"><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code></a>: earliest possible Date in QuantLib</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.maxdate" title="quantlib.time.date.maxdate"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code></a>: latest possible Date in QuantLib</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.is_leap" title="quantlib.time.date.is_leap"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code></a>: is year a leap year?</p></li>
+<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.end_of_month" title="quantlib.time.date.end_of_month"><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code></a>: what is the end of the current month the date is in?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">is_end_of_month(date)()</span></code>: is date the end of the month?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">next_weekday(date,</span> <span class="pre">weekday)()</span></code>: on which date is the weekday following
 the date? (e.g. date of the next Friday)</p></li>
@@ -101,8 +103,8 @@ the date? (e.g. date of the next Friday)</p></li>
 given year and month? (e.g. date of the 3rd Wednesday in July 2010)</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="calendars">
+</section>
+<section id="calendars">
 <h3>Calendars<a class="headerlink" href="#calendars" title="Permalink to this headline">¶</a></h3>
 <p>One of the crucial objects in the daily business is a calendar for different countries which shows the holidays, business days and weekends for the respective country. In QuantLib, a calendar can be set up easily via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uk_calendar</span> <span class="o">=</span> <span class="n">UnitedKingdom</span><span class="p">()</span>
@@ -209,8 +211,8 @@ the initial/final dates.</p></li>
 <span class="n">Business</span> <span class="n">Days</span> <span class="n">Between</span><span class="p">:</span> <span class="mi">41</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="day-counters">
+</section>
+<section id="day-counters">
 <h3>Day counters<a class="headerlink" href="#day-counters" title="Permalink to this headline">¶</a></h3>
 <p>Daycount conventions are crucial in financial markets. QuantLib offers :</p>
 <blockquote>
@@ -234,8 +236,8 @@ the initial/final dates.</p></li>
 </ul>
 </div></blockquote>
 <p>TODO : add example</p>
-</div>
-<div class="section" id="date-generation">
+</section>
+<section id="date-generation">
 <h3>Date generation<a class="headerlink" href="#date-generation" title="Permalink to this headline">¶</a></h3>
 <p>An often needed functionality is a schedule of payments, for example for coupon payments of a bond. The task is to produce a series of dates from a start to an end date following a given frequency(e.g. annual, quarterly…). We might want the dates to follow a certain business day convention. And we might want the schedule to go backwards (e.g. start the frequency going backwards from the last date).</p>
 <p>For example:</p>
@@ -291,8 +293,8 @@ reference date.</p></li>
 <li><p>dates(): returns the whole schedule in a DateList object.</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="performance-considerations">
+</section>
+<section id="performance-considerations">
 <h3>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this headline">¶</a></h3>
 <p>In [3]: %timeit QuantLib.Date.todaysDate() + QuantLib.Period(10, QuantLib.Days)
 100000 loops, best of 3: 9.71 us per loop</p>
@@ -300,13 +302,13 @@ reference date.</p></li>
 100000 loops, best of 3: 3.55 us per loop</p>
 <p>In [5]: %timeit quantlib.date.today() + quantlib.date.Period(10, quantlib.date.Days)
 100000 loops, best of 3: 2.17 us per loop</p>
-</div>
-</div>
-<div class="section" id="reference">
+</section>
+</section>
+<section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
 <p>The mlab module provides high-level functions suitable for easily performing common quantitative finance calculations. These functions use as input standardized data structures that are provided to limit the amount of data transformation needed to string functions together.</p>
 <p>The mlab functions often use pandas data frames as inputs. In order to encourage inter-operability between functions, we have defined a number of standard data structures. The column names of these data frames are defined in the ‘’names’’ module. The standardized data structures should be created with the functions provided in the ‘’data_structures’’ module.</p>
-<div class="section" id="names">
+<section id="names">
 <h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
 <p>The column names of all datasets are defined in names.py. A column name should always be referenced by the corresponding variable name,
 and not by a character string. For example, refer to the ‘Strike’ column of an option_quotes data
@@ -319,8 +321,8 @@ set by:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">strike</span> <span class="o">=</span> <span class="n">option_quotes</span><span class="p">[</span><span class="s1">&#39;Strike&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-structures-templates">
+</section>
+<section id="data-structures-templates">
 <h3>Data Structures Templates<a class="headerlink" href="#data-structures-templates" title="Permalink to this headline">¶</a></h3>
 <p>These data structures are defined to facilitate the inter-operability of the high level functions found in the ‘mlab’ module.</p>
 <p><strong>Option Quotes</strong></p>
@@ -332,29 +334,29 @@ set by:</p>
 </div>
 <p><strong>Risk-free Rate and Dividends</strong></p>
 <p>When calibrating a volatility model, the default algorithm is to compute the implied term structure of risk-free rate and dividend yield from the option data, using the call-put parity relationship. The result of this calculation is the ‘riskfree_dividend’ data structure.</p>
-</div>
-</div>
-<div class="section" id="mlab">
+</section>
+</section>
+<section id="mlab">
 <h2>Mlab<a class="headerlink" href="#mlab" title="Permalink to this headline">¶</a></h2>
 <p>The mlab module provides high-level functions suitable for easily performing common
 quantitative finance calculations. These functions use as input standardized data structures
 that are provided to limit the amount of data
 transformation needed to string functions together.</p>
-<div class="section" id="standardized-data-structures">
+<section id="standardized-data-structures">
 <h3>Standardized data structures<a class="headerlink" href="#standardized-data-structures" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="curve-building">
+</section>
+<section id="curve-building">
 <h3>Curve building<a class="headerlink" href="#curve-building" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="asset-pricing">
+</section>
+<section id="asset-pricing">
 <h3>Asset pricing<a class="headerlink" href="#asset-pricing" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="notebooks">
+</section>
+</section>
+<section id="notebooks">
 <h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
 <p>The notebooks and scripts folder provide sample calculations performed with
 QuantLib.</p>
-<div class="section" id="getting-started">
+<section id="getting-started">
 <h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
 <p>In order to use the notebooks, you need to install:</p>
 <ul class="simple">
@@ -373,15 +375,18 @@ You can access the notebooks with the command:</p>
 </div>
 <p>The browser will start and display a menu with several notebooks.
 As of October 2012, you should see 8 notebooks, as shown below:</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/notebook-browser.png"><img alt="_images/notebook-browser.png" src="_images/notebook-browser.png" style="width: 701.4px; height: 414.4px;" /></a>
-<p class="caption"><span class="caption-text">Notebook menu in the Firefox browser.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-text">Notebook menu in the Firefox browser.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -434,7 +439,7 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -459,12 +464,13 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
         <li class="right" >
           <a href="tutorial.html" title="Tutorial"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">User’s guide</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
     </div>
   </body>
 </html>

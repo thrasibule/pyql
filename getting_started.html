@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Getting started &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -34,7 +35,8 @@
         <li class="right" >
           <a href="index.html" title="Welcome to PyQL’s documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Getting started</a></li> 
       </ul>
     </div>  
 
@@ -43,9 +45,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="getting-started">
+  <section id="getting-started">
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="pyql-an-overview">
+<section id="pyql-an-overview">
 <h2>PyQL - an overview<a class="headerlink" href="#pyql-an-overview" title="Permalink to this headline">¶</a></h2>
 <p>Why building a new set of QuantLib wrappers for Python?</p>
 <p>The SWIG wrappers provide a very good coverage of the library but have
@@ -63,7 +65,7 @@ QuantLib internals that could be very useful on the Python side, we
 chose another road. PyQL is build on top of Cython and creates a thin
 Pythonic layer on top of QuantLib. It allows a tight control on the
 wrapping and provides higher level Python integration.</p>
-<div class="section" id="features">
+<section id="features">
 <h3>Features:<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Integration with standard datatypes (like datetime objects) and numpy arrays;</p></li>
@@ -73,9 +75,9 @@ wrapping and provides higher level Python integration.</p>
 <li><p>Easy extendibility thanks to Cython and shorter build time when adding new functionalities;</p></li>
 <li><p>Sphinx documentation.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="building-and-installing-pyql">
+</section>
+</section>
+<section id="building-and-installing-pyql">
 <h2>Building and installing PyQL<a class="headerlink" href="#building-and-installing-pyql" title="Permalink to this headline">¶</a></h2>
 <p>Prerequisites:</p>
 <ul class="simple">
@@ -88,8 +90,8 @@ and configure the Boost and QuantLib include and library directories, then run</
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="installation-from-source">
+</section>
+<section id="installation-from-source">
 <h2>Installation from source<a class="headerlink" href="#installation-from-source" title="Permalink to this headline">¶</a></h2>
 <p>The following instructions explain how to build the project from source, on a Linux system.
 The instructions have been tested on Ubuntu 12.04 LTS.</p>
@@ -179,8 +181,8 @@ $ make tests
 </li>
 </ol>
 <p>If you have installed QuantLib in a directory different from <code class="code docutils literal notranslate"><span class="pre">/opt</span></code>, edit the <cite>setup.py</cite> file before running make and update the <code class="code docutils literal notranslate"><span class="pre">INCLUDE_DIRS</span></code> and <code class="code docutils literal notranslate"><span class="pre">LIBRARY_DIRS</span></code> to point to your installation of QuantLib.</p>
-</div>
-<div class="section" id="installation-from-source-on-windows">
+</section>
+<section id="installation-from-source-on-windows">
 <h2>Installation from source on Windows<a class="headerlink" href="#installation-from-source-on-windows" title="Permalink to this headline">¶</a></h2>
 <p>The following instructions explain how to build the project from source, on a
 Windows system.
@@ -274,10 +276,11 @@ PS C:<span class="se">\d</span>ev<span class="se">\p</span>yql&gt; python -m uni
 </div>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -314,7 +317,7 @@ PS C:<span class="se">\d</span>ev<span class="se">\p</span>yql&gt; python -m uni
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -339,12 +342,13 @@ PS C:<span class="se">\d</span>ev<span class="se">\p</span>yql&gt; python -m uni
         <li class="right" >
           <a href="index.html" title="Welcome to PyQL’s documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Getting started</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
     </div>
   </body>
 </html>
