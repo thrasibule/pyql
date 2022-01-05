@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Roadmap &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <title>Notebooks &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -15,8 +15,7 @@
     <script src="_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Reference guide" href="reference_guide.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,9 +26,6 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="reference_guide.html" title="Reference guide"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
@@ -39,29 +35,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="roadmap">
-<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>Provide binary version for Mac, Windows and Linux</p></li>
-<li><p>Increase the Python coverage for C++ classes</p></li>
-<li><p>Make the API more pythonic and user friendly to abstract more of the complex
-C++ constructions</p></li>
-<li><p>Provide a better integration for large datasets</p></li>
-<li><p>Investigate potential OpenMP support</p></li>
+  <div class="section" id="notebooks">
+<h1>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h1>
+<p>The notebooks and scripts folder provide sample calculations performed with
+QuantLib.</p>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>In order to use the notebooks, you need to install:</p>
+<ul class="simple">
+<li><p>Ipython 0.13</p></li>
+<li><p>pylab</p></li>
+<li><p>matplotlib</p></li>
 </ul>
-</div></blockquote>
+<p>Make sure that pyQL is in the PYTHONPATH.
+You can access the notebooks with the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython notebook --pylab inline &lt;path to the notebooks folder&gt; --browser<span class="o">=</span>&lt;browser name&gt;
+</pre></div>
 </div>
-<div class="section" id="documentation">
-<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
-<p>List of online resources useful for the project:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>add examples from <a class="reference external" href="http://quantlib.org/slides/dima-ql-intro-1.pdf">http://quantlib.org/slides/dima-ql-intro-1.pdf</a></p></li>
-<li><p>Fixed income - indexes (see <a class="reference external" href="http://quantlib.org/slides/dima-ql-intro-2.pdf">http://quantlib.org/slides/dima-ql-intro-2.pdf</a>
-p78)</p></li>
-</ul>
-</div></blockquote>
+<p>For example, on a linux system where the pyql project is located in ~/dev, the command to view the notebooks with the Firefox browser would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ipython notebook --pylab inline ~/dev/pyql/examples/notebooks  --browser<span class="o">=</span>firefox
+</pre></div>
+</div>
+<p>The browser will start and display a menu with several notebooks.
+As of October 2012, you should see 8 notebooks, as shown below:</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/notebook-browser.png"><img alt="_images/notebook-browser.png" src="_images/notebook-browser.png" style="width: 701.4px; height: 414.4px;" /></a>
+<p class="caption"><span class="caption-text">Notebook menu in the Firefox browser.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 
 
@@ -72,17 +73,16 @@ p78)</p></li>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Roadmap</a></li>
-<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#">Notebooks</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+</ul>
+</li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="reference_guide.html"
-                        title="previous chapter">Reference guide</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/roadmap.rst.txt"
+      <li><a href="_sources/notebooks.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -109,9 +109,6 @@ p78)</p></li>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="reference_guide.html" title="Reference guide"
-             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
       </ul>
     </div>

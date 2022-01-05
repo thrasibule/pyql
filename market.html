@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Market &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="market">
+<h1>Market<a class="headerlink" href="#market" title="Permalink to this headline">¶</a></h1>
+<p>PyQL is primarily a wrapper around QuantLib, and strictly follows the QuantLib class structure. A casual look at the PyQL test
+suite will convince the user that using QuantLib, or its PyQL wrapper, requires a pretty detailed understanding of its class
+structure. The number of market convention parameters that need to be supplied in order to perform the simplest calculation can be overwhelming.</p>
+<p>In an attempt to bring some order and logic to this profusion of market conventions, PyQL introduces the notion of Market.
+A Market is the virtual place where financial assets are traded. It defines all the conventions needed to quote prices, measure yield, compute yield curves from market quotes, etc. Examples of these virtual market places are:</p>
+<ul class="simple">
+<li><p>Fixed income markets
+* The US Treasury market
+* The US Libor market
+* The Euribor market</p></li>
+<li><p>Equity markets
+* US Equity</p></li>
+</ul>
+<p>A market fulfills two functions: it is a repository of market conventions,
+and provides methods for performing
+standard calculations on market quotes. This two functions are now detailed.</p>
+<div class="section" id="repository-of-trading-conventions">
+<h2>Repository of Trading Conventions<a class="headerlink" href="#repository-of-trading-conventions" title="Permalink to this headline">¶</a></h2>
+<p>A market provides the following information:</p>
+<ul class="simple">
+<li><p>The calendar of business days</p></li>
+<li><p>The daycount conventions</p></li>
+</ul>
+</div>
+<div class="section" id="standard-calculations">
+<h2>Standard Calculations<a class="headerlink" href="#standard-calculations" title="Permalink to this headline">¶</a></h2>
+<p>The methods that are defined are function of the type of market under consideration. For Fixed Income markets:</p>
+<ul class="simple">
+<li><p>Bootstrapping of yield curves from market quotes</p></li>
+<li><p>Direct calculation of discount factors</p></li>
+</ul>
+</div>
+<div class="section" id="market-quotes">
+<h2>Market quotes<a class="headerlink" href="#market-quotes" title="Permalink to this headline">¶</a></h2>
+<p>Market quotes are provided as a list of tuples. Each tuple includes 3 items:</p>
+<ul class="simple">
+<li><p>Α label that identifies the type of instrument: DEP/SWAP/FRA/ED</p></li>
+<li><p>The tenor, as a string of the form ‘1M’, ‘10Y’, ‘3W’</p></li>
+<li><p>A numeric quote</p></li>
+</ul>
+</div>
+<div class="section" id="creating-a-new-market">
+<h2>Creating a new market:<a class="headerlink" href="#creating-a-new-market" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">usd_libor_market</span><span class="p">()</span>
+
+<span class="c1"># add quotes</span>
+<span class="n">eval_date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2004</span><span class="p">)</span>
+
+<span class="n">quotes</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;1W&#39;</span><span class="p">,</span> <span class="mf">0.0382</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;1M&#39;</span><span class="p">,</span> <span class="mf">0.0372</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;3M&#39;</span><span class="p">,</span> <span class="mf">0.0363</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;6M&#39;</span><span class="p">,</span> <span class="mf">0.0353</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;9M&#39;</span><span class="p">,</span> <span class="mf">0.0348</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;DEP&#39;</span><span class="p">,</span> <span class="s1">&#39;1Y&#39;</span><span class="p">,</span> <span class="mf">0.0345</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;SWAP&#39;</span><span class="p">,</span> <span class="s1">&#39;2Y&#39;</span><span class="p">,</span> <span class="mf">0.037125</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;SWAP&#39;</span><span class="p">,</span> <span class="s1">&#39;3Y&#39;</span><span class="p">,</span> <span class="mf">0.0398</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;SWAP&#39;</span><span class="p">,</span> <span class="s1">&#39;5Y&#39;</span><span class="p">,</span> <span class="mf">0.0443</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;SWAP&#39;</span><span class="p">,</span> <span class="s1">&#39;10Y&#39;</span><span class="p">,</span> <span class="mf">0.05165</span><span class="p">),</span>
+          <span class="p">(</span><span class="s1">&#39;SWAP&#39;</span><span class="p">,</span> <span class="s1">&#39;15Y&#39;</span><span class="p">,</span> <span class="mf">0.055175</span><span class="p">)]</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">set_quotes</span><span class="p">(</span><span class="n">eval_date</span><span class="p">,</span> <span class="n">quotes</span><span class="p">)</span>
+
+<span class="c1"># bootstrap a yield curve, using the market conventions</span>
+<span class="c1"># specific to the US Libor market</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">bootstrap_term_structure</span><span class="p">()</span>
+
+<span class="n">dt</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2010</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Discount factor for </span><span class="si">%s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="n">dt</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Market</a><ul>
+<li><a class="reference internal" href="#repository-of-trading-conventions">Repository of Trading Conventions</a></li>
+<li><a class="reference internal" href="#standard-calculations">Standard Calculations</a></li>
+<li><a class="reference internal" href="#market-quotes">Market quotes</a></li>
+<li><a class="reference internal" href="#creating-a-new-market">Creating a new market:</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/market.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+  </body>
+</html>
