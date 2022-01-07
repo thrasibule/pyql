@@ -1,0 +1,34 @@
+quantlib.mlab
+=============
+
+.. automodule:: quantlib.mlab
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   quantlib.mlab.fixed_income
+   quantlib.mlab.option_pricing
+   quantlib.mlab.term_structure
+   quantlib.mlab.util
+

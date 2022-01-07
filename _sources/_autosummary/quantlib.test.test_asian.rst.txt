@@ -1,0 +1,36 @@
+quantlib.test.test\_asian
+=========================
+
+.. automodule:: quantlib.test.test_asian
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      flat_rate
+      relative_error
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AsianOptionTestCase
+   
+   
+
+   
+   
+   
+
+
+

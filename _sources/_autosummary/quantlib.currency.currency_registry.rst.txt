@@ -1,0 +1,29 @@
+quantlib.currency.currency\_registry
+====================================
+
+.. automodule:: quantlib.currency.currency_registry
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      initialize_currency_registry
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

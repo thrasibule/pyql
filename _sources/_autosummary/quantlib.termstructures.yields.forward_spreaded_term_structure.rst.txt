@@ -1,0 +1,29 @@
+quantlib.termstructures.yields.forward\_spreaded\_term\_structure
+=================================================================
+
+.. automodule:: quantlib.termstructures.yields.forward_spreaded_term_structure
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ForwardSpreadedTermStructure
+   
+   
+
+   
+   
+   
+
+
+

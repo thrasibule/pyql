@@ -1,0 +1,29 @@
+quantlib.instruments.make\_cms
+==============================
+
+.. automodule:: quantlib.instruments.make_cms
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      MakeCms
+   
+   
+
+   
+   
+   
+
+
+

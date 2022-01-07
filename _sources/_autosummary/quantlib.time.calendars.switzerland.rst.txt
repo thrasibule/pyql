@@ -1,0 +1,29 @@
+quantlib.time.calendars.switzerland
+===================================
+
+.. automodule:: quantlib.time.calendars.switzerland
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Switzerland
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,29 @@
+quantlib.test.test\_settings
+============================
+
+.. automodule:: quantlib.test.test_settings
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SettingsTestCase
+   
+   
+
+   
+   
+   
+
+
+

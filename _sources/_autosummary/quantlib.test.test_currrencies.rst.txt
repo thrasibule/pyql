@@ -1,0 +1,29 @@
+quantlib.test.test\_currrencies
+===============================
+
+.. automodule:: quantlib.test.test_currrencies
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TestCurrency
+   
+   
+
+   
+   
+   
+
+
+

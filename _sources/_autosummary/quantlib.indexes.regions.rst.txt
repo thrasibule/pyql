@@ -1,0 +1,33 @@
+quantlib.indexes.regions
+========================
+
+.. automodule:: quantlib.indexes.regions
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AustraliaRegion
+      EURegion
+      FranceRegion
+      UKRegion
+      USRegion
+   
+   
+
+   
+   
+   
+
+
+

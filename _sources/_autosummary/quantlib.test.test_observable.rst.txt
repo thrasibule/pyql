@@ -1,0 +1,29 @@
+quantlib.test.test\_observable
+==============================
+
+.. automodule:: quantlib.test.test_observable
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SimpleObserverTestCase
+   
+   
+
+   
+   
+   
+
+
+

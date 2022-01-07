@@ -9,14 +9,11 @@ Welcome to PyQL's documentation
 
 Contents:
 
-.. toctree::
-   :maxdepth: 2
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
 
-   getting_started
-   tutorial
-   users_guide
-   reference_guide
-   roadmap
+   quantlib
 
 Indices and tables
 ==================
@@ -24,4 +21,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

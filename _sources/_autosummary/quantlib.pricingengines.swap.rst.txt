@@ -1,0 +1,29 @@
+quantlib.pricingengines.swap
+============================
+
+.. automodule:: quantlib.pricingengines.swap
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DiscountingSwapEngine
+   
+   
+
+   
+   
+   
+
+
+

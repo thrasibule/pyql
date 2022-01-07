@@ -1,0 +1,32 @@
+quantlib.methods
+================
+
+.. automodule:: quantlib.methods
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   quantlib.methods.finitedifferences
+   quantlib.methods.montecarlo
+

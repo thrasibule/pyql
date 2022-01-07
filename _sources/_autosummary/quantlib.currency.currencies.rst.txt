@@ -1,0 +1,43 @@
+quantlib.currency.currencies
+============================
+
+.. automodule:: quantlib.currency.currencies
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AUDCurrency
+      CHFCurrency
+      DKKCurrency
+      EURCurrency
+      GBPCurrency
+      HKDCurrency
+      INRCurrency
+      JPYCurrency
+      NOKCurrency
+      NZDCurrency
+      PLNCurrency
+      SEKCurrency
+      SGDCurrency
+      USDCurrency
+      ZARCurrency
+   
+   
+
+   
+   
+   
+
+
+

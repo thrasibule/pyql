@@ -1,0 +1,30 @@
+quantlib.mlab.util
+==================
+
+.. automodule:: quantlib.mlab.util
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      array_call
+      common_shape
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

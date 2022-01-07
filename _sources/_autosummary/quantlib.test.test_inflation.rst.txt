@@ -1,0 +1,30 @@
+quantlib.test.test\_inflation
+=============================
+
+.. automodule:: quantlib.test.test_inflation
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TestCPIBond
+      TestInflationIndex
+   
+   
+
+   
+   
+   
+
+
+

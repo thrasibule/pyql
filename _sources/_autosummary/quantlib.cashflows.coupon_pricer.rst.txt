@@ -1,0 +1,38 @@
+quantlib.cashflows.coupon\_pricer
+=================================
+
+.. automodule:: quantlib.cashflows.coupon_pricer
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      set_coupon_pricer
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      BlackIborCouponPricer
+      CmsCouponPricer
+      FloatingRateCouponPricer
+      IborCouponPricer
+   
+   
+
+   
+   
+   
+
+
+

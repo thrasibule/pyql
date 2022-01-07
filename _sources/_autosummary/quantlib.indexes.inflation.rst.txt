@@ -1,0 +1,33 @@
+quantlib.indexes.inflation
+==========================
+
+.. automodule:: quantlib.indexes.inflation
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   quantlib.indexes.inflation.australia
+   quantlib.indexes.inflation.euhicp
+   quantlib.indexes.inflation.ukrpi
+

@@ -1,0 +1,33 @@
+quantlib.termstructures.volatility.sabr
+=======================================
+
+.. automodule:: quantlib.termstructures.volatility.sabr
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      sabr_volatility
+      shifted_sabr_volatility
+      unsafe_sabr_volatility
+      unsafe_shifted_sabr_volatility
+      validate_sabr_parameters
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

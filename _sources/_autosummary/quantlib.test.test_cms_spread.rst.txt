@@ -1,0 +1,29 @@
+quantlib.test.test\_cms\_spread
+===============================
+
+.. automodule:: quantlib.test.test_cms_spread
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CmsSpreadTestCase
+   
+   
+
+   
+   
+   
+
+
+

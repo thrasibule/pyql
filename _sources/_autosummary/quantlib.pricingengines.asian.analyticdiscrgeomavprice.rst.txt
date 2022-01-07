@@ -1,0 +1,29 @@
+quantlib.pricingengines.asian.analyticdiscrgeomavprice
+======================================================
+
+.. automodule:: quantlib.pricingengines.asian.analyticdiscrgeomavprice
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AnalyticDiscreteGeometricAveragePriceAsianEngine
+   
+   
+
+   
+   
+   
+
+
+

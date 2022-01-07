@@ -1,0 +1,30 @@
+quantlib.settings
+=================
+
+.. automodule:: quantlib.settings
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DateProxy
+      Settings
+   
+   
+
+   
+   
+   
+
+
+

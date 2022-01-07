@@ -1,0 +1,29 @@
+quantlib.util.object\_registry
+==============================
+
+.. automodule:: quantlib.util.object_registry
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ObjectRegistry
+   
+   
+
+   
+   
+   
+
+
+

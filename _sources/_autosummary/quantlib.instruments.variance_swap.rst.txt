@@ -1,0 +1,29 @@
+quantlib.instruments.variance\_swap
+===================================
+
+.. automodule:: quantlib.instruments.variance_swap
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      VarianceSwap
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,29 @@
+quantlib.indexes.inflation.australia
+====================================
+
+.. automodule:: quantlib.indexes.inflation.australia
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AUCPI
+   
+   
+
+   
+   
+   
+
+
+

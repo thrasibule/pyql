@@ -1,0 +1,31 @@
+quantlib.instruments.payoffs
+============================
+
+.. automodule:: quantlib.instruments.payoffs
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Payoff
+      PlainVanillaPayoff
+      StrikedTypePayoff
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,29 @@
+quantlib.indexes.inflation.ukrpi
+================================
+
+.. automodule:: quantlib.indexes.inflation.ukrpi
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      UKRPI
+   
+   
+
+   
+   
+   
+
+
+

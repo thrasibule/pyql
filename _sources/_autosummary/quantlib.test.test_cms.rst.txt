@@ -1,0 +1,29 @@
+quantlib.test.test\_cms
+=======================
+
+.. automodule:: quantlib.test.test_cms
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CmsFairRateTestCase
+   
+   
+
+   
+   
+   
+
+
+

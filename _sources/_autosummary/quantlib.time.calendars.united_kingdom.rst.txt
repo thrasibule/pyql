@@ -1,0 +1,29 @@
+quantlib.time.calendars.united\_kingdom
+=======================================
+
+.. automodule:: quantlib.time.calendars.united_kingdom
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      UnitedKingdom
+   
+   
+
+   
+   
+   
+
+
+

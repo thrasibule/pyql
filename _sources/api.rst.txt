@@ -189,33 +189,33 @@ quantlib.model.equity
    :undoc-members:
 
 :mod:`~quantlib.termstructures.yield_term_structure`
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yield_term_structure
    :members:
    :undoc-members:
 
 ::mod:`quantlib.termstructures.yields`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 mod:`~quantlib.termstructures.yields.rate_helpers`
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.rate_helpers
     :members:
     :noindex:
 
 :mod:`~quantlib.termstructures.yields.bond_helpers`
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.bond_helpers
     :members:
     :noindex:
 
 :mod:`~quantlib.termstructures.yields.flat_forward`
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.flat_forward
     :members:
 
 :mod:`~quantlib.termstructures.yields.zero_curve`
-""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 .. automodule:: quantlib.termstructures.yields.zero_curve
     :members:
 

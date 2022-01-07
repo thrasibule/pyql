@@ -1,0 +1,30 @@
+quantlib.time.calendar\_registry
+================================
+
+.. automodule:: quantlib.time.calendar_registry
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      initialize_code_registry
+      initialize_name_registry
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

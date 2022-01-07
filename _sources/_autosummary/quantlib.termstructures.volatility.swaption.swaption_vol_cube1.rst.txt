@@ -1,0 +1,30 @@
+quantlib.termstructures.volatility.swaption.swaption\_vol\_cube1
+================================================================
+
+.. automodule:: quantlib.termstructures.volatility.swaption.swaption_vol_cube1
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SwaptionVolCube1
+      SwaptionVolatilityCube1
+   
+   
+
+   
+   
+   
+
+
+

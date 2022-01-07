@@ -1,0 +1,36 @@
+quantlib.cashflows.inflation\_coupon\_pricer
+============================================
+
+.. automodule:: quantlib.cashflows.inflation_coupon_pricer
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      set_coupon_pricer
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      InflationCouponPricer
+      YoYInflationCouponPricer
+   
+   
+
+   
+   
+   
+
+
+

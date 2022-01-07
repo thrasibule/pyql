@@ -1,0 +1,29 @@
+quantlib.test.test\_calendar\_registry
+======================================
+
+.. automodule:: quantlib.test.test_calendar_registry
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CalendarRegistryTestCase
+   
+   
+
+   
+   
+   
+
+
+

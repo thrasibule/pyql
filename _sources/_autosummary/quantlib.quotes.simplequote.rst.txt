@@ -1,0 +1,29 @@
+quantlib.quotes.simplequote
+===========================
+
+.. automodule:: quantlib.quotes.simplequote
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SimpleQuote
+   
+   
+
+   
+   
+   
+
+
+

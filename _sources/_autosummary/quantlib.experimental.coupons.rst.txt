@@ -1,0 +1,33 @@
+quantlib.experimental.coupons
+=============================
+
+.. automodule:: quantlib.experimental.coupons
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   quantlib.experimental.coupons.cms_spread_coupon
+   quantlib.experimental.coupons.lognormal_cmsspread_pricer
+   quantlib.experimental.coupons.swap_spread_index
+

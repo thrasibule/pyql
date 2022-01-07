@@ -1,0 +1,29 @@
+quantlib.termstructures.volatility.smilesection
+===============================================
+
+.. automodule:: quantlib.termstructures.volatility.smilesection
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SmileSection
+   
+   
+
+   
+   
+   
+
+
+

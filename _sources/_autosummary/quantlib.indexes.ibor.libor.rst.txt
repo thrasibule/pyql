@@ -1,0 +1,29 @@
+quantlib.indexes.ibor.libor
+===========================
+
+.. automodule:: quantlib.indexes.ibor.libor
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Libor
+   
+   
+
+   
+   
+   
+
+
+

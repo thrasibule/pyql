@@ -1,0 +1,30 @@
+quantlib.indexes.region
+=======================
+
+.. automodule:: quantlib.indexes.region
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CustomRegion
+      Region
+   
+   
+
+   
+   
+   
+
+
+

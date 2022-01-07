@@ -1,0 +1,29 @@
+quantlib.indexes.region\_registry
+=================================
+
+.. automodule:: quantlib.indexes.region_registry
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      initialize_region_registry
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

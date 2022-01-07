@@ -1,0 +1,29 @@
+quantlib.indexes.index\_manager
+===============================
+
+.. automodule:: quantlib.indexes.index_manager
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      IndexManager
+   
+   
+
+   
+   
+   
+
+
+
