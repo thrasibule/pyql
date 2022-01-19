@@ -60,10 +60,10 @@ as follows::
 
   cdef extern from 'ql/quotes/simplequote.hpp' namespace 'QuantLib':
 
-	cdef cppclass SimpleQuote(Quote):
-       SimpleQuote(Real value)
-       Real setValue(Real value)
-       void reset()
+     cdef cppclass SimpleQuote(Quote):
+        SimpleQuote(Real value)
+        Real setValue(Real value)
+        void reset()
 
 In this file, we declare the class ``SimpleQuote`` qwhich derives from ``Quote``.
 The syntax is almost identical to the corresponding C++ header file. The

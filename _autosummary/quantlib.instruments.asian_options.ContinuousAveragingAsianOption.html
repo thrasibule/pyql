@@ -40,36 +40,15 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ContinuousAveragingAsianOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AverageType</span> <span class="pre">average_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrikedTypePayoff</span> <span class="pre">payoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Exercise</span> <span class="pre">exercise</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.instruments.option.OneAssetOption.html#quantlib.instruments.option.OneAssetOption" title="quantlib.instruments.option.OneAssetOption"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.option.OneAssetOption</span></code></a></p>
 <p>Continuous-averaging Asian option</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.average_type">
-<span class="sig-name descname"><span class="pre">average_type</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.average_type" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Enum (Arithmetic or Geometric)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>average_type</strong> (<em>Enum</em><em> (</em><em>Arithmetic</em><em> or </em><em>Geometric</em><em>)</em>) – </p></li>
+<li><p><strong>payoff</strong> (<a class="reference internal" href="quantlib.instruments.payoffs.StrikedTypePayoff.html#quantlib.instruments.payoffs.StrikedTypePayoff" title="quantlib.instruments.payoffs.StrikedTypePayoff"><em>StrikedTypePayoff</em></a>) – </p></li>
+<li><p><strong>exercise</strong> (<a class="reference internal" href="quantlib.instruments.option.Exercise.html#quantlib.instruments.option.Exercise" title="quantlib.instruments.option.Exercise"><em>Exercise</em></a>) – </p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.payoff">
-<span class="sig-name descname"><span class="pre">payoff</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.payoff" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="quantlib.instruments.payoffs.StrikedTypePayoff.html#quantlib.instruments.payoffs.StrikedTypePayoff" title="quantlib.instruments.payoffs.StrikedTypePayoff">StrikedTypePayoff</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.exercise">
-<span class="sig-name descname"><span class="pre">exercise</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.exercise" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="quantlib.instruments.option.Exercise.html#quantlib.instruments.option.Exercise" title="quantlib.instruments.option.Exercise">Exercise</a></p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.__init__" title="Permalink to this definition">¶</a></dt>
@@ -109,7 +88,7 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elasticity</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.exercise" title="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.exercise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exercise</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">exercise</span></code></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma</span></code></p></td>
@@ -127,7 +106,7 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></p></td>
 <td><p>Shortcut to the net_present_value property.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.asian_options.ContinuousAveragingAsianOption.payoff" title="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.payoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">payoff</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">payoff</span></code></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rho</span></code></p></td>
