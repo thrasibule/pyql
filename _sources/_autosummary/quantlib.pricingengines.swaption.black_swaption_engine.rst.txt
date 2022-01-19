@@ -16,6 +16,8 @@ quantlib.pricingengines.swaption.black\_swaption\_engine
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BachelierSwaptionEngine
       BlackSwaptionEngine

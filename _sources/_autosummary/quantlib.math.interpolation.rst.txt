@@ -16,6 +16,8 @@ quantlib.math.interpolation
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BackwardFlat
       Cubic

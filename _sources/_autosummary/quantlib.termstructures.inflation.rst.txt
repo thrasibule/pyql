@@ -25,6 +25,7 @@ quantlib.termstructures.inflation
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.inflation.api

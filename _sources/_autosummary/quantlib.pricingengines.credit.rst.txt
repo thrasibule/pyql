@@ -25,6 +25,7 @@ quantlib.pricingengines.credit
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.pricingengines.credit.api

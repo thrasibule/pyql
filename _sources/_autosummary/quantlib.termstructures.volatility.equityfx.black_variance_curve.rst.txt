@@ -16,6 +16,8 @@ quantlib.termstructures.volatility.equityfx.black\_variance\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BlackVarianceCurve
    

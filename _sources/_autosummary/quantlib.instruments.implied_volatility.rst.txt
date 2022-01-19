@@ -16,6 +16,8 @@ quantlib.instruments.implied\_volatility
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       ImpliedVolatilityHelper
    

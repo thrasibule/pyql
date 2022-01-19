@@ -25,6 +25,7 @@ quantlib.models.shortrate
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.models.shortrate.calibrationhelpers

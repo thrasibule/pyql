@@ -16,6 +16,8 @@ quantlib.termstructures.credit.piecewise\_default\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       PiecewiseDefaultCurve
    

@@ -12,6 +12,7 @@ quantlib.instruments.credit\_default\_swap
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       cds_maturity
    
@@ -22,6 +23,8 @@ quantlib.instruments.credit\_default\_swap
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       CreditDefaultSwap
    

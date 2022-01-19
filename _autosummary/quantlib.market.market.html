@@ -17,8 +17,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="quantlib.math" href="quantlib.math.html" />
-    <link rel="prev" title="quantlib.market.conventions.swap" href="quantlib.market.conventions.swap.html" /> 
+    <link rel="next" title="quantlib.market.market.libor_market" href="quantlib.market.market.libor_market.html" />
+    <link rel="prev" title="quantlib.market.conventions.swap.row" href="quantlib.market.conventions.swap.row.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,14 +30,15 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="quantlib.math.html" title="quantlib.math"
+          <a href="quantlib.market.market.libor_market.html" title="quantlib.market.market.libor_market"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="quantlib.market.conventions.swap.html" title="quantlib.market.conventions.swap"
+          <a href="quantlib.market.conventions.swap.row.html" title="quantlib.market.conventions.swap.row"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="quantlib.market.html" accesskey="U">quantlib.market</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.market.html" accesskey="U">quantlib.market</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.market.market</a></li> 
       </ul>
     </div>  
@@ -56,16 +57,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">libor_market</span></code>([market])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.market.market.libor_market.html#quantlib.market.market.libor_market" title="quantlib.market.market.libor_market"><code class="xref py py-obj docutils literal notranslate"><span class="pre">libor_market</span></code></a>([market])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_eurobond_helper</span></code>(market, clean_price, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.market.market.make_eurobond_helper.html#quantlib.market.market.make_eurobond_helper" title="quantlib.market.market.make_eurobond_helper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_eurobond_helper</span></code></a>(market, clean_price, ...)</p></td>
 <td><p>Wrapper for bond helpers.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_rate_helper</span></code>(market, quote[, reference_date])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.market.market.make_rate_helper.html#quantlib.market.market.make_rate_helper" title="quantlib.market.market.make_rate_helper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_rate_helper</span></code></a>(market, quote[, reference_date])</p></td>
 <td><p>Wrapper for deposit and swaps rate helpers makers TODO: class method of RateHelper?</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_imm_date</span></code>(reference_date, tenor)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.market.market.next_imm_date.html#quantlib.market.market.next_imm_date" title="quantlib.market.market.next_imm_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">next_imm_date</span></code></a>(reference_date, tenor)</p></td>
 <td><p>Third Wednesday of contract month</p></td>
 </tr>
 </tbody>
@@ -77,13 +78,13 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">FixedIncomeMarket</span></code>(name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.market.market.FixedIncomeMarket.html#quantlib.market.market.FixedIncomeMarket" title="quantlib.market.market.FixedIncomeMarket"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FixedIncomeMarket</span></code></a>(name)</p></td>
 <td><p>A Fixed Income Market, defined by: - a list of benchmarks instruments (deposits, FRA, swaps,   EuroDollar futures, bonds) - a set of market conventions, needed to interpreted the quoted   prices of benchmark instruments, and for computing   derived quantities (yield curves)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">IborMarket</span></code>(name, market, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.market.market.IborMarket.html#quantlib.market.market.IborMarket" title="quantlib.market.market.IborMarket"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IborMarket</span></code></a>(name, market, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Market</span></code>(name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.market.market.Market.html#quantlib.market.market.Market" title="quantlib.market.market.Market"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Market</span></code></a>(name)</p></td>
 <td><p>Abstract Market class.</p></td>
 </tr>
 </tbody>
@@ -97,12 +98,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="quantlib.market.conventions.swap.html"
-                        title="previous chapter">quantlib.market.conventions.swap</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="quantlib.math.html"
-                        title="next chapter">quantlib.math</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.market.conventions.swap.row.html"
+                          title="previous chapter">quantlib.market.conventions.swap.row</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.market.market.libor_market.html"
+                          title="next chapter">quantlib.market.market.libor_market</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -134,20 +139,21 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="quantlib.math.html" title="quantlib.math"
+          <a href="quantlib.market.market.libor_market.html" title="quantlib.market.market.libor_market"
              >next</a> |</li>
         <li class="right" >
-          <a href="quantlib.market.conventions.swap.html" title="quantlib.market.conventions.swap"
+          <a href="quantlib.market.conventions.swap.row.html" title="quantlib.market.conventions.swap.row"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="quantlib.market.html" >quantlib.market</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.market.html" >quantlib.market</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.market.market</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

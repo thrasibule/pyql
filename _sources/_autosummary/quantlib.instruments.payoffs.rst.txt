@@ -16,6 +16,8 @@ quantlib.instruments.payoffs
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       Payoff
       PlainVanillaPayoff

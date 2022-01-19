@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.termstructures.yields.api" href="quantlib.termstructures.yields.api.html" />
-    <link rel="prev" title="quantlib.termstructures.yield_term_structure" href="quantlib.termstructures.yield_term_structure.html" /> 
+    <link rel="prev" title="quantlib.termstructures.yield_term_structure.YieldTermStructure" href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -33,11 +33,12 @@
           <a href="quantlib.termstructures.yields.api.html" title="quantlib.termstructures.yields.api"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="quantlib.termstructures.yield_term_structure.html" title="quantlib.termstructures.yield_term_structure"
+          <a href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html" title="quantlib.termstructures.yield_term_structure.YieldTermStructure"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="quantlib.termstructures.html" accesskey="U">quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" accesskey="U">quantlib.termstructures</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.yields</a></li> 
       </ul>
     </div>  
@@ -68,7 +69,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.termstructures.yields.discount_curve.html#module-quantlib.termstructures.yields.discount_curve" title="quantlib.termstructures.yields.discount_curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.discount_curve</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.termstructures.yields.flat_forward" title="quantlib.termstructures.yields.flat_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.flat_forward</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.termstructures.yields.flat_forward.html#module-quantlib.termstructures.yields.flat_forward" title="quantlib.termstructures.yields.flat_forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.flat_forward</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.termstructures.yields.forward_curve.html#module-quantlib.termstructures.yields.forward_curve" title="quantlib.termstructures.yields.forward_curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.forward_curve</span></code></a></p></td>
@@ -87,9 +88,9 @@
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.termstructures.yields.rate_helpers.html#module-quantlib.termstructures.yields.rate_helpers" title="quantlib.termstructures.yields.rate_helpers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.rate_helpers</span></code></a></p></td>
-<td><p></p></td>
+<td><p>deposit, FRA, futures and various swap rate helpers</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.termstructures.yields.zero_curve" title="quantlib.termstructures.yields.zero_curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.zero_curve</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.termstructures.yields.zero_curve.html#module-quantlib.termstructures.yields.zero_curve" title="quantlib.termstructures.yields.zero_curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.zero_curve</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -103,12 +104,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="quantlib.termstructures.yield_term_structure.html"
-                        title="previous chapter">quantlib.termstructures.yield_term_structure</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="quantlib.termstructures.yields.api.html"
-                        title="next chapter">quantlib.termstructures.yields.api</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html"
+                          title="previous chapter">quantlib.termstructures.yield_term_structure.YieldTermStructure</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.yields.api.html"
+                          title="next chapter">quantlib.termstructures.yields.api</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -143,17 +148,18 @@
           <a href="quantlib.termstructures.yields.api.html" title="quantlib.termstructures.yields.api"
              >next</a> |</li>
         <li class="right" >
-          <a href="quantlib.termstructures.yield_term_structure.html" title="quantlib.termstructures.yield_term_structure"
+          <a href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html" title="quantlib.termstructures.yield_term_structure.YieldTermStructure"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.yields</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

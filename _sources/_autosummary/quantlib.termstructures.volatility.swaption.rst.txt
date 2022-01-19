@@ -25,6 +25,7 @@ quantlib.termstructures.volatility.swaption
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.volatility.swaption.spreaded_swaption_vol

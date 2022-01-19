@@ -16,6 +16,8 @@ quantlib.termstructures.volatility.optionlet.optionlet\_volatility\_structure
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       ConstantOptionletVolatility
       OptionletVolatilityStructure

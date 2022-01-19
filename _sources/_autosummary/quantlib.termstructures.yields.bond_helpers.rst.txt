@@ -16,6 +16,8 @@ quantlib.termstructures.yields.bond\_helpers
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BondHelper
       FixedRateBondHelper

@@ -16,6 +16,8 @@ quantlib.cashflows.cms\_coupon
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       CmsCoupon
    

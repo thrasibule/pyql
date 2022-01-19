@@ -25,6 +25,7 @@ quantlib.quotes
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.quotes.futuresconvadjustmentquote

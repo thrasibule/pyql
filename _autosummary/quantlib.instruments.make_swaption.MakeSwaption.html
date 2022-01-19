@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.instruments.make_swaption.MakeSwaption &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.instruments.make_vanilla_swap" href="quantlib.instruments.make_vanilla_swap.html" />
+    <link rel="prev" title="quantlib.instruments.make_swaption" href="quantlib.instruments.make_swaption.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_vanilla_swap.html" title="quantlib.instruments.make_vanilla_swap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_swaption.html" title="quantlib.instruments.make_swaption"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.make_swaption.html" accesskey="U">quantlib.instruments.make_swaption</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.make_swaption.MakeSwaption</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-instruments-make-swaption-makeswaption">
+<h1>quantlib.instruments.make_swaption.MakeSwaption<a class="headerlink" href="#quantlib-instruments-make-swaption-makeswaption" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MakeSwaption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SwapIndex</span> <span class="pre">swap_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option_tenor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">strike=QL_NULL_REAL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.__init__" title="quantlib.instruments.make_swaption.MakeSwaption.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_exercise_date" title="quantlib.instruments.make_swaption.MakeSwaption.with_exercise_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_exercise_date</span></code></a>(self, Date exercise_date)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_nominal" title="quantlib.instruments.make_swaption.MakeSwaption.with_nominal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_nominal</span></code></a>(self, Real nominal)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_option_convention" title="quantlib.instruments.make_swaption.MakeSwaption.with_option_convention"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_option_convention</span></code></a>(self, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_pricing_engine" title="quantlib.instruments.make_swaption.MakeSwaption.with_pricing_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_pricing_engine</span></code></a>(self, PricingEngine engine)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_settlement_method" title="quantlib.instruments.make_swaption.MakeSwaption.with_settlement_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_settlement_method</span></code></a>(self, Method method)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_settlement_type" title="quantlib.instruments.make_swaption.MakeSwaption.with_settlement_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_settlement_type</span></code></a>(self, Type delivery)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_swaption.MakeSwaption.with_underlying_type" title="quantlib.instruments.make_swaption.MakeSwaption.with_underlying_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_underlying_type</span></code></a>(self, SwapType swap_type)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_exercise_date">
+<span class="sig-name descname"><span class="pre">with_exercise_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">exercise_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_exercise_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_nominal">
+<span class="sig-name descname"><span class="pre">with_nominal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">nominal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_nominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_option_convention">
+<span class="sig-name descname"><span class="pre">with_option_convention</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">bdc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_option_convention" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_pricing_engine">
+<span class="sig-name descname"><span class="pre">with_pricing_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PricingEngine</span> <span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_pricing_engine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_settlement_method">
+<span class="sig-name descname"><span class="pre">with_settlement_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Method</span> <span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_settlement_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_settlement_type">
+<span class="sig-name descname"><span class="pre">with_settlement_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Type</span> <span class="pre">delivery</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_settlement_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_swaption.MakeSwaption.with_underlying_type">
+<span class="sig-name descname"><span class="pre">with_underlying_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SwapType</span> <span class="pre">swap_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_swaption.MakeSwaption.with_underlying_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.instruments.make_swaption.html"
+                          title="previous chapter">quantlib.instruments.make_swaption</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.instruments.make_vanilla_swap.html"
+                          title="next chapter">quantlib.instruments.make_vanilla_swap</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.instruments.make_swaption.MakeSwaption.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_vanilla_swap.html" title="quantlib.instruments.make_vanilla_swap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_swaption.html" title="quantlib.instruments.make_swaption"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.make_swaption.html" >quantlib.instruments.make_swaption</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.make_swaption.MakeSwaption</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

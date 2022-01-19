@@ -16,6 +16,8 @@ quantlib.pricingengines.credit.midpoint\_cds\_engine
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       MidPointCdsEngine
    

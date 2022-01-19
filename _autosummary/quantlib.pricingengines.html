@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.pricingengines.api" href="quantlib.pricingengines.api.html" />
-    <link rel="prev" title="quantlib.observable" href="quantlib.observable.html" /> 
+    <link rel="prev" title="quantlib.observable.Observer" href="quantlib.observable.Observer.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -33,10 +33,11 @@
           <a href="quantlib.pricingengines.api.html" title="quantlib.pricingengines.api"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="quantlib.observable.html" title="quantlib.observable"
+          <a href="quantlib.observable.Observer.html" title="quantlib.observable.Observer"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" accesskey="U">quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" accesskey="U">quantlib</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.pricingengines</a></li> 
       </ul>
     </div>  
@@ -61,7 +62,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.pricingengines.asian.html#module-quantlib.pricingengines.asian" title="quantlib.pricingengines.asian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.asian</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.pricingengines.blackformula" title="quantlib.pricingengines.blackformula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.blackformula</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.pricingengines.blackformula.html#module-quantlib.pricingengines.blackformula" title="quantlib.pricingengines.blackformula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.blackformula</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.pricingengines.bond.html#module-quantlib.pricingengines.bond" title="quantlib.pricingengines.bond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.bond</span></code></a></p></td>
@@ -82,7 +83,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.pricingengines.swap.html#module-quantlib.pricingengines.swap" title="quantlib.pricingengines.swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.swap</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.pricingengines.swaption" title="quantlib.pricingengines.swaption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.swaption</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.pricingengines.swaption.html#module-quantlib.pricingengines.swaption" title="quantlib.pricingengines.swaption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.swaption</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.pricingengines.vanilla.html#module-quantlib.pricingengines.vanilla" title="quantlib.pricingengines.vanilla"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.pricingengines.vanilla</span></code></a></p></td>
@@ -99,12 +100,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="quantlib.observable.html"
-                        title="previous chapter">quantlib.observable</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="quantlib.pricingengines.api.html"
-                        title="next chapter">quantlib.pricingengines.api</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.observable.Observer.html"
+                          title="previous chapter">quantlib.observable.Observer</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.pricingengines.api.html"
+                          title="next chapter">quantlib.pricingengines.api</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -139,16 +144,17 @@
           <a href="quantlib.pricingengines.api.html" title="quantlib.pricingengines.api"
              >next</a> |</li>
         <li class="right" >
-          <a href="quantlib.observable.html" title="quantlib.observable"
+          <a href="quantlib.observable.Observer.html" title="quantlib.observable.Observer"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.pricingengines</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

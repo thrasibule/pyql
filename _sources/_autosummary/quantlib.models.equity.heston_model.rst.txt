@@ -16,6 +16,8 @@ quantlib.models.equity.heston\_model
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       HestonModel
       HestonModelHelper

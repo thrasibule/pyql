@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.instruments.api" href="quantlib.instruments.api.html" />
-    <link rel="prev" title="quantlib.indexes.swap_index" href="quantlib.indexes.swap_index.html" /> 
+    <link rel="prev" title="quantlib.indexes.swap_index.SwapIndex" href="quantlib.indexes.swap_index.SwapIndex.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -33,10 +33,11 @@
           <a href="quantlib.instruments.api.html" title="quantlib.instruments.api"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="quantlib.indexes.swap_index.html" title="quantlib.indexes.swap_index"
+          <a href="quantlib.indexes.swap_index.SwapIndex.html" title="quantlib.indexes.swap_index.SwapIndex"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" accesskey="U">quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" accesskey="U">quantlib</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.instruments</a></li> 
       </ul>
     </div>  
@@ -61,10 +62,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.asian_options.html#module-quantlib.instruments.asian_options" title="quantlib.instruments.asian_options"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.asian_options</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.instruments.bonds" title="quantlib.instruments.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.bonds</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.bonds.html#module-quantlib.instruments.bonds" title="quantlib.instruments.bonds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.bonds</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.instruments.credit_default_swap" title="quantlib.instruments.credit_default_swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.credit_default_swap</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.credit_default_swap.html#module-quantlib.instruments.credit_default_swap" title="quantlib.instruments.credit_default_swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.credit_default_swap</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.implied_volatility.html#module-quantlib.instruments.implied_volatility" title="quantlib.instruments.implied_volatility"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.implied_volatility</span></code></a></p></td>
@@ -85,7 +86,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.make_vanilla_swap.html#module-quantlib.instruments.make_vanilla_swap" title="quantlib.instruments.make_vanilla_swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.make_vanilla_swap</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../reference_guide.html#module-quantlib.instruments.option" title="quantlib.instruments.option"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.option</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.option.html#module-quantlib.instruments.option" title="quantlib.instruments.option"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.option</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.payoffs.html#module-quantlib.instruments.payoffs" title="quantlib.instruments.payoffs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantlib.instruments.payoffs</span></code></a></p></td>
@@ -111,12 +112,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="quantlib.indexes.swap_index.html"
-                        title="previous chapter">quantlib.indexes.swap_index</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="quantlib.instruments.api.html"
-                        title="next chapter">quantlib.instruments.api</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.indexes.swap_index.SwapIndex.html"
+                          title="previous chapter">quantlib.indexes.swap_index.SwapIndex</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.instruments.api.html"
+                          title="next chapter">quantlib.instruments.api</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -151,16 +156,17 @@
           <a href="quantlib.instruments.api.html" title="quantlib.instruments.api"
              >next</a> |</li>
         <li class="right" >
-          <a href="quantlib.indexes.swap_index.html" title="quantlib.indexes.swap_index"
+          <a href="quantlib.indexes.swap_index.SwapIndex.html" title="quantlib.indexes.swap_index.SwapIndex"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">quantlib.instruments</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

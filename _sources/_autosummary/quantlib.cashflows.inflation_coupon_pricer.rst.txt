@@ -12,6 +12,7 @@ quantlib.cashflows.inflation\_coupon\_pricer
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       set_coupon_pricer
    
@@ -22,6 +23,8 @@ quantlib.cashflows.inflation\_coupon\_pricer
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       InflationCouponPricer
       YoYInflationCouponPricer

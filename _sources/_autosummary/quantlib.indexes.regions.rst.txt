@@ -16,6 +16,8 @@ quantlib.indexes.regions
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       AustraliaRegion
       EURegion

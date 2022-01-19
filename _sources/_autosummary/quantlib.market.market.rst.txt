@@ -12,6 +12,7 @@ quantlib.market.market
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       libor_market
       make_eurobond_helper
@@ -25,6 +26,8 @@ quantlib.market.market
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       FixedIncomeMarket
       IborMarket

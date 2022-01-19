@@ -25,6 +25,7 @@ quantlib.termstructures.volatility
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.volatility.api

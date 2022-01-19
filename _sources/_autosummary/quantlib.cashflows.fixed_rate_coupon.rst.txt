@@ -16,6 +16,8 @@ quantlib.cashflows.fixed\_rate\_coupon
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       FixedRateCoupon
       FixedRateLeg

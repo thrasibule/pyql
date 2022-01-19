@@ -12,6 +12,7 @@ quantlib.mlab.util
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       array_call
       common_shape

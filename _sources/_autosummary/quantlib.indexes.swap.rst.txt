@@ -25,6 +25,7 @@ quantlib.indexes.swap
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.indexes.swap.euribor_swap

@@ -25,6 +25,7 @@ quantlib.reference
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.reference.data_structures

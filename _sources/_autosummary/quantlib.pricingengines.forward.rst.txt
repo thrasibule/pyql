@@ -25,6 +25,7 @@ quantlib.pricingengines.forward
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.pricingengines.forward.mc_variance_swap_engine

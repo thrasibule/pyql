@@ -16,6 +16,8 @@ quantlib.indexes.index\_manager
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       IndexManager
    

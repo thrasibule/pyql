@@ -16,6 +16,8 @@ quantlib.termstructures.credit.interpolated\_hazardrate\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       InterpolatedHazardRateCurve
    

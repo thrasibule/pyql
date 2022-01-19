@@ -16,6 +16,8 @@ quantlib.termstructures.volatility.equityfx.black\_constant\_vol
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BlackConstantVol
    

@@ -12,6 +12,7 @@ quantlib.market.conventions.swap
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       help
       load
@@ -24,6 +25,8 @@ quantlib.market.conventions.swap
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       row
    

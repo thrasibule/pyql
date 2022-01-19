@@ -25,6 +25,7 @@ quantlib.termstructures.volatility.equityfx
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.volatility.equityfx.black_constant_vol

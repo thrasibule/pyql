@@ -25,6 +25,7 @@ quantlib.mlab
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.mlab.fixed_income

@@ -16,6 +16,8 @@ quantlib.cashflows.ibor\_coupon
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       IborCoupon
       IborLeg

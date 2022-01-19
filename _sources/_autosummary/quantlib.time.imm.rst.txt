@@ -12,6 +12,7 @@ quantlib.time.imm
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       code
       date

@@ -12,6 +12,7 @@ quantlib.mlab.option\_pricing
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       blsimpv
       blsprice

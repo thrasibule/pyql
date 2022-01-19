@@ -25,6 +25,7 @@ quantlib.market
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.market.conventions

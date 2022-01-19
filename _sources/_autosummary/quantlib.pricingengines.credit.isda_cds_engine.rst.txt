@@ -16,6 +16,8 @@ quantlib.pricingengines.credit.isda\_cds\_engine
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       IsdaCdsEngine
    

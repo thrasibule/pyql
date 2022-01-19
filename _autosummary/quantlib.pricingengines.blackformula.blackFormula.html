@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.pricingengines.blackformula.blackFormula &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev" href="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev.html" />
+    <link rel="prev" title="quantlib.pricingengines.blackformula" href="quantlib.pricingengines.blackformula.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev.html" title="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.pricingengines.blackformula.html" title="quantlib.pricingengines.blackformula"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.pricingengines.html" >quantlib.pricingengines</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.pricingengines.blackformula.html" accesskey="U">quantlib.pricingengines.blackformula</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.pricingengines.blackformula.blackFormula</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-pricingengines-blackformula-blackformula">
+<h1>quantlib.pricingengines.blackformula.blackFormula<a class="headerlink" href="#quantlib-pricingengines-blackformula-blackformula" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="quantlib.pricingengines.blackformula.blackFormula">
+<span class="sig-name descname"><span class="pre">blackFormula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Type</span> <span class="pre">option_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">stdDev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">discount=1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">displacement=0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.blackformula.blackFormula" title="Permalink to this definition">¶</a></dt>
+<dd><p>Black 1976 formula</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>option_type</strong> (<em>str or option.Call/Put</em>)</p></li>
+<li><p><strong>strike</strong> (<em>float</em>)</p></li>
+<li><p><strong>forward</strong> (<em>float</em>)</p></li>
+<li><p><strong>std_dev</strong> (<em>float</em>)</p></li>
+<li><p><strong>discount</strong> (<em>float</em>)</p></li>
+<li><p><strong>displacement</strong> (<em>float</em>)</p></li>
+<li><p><strong>.. warning::</strong> – Instead of volatility it uses standard deviation,
+i.e. volatility*sqrt(timeToMaturity)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.pricingengines.blackformula.html"
+                          title="previous chapter">quantlib.pricingengines.blackformula</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev.html"
+                          title="next chapter">quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.pricingengines.blackformula.blackFormula.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev.html" title="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.pricingengines.blackformula.html" title="quantlib.pricingengines.blackformula"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.pricingengines.html" >quantlib.pricingengines</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.pricingengines.blackformula.html" >quantlib.pricingengines.blackformula</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.pricingengines.blackformula.blackFormula</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

@@ -16,6 +16,8 @@ quantlib.termstructures.volatility.sabr\_interpolated\_smilesection
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       SabrInterpolatedSmileSection
    

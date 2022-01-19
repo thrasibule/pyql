@@ -12,6 +12,7 @@ quantlib.util.rates
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       flat_rate
       make_rate_helper

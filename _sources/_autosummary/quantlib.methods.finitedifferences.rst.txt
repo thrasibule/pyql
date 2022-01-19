@@ -25,6 +25,7 @@ quantlib.methods.finitedifferences
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.methods.finitedifferences.solvers

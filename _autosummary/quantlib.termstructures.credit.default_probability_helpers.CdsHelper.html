@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.termstructures.credit.default_probability_helpers.CdsHelper &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper" href="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper.html" />
+    <link rel="prev" title="quantlib.termstructures.credit.default_probability_helpers" href="quantlib.termstructures.credit.default_probability_helpers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper.html" title="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.credit.default_probability_helpers.html" title="quantlib.termstructures.credit.default_probability_helpers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.credit.html" >quantlib.termstructures.credit</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.credit.default_probability_helpers.html" accesskey="U">quantlib.termstructures.credit.default_probability_helpers</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.credit.default_probability_helpers.CdsHelper</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-termstructures-credit-default-probability-helpers-cdshelper">
+<h1>quantlib.termstructures.credit.default_probability_helpers.CdsHelper<a class="headerlink" href="#quantlib-termstructures-credit-default-probability-helpers-cdshelper" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.termstructures.credit.default_probability_helpers.CdsHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CdsHelper</span></span><a class="headerlink" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper.html#quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper" title="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper</span></code></a></p>
+<p>Base default-probability bootstrap helper</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tenor</strong> (<a class="reference internal" href="quantlib.time.date.Period.html#quantlib.time.date.Period" title="quantlib.time.date.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">Period</span></code></a>) – CDS tenor.</p></li>
+<li><p><strong>frequency</strong> (<em>Frequency</em>) – Coupon frequency.</p></li>
+<li><p><strong>settlementDays</strong> (<em>Integer</em>) – The number of days from today’s date
+to the start of the protection period.</p></li>
+<li><p><strong>paymentConvention</strong> (<em>BusinessDayConvention</em>) – The payment convention applied to
+coupons schedules, settlement dates
+and protection period calculations.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.__init__" title="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.set_term_structure" title="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.set_term_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_term_structure</span></code></a>(self, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.swap" title="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.swap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swap</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.set_term_structure">
+<span class="sig-name descname"><span class="pre">set_term_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DefaultProbabilityTermStructure</span> <span class="pre">ts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.set_term_structure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.credit.default_probability_helpers.CdsHelper.swap">
+<span class="sig-name descname"><span class="pre">swap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.credit.default_probability_helpers.CdsHelper.swap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.credit.default_probability_helpers.html"
+                          title="previous chapter">quantlib.termstructures.credit.default_probability_helpers</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper.html"
+                          title="next chapter">quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.termstructures.credit.default_probability_helpers.CdsHelper.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper.html" title="quantlib.termstructures.credit.default_probability_helpers.DefaultProbabilityHelper"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.credit.default_probability_helpers.html" title="quantlib.termstructures.credit.default_probability_helpers"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.credit.html" >quantlib.termstructures.credit</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.credit.default_probability_helpers.html" >quantlib.termstructures.credit.default_probability_helpers</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.credit.default_probability_helpers.CdsHelper</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

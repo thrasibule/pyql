@@ -16,6 +16,8 @@ quantlib.math.optimization
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       Constraint
       EndCriteria

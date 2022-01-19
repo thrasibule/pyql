@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.instruments.make_vanilla_swap.MakeVanillaSwap &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.instruments.option" href="quantlib.instruments.option.html" />
+    <link rel="prev" title="quantlib.instruments.make_vanilla_swap" href="quantlib.instruments.make_vanilla_swap.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.option.html" title="quantlib.instruments.option"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_vanilla_swap.html" title="quantlib.instruments.make_vanilla_swap"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.make_vanilla_swap.html" accesskey="U">quantlib.instruments.make_vanilla_swap</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.make_vanilla_swap.MakeVanillaSwap</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-instruments-make-vanilla-swap-makevanillaswap">
+<h1>quantlib.instruments.make_vanilla_swap.MakeVanillaSwap<a class="headerlink" href="#quantlib-instruments-make-vanilla-swap-makevanillaswap" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MakeVanillaSwap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">swap_tenor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IborIndex</span> <span class="pre">ibor_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">fixed_rate=QL_NULL_REAL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">forward_start=Period(0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Days)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.__init__" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.receive_fixed" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.receive_fixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">receive_fixed</span></code></a>(self, bool flag=True)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_discounting_term_structure" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_discounting_term_structure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_discounting_term_structure</span></code></a>(self, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_effective_date" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_effective_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_effective_date</span></code></a>(self, Date effective_date)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_day_count" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_day_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_fixed_leg_day_count</span></code></a>(self, DayCounter dc)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_tenor" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_tenor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_fixed_leg_tenor</span></code></a>(self, Period t)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_day_count" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_day_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_floating_leg_day_count</span></code></a>(self, DayCounter dc)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_spread" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_spread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_floating_leg_spread</span></code></a>(self, Spread sp)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_tenor" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_tenor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_floating_leg_tenor</span></code></a>(self, Period t)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_nominal" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_nominal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_nominal</span></code></a>(self, Real n)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_pricing_engine" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_pricing_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_pricing_engine</span></code></a>(self, PricingEngine engine)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_rule" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_rule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_rule</span></code></a>(self, Rule rule)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_settlement_days" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_settlement_days"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_settlement_days</span></code></a>(self, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_termination_date" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_termination_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_termination_date</span></code></a>(self, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_type" title="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_type</span></code></a>(self, SwapType type)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.receive_fixed">
+<span class="sig-name descname"><span class="pre">receive_fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">flag=True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.receive_fixed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_discounting_term_structure">
+<span class="sig-name descname"><span class="pre">with_discounting_term_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">yts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_discounting_term_structure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_effective_date">
+<span class="sig-name descname"><span class="pre">with_effective_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">effective_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_effective_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_day_count">
+<span class="sig-name descname"><span class="pre">with_fixed_leg_day_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">dc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_day_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_tenor">
+<span class="sig-name descname"><span class="pre">with_fixed_leg_tenor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_fixed_leg_tenor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_day_count">
+<span class="sig-name descname"><span class="pre">with_floating_leg_day_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">dc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_day_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_spread">
+<span class="sig-name descname"><span class="pre">with_floating_leg_spread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Spread</span> <span class="pre">sp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_spread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_tenor">
+<span class="sig-name descname"><span class="pre">with_floating_leg_tenor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_tenor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_nominal">
+<span class="sig-name descname"><span class="pre">with_nominal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_nominal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_pricing_engine">
+<span class="sig-name descname"><span class="pre">with_pricing_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PricingEngine</span> <span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_pricing_engine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_rule">
+<span class="sig-name descname"><span class="pre">with_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rule</span> <span class="pre">rule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_rule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_settlement_days">
+<span class="sig-name descname"><span class="pre">with_settlement_days</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_settlement_days" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_termination_date">
+<span class="sig-name descname"><span class="pre">with_termination_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">termination_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_termination_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_type">
+<span class="sig-name descname"><span class="pre">with_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SwapType</span> <span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.instruments.make_vanilla_swap.html"
+                          title="previous chapter">quantlib.instruments.make_vanilla_swap</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.instruments.option.html"
+                          title="next chapter">quantlib.instruments.option</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.option.html" title="quantlib.instruments.option"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.make_vanilla_swap.html" title="quantlib.instruments.make_vanilla_swap"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.make_vanilla_swap.html" >quantlib.instruments.make_vanilla_swap</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.make_vanilla_swap.MakeVanillaSwap</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

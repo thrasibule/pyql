@@ -16,6 +16,8 @@ quantlib.models.shortrate.onefactor\_model
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       OneFactorAffineModel
    

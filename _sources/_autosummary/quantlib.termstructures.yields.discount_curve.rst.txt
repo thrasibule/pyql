@@ -16,6 +16,8 @@ quantlib.termstructures.yields.discount\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BackwardFlatInterpolatedDiscountCurve
       CubicInterpolatedDiscountCurve

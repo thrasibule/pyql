@@ -16,6 +16,8 @@ quantlib.indexes.swap\_index
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       SwapIndex
    

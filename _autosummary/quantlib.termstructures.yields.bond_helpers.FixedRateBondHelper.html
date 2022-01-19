@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.termstructures.yields.bootstraptraits" href="quantlib.termstructures.yields.bootstraptraits.html" />
+    <link rel="prev" title="quantlib.termstructures.yields.bond_helpers.BondHelper" href="quantlib.termstructures.yields.bond_helpers.BondHelper.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.yields.bootstraptraits.html" title="quantlib.termstructures.yields.bootstraptraits"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.yields.bond_helpers.BondHelper.html" title="quantlib.termstructures.yields.bond_helpers.BondHelper"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.yields.html" >quantlib.termstructures.yields</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.yields.bond_helpers.html" accesskey="U">quantlib.termstructures.yields.bond_helpers</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-termstructures-yields-bond-helpers-fixedratebondhelper">
+<h1>quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper<a class="headerlink" href="#quantlib-termstructures-yields-bond-helpers-fixedratebondhelper" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FixedRateBondHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Quote</span> <span class="pre">clean_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">face_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Schedule</span> <span class="pre">schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Rate]</span> <span class="pre">coupons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">payment_conv=Following</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">redemption=100.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">issue_date=Date()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.yields.bond_helpers.BondHelper.html#quantlib.termstructures.yields.bond_helpers.BondHelper" title="quantlib.termstructures.yields.bond_helpers.BondHelper"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.bond_helpers.BondHelper</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper.__init__" title="quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.yields.bond_helpers.BondHelper.html"
+                          title="previous chapter">quantlib.termstructures.yields.bond_helpers.BondHelper</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.yields.bootstraptraits.html"
+                          title="next chapter">quantlib.termstructures.yields.bootstraptraits</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.yields.bootstraptraits.html" title="quantlib.termstructures.yields.bootstraptraits"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.yields.bond_helpers.BondHelper.html" title="quantlib.termstructures.yields.bond_helpers.BondHelper"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.yields.html" >quantlib.termstructures.yields</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.yields.bond_helpers.html" >quantlib.termstructures.yields.bond_helpers</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.yields.bond_helpers.FixedRateBondHelper</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

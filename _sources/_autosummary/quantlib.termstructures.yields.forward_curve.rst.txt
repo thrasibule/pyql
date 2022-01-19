@@ -16,6 +16,8 @@ quantlib.termstructures.yields.forward\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       BackwardFlatInterpolatedForwardCurve
       CubicInterpolatedForwardCurve

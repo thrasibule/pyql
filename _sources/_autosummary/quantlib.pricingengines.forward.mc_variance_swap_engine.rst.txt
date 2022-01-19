@@ -16,6 +16,8 @@ quantlib.pricingengines.forward.mc\_variance\_swap\_engine
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       MCVarianceSwapEngine
    

@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.instruments.asian_options.DiscreteAveragingAsianOption &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.instruments.bonds" href="quantlib.instruments.bonds.html" />
+    <link rel="prev" title="quantlib.instruments.asian_options.ContinuousAveragingAsianOption" href="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.bonds.html" title="quantlib.instruments.bonds"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.html" title="quantlib.instruments.asian_options.ContinuousAveragingAsianOption"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.asian_options.html" accesskey="U">quantlib.instruments.asian_options</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.asian_options.DiscreteAveragingAsianOption</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-instruments-asian-options-discreteaveragingasianoption">
+<h1>quantlib.instruments.asian_options.DiscreteAveragingAsianOption<a class="headerlink" href="#quantlib-instruments-asian-options-discreteaveragingasianoption" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DiscreteAveragingAsianOption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AverageType</span> <span class="pre">average_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">StrikedTypePayoff</span> <span class="pre">payoff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Exercise</span> <span class="pre">exercise</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">fixing_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running_accum=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">past_fixings=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_past_fixings=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="quantlib.instruments.option.OneAssetOption.html#quantlib.instruments.option.OneAssetOption" title="quantlib.instruments.option.OneAssetOption"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.option.OneAssetOption</span></code></a></p>
+<p>Discrete-averaging Asian option</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.average_type">
+<span class="sig-name descname"><span class="pre">average_type</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.average_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Enum (Arithmetic or Geometric)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.payoff">
+<span class="sig-name descname"><span class="pre">payoff</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.payoff" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="quantlib.instruments.payoffs.StrikedTypePayoff.html#quantlib.instruments.payoffs.StrikedTypePayoff" title="quantlib.instruments.payoffs.StrikedTypePayoff">StrikedTypePayoff</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.exercise">
+<span class="sig-name descname"><span class="pre">exercise</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.exercise" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="quantlib.instruments.option.Exercise.html#quantlib.instruments.option.Exercise" title="quantlib.instruments.option.Exercise">Exercise</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.fixing_dates">
+<span class="sig-name descname"><span class="pre">fixing_dates</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.fixing_dates" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of dates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.running_accum">
+<span class="sig-name descname"><span class="pre">running_accum</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.running_accum" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(float) Optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.past_fixings">
+<span class="sig-name descname"><span class="pre">past_fixings</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.past_fixings" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>(float) Optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.all_past_fixings">
+<span class="sig-name descname"><span class="pre">all_past_fixings</span></span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.all_past_fixings" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of floats  Optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.__init__" title="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code>(self, PricingEngine engine)</p></td>
+<td><p>Sets the pricing engine.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">delta</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">delta_forward</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dividend_rho</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elasticity</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.exercise" title="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.exercise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exercise</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gamma</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_expired</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">itm_cash_probability</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">net_present_value</span></code></p></td>
+<td><p>Instrument net present value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></p></td>
+<td><p>Shortcut to the net_present_value property.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.asian_options.DiscreteAveragingAsianOption.payoff" title="quantlib.instruments.asian_options.DiscreteAveragingAsianOption.payoff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">payoff</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">rho</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strike_sensitivity</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">theta_per_day</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">valuation_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">vega</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.html"
+                          title="previous chapter">quantlib.instruments.asian_options.ContinuousAveragingAsianOption</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.instruments.bonds.html"
+                          title="next chapter">quantlib.instruments.bonds</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.instruments.asian_options.DiscreteAveragingAsianOption.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.bonds.html" title="quantlib.instruments.bonds"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.asian_options.ContinuousAveragingAsianOption.html" title="quantlib.instruments.asian_options.ContinuousAveragingAsianOption"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.asian_options.html" >quantlib.instruments.asian_options</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.asian_options.DiscreteAveragingAsianOption</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

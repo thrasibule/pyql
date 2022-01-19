@@ -25,6 +25,7 @@ quantlib.termstructures.credit
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.credit.api

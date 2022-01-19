@@ -16,6 +16,8 @@ quantlib.indexes.ibor\_index
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       IborIndex
       OvernightIndex

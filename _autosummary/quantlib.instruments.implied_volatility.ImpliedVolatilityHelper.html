@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.instruments.implied_volatility.ImpliedVolatilityHelper &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.instruments.instrument" href="quantlib.instruments.instrument.html" />
+    <link rel="prev" title="quantlib.instruments.implied_volatility" href="quantlib.instruments.implied_volatility.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.instrument.html" title="quantlib.instruments.instrument"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.implied_volatility.html" title="quantlib.instruments.implied_volatility"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.implied_volatility.html" accesskey="U">quantlib.instruments.implied_volatility</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.implied_volatility.ImpliedVolatilityHelper</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-instruments-implied-volatility-impliedvolatilityhelper">
+<h1>quantlib.instruments.implied_volatility.ImpliedVolatilityHelper<a class="headerlink" href="#quantlib-instruments-implied-volatility-impliedvolatilityhelper" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ImpliedVolatilityHelper</span></span><a class="headerlink" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.__init__" title="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.calculate" title="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.calculate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate</span></code></a>(type self, Instrument instrument, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.clone" title="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone</span></code></a>(type self, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.calculate">
+<span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Instrument</span> <span class="pre">instrument</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PricingEngine</span> <span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SimpleQuote</span> <span class="pre">volatility</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">target_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">accuracy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">max_evaluations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Volatility</span> <span class="pre">min_vol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Volatility</span> <span class="pre">max_vol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">GeneralizedBlackScholesProcess</span> <span class="pre">process</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SimpleQuote</span> <span class="pre">quote</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.instruments.implied_volatility.html"
+                          title="previous chapter">quantlib.instruments.implied_volatility</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.instruments.instrument.html"
+                          title="next chapter">quantlib.instruments.instrument</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.instruments.implied_volatility.ImpliedVolatilityHelper.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.instrument.html" title="quantlib.instruments.instrument"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.instruments.implied_volatility.html" title="quantlib.instruments.implied_volatility"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.instruments.html" >quantlib.instruments</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.instruments.implied_volatility.html" >quantlib.instruments.implied_volatility</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.instruments.implied_volatility.ImpliedVolatilityHelper</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

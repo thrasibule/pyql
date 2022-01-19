@@ -16,6 +16,8 @@ quantlib.pricingengines.swap
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       DiscountingSwapEngine
    

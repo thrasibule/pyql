@@ -16,6 +16,8 @@ quantlib.termstructures.vol\_term\_structure
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       VolatilityTermStructure
    

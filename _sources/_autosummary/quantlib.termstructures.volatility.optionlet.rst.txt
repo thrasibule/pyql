@@ -25,6 +25,7 @@ quantlib.termstructures.volatility.optionlet
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.termstructures.volatility.optionlet.optionlet_volatility_structure

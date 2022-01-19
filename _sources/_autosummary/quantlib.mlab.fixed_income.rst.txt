@@ -12,6 +12,7 @@ quantlib.mlab.fixed\_income
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       bndprice
       cfamounts

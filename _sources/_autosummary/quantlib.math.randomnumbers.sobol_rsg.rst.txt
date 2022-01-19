@@ -16,6 +16,8 @@ quantlib.math.randomnumbers.sobol\_rsg
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       SobolRsg
    

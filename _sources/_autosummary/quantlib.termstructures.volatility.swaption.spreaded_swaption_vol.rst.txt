@@ -16,6 +16,8 @@ quantlib.termstructures.volatility.swaption.spreaded\_swaption\_vol
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       SpreadedSwaptionVolatility
       SwaptionVolatilityDiscrete

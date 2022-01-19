@@ -25,6 +25,7 @@ quantlib.cashflows
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.cashflows.cap_floored_coupon

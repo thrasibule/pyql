@@ -1,0 +1,52 @@
+quantlib.indexes.ibor.libor.Libor
+=================================
+
+.. currentmodule:: quantlib.indexes.ibor.libor
+
+.. autoclass:: Libor
+   :members:
+   :show-inheritance:
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+
+
+   
+      ~Libor.__init__
+      ~Libor.add_fixing
+      ~Libor.clear_fixings
+      ~Libor.fixing
+      ~Libor.fixing_date
+      ~Libor.from_name
+      ~Libor.is_valid_fixing_date
+      ~Libor.maturity_date
+      ~Libor.value_date
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+   
+      ~Libor.business_day_convention
+      ~Libor.currency
+      ~Libor.day_counter
+      ~Libor.end_of_month
+      ~Libor.family_name
+      ~Libor.fixing_calendar
+      ~Libor.fixing_days
+      ~Libor.joint_calendar
+      ~Libor.name
+      ~Libor.tenor
+      ~Libor.time_series
+
+   
+   

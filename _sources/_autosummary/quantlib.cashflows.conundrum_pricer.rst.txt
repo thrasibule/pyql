@@ -16,6 +16,8 @@ quantlib.cashflows.conundrum\_pricer
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       AnalyticHaganPricer
       HaganPricer

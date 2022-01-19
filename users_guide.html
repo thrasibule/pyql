@@ -16,7 +16,9 @@
     <script src="_static/doctools.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reference guide" href="reference_guide.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,6 +29,12 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="reference_guide.html" title="Reference guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">User’s guide</a></li> 
       </ul>
@@ -65,29 +73,29 @@ date handling is also known from Excel. The alternative is the construction via:
 Annual, Semiannual, EveryFourthMonth, Quartely, Bimonthly, Monthly,
 EveryFourthWeek, Biweekly, Weekly, Daily and OtherFrequency.</p>
 <p>Time units are constants defined in the date module: <code class="xref py py-data docutils literal notranslate"><span class="pre">Days</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Weeks</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Months</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Years</span></code>.</p>
-<p>Each <a class="reference internal" href="reference_guide.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a> object has the following properties:</p>
+<p>Each <a class="reference internal" href="_autosummary/quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a> object has the following properties:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.weekday" title="quantlib.time.date.Date.weekday"><code class="xref py py-attr docutils literal notranslate"><span class="pre">weekday</span></code></a> returns the weekday using the weekday constants defined in the
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">weekday</span></code> returns the weekday using the weekday constants defined in the
 date module (Sunday to Saturday and Sun to Sat).</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.day" title="quantlib.time.date.Date.day"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code></a> returns the day of the month</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.day_of_year" title="quantlib.time.date.Date.day_of_year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">day_of_year</span></code></a> returns the day of the year</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.month" title="quantlib.time.date.Date.month"><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code></a> returns the month</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.year" title="quantlib.time.date.Date.year"><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code></a> returns the year</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.Date.serial" title="quantlib.time.date.Date.serial"><code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code></a> returns a the serial number of this date</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">day</span></code> returns the day of the month</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">day_of_year</span></code> returns the day of the year</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code> returns the month</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">year</span></code> returns the year</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code> returns a the serial number of this date</p></li>
 </ul>
 </div></blockquote>
-<p>The <a class="reference internal" href="reference_guide.html#module-quantlib.time.date" title="quantlib.time.date"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code></a> module has some useful static functions,
+<p>The <a class="reference internal" href="_autosummary/quantlib.time.date.html#module-quantlib.time.date" title="quantlib.time.date"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code></a> module has some useful static functions,
 which give general results, such as whether a given year is a leap
 year or a given date is the end of the month. The currently available
 functions are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.today" title="quantlib.time.date.today"><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></a></p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.mindate" title="quantlib.time.date.mindate"><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code></a>: earliest possible Date in QuantLib</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.maxdate" title="quantlib.time.date.maxdate"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code></a>: latest possible Date in QuantLib</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.is_leap" title="quantlib.time.date.is_leap"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code></a>: is year a leap year?</p></li>
-<li><p><a class="reference internal" href="reference_guide.html#quantlib.time.date.end_of_month" title="quantlib.time.date.end_of_month"><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code></a>: what is the end of the current month the date is in?</p></li>
+<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.today.html#quantlib.time.date.today" title="quantlib.time.date.today"><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></a></p></li>
+<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.mindate.html#quantlib.time.date.mindate" title="quantlib.time.date.mindate"><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code></a>: earliest possible Date in QuantLib</p></li>
+<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.maxdate.html#quantlib.time.date.maxdate" title="quantlib.time.date.maxdate"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code></a>: latest possible Date in QuantLib</p></li>
+<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.is_leap.html#quantlib.time.date.is_leap" title="quantlib.time.date.is_leap"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code></a>: is year a leap year?</p></li>
+<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.end_of_month.html#quantlib.time.date.end_of_month" title="quantlib.time.date.end_of_month"><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code></a>: what is the end of the current month the date is in?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">is_end_of_month(date)()</span></code>: is date the end of the month?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">next_weekday(date,</span> <span class="pre">weekday)()</span></code>: on which date is the weekday following
 the date? (e.g. date of the next Friday)</p></li>
@@ -384,8 +392,9 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">User’s guide</a><ul>
 <li><a class="reference internal" href="#business-dates">Business dates</a><ul>
 <li><a class="reference internal" href="#date">Date</a></li>
@@ -414,6 +423,17 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
 </li>
 </ul>
 
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="tutorial.html"
+                          title="previous chapter">Tutorial</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="reference_guide.html"
+                          title="next chapter">Reference guide</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -444,13 +464,19 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="reference_guide.html" title="Reference guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">User’s guide</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

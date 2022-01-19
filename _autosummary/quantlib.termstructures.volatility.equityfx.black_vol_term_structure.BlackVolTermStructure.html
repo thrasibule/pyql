@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure" href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure.html" />
+    <link rel="prev" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure" href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure.html" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure.html" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.volatility.html" >quantlib.termstructures.volatility</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.volatility.equityfx.html" >quantlib.termstructures.volatility.equityfx</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.html" accesskey="U">quantlib.termstructures.volatility.equityfx.black_vol_term_structure</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-termstructures-volatility-equityfx-black-vol-term-structure-blackvoltermstructure">
+<h1>quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure<a class="headerlink" href="#quantlib-termstructures-volatility-equityfx-black-vol-term-structure-blackvoltermstructure" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlackVolTermStructure</span></span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.vol_term_structure.VolatilityTermStructure.html#quantlib.termstructures.vol_term_structure.VolatilityTermStructure" title="quantlib.termstructures.vol_term_structure.VolatilityTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.termstructures.vol_term_structure.VolatilityTermStructure</span></code></a></p>
+<p>Black-volatility term structure</p>
+<p>This abstract class defines the interface of concrete
+Black-volatility term structures which will be derived from
+this one.</p>
+<p>Volatilities are assumed to be expressed on an annual basis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.__init__" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVariance" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackForwardVariance</span></code></a>(self, time_1, time_2, ...)</p></td>
+<td><p>forward (at-the-money) variance</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVol" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackForwardVol</span></code></a>(self, time_1, time_2, ...)</p></td>
+<td><p>forward (at-the-money) volatility</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVariance" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVariance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackVariance</span></code></a>(self, maturity, Real strike, ...)</p></td>
+<td><p>spot variance</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVol" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVol"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackVol</span></code></a>(self, maturity, Real strike, ...)</p></td>
+<td><p>spot volatility</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">option_date_from_tenor</span></code>(self, Period period)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_from_reference</span></code>(self, Date date)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">calendar</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reference_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">settlement_days</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVariance">
+<span class="sig-name descname"><span class="pre">blackForwardVariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">extrapolate=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward (at-the-money) variance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVol">
+<span class="sig-name descname"><span class="pre">blackForwardVol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">extrapolate=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackForwardVol" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward (at-the-money) volatility</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVariance">
+<span class="sig-name descname"><span class="pre">blackVariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maturity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">extrapolate=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>spot variance</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVol">
+<span class="sig-name descname"><span class="pre">blackVol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maturity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">extrapolate=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.blackVol" title="Permalink to this definition">¶</a></dt>
+<dd><p>spot volatility</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure.html"
+                          title="previous chapter">quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure.html"
+                          title="next chapter">quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure.html" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolatilityTermStructure"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure.html" title="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVarianceTermStructure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.termstructures.html" >quantlib.termstructures</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.termstructures.volatility.html" >quantlib.termstructures.volatility</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.termstructures.volatility.equityfx.html" >quantlib.termstructures.volatility.equityfx</a> &#187;</li>
+          <li class="nav-item nav-item-6"><a href="quantlib.termstructures.volatility.equityfx.black_vol_term_structure.html" >quantlib.termstructures.volatility.equityfx.black_vol_term_structure</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.termstructures.volatility.equityfx.black_vol_term_structure.BlackVolTermStructure</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

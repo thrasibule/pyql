@@ -12,6 +12,7 @@ quantlib.pricingengines.bondfunctions
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       basisPointValue
       bond_yield

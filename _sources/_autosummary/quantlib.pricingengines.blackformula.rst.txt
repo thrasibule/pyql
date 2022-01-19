@@ -12,6 +12,7 @@ quantlib.pricingengines.blackformula
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       blackFormula
       blackFormulaImpliedStdDev

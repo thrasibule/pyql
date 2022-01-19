@@ -12,6 +12,7 @@ quantlib.mlab.term\_structure
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       zbt_libor_yield
    

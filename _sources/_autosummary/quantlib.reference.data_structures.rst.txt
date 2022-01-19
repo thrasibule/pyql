@@ -12,6 +12,7 @@ quantlib.reference.data\_structures
    .. rubric:: Functions
 
    .. autosummary::
+      :toctree:
    
       option_quotes_template
       riskfree_dividend_template

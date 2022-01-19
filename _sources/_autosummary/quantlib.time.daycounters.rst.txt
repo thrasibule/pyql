@@ -25,6 +25,7 @@ quantlib.time.daycounters
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.time.daycounters.actual_actual

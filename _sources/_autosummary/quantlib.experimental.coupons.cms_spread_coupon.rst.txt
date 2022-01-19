@@ -16,6 +16,8 @@ quantlib.experimental.coupons.cms\_spread\_coupon
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       CappedFlooredCmsSpreadCoupon
       CmsSpreadCoupon

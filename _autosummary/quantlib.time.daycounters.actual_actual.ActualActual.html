@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.time.daycounters.actual_actual.ActualActual &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.time.daycounters.simple" href="quantlib.time.daycounters.simple.html" />
+    <link rel="prev" title="quantlib.time.daycounters.actual_actual" href="quantlib.time.daycounters.actual_actual.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.time.daycounters.simple.html" title="quantlib.time.daycounters.simple"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.time.daycounters.actual_actual.html" title="quantlib.time.daycounters.actual_actual"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.time.html" >quantlib.time</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.time.daycounters.html" >quantlib.time.daycounters</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.time.daycounters.actual_actual.html" accesskey="U">quantlib.time.daycounters.actual_actual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.time.daycounters.actual_actual.ActualActual</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-time-daycounters-actual-actual-actualactual">
+<h1>quantlib.time.daycounters.actual_actual.ActualActual<a class="headerlink" href="#quantlib-time-daycounters-actual-actual-actualactual" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.time.daycounters.actual_actual.ActualActual">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActualActual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Convention</span> <span class="pre">convention=ISDA</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.time.daycounters.actual_actual.ActualActual" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.time.daycounter.DayCounter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.time.daycounters.actual_actual.ActualActual.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.time.daycounters.actual_actual.ActualActual.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.time.daycounters.actual_actual.ActualActual.__init__" title="quantlib.time.daycounters.actual_actual.ActualActual.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">day_count</span></code>(self, Date date1, Date date2)</p></td>
+<td><p>Returns the number of days between two dates.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_name</span></code>(type cls, name)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">year_fraction</span></code>(self, Date date1, Date date2, ...)</p></td>
+<td><p>Returns the period between two dates as a fraction of year.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.time.daycounters.actual_actual.html"
+                          title="previous chapter">quantlib.time.daycounters.actual_actual</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.time.daycounters.simple.html"
+                          title="next chapter">quantlib.time.daycounters.simple</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.time.daycounters.actual_actual.ActualActual.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.time.daycounters.simple.html" title="quantlib.time.daycounters.simple"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.time.daycounters.actual_actual.html" title="quantlib.time.daycounters.actual_actual"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.time.html" >quantlib.time</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.time.daycounters.html" >quantlib.time.daycounters</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.time.daycounters.actual_actual.html" >quantlib.time.daycounters.actual_actual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.time.daycounters.actual_actual.ActualActual</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

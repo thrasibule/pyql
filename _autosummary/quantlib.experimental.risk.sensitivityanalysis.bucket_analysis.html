@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.experimental.risk.sensitivityanalysis.bucket_analysis &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis" href="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis.html" />
+    <link rel="prev" title="quantlib.experimental.risk.sensitivityanalysis" href="quantlib.experimental.risk.sensitivityanalysis.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis.html" title="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.experimental.risk.sensitivityanalysis.html" title="quantlib.experimental.risk.sensitivityanalysis"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.experimental.html" >quantlib.experimental</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.experimental.risk.html" >quantlib.experimental.risk</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.experimental.risk.sensitivityanalysis.html" accesskey="U">quantlib.experimental.risk.sensitivityanalysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.experimental.risk.sensitivityanalysis.bucket_analysis</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-experimental-risk-sensitivityanalysis-bucket-analysis">
+<h1>quantlib.experimental.risk.sensitivityanalysis.bucket_analysis<a class="headerlink" href="#quantlib-experimental-risk-sensitivityanalysis-bucket-analysis" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="quantlib.experimental.risk.sensitivityanalysis.bucket_analysis">
+<span class="sig-name descname"><span class="pre">bucket_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">quotes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">instruments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Real]</span> <span class="pre">quantities=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">shift=0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SensitivityAnalysis</span> <span class="pre">type=Centered</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.experimental.risk.sensitivityanalysis.bucket_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>1) quotes</strong> (<em>list[SimpleQuote] or list[list[SimpleQuote]]</em>) – list or list of list of quotes to be tweaked by a certain shift,
+usually passed from ratehelpers</p></li>
+<li><p><strong>2) instruments</strong> (<em>List of instruments</em>) – list of instruments to be analyzed.</p></li>
+<li><p><strong>3) quantity</strong> (<em>Quantity of instrument</em>) – A multiplier for the resulting buckets, Usually 1 or lower.</p></li>
+<li><p><strong>4) shift</strong> (<em>Amount of shift for analysis.</em>) – Tends to be 0.0001 (1 bp). Can be larger as well as positive or negative.</p></li>
+<li><p><strong>5) type</strong> (<em>Sensitivity Analysis Type</em>) – Will be either OneSide or Centered</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.experimental.risk.sensitivityanalysis.html"
+                          title="previous chapter">quantlib.experimental.risk.sensitivityanalysis</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis.html"
+                          title="next chapter">quantlib.experimental.risk.sensitivityanalysis.parallel_analysis</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.experimental.risk.sensitivityanalysis.bucket_analysis.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis.html" title="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.experimental.risk.sensitivityanalysis.html" title="quantlib.experimental.risk.sensitivityanalysis"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.experimental.html" >quantlib.experimental</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="quantlib.experimental.risk.html" >quantlib.experimental.risk</a> &#187;</li>
+          <li class="nav-item nav-item-5"><a href="quantlib.experimental.risk.sensitivityanalysis.html" >quantlib.experimental.risk.sensitivityanalysis</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.experimental.risk.sensitivityanalysis.bucket_analysis</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

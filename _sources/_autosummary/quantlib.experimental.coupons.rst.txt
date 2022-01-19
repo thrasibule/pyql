@@ -25,6 +25,7 @@ quantlib.experimental.coupons
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.experimental.coupons.cms_spread_coupon

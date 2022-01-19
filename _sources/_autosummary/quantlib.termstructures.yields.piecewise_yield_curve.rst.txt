@@ -16,6 +16,8 @@ quantlib.termstructures.yields.piecewise\_yield\_curve
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       DiscountBackwardFlatPiecewiseYieldCurve
       DiscountCubicPiecewiseYieldCurve

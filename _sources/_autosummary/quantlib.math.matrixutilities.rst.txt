@@ -25,6 +25,7 @@ quantlib.math.matrixutilities
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.math.matrixutilities.pseudosqrt

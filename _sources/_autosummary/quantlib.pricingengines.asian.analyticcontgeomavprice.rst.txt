@@ -16,6 +16,8 @@ quantlib.pricingengines.asian.analyticcontgeomavprice
    .. rubric:: Classes
 
    .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
    
       AnalyticContinuousGeometricAveragePriceAsianEngine
    

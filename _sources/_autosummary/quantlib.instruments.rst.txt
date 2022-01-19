@@ -25,6 +25,7 @@ quantlib.instruments
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.instruments.api

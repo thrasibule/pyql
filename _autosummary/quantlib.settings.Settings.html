@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>quantlib.settings.Settings &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="quantlib.sim" href="quantlib.sim.html" />
+    <link rel="prev" title="quantlib.settings.DateProxy" href="quantlib.settings.DateProxy.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.sim.html" title="quantlib.sim"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.settings.DateProxy.html" title="quantlib.settings.DateProxy"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.settings.html" accesskey="U">quantlib.settings</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.settings.Settings</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantlib-settings-settings">
+<h1>quantlib.settings.Settings<a class="headerlink" href="#quantlib-settings-settings" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="quantlib.settings.Settings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Settings</span></span><a class="headerlink" href="#quantlib.settings.Settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.settings.Settings.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.settings.Settings.__init__" title="quantlib.settings.Settings.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.settings.Settings.anchor_evaluation_date" title="quantlib.settings.Settings.anchor_evaluation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">anchor_evaluation_date</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.settings.Settings.instance" title="quantlib.settings.Settings.instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">instance</span></code></a>(type cls)</p></td>
+<td><p>Returns an instance of the global Settings object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.settings.Settings.reset_evaluation_date" title="quantlib.settings.Settings.reset_evaluation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_evaluation_date</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">enforces_todays_historic_fixings</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.settings.Settings.evaluation_date" title="quantlib.settings.Settings.evaluation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation_date</span></code></a></p></td>
+<td><p>Property to set/get the evaluation date.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_reference_date_events</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">include_todays_cashflows</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observable_evaluation_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.settings.Settings.version" title="quantlib.settings.Settings.version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">version</span></code></a></p></td>
+<td><p>Returns the QuantLib C++ version (QL_VERSION) used by this wrapper.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.anchor_evaluation_date">
+<span class="sig-name descname"><span class="pre">anchor_evaluation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.settings.Settings.anchor_evaluation_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.evaluation_date">
+<span class="sig-name descname"><span class="pre">evaluation_date</span></span><a class="headerlink" href="#quantlib.settings.Settings.evaluation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Property to set/get the evaluation date.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.settings.Settings.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instance of the global Settings object.</p>
+<p>Utility method to mimic the behaviour of the C++ singleton.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.reset_evaluation_date">
+<span class="sig-name descname"><span class="pre">reset_evaluation_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.settings.Settings.reset_evaluation_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="quantlib.settings.Settings.version">
+<span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#quantlib.settings.Settings.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the QuantLib C++ version (QL_VERSION) used by this wrapper.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="quantlib.settings.DateProxy.html"
+                          title="previous chapter">quantlib.settings.DateProxy</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="quantlib.sim.html"
+                          title="next chapter">quantlib.sim</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_autosummary/quantlib.settings.Settings.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="quantlib.sim.html" title="quantlib.sim"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quantlib.settings.DateProxy.html" title="quantlib.settings.DateProxy"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../reference_guide.html" >Reference guide</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="quantlib.html" >quantlib</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="quantlib.settings.html" >quantlib.settings</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">quantlib.settings.Settings</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>

@@ -25,6 +25,7 @@ quantlib.currency
 
 .. autosummary::
    :toctree:
+   :template: custom-module-template.rst
    :recursive:
 
    quantlib.currency.api
