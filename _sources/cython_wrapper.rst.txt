@@ -61,8 +61,8 @@ as follows::
   cdef extern from 'ql/quotes/simplequote.hpp' namespace 'QuantLib':
 
 	cdef cppclass SimpleQuote(Quote):
-	   SimpleQuote(Real value)
-	   Real setValue(Real value)
+       SimpleQuote(Real value)
+       Real setValue(Real value)
        void reset()
 
 In this file, we declare the class ``SimpleQuote`` qwhich derives from ``Quote``.
@@ -114,9 +114,9 @@ python class is reproduced below::
 
       property value:
          def __get__(self):
-         return self._thisptr.get().value()
+            return self._thisptr.get().value()
 
-        def __set__(self, double value):
+         def __set__(self, double value):
             (<_qt.SimpleQuote*>self._thisptr.get()).setValue(value)
 
 The ``__init__`` method invokes the C++ constructor, which returns a shared pointer.
