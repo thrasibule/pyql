@@ -1,41 +1,45 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
     <title>Business dates &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="search" title="Search" href="search.html" /> 
   </head><body>
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
-  <section id="business-dates">
+  <div class="section" id="business-dates">
 <h1>Business dates<a class="headerlink" href="#business-dates" title="Permalink to this headline">¶</a></h1>
 <p>Business dates handling capabilities is provided by the quantlib.time
 subpackage. The three core components are Date, Period and Calendar.</p>
-<section id="date">
+<div class="section" id="date">
 <h2>Date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h2>
 <p>A date in QuantLib can be constructed with the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">(</span><span class="n">serial_number</span><span class="p">)</span>
@@ -57,7 +61,7 @@ date handling is also known from Excel. The alternative is the construction via:
 Annual, Semiannual, EveryFourthMonth, Quartely, Bimonthly, Monthly,
 EveryFourthWeek, Biweekly, Weekly, Daily and OtherFrequency.</p>
 <p>Time units are constants defined in the date module: <code class="xref py py-data docutils literal notranslate"><span class="pre">Days</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Weeks</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Months</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Years</span></code>.</p>
-<p>Each <a class="reference internal" href="_autosummary/quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a> object has the following properties:</p>
+<p>Each <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code> object has the following properties:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">weekday</span></code> returns the weekday using the weekday constants defined in the
@@ -69,17 +73,17 @@ date module (Sunday to Saturday and Sun to Sat).</p></li>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">serial</span></code> returns a the serial number of this date</p></li>
 </ul>
 </div></blockquote>
-<p>The <a class="reference internal" href="_autosummary/quantlib.time.date.html#module-quantlib.time.date" title="quantlib.time.date"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code></a> module has some useful static functions,
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.date</span></code> module has some useful static functions,
 which give general results, such as whether a given year is a leap
 year or a given date is the end of the month. The currently available
 functions are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.today.html#quantlib.time.date.today" title="quantlib.time.date.today"><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></a></p></li>
-<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.mindate.html#quantlib.time.date.mindate" title="quantlib.time.date.mindate"><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code></a>: earliest possible Date in QuantLib</p></li>
-<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.maxdate.html#quantlib.time.date.maxdate" title="quantlib.time.date.maxdate"><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code></a>: latest possible Date in QuantLib</p></li>
-<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.is_leap.html#quantlib.time.date.is_leap" title="quantlib.time.date.is_leap"><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code></a>: is year a leap year?</p></li>
-<li><p><a class="reference internal" href="_autosummary/quantlib.time.date.end_of_month.html#quantlib.time.date.end_of_month" title="quantlib.time.date.end_of_month"><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code></a>: what is the end of the current month the date is in?</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">today()</span></code></p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">mindate()</span></code>: earliest possible Date in QuantLib</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">maxdate()</span></code>: latest possible Date in QuantLib</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">is_leap()</span></code>: is year a leap year?</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">end_of_month()</span></code>: what is the end of the current month the date is in?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">is_end_of_month(date)()</span></code>: is date the end of the month?</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">next_weekday(date,</span> <span class="pre">weekday)()</span></code>: on which date is the weekday following
 the date? (e.g. date of the next Friday)</p></li>
@@ -87,15 +91,15 @@ the date? (e.g. date of the next Friday)</p></li>
 given year and month? (e.g. date of the 3rd Wednesday in July 2010)</p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="calendars">
+</div>
+<div class="section" id="calendars">
 <h2>Calendars<a class="headerlink" href="#calendars" title="Permalink to this headline">¶</a></h2>
 <p>One of the crucial objects in the daily business is a calendar for different countries which shows the holidays, business days and weekends for the respective country. In QuantLib, a calendar can be set up easily via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uk_calendar</span> <span class="o">=</span> <span class="n">UnitedKingdom</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>for the UK. Calendars implementation are available in the
-<a class="reference internal" href="_autosummary/quantlib.time.calendars.html#module-quantlib.time.calendars" title="quantlib.time.calendars"><code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.calendars</span></code></a> subpackage.</p>
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">quantlib.time.calendars</span></code> subpackage.</p>
 <p>Various other calendars are available, for example for Germany, United States, Switzerland, Ukraine, Turkey, Japan, India, Canada and Australia. In addition, special exchange calendars can be initialized for several countries.
 For example, the New-York Stock Exchange calendar can be initialized via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">us_calendar</span> <span class="o">=</span> <span class="n">UnitedStates</span><span class="p">(</span><span class="n">NYSE</span><span class="p">);</span>
@@ -195,8 +199,8 @@ the initial/final dates.</p></li>
 <span class="n">Business</span> <span class="n">Days</span> <span class="n">Between</span><span class="p">:</span> <span class="mi">41</span>
 </pre></div>
 </div>
-</section>
-<section id="day-counters">
+</div>
+<div class="section" id="day-counters">
 <h2>Day counters<a class="headerlink" href="#day-counters" title="Permalink to this headline">¶</a></h2>
 <p>Daycount conventions are crucial in financial markets. QuantLib offers :</p>
 <blockquote>
@@ -220,8 +224,8 @@ the initial/final dates.</p></li>
 </ul>
 </div></blockquote>
 <p>TODO : add example</p>
-</section>
-<section id="date-generation">
+</div>
+<div class="section" id="date-generation">
 <h2>Date generation<a class="headerlink" href="#date-generation" title="Permalink to this headline">¶</a></h2>
 <p>An often needed functionality is a schedule of payments, for example for coupon payments of a bond. The task is to produce a series of dates from a start to an end date following a given frequency(e.g. annual, quarterly…). We might want the dates to follow a certain business day convention. And we might want the schedule to go backwards (e.g. start the frequency going backwards from the last date).</p>
 <p>For example:</p>
@@ -277,8 +281,8 @@ reference date.</p></li>
 <li><p>dates(): returns the whole schedule in a DateList object.</p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="performance-considerations">
+</div>
+<div class="section" id="performance-considerations">
 <h2>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this headline">¶</a></h2>
 <p>In [3]: %timeit QuantLib.Date.todaysDate() + QuantLib.Period(10, QuantLib.Days)
 100000 loops, best of 3: 9.71 us per loop</p>
@@ -286,78 +290,63 @@ reference date.</p></li>
 100000 loops, best of 3: 3.55 us per loop</p>
 <p>In [5]: %timeit quantlib.date.today() + quantlib.date.Period(10, quantlib.date.Days)
 100000 loops, best of 3: 2.17 us per loop</p>
-</section>
-</section>
+</div>
+</div>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Quantlib cython wrapper</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users_guide.html">User’s guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference_guide.html">Reference guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#documentation">Documentation</a></li>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Business dates</a><ul>
+<li><a class="reference internal" href="#date">Date</a></li>
+<li><a class="reference internal" href="#calendars">Calendars</a></li>
+<li><a class="reference internal" href="#day-counters">Day counters</a></li>
+<li><a class="reference internal" href="#date-generation">Date generation</a></li>
+<li><a class="reference internal" href="#performance-considerations">Performance considerations</a></li>
+</ul>
+</li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/business_dates.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
 <script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2011, Didrik Pinte, Patrick Henaff.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/business_dates.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Quantlib cython wrapper 0.1.1 documentation</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011, Didrik Pinte, Patrick Henaff.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
   </body>
 </html>
