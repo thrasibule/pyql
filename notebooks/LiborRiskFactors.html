@@ -301,14 +301,14 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.mlab as ml
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.mlab</span> <span class="k">as</span> <span class="nn">ml</span>
 
-import pandas as pd
-from quantlib.util.rates import zero_rate, make_term_structure
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">quantlib.util.rates</span> <span class="kn">import</span> <span class="n">zero_rate</span><span class="p">,</span> <span class="n">make_term_structure</span>
 </pre></div>
 </div>
 </div>
@@ -319,24 +319,24 @@ from quantlib.util.rates import zero_rate, make_term_structure
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_libor = pd.read_pickle(os.path.join(&#39;..&#39;, &#39;data&#39;, &#39;df_libor.pkl&#39;))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_libor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;df_libor.pkl&#39;</span><span class="p">))</span>
 
-dtObs = df_libor.index
+<span class="n">dtObs</span> <span class="o">=</span> <span class="n">df_libor</span><span class="o">.</span><span class="n">index</span>
 
-dtI = dtObs[range(0, len(dtObs) - 1, 60)]
-days = [10, 30, 90, 182, 365, 365 * 2, 365 * 3,
-            365 * 5, 365 * 10, 365 * 15]
+<span class="n">dtI</span> <span class="o">=</span> <span class="n">dtObs</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dtObs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">)]</span>
+<span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">365</span><span class="p">,</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="mi">365</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">365</span> <span class="o">*</span> <span class="mi">15</span><span class="p">]</span>
 
-    # maturity in columns, observation days in rows
-zc_rate = np.empty((len(dtI), len(days)), dtype=&#39;float64&#39;)
-dt_maturity = np.empty_like(zc_rate, dtype=&#39;object&#39;)
+    <span class="c1"># maturity in columns, observation days in rows</span>
+<span class="n">zc_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">dtI</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">dt_maturity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">zc_rate</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
 
-for i, obs_date in enumerate(dtI):
-    rates = df_libor.xs(obs_date) / 100
-    # bootstrap a term structure from the libor rates
-    ts = make_term_structure(rates, obs_date)
-    # compute zero-coupon rates for a range of maturities
-    (dt_maturity[i, ], zc_rate[i, ]) = zero_rate(ts, days, obs_date)
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">obs_date</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dtI</span><span class="p">):</span>
+    <span class="n">rates</span> <span class="o">=</span> <span class="n">df_libor</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="n">obs_date</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+    <span class="c1"># bootstrap a term structure from the libor rates</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">make_term_structure</span><span class="p">(</span><span class="n">rates</span><span class="p">,</span> <span class="n">obs_date</span><span class="p">)</span>
+    <span class="c1"># compute zero-coupon rates for a range of maturities</span>
+    <span class="p">(</span><span class="n">dt_maturity</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">],</span> <span class="n">zc_rate</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">])</span> <span class="o">=</span> <span class="n">zero_rate</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">days</span><span class="p">,</span> <span class="n">obs_date</span><span class="p">)</span>
 <br/><br/><br/></pre></div>
 </div>
 </div>
@@ -353,36 +353,36 @@ for i, obs_date in enumerate(dtI):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from sklearn import decomposition
-pca = decomposition.PCA()
-# compute rate change
-zc_diff = np.diff(zc_rate, axis=0)
-# PCA on rate change
-zc_pca = pca.fit(zc_diff)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">decomposition</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">decomposition</span><span class="o">.</span><span class="n">PCA</span><span class="p">()</span>
+<span class="c1"># compute rate change</span>
+<span class="n">zc_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">zc_rate</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># PCA on rate change</span>
+<span class="n">zc_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">zc_diff</span><span class="p">)</span>
 
-fig = plt.figure()
-fig.set_size_inches(15,6)
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 
-ax = fig.add_subplot(121)
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
 
-# compute x-axis limits
-dtMin = dt_maturity[0,0]
-dtMax = dt_maturity[-1,-1]
+<span class="c1"># compute x-axis limits</span>
+<span class="n">dtMin</span> <span class="o">=</span> <span class="n">dt_maturity</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dtMax</span> <span class="o">=</span> <span class="n">dt_maturity</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-ax.set_xlim(dtMin, dtMax)
-ax.set_ylim(0.0, 0.1)
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">dtMin</span><span class="p">,</span> <span class="n">dtMax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
 
-# plot a few curves
-for i in range(0, len(dtI),3):
-    ax.plot(dt_maturity[i,], zc_rate[i,])
-plt.title(&#39;Zero-Coupon USD Libor: 2000 to 2010&#39;)
+<span class="c1"># plot a few curves</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dtI</span><span class="p">),</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dt_maturity</span><span class="p">[</span><span class="n">i</span><span class="p">,],</span> <span class="n">zc_rate</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Zero-Coupon USD Libor: 2000 to 2010&#39;</span><span class="p">)</span>
 
-ax2 = fig.add_subplot(122)
-ttm = np.array(days)/365.0
-ax2.plot(ttm, zc_pca.components_[0], &#39;k--&#39;, ttm, zc_pca.components_[1], &#39;k:&#39;, ttm, zc_pca.components_[2], &#39;k&#39;)
-leg = ax2.legend((&#39;PC 1&#39;, &#39;PC 2&#39;, &#39;PC 3&#39;))
-plt.title(&#39;First 3 Principal Components of USD Libor&#39;)
-plt.show()
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">ttm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">days</span><span class="p">)</span><span class="o">/</span><span class="mf">365.0</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ttm</span><span class="p">,</span> <span class="n">zc_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">ttm</span><span class="p">,</span> <span class="n">zc_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">ttm</span><span class="p">,</span> <span class="n">zc_pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">leg</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s1">&#39;PC 1&#39;</span><span class="p">,</span> <span class="s1">&#39;PC 2&#39;</span><span class="p">,</span> <span class="s1">&#39;PC 3&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;First 3 Principal Components of USD Libor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <br/></pre></div>
 </div>
 </div>

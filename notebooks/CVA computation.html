@@ -292,120 +292,1095 @@ div.rendered_html tbody tr:hover {
 <li><p>Simulate yield curve at future dates.</p></li>
 <li><p>Calculate your derivatives portfolio NPV (net present value) at each time point for each scenario.</p></li>
 <li><p>Calculate CVA as sum of Expected Exposure multiplied by probability of default at this interval</p>
-<div class="math">
-<p><span class="math">CVA = (1-R) \int{DF(t) EE(t) dQ_t}</span></p>
-</div><p>where <span class="math">R</span> is the Recovery (normally set to 40%), <span class="math">EE(t)</span> the expected exposure at time <span class="math">t</span>, <span class="math">dQ</span> the survival probability density, and <span class="math">DF(t)</span> discount factor at time <span class="math">t</span>.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">CVA = (1-R) \int{DF(t) EE(t) dQ_t}
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<p>where <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">R</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ is the Recovery (normally set to 40%), <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">EE(t)</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ the expected exposure at time <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+, <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">dQ</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ the survival probability density, and <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">DF(t)</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ discount factor at time <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+.</p>
 </li>
 </ol>
 </section>
 <section id="Outline">
 <h2>Outline<a class="headerlink" href="#Outline" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>In this simple example, we will use the Hull White model to generate future yield curves. In practice, many banks use some yield curve evolution models based on historical simulations. In the Hull White model, the short rate <span class="math">r_t</span> is distributed normally with known mean and variance.</p></li>
+<li><p>In this simple example, we will use the Hull White model to generate future yield curves. In practice, many banks use some yield curve evolution models based on historical simulations. In the Hull White model, the short rate <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">r_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ is distributed normally with known mean and variance.</p></li>
 <li><p>For each point of time we will generate whole yield curve based on short rate. Then we will price our interest rate swap on each of these curves.</p></li>
 <li><p>to approximate CVA we will use BASEL III formula for regulatory capital charge approximating default probability [or survival probability ] as exp(-ST/(1-R)) so we get:</p>
-<div class="math">
-<p><span class="math">CVA= (1-R) \sum \frac{EE^{*}_{T_{i}}+EE^{*}_{T_{i-1}}}{2} (e^{-\frac{ST_{i-1}}{1-R}}-e^{-\frac{ST_{i}}{1-R}})^+</span></p>
-</div><p>where <span class="math">EE^{*}</span> is discounted Expected exposure of portfolio.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">CVA= (1-R) \sum \frac{EE^{*}_{T_{i}}+EE^{*}_{T_{i-1}}}{2} (e^{-\frac{ST_{i-1}}{1-R}}-e^{-\frac{ST_{i}}{1-R}})^+
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<p>where <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">EE^{*}</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ is discounted Expected exposure of portfolio.</p>
 </li>
 </ol>
 </section>
 <section id="Hull-White-model-for-future-yield-curve-simulations">
 <h2>Hull-White model for future yield curve simulations<a class="headerlink" href="#Hull-White-model-for-future-yield-curve-simulations" title="Permalink to this headline">¶</a></h2>
 <p>the model is given by dynamics:</p>
-<div class="math">
-<p><span class="math">dr_t=(\theta_t-ar_t)dt+\sigma dW_t</span></p>
-</div><p>In the Hull White model, the short rate <span class="math">r_t</span> is distributed normally with mean and variance given by</p>
-<div class="math">
-<p><span class="math">E(r_t|r_s)=r_se^{-a(t-s)}+\gamma_t-\gamma_se^{-a(t-s)}</span></p>
-</div><div class="math">
-<p><span class="math">Var(r_t|r_s)=\frac{\sigma^2}{2a}(1-e^{-2a(t-s)})</span></p>
-</div><p>where <span class="math">\gamma_t=f_t(0)+\frac{\sigma^2}{2a}(1-e^{-at})^2</span> and <span class="math">f_t(0)</span> is the instantaneous forward rate at time <span class="math">t</span> as seen at time 0. The calculations will not depend on <span class="math">\theta_t</span>. To generate the future values of <span class="math">r_t</span>, we use the <a class="reference internal" href="../_autosummary/quantlib.sim.simulate.simulate_process.html#quantlib.sim.simulate.simulate_process"><span class="std std-ref">simulate_process</span></a> function which is a convenience function provided in the simulate module of pyql. After getting a matrix of all
-<span class="math">r_t</span> for all draws and time points, we will construct a yield curve for each <span class="math">r_t</span> using Hull White discount factors <span class="math">E(r_{t_i})</span> at each future date.</p>
-<div class="math">
-<p><span class="math">P_{\rightarrow T}(0)= E( e^{-\int_0^Tr_sds})=E( E(e^{-\int_0^Tr_sds}|\mathcal{F}_{t_i}))=E(P_{\rightarrow t_i}(0)E(e^{-\int_{t_i}^Tr_sds}|\mathcal{F}_{t_i}))</span></p>
-</div><p>for each future time point <span class="math">t_i</span>, <span class="math">T</span> being the maturity.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">dr_t=(\theta_t-ar_t)dt+\sigma dW_t
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<p>In the Hull White model, the short rate <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">r_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ is distributed normally with mean and variance given by</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">E(r_t|r_s)=r_se^{-a(t-s)}+\gamma_t-\gamma_se^{-a(t-s)}
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">Var(r_t|r_s)=\frac{\sigma^2}{2a}(1-e^{-2a(t-s)})
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<p>where <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">\gamma_t=f_t(0)+\frac{\sigma^2}{2a}(1-e^{-at})^2</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ and <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">f_t(0)</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ is the instantaneous forward rate at time <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ as seen at time 0. The calculations will not depend on <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">\theta_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+. To generate the future values of <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">r_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+, we use the <a class="reference internal" href="../_autosummary/quantlib.sim.simulate.simulate_process.html#quantlib.sim.simulate.simulate_process"><span class="std std-ref">simulate_process</span></a> function which is a convenience function provided in the simulate module of pyql. After getting a matrix of all
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">r_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ for all draws and time points, we will construct a yield curve for each <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">r_t</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ using Hull White discount factors <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">E(r_{t_i})</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ at each future date.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">P_{\rightarrow T}(0)= E( e^{-\int_0^Tr_sds})=E( E(e^{-\int_0^Tr_sds}|\mathcal{F}_{t_i}))=E(P_{\rightarrow t_i}(0)E(e^{-\int_{t_i}^Tr_sds}|\mathcal{F}_{t_i}))
+
+</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+<p>for each future time point <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">t_i</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+, <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">T</span>)</p>
+<p>latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2020-02-02&gt; patch level 2
+L3 programming layer &lt;2020-02-14&gt;
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+
+! LaTeX Error: File `anyfontsize.sty' not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.8 \usepackage
+               {bm}^^M
+No pages of output.
+Transcript written on math.log.
+</p>
+</div>
+ being the maturity.</p>
 <p>also we’ll output some generated yield curves.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from quantlib.settings import Settings
-from quantlib.time.api import (Date, Actual360, TARGET, NoFrequency, Period,
-                               Years, Schedule, ModifiedFollowing, Following, Rule)
-from quantlib.termstructures.yields.api import DiscountCurve
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quantlib.settings</span> <span class="kn">import</span> <span class="n">Settings</span>
+<span class="kn">from</span> <span class="nn">quantlib.time.api</span> <span class="kn">import</span> <span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">Actual360</span><span class="p">,</span> <span class="n">TARGET</span><span class="p">,</span> <span class="n">NoFrequency</span><span class="p">,</span> <span class="n">Period</span><span class="p">,</span>
+                               <span class="n">Years</span><span class="p">,</span> <span class="n">Schedule</span><span class="p">,</span> <span class="n">ModifiedFollowing</span><span class="p">,</span> <span class="n">Following</span><span class="p">,</span> <span class="n">Rule</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">quantlib.termstructures.yields.api</span> <span class="kn">import</span> <span class="n">DiscountCurve</span>
 
-todaysDate = Date(26, 12, 2013);
-Settings().evaluation_date = todaysDate;
-crvTodaydates = [Date(26, 12, 2013),
-                 Date(30, 6, 2014),
-                 Date(30, 7, 2014),
-                 Date(29, 8, 2014),
-                 Date(30, 9, 2014),
-                 Date(30, 10, 2014),
-                 Date(28, 11, 2014),
-                 Date(30, 12, 2014),
-                 Date(30, 1, 2015),
-                 Date(27, 2, 2015),
-                 Date(30, 3, 2015),
-                 Date(30, 4, 2015),
-                 Date(29, 5, 2015),
-                 Date(30, 6, 2015),
-                 Date(30, 12, 2015),
-                 Date(30, 12, 2016),
-                 Date(29, 12, 2017),
-                 Date(31, 12, 2018),
-                 Date(30, 12, 2019),
-                 Date(30, 12, 2020),
-                 Date(30, 12, 2021),
-                 Date(30, 12, 2022),
-                 Date(29, 12, 2023),
-                 Date(30, 12, 2024),
-                 Date(30, 12, 2025),
-                 Date(29, 12, 2028),
-                 Date(30, 12, 2033),
-                 Date(30, 12, 2038),
-                 Date(30, 12, 2043),
-                 Date(30, 12, 2048),
-                 Date(30, 12, 2053),
-                 Date(30, 12, 2058),
-                 Date(31, 12, 2063)]
-crvTodaydf=[1.0,
-            0.998022,
-            0.99771,
-            0.99739,
-            0.997017,
-            0.996671,
-            0.996337,
-            0.995921,
-            0.995522,
-            0.995157,
-            0.994706,
-            0.994248,
-            0.993805,
-            0.993285,
-            0.989614,
-            0.978541,
-            0.961973,
-            0.940868,
-            0.916831,
-            0.890805,
-            0.863413,
-            0.834987,
-            0.807111,
-            0.778332,
-            0.750525,
-            0.674707,
-            0.575192,
-            0.501258,
-            0.44131,
-            0.384733,
-            0.340425,
-            0.294694,
-            0.260792
-            ]
+<span class="n">todaysDate</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2013</span><span class="p">);</span>
+<span class="n">Settings</span><span class="p">()</span><span class="o">.</span><span class="n">evaluation_date</span> <span class="o">=</span> <span class="n">todaysDate</span><span class="p">;</span>
+<span class="n">crvTodaydates</span> <span class="o">=</span> <span class="p">[</span><span class="n">Date</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2013</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2014</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2015</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2016</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2017</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2018</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2019</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2020</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2021</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2022</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2023</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2024</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2025</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2028</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2033</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2038</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2043</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2048</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2053</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2058</span><span class="p">),</span>
+                 <span class="n">Date</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2063</span><span class="p">)]</span>
+<span class="n">crvTodaydf</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span>
+            <span class="mf">0.998022</span><span class="p">,</span>
+            <span class="mf">0.99771</span><span class="p">,</span>
+            <span class="mf">0.99739</span><span class="p">,</span>
+            <span class="mf">0.997017</span><span class="p">,</span>
+            <span class="mf">0.996671</span><span class="p">,</span>
+            <span class="mf">0.996337</span><span class="p">,</span>
+            <span class="mf">0.995921</span><span class="p">,</span>
+            <span class="mf">0.995522</span><span class="p">,</span>
+            <span class="mf">0.995157</span><span class="p">,</span>
+            <span class="mf">0.994706</span><span class="p">,</span>
+            <span class="mf">0.994248</span><span class="p">,</span>
+            <span class="mf">0.993805</span><span class="p">,</span>
+            <span class="mf">0.993285</span><span class="p">,</span>
+            <span class="mf">0.989614</span><span class="p">,</span>
+            <span class="mf">0.978541</span><span class="p">,</span>
+            <span class="mf">0.961973</span><span class="p">,</span>
+            <span class="mf">0.940868</span><span class="p">,</span>
+            <span class="mf">0.916831</span><span class="p">,</span>
+            <span class="mf">0.890805</span><span class="p">,</span>
+            <span class="mf">0.863413</span><span class="p">,</span>
+            <span class="mf">0.834987</span><span class="p">,</span>
+            <span class="mf">0.807111</span><span class="p">,</span>
+            <span class="mf">0.778332</span><span class="p">,</span>
+            <span class="mf">0.750525</span><span class="p">,</span>
+            <span class="mf">0.674707</span><span class="p">,</span>
+            <span class="mf">0.575192</span><span class="p">,</span>
+            <span class="mf">0.501258</span><span class="p">,</span>
+            <span class="mf">0.44131</span><span class="p">,</span>
+            <span class="mf">0.384733</span><span class="p">,</span>
+            <span class="mf">0.340425</span><span class="p">,</span>
+            <span class="mf">0.294694</span><span class="p">,</span>
+            <span class="mf">0.260792</span>
+            <span class="p">]</span>
 
-crvToday = DiscountCurve(crvTodaydates, crvTodaydf, Actual360(), TARGET())
+<span class="n">crvToday</span> <span class="o">=</span> <span class="n">DiscountCurve</span><span class="p">(</span><span class="n">crvTodaydates</span><span class="p">,</span> <span class="n">crvTodaydf</span><span class="p">,</span> <span class="n">Actual360</span><span class="p">(),</span> <span class="n">TARGET</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -413,13 +1388,13 @@ crvToday = DiscountCurve(crvTodaydates, crvTodaydf, Actual360(), TARGET())
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-months = range(3, 12 * 5 + 1, 3)
-sPeriods = [&quot;{}M&quot;.format(month) for month in months]
-print(sPeriods)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">months</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sPeriods</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">M&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sPeriods</span><span class="p">)</span>
 
-Dates = [todaysDate] + [todaysDate + Period(s) for s in sPeriods]
-T = np.array([Actual360().year_fraction(todaysDate, d) for d in Dates])
+<span class="n">Dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">todaysDate</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">todaysDate</span> <span class="o">+</span> <span class="n">Period</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sPeriods</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Actual360</span><span class="p">()</span><span class="o">.</span><span class="n">year_fraction</span><span class="p">(</span><span class="n">todaysDate</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">Dates</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -435,37 +1410,37 @@ T = np.array([Actual360().year_fraction(todaysDate, d) for d in Dates])
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from matplotlib import pyplot as plt
-import matplotlib
-matplotlib.rcParams[&#39;figure.figsize&#39;] = (15.0, 7.0)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">15.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">)</span>
 
-from quantlib.processes.api import HullWhiteProcess
-from quantlib.sim.simulate import simulate_process
-from quantlib.time_grid import TimeGrid
+<span class="kn">from</span> <span class="nn">quantlib.processes.api</span> <span class="kn">import</span> <span class="n">HullWhiteProcess</span>
+<span class="kn">from</span> <span class="nn">quantlib.sim.simulate</span> <span class="kn">import</span> <span class="n">simulate_process</span>
+<span class="kn">from</span> <span class="nn">quantlib.time_grid</span> <span class="kn">import</span> <span class="n">TimeGrid</span>
 
-Nsim = 1000
+<span class="n">Nsim</span> <span class="o">=</span> <span class="mi">1000</span>
 
-#parameters calibrated with Quantlib to coterminal swaptions on 26/dec/2013
-a = 0.376739
-sigma = 0.0209835
+<span class="c1">#parameters calibrated with Quantlib to coterminal swaptions on 26/dec/2013</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.376739</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.0209835</span>
 
-hw = HullWhiteProcess(crvToday, a, sigma)
-grid = TimeGrid.from_vector(T)
-rmat = simulate_process(hw, Nsim, grid, 1, antithetic=False)
-dT = np.diff(T)
+<span class="n">hw</span> <span class="o">=</span> <span class="n">HullWhiteProcess</span><span class="p">(</span><span class="n">crvToday</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">TimeGrid</span><span class="o">.</span><span class="n">from_vector</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">rmat</span> <span class="o">=</span> <span class="n">simulate_process</span><span class="p">(</span><span class="n">hw</span><span class="p">,</span> <span class="n">Nsim</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">antithetic</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">dT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 
-#check that bond prices match the original discount factors
-bonds = np.empty_like(rmat)
-bonds[1:] = np.exp(-(rmat[1:] * dT[:,None]).cumsum(axis=0))
-bonds[0] = 1
-bonds_mean = np.mean(bonds, axis=1)
+<span class="c1">#check that bond prices match the original discount factors</span>
+<span class="n">bonds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">rmat</span><span class="p">)</span>
+<span class="n">bonds</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">rmat</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*</span> <span class="n">dT</span><span class="p">[:,</span><span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">bonds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">bonds_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bonds</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-fig, ax = plt.subplots(figsize=(8, 5), layout=&#39;constrained&#39;)
-ax.plot(T, bonds_mean, label=&quot;simulated bond prices&quot;)
-ax.plot(T, [crvToday.discount(t) for t in T], label=&quot;discount factors&quot;)
-ax.set_xlabel(&quot;T&quot;)
-ax.legend()
-fig
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">bonds_mean</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;simulated bond prices&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="p">[</span><span class="n">crvToday</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;discount factors&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
@@ -487,28 +1462,28 @@ fig
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from quantlib.models.shortrate.onefactormodels.hullwhite import HullWhite
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quantlib.models.shortrate.onefactormodels.hullwhite</span> <span class="kn">import</span> <span class="n">HullWhite</span>
 
-start_date = Date(26, 12, 2013);
-hw_model = HullWhite(crvToday, a, sigma)
-crvMat = np.empty((len(T), Nsim), dtype=&#39;object&#39;)
-crvMat[0] = crvToday
-for i in range(1, len(T)):
-    crvDates = [Dates[i] + Period(k, Years) for k in range(21)]
-    crv_row = []
-    for n in range(Nsim):
-        rt = rmat[i, n]
-        crvDiscounts = [hw_model.discount_bound(T[i], T[i] + k, rt) for k in np.arange(21.)]
-        crvMat[i, n] = DiscountCurve(crvDates, crvDiscounts, Actual360(), TARGET())
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2013</span><span class="p">);</span>
+<span class="n">hw_model</span> <span class="o">=</span> <span class="n">HullWhite</span><span class="p">(</span><span class="n">crvToday</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="n">crvMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="n">Nsim</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;object&#39;</span><span class="p">)</span>
+<span class="n">crvMat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">crvToday</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+    <span class="n">crvDates</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">Period</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">Years</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">21</span><span class="p">)]</span>
+    <span class="n">crv_row</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nsim</span><span class="p">):</span>
+        <span class="n">rt</span> <span class="o">=</span> <span class="n">rmat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+        <span class="n">crvDiscounts</span> <span class="o">=</span> <span class="p">[</span><span class="n">hw_model</span><span class="o">.</span><span class="n">discount_bound</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="n">rt</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">21.</span><span class="p">)]</span>
+        <span class="n">crvMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">DiscountCurve</span><span class="p">(</span><span class="n">crvDates</span><span class="p">,</span> <span class="n">crvDiscounts</span><span class="p">,</span> <span class="n">Actual360</span><span class="p">(),</span> <span class="n">TARGET</span><span class="p">())</span>
 
-bondT = np.zeros_like(rmat)
-for n in range(Nsim):
-    for i in range(len(T)):
-        bondT[i,n] = bonds[i,n] * crvMat[i,n].discount(19 - T[i])
+<span class="n">bondT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">rmat</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nsim</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+        <span class="n">bondT</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">bonds</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">crvMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="mi">19</span> <span class="o">-</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
-bondTmean = np.mean(bondT, axis=1)
-np.set_printoptions(precision=4, suppress=True)
-print(&#39;bondTmean-Terminal bond\n&#39;, bondTmean - crvToday.discount(19.))
+<span class="n">bondTmean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bondT</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bondTmean-Terminal bond</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">bondTmean</span> <span class="o">-</span> <span class="n">crvToday</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="mf">19.</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -527,17 +1502,17 @@ bondTmean-Terminal bond
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from quantlib.compounding import Continuous
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(range(10),
-         [crvMat[0,0].forward_rate(t, t, compounding=Continuous, frequency=NoFrequency).rate
-          for t in np.arange(10.)])
-for i in range(min(Nsim, 10)):
-    ax.plot(range(10), [crvMat[i,1].forward_rate(t, t,
-                                                  compounding=Continuous, frequency=NoFrequency).rate
-                         for t in np.arange(10.)])
-ax.set_title(&#39;generated yield curves&#39;)
-fig
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quantlib.compounding</span> <span class="kn">import</span> <span class="n">Continuous</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+         <span class="p">[</span><span class="n">crvMat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">forward_rate</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">compounding</span><span class="o">=</span><span class="n">Continuous</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">NoFrequency</span><span class="p">)</span><span class="o">.</span><span class="n">rate</span>
+          <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">Nsim</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="n">crvMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">forward_rate</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span>
+                                                  <span class="n">compounding</span><span class="o">=</span><span class="n">Continuous</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">NoFrequency</span><span class="p">)</span><span class="o">.</span><span class="n">rate</span>
+                         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">10.</span><span class="p">)])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;generated yield curves&#39;</span><span class="p">)</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
@@ -559,20 +1534,20 @@ fig
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from quantlib.indexes.api import Euribor6M
-from quantlib.instruments.api import VanillaSwap, Receiver
-from quantlib.pricingengines.swap import DiscountingSwapEngine
-from quantlib.termstructures.yields.api import YieldTermStructure
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">quantlib.indexes.api</span> <span class="kn">import</span> <span class="n">Euribor6M</span>
+<span class="kn">from</span> <span class="nn">quantlib.instruments.api</span> <span class="kn">import</span> <span class="n">VanillaSwap</span><span class="p">,</span> <span class="n">Receiver</span>
+<span class="kn">from</span> <span class="nn">quantlib.pricingengines.swap</span> <span class="kn">import</span> <span class="n">DiscountingSwapEngine</span>
+<span class="kn">from</span> <span class="nn">quantlib.termstructures.yields.api</span> <span class="kn">import</span> <span class="n">YieldTermStructure</span>
 
-#indexes definition
-forecast_term_structure = YieldTermStructure()
-index = Euribor6M(forecast_term_structure)
+<span class="c1">#indexes definition</span>
+<span class="n">forecast_term_structure</span> <span class="o">=</span> <span class="n">YieldTermStructure</span><span class="p">()</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">Euribor6M</span><span class="p">(</span><span class="n">forecast_term_structure</span><span class="p">)</span>
 
-rmean = [hw.expectation(0., hw.x0, t) for t in T]
+<span class="n">rmean</span> <span class="o">=</span> <span class="p">[</span><span class="n">hw</span><span class="o">.</span><span class="n">expectation</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">hw</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">]</span>
 
-# we add a fixing every 6 months
-for i in range(0, len(Dates), 2):
-    index.add_fixing(index.fixing_date(Dates[i]), rmean[i])
+<span class="c1"># we add a fixing every 6 months</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">Dates</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">add_fixing</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">fixing_date</span><span class="p">(</span><span class="n">Dates</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">rmean</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -580,16 +1555,16 @@ for i in range(0, len(Dates), 2):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#swap 1 definition
-maturity = Date(26, 12, 2018)
-fixed_schedule = Schedule.from_rule(start_date, maturity, Period(&quot;6M&quot;), TARGET(),
-                                    ModifiedFollowing, ModifiedFollowing, Rule.Forward,
-                                    False)
-floating_schedule = Schedule.from_rule(start_date, maturity, Period(&quot;6M&quot;),
-                                       TARGET(), ModifiedFollowing,
-                                       ModifiedFollowing, Rule.Forward, False)
-swap1 = VanillaSwap(Receiver, 10_000_000, fixed_schedule, 0.02, Actual360(),
-                    floating_schedule, index, 0, Actual360())  #0.01215
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#swap 1 definition</span>
+<span class="n">maturity</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2018</span><span class="p">)</span>
+<span class="n">fixed_schedule</span> <span class="o">=</span> <span class="n">Schedule</span><span class="o">.</span><span class="n">from_rule</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">maturity</span><span class="p">,</span> <span class="n">Period</span><span class="p">(</span><span class="s2">&quot;6M&quot;</span><span class="p">),</span> <span class="n">TARGET</span><span class="p">(),</span>
+                                    <span class="n">ModifiedFollowing</span><span class="p">,</span> <span class="n">ModifiedFollowing</span><span class="p">,</span> <span class="n">Rule</span><span class="o">.</span><span class="n">Forward</span><span class="p">,</span>
+                                    <span class="kc">False</span><span class="p">)</span>
+<span class="n">floating_schedule</span> <span class="o">=</span> <span class="n">Schedule</span><span class="o">.</span><span class="n">from_rule</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">maturity</span><span class="p">,</span> <span class="n">Period</span><span class="p">(</span><span class="s2">&quot;6M&quot;</span><span class="p">),</span>
+                                       <span class="n">TARGET</span><span class="p">(),</span> <span class="n">ModifiedFollowing</span><span class="p">,</span>
+                                       <span class="n">ModifiedFollowing</span><span class="p">,</span> <span class="n">Rule</span><span class="o">.</span><span class="n">Forward</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">swap1</span> <span class="o">=</span> <span class="n">VanillaSwap</span><span class="p">(</span><span class="n">Receiver</span><span class="p">,</span> <span class="mi">10_000_000</span><span class="p">,</span> <span class="n">fixed_schedule</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">Actual360</span><span class="p">(),</span>
+                    <span class="n">floating_schedule</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Actual360</span><span class="p">())</span>  <span class="c1">#0.01215</span>
 <br/></pre></div>
 </div>
 </div>
@@ -597,20 +1572,20 @@ swap1 = VanillaSwap(Receiver, 10_000_000, fixed_schedule, 0.02, Actual360(),
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>npvMat = np.empty((len(T), Nsim))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npvMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="n">Nsim</span><span class="p">))</span>
 
-discount_term_structure = YieldTermStructure()
-swapEngine = DiscountingSwapEngine(discount_term_structure)
-npvMat = np.empty((len(T), Nsim))
-swap1.set_pricing_engine(swapEngine)
+<span class="n">discount_term_structure</span> <span class="o">=</span> <span class="n">YieldTermStructure</span><span class="p">()</span>
+<span class="n">swapEngine</span> <span class="o">=</span> <span class="n">DiscountingSwapEngine</span><span class="p">(</span><span class="n">discount_term_structure</span><span class="p">)</span>
+<span class="n">npvMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="n">Nsim</span><span class="p">))</span>
+<span class="n">swap1</span><span class="o">.</span><span class="n">set_pricing_engine</span><span class="p">(</span><span class="n">swapEngine</span><span class="p">)</span>
 
-for i, d in enumerate(Dates):
-    Settings().evaluation_date = d
-    for n in range(Nsim):
-        crv = crvMat[i, n]
-        discount_term_structure.link_to(crv)
-        forecast_term_structure.link_to(crv)
-        npvMat[i, n] = swap1.npv
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Dates</span><span class="p">):</span>
+    <span class="n">Settings</span><span class="p">()</span><span class="o">.</span><span class="n">evaluation_date</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nsim</span><span class="p">):</span>
+        <span class="n">crv</span> <span class="o">=</span> <span class="n">crvMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+        <span class="n">discount_term_structure</span><span class="o">.</span><span class="n">link_to</span><span class="p">(</span><span class="n">crv</span><span class="p">)</span>
+        <span class="n">forecast_term_structure</span><span class="o">.</span><span class="n">link_to</span><span class="p">(</span><span class="n">crv</span><span class="p">)</span>
+        <span class="n">npvMat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">swap1</span><span class="o">.</span><span class="n">npv</span>
 </pre></div>
 </div>
 </div>
@@ -618,15 +1593,15 @@ for i, d in enumerate(Dates):
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>npv = npvMat[0,0]
-#replace negative values with 0
-npvMat[npvMat&lt;0] = 0
-EE = np.mean(npvMat, axis=1)
-print(&#39;\nEE:\n&#39;, EE)
-#print &#39;\nrmat:\n&#39;,rmat
-print(&#39;\nrmean:\n&#39;, rmean)
-#print &#39;\nrstd:\n&#39;,rstd
-#print &#39;\n95% are in \n&#39;,zip(rmean-2*rstd,rmean+2*rstd)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">npv</span> <span class="o">=</span> <span class="n">npvMat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#replace negative values with 0</span>
+<span class="n">npvMat</span><span class="p">[</span><span class="n">npvMat</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">EE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">npvMat</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">EE:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">EE</span><span class="p">)</span>
+<span class="c1">#print &#39;\nrmat:\n&#39;,rmat</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">rmean:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">rmean</span><span class="p">)</span>
+<span class="c1">#print &#39;\nrstd:\n&#39;,rstd</span>
+<span class="c1">#print &#39;\n95% are in \n&#39;,zip(rmean-2*rstd,rmean+2*rstd)</span>
 </pre></div>
 </div>
 </div>
@@ -650,16 +1625,16 @@ rmean:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># We use 5% for the credit spread and 40% for the recovery
-from math import exp
-S = 0.05
-R = 0.4
-r = 0
-for i in range(len(T)-1):
-    r += 0.5 * crvToday.discount(T[i+1]) * (EE[i] + EE[i+1]) * (exp(-S*T[i]/(1.0-R)) -exp(-S*T[i+1]/(1.0-R)))
-CVA = (1. - R) * r
-print(&quot;\nnpv=&quot;, npv)
-print(&quot;\nCVA=&quot;, CVA)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We use 5% for the credit spread and 40% for the recovery</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">crvToday</span><span class="o">.</span><span class="n">discount</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">EE</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">EE</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">S</span><span class="o">*</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">R</span><span class="p">))</span> <span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">S</span><span class="o">*</span><span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="n">R</span><span class="p">)))</span>
+<span class="n">CVA</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">npv=&quot;</span><span class="p">,</span> <span class="n">npv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">CVA=&quot;</span><span class="p">,</span> <span class="n">CVA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -678,14 +1653,14 @@ CVA= 40722.15743027281
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig, ax = plt.subplots(figsize=(8, 5))
-ax.plot(T, EE)
-ax.set_xlabel(&quot;Time in years&quot;)
-ax.set_title(&#39;Expected Exposure&#39;)
-fig
-#plot(T,np.mean(rmat,axis=0))
-#plot(T,rmean)
-#plot(T,[npvMat[0,0]]*len(T))
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">EE</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time in years&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Expected Exposure&#39;</span><span class="p">)</span>
+<span class="n">fig</span>
+<span class="c1">#plot(T,np.mean(rmat,axis=0))</span>
+<span class="c1">#plot(T,rmean)</span>
+<span class="c1">#plot(T,[npvMat[0,0]]*len(T))</span>
 </pre></div>
 </div>
 </div>
