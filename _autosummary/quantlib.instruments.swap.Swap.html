@@ -13,9 +13,10 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="quantlib.instruments.swap.VanillaSwap" href="quantlib.instruments.swap.VanillaSwap.html" />
+    <link rel="next" title="quantlib.instruments.swaption" href="quantlib.instruments.swaption.html" />
     <link rel="prev" title="quantlib.instruments.swap" href="quantlib.instruments.swap.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -55,17 +56,26 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.__init__" title="quantlib.instruments.swap.Swap.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg" title="quantlib.instruments.swap.Swap.leg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg</span></code></a>(self, int i)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.endDiscounts" title="quantlib.instruments.swap.Swap.endDiscounts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">endDiscounts</span></code></a>(self, Size j)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg_BPS" title="quantlib.instruments.swap.Swap.leg_BPS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg_BPS</span></code></a>(self, Size j)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg" title="quantlib.instruments.swap.Swap.leg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg</span></code></a>(self, int i)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg_NPV" title="quantlib.instruments.swap.Swap.leg_NPV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg_NPV</span></code></a>(self, Size j)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg_BPS" title="quantlib.instruments.swap.Swap.leg_BPS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg_BPS</span></code></a>(self, Size j)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.leg_NPV" title="quantlib.instruments.swap.Swap.leg_NPV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leg_NPV</span></code></a>(self, Size j)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.npvDateDiscount" title="quantlib.instruments.swap.Swap.npvDateDiscount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npvDateDiscount</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code>(self, PricingEngine engine)</p></td>
 <td><p>Sets the pricing engine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.swap.Swap.startDiscounts" title="quantlib.instruments.swap.Swap.startDiscounts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">startDiscounts</span></code></a>(self, Size j)</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -97,6 +107,11 @@
 </tbody>
 </table>
 <dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.swap.Swap.endDiscounts">
+<span class="sig-name descname"><span class="pre">endDiscounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap.endDiscounts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.swap.Swap.leg">
 <span class="sig-name descname"><span class="pre">leg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap.leg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -109,6 +124,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.swap.Swap.leg_NPV">
 <span class="sig-name descname"><span class="pre">leg_NPV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap.leg_NPV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.swap.Swap.npvDateDiscount">
+<span class="sig-name descname"><span class="pre">npvDateDiscount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap.npvDateDiscount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.swap.Swap.startDiscounts">
+<span class="sig-name descname"><span class="pre">startDiscounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap.startDiscounts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -154,7 +179,7 @@
   <li><a href="quantlib.instruments.html">quantlib.instruments</a><ul>
   <li><a href="quantlib.instruments.swap.html">quantlib.instruments.swap</a><ul>
       <li>Previous: <a href="quantlib.instruments.swap.html" title="previous chapter">quantlib.instruments.swap</a></li>
-      <li>Next: <a href="quantlib.instruments.swap.VanillaSwap.html" title="next chapter">quantlib.instruments.swap.VanillaSwap</a></li>
+      <li>Next: <a href="quantlib.instruments.swaption.html" title="next chapter">quantlib.instruments.swaption</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

@@ -22,6 +22,7 @@ quantlib.termstructures.yields.rate\_helpers
       DepositRateHelper
       FraRateHelper
       FuturesRateHelper
+      FxSwapRateHelper
       RateHelper
       RelativeDateRateHelper
       SwapRateHelper

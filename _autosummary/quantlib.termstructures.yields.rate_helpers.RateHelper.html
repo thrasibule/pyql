@@ -13,10 +13,11 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper" href="quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper.html" />
-    <link rel="prev" title="quantlib.termstructures.yields.rate_helpers.FuturesRateHelper" href="quantlib.termstructures.yields.rate_helpers.FuturesRateHelper.html" />
+    <link rel="prev" title="quantlib.termstructures.yields.rate_helpers.FxSwapRateHelper" href="quantlib.termstructures.yields.rate_helpers.FxSwapRateHelper.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -54,6 +55,9 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.yields.rate_helpers.RateHelper.__init__" title="quantlib.termstructures.yields.rate_helpers.RateHelper.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
 <td><p></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.termstructures.yields.rate_helpers.RateHelper.update" title="quantlib.termstructures.yields.rate_helpers.RateHelper.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
@@ -63,10 +67,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">earliest_date</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote</span></code></p></td>
@@ -74,6 +84,11 @@
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.termstructures.yields.rate_helpers.RateHelper.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.rate_helpers.RateHelper.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -117,7 +132,7 @@
   <li><a href="quantlib.termstructures.html">quantlib.termstructures</a><ul>
   <li><a href="quantlib.termstructures.yields.html">quantlib.termstructures.yields</a><ul>
   <li><a href="quantlib.termstructures.yields.rate_helpers.html">quantlib.termstructures.yields.rate_helpers</a><ul>
-      <li>Previous: <a href="quantlib.termstructures.yields.rate_helpers.FuturesRateHelper.html" title="previous chapter">quantlib.termstructures.yields.rate_helpers.FuturesRateHelper</a></li>
+      <li>Previous: <a href="quantlib.termstructures.yields.rate_helpers.FxSwapRateHelper.html" title="previous chapter">quantlib.termstructures.yields.rate_helpers.FxSwapRateHelper</a></li>
       <li>Next: <a href="quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper.html" title="next chapter">quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper</a></li>
   </ul></li>
   </ul></li>

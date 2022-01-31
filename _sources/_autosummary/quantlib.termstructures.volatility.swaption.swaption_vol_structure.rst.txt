@@ -19,6 +19,7 @@ quantlib.termstructures.volatility.swaption.swaption\_vol\_structure
       :toctree:
       :template: custom-class-template.rst
    
+      HandleSwaptionVolatilityStructure
       SwaptionVolatilityStructure
    
    

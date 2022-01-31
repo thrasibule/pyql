@@ -18,6 +18,7 @@ quantlib.cashflows.fixed\_rate\_coupon.FixedRateCoupon
 
    
       ~FixedRateCoupon.__init__
+      ~FixedRateCoupon.accrued_amount
       ~FixedRateCoupon.accrued_days
       ~FixedRateCoupon.accrued_period
       ~FixedRateCoupon.has_occured

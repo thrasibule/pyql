@@ -18,6 +18,7 @@ quantlib.experimental.coupons.cms\_spread\_coupon.CmsSpreadCoupon
 
    
       ~CmsSpreadCoupon.__init__
+      ~CmsSpreadCoupon.accrued_amount
       ~CmsSpreadCoupon.accrued_days
       ~CmsSpreadCoupon.accrued_period
       ~CmsSpreadCoupon.has_occured

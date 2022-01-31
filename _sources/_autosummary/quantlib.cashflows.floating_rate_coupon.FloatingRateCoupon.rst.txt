@@ -18,6 +18,7 @@ quantlib.cashflows.floating\_rate\_coupon.FloatingRateCoupon
 
    
       ~FloatingRateCoupon.__init__
+      ~FloatingRateCoupon.accrued_amount
       ~FloatingRateCoupon.accrued_days
       ~FloatingRateCoupon.accrued_period
       ~FloatingRateCoupon.has_occured

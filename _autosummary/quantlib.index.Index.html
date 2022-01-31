@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.indexes" href="quantlib.indexes.html" />
@@ -57,13 +58,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#quantlib.index.Index.add_fixing" title="quantlib.index.Index.add_fixing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_fixing</span></code></a>(self, Date fixingDate, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.index.Index.clear_fixings" title="quantlib.index.Index.clear_fixings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_fixings</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.index.Index.add_fixings" title="quantlib.index.Index.add_fixings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_fixings</span></code></a>(self, list dates, list values, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.index.Index.fixing" title="quantlib.index.Index.fixing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing</span></code></a>(self, Date fixingDate, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.index.Index.clear_fixings" title="quantlib.index.Index.clear_fixings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_fixings</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.index.Index.is_valid_fixing_date" title="quantlib.index.Index.is_valid_fixing_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code></a>(self, Date fixingDate)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.index.Index.fixing" title="quantlib.index.Index.fixing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing</span></code></a>(self, Date fixingDate, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.index.Index.is_valid_fixing_date" title="quantlib.index.Index.is_valid_fixing_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code></a>(self, Date fixingDate)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -89,6 +93,11 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.index.Index.add_fixing">
 <span class="sig-name descname"><span class="pre">add_fixing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">fixingDate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">fixing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">forceOverwrite=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.index.Index.add_fixing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.index.Index.add_fixings">
+<span class="sig-name descname"><span class="pre">add_fixings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">force_overwrite=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.index.Index.add_fixings" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

@@ -18,6 +18,7 @@ quantlib.cashflows.ibor\_coupon.IborCoupon
 
    
       ~IborCoupon.__init__
+      ~IborCoupon.accrued_amount
       ~IborCoupon.accrued_days
       ~IborCoupon.accrued_period
       ~IborCoupon.has_occured

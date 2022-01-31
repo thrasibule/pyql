@@ -19,9 +19,11 @@ quantlib.indexes.ibor.usdlibor.USDLibor
    
       ~USDLibor.__init__
       ~USDLibor.add_fixing
+      ~USDLibor.add_fixings
       ~USDLibor.clear_fixings
       ~USDLibor.fixing
       ~USDLibor.fixing_date
+      ~USDLibor.forecast_fixing
       ~USDLibor.from_name
       ~USDLibor.is_valid_fixing_date
       ~USDLibor.maturity_date
@@ -43,6 +45,7 @@ quantlib.indexes.ibor.usdlibor.USDLibor
       ~USDLibor.family_name
       ~USDLibor.fixing_calendar
       ~USDLibor.fixing_days
+      ~USDLibor.forwarding_term_structure
       ~USDLibor.joint_calendar
       ~USDLibor.name
       ~USDLibor.tenor

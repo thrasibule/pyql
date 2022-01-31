@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.pricingengines.asian.analyticdiscrgeomavprice" href="quantlib.pricingengines.asian.analyticdiscrgeomavprice.html" />
@@ -39,28 +40,15 @@
 <dt class="sig sig-object py" id="quantlib.pricingengines.asian.analyticcontgeomavprice.AnalyticContinuousGeometricAveragePriceAsianEngine">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AnalyticContinuousGeometricAveragePriceAsianEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GeneralizedBlackScholesProcess</span> <span class="pre">process</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.asian.analyticcontgeomavprice.AnalyticContinuousGeometricAveragePriceAsianEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.pricingengines.engine.PricingEngine.html#quantlib.pricingengines.engine.PricingEngine" title="quantlib.pricingengines.engine.PricingEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.pricingengines.engine.PricingEngine</span></code></a></p>
-<p>Pricing engine for European continuous geometric average price Asian
-This class implements a continuous geometric average price</p>
-<blockquote>
-<div><blockquote>
-<div><p>Asian option with European exercise.  The formula is from
-“Option Pricing Formulas”, E. G. Haug (1997) pag 96-97.</p>
-</div></blockquote>
-<dl>
-<dt>ingroup asianengines</dt><dd><p>test
-- the correctness of the returned value is tested by</p>
-<blockquote>
-<div><p>reproducing results available in literature, and results
-obtained using a discrete average approximation.</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>the correctness of the returned greeks is tested by
-reproducing numerical derivatives.</p></li>
-</ul>
+<p>Pricing engine for European continuous geometric average price Asian</p>
+<p>This class implements a continuous geometric average price Asian option
+with European exercise.  The formula is from <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>E.G. Haug “Option Pricing Formulas”, pp. 96-97, 1997</p>
 </dd>
 </dl>
-<p>TODO: handle seasoned options</p>
-</div></blockquote>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.pricingengines.asian.analyticcontgeomavprice.AnalyticContinuousGeometricAveragePriceAsianEngine.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.asian.analyticcontgeomavprice.AnalyticContinuousGeometricAveragePriceAsianEngine.__init__" title="Permalink to this definition">¶</a></dt>

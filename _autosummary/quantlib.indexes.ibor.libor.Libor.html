@@ -13,9 +13,10 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="quantlib.indexes.ibor.usdlibor" href="quantlib.indexes.ibor.usdlibor.html" />
+    <link rel="next" title="quantlib.indexes.ibor.sofr" href="quantlib.indexes.ibor.sofr.html" />
     <link rel="prev" title="quantlib.indexes.ibor.libor" href="quantlib.indexes.ibor.libor.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -62,16 +63,22 @@ LIBOR fixed by BBA.</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_fixing</span></code>(self, Date fixingDate, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_fixings</span></code>(self)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_fixings</span></code>(self, list dates, list values, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing</span></code>(self, Date fixingDate, ...)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_fixings</span></code>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing_date</span></code>(self, Date valueDate)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing</span></code>(self, Date fixingDate, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_name</span></code>(type self, market[, term_structure])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing_date</span></code>(self, Date valueDate)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">forecast_fixing</span></code>(self, Date fixing_date)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_name</span></code>(market[, term_structure])</p></td>
 <td><p>Create default IBOR for the market, modify attributes if provided</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code>(self, Date fixingDate)</p></td>
@@ -113,16 +120,19 @@ LIBOR fixed by BBA.</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing_days</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">joint_calendar</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">forwarding_term_structure</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">joint_calendar</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tenor</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_series</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tenor</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_series</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -171,7 +181,7 @@ LIBOR fixed by BBA.</p>
   <li><a href="quantlib.indexes.ibor.html">quantlib.indexes.ibor</a><ul>
   <li><a href="quantlib.indexes.ibor.libor.html">quantlib.indexes.ibor.libor</a><ul>
       <li>Previous: <a href="quantlib.indexes.ibor.libor.html" title="previous chapter">quantlib.indexes.ibor.libor</a></li>
-      <li>Next: <a href="quantlib.indexes.ibor.usdlibor.html" title="next chapter">quantlib.indexes.ibor.usdlibor</a></li>
+      <li>Next: <a href="quantlib.indexes.ibor.sofr.html" title="next chapter">quantlib.indexes.ibor.sofr</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

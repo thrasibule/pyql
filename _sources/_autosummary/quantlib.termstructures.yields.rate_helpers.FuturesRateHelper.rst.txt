@@ -19,6 +19,7 @@ quantlib.termstructures.yields.rate\_helpers.FuturesRateHelper
    
       ~FuturesRateHelper.__init__
       ~FuturesRateHelper.from_index
+      ~FuturesRateHelper.update
    
    
 
@@ -30,8 +31,10 @@ quantlib.termstructures.yields.rate\_helpers.FuturesRateHelper
 
    
       ~FuturesRateHelper.convexity_adjustment
+      ~FuturesRateHelper.earliest_date
       ~FuturesRateHelper.implied_quote
       ~FuturesRateHelper.latest_date
+      ~FuturesRateHelper.maturity_date
       ~FuturesRateHelper.quote
 
    

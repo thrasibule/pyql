@@ -18,6 +18,7 @@ quantlib.cashflows.cms\_coupon.CmsCoupon
 
    
       ~CmsCoupon.__init__
+      ~CmsCoupon.accrued_amount
       ~CmsCoupon.accrued_days
       ~CmsCoupon.accrued_period
       ~CmsCoupon.has_occured

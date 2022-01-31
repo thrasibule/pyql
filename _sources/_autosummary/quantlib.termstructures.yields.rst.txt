@@ -36,8 +36,11 @@ quantlib.termstructures.yields
    quantlib.termstructures.yields.forward_curve
    quantlib.termstructures.yields.forward_spreaded_term_structure
    quantlib.termstructures.yields.implied_term_structure
+   quantlib.termstructures.yields.ois_rate_helper
+   quantlib.termstructures.yields.overnightindexfutureratehelper
    quantlib.termstructures.yields.piecewise_yield_curve
    quantlib.termstructures.yields.piecewise_zerospreaded_termstructure
    quantlib.termstructures.yields.rate_helpers
    quantlib.termstructures.yields.zero_curve
+   quantlib.termstructures.yields.zero_spreaded_term_structure
 

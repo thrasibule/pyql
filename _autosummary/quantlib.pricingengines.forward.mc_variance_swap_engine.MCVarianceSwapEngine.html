@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.pricingengines.forward.replicating_variance_swap_engine" href="quantlib.pricingengines.forward.replicating_variance_swap_engine.html" />
@@ -39,10 +40,9 @@
 <dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MCVarianceSwapEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">GeneralizedBlackScholesProcess</span> <span class="pre">process</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">time_steps=QL_NULL_INTEGER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">time_steps_per_year=QL_NULL_INTEGER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">brownian_bridge=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">antithetic_variate=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">required_samples=QL_NULL_INTEGER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">required_tolerance=QL_NULL_REAL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">max_samples=QL_NULL_INTEGER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BigNatural</span> <span class="pre">seed=0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.pricingengines.engine.PricingEngine.html#quantlib.pricingengines.engine.PricingEngine" title="quantlib.pricingengines.engine.PricingEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.pricingengines.engine.PricingEngine</span></code></a></p>
-<p>Variance-swap pricing engine using Monte Carlo simulation,
-as described in Demeterfi, Derman, Kamal &amp; Zou,
+<p>Variance-swap pricing engine using Monte Carlo simulation</p>
+<p>as described in Demeterfi, Derman, Kamal &amp; Zou,
 “A Guide to Volatility and Variance Swaps”, 1999
-ingroup forwardengines
 TODO define tolerance of numerical integral and incorporate it</p>
 <blockquote>
 <div><p>in errorEstimate</p>
@@ -52,96 +52,21 @@ TODO define tolerance of numerical integral and incorporate it</p>
 </dd>
 </dl>
 <p>Calculate variance via Monte Carlo</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.process">
-<span class="sig-name descname"><span class="pre">process</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.process" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess.html#quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess" title="quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess">GeneralizedBlackScholesProcess</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>process</strong> (<a class="reference internal" href="quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess.html#quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess" title="quantlib.processes.black_scholes_process.GeneralizedBlackScholesProcess"><em>GeneralizedBlackScholesProcess</em></a>) – </p></li>
+<li><p><strong>time_steps</strong> (<em>Size</em>) – </p></li>
+<li><p><strong>time_steps_per_year</strong> (<em>Size</em>) – </p></li>
+<li><p><strong>brownian_bridge</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>antithetic_variate</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>required_samples</strong> (<em>Size</em>) – </p></li>
+<li><p><strong>required_tolerance</strong> (<em>Real</em>) – </p></li>
+<li><p><strong>max_samples</strong> (<em>Size</em>) – </p></li>
+<li><p><strong>seed</strong> (<em>BigNatural</em>) – </p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.time_steps">
-<span class="sig-name descname"><span class="pre">time_steps</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.time_steps" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Size</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.time_steps_per_year">
-<span class="sig-name descname"><span class="pre">time_steps_per_year</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.time_steps_per_year" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Size</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.brownian_bridge">
-<span class="sig-name descname"><span class="pre">brownian_bridge</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.brownian_bridge" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.antithetic_variate">
-<span class="sig-name descname"><span class="pre">antithetic_variate</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.antithetic_variate" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.required_samples">
-<span class="sig-name descname"><span class="pre">required_samples</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.required_samples" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Size</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.required_tolerance">
-<span class="sig-name descname"><span class="pre">required_tolerance</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.required_tolerance" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Real</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.max_samples">
-<span class="sig-name descname"><span class="pre">max_samples</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.max_samples" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Size</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.seed">
-<span class="sig-name descname"><span class="pre">seed</span></span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.seed" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>BigNatural</p>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.forward.mc_variance_swap_engine.MCVarianceSwapEngine.__init__" title="Permalink to this definition">¶</a></dt>

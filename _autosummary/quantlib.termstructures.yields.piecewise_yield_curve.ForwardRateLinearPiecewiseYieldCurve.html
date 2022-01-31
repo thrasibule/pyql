@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLogLinearPiecewiseYieldCurve" href="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLogLinearPiecewiseYieldCurve.html" />
@@ -42,7 +43,9 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Floating yield curve</p>
+<p>updating evaluation_date in Settings will change the reference_date.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>settlement_days</strong> (<em>int</em>) – The settlement date</p></li>
@@ -63,12 +66,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.__init__" title="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param settlement_days</dt>
-<dd class="field-odd"><p>The settlement date</p>
-</dd>
-</dl>
-</p></td>
+<td><p>Floating yield curve</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discount</span></code>(self, value, bool extrapolate=False)</p></td>
 <td><p></p></td>
@@ -77,14 +75,9 @@
 <td><p>Returns the forward interest rate between two dates or times.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.from_reference_date" title="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.from_reference_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_reference_date</span></code></a>(type cls, ...)</p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param reference_date</dt>
-<dd class="field-odd"><p>The curve's reference date</p>
-</dd>
-</dl>
-</p></td>
+<td><p>Fixed <cite>reference_date</cite> yield curve</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">link_to</span></code>(self, YieldTermStructure structure)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">link_to</span></code>(self, YieldTermStructure structure, ...)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_from_reference</span></code>(self, Date dt)</p></td>
@@ -149,7 +142,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.from_reference_date">
 <span class="sig-name descname"><span class="pre">from_reference_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span> <span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">reference_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">helpers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">daycounter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Linear</span> <span class="pre">i=Linear()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">accuracy=1e-12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.piecewise_yield_curve.ForwardRateLinearPiecewiseYieldCurve.from_reference_date" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Fixed <cite>reference_date</cite> yield curve</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>reference_date</strong> (<a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><em>quantlib.time.date.Date</em></a>) – The curve’s reference date</p></li>

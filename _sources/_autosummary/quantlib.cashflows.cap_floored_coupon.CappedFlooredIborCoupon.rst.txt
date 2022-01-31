@@ -18,6 +18,7 @@ quantlib.cashflows.cap\_floored\_coupon.CappedFlooredIborCoupon
 
    
       ~CappedFlooredIborCoupon.__init__
+      ~CappedFlooredIborCoupon.accrued_amount
       ~CappedFlooredIborCoupon.accrued_days
       ~CappedFlooredIborCoupon.accrued_period
       ~CappedFlooredIborCoupon.has_occured

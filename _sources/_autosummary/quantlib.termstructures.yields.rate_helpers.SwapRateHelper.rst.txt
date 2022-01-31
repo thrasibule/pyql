@@ -32,9 +32,11 @@ quantlib.termstructures.yields.rate\_helpers.SwapRateHelper
    .. autosummary::
 
    
+      ~SwapRateHelper.earliest_date
       ~SwapRateHelper.forward_start
       ~SwapRateHelper.implied_quote
       ~SwapRateHelper.latest_date
+      ~SwapRateHelper.maturity_date
       ~SwapRateHelper.quote
       ~SwapRateHelper.spread
 

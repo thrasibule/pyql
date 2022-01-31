@@ -18,6 +18,7 @@ quantlib.experimental.coupons.cms\_spread\_coupon.CappedFlooredCmsSpreadCoupon
 
    
       ~CappedFlooredCmsSpreadCoupon.__init__
+      ~CappedFlooredCmsSpreadCoupon.accrued_amount
       ~CappedFlooredCmsSpreadCoupon.accrued_days
       ~CappedFlooredCmsSpreadCoupon.accrued_period
       ~CappedFlooredCmsSpreadCoupon.has_occured

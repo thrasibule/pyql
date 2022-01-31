@@ -19,6 +19,7 @@ quantlib.indexes.inflation.euhicp.YYEUHICP
    
       ~YYEUHICP.__init__
       ~YYEUHICP.add_fixing
+      ~YYEUHICP.add_fixings
       ~YYEUHICP.clear_fixings
       ~YYEUHICP.fixing
       ~YYEUHICP.is_valid_fixing_date

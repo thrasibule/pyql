@@ -33,13 +33,18 @@ quantlib.instruments.swaption.Swaption
    
       ~Swaption.annuity
       ~Swaption.atm_forward
+      ~Swaption.delta
       ~Swaption.exercise
+      ~Swaption.implied_vol
       ~Swaption.is_expired
       ~Swaption.net_present_value
       ~Swaption.npv
       ~Swaption.payoff
       ~Swaption.settlement_method
       ~Swaption.settlement_type
+      ~Swaption.std_dev
+      ~Swaption.time_to_expiry
+      ~Swaption.type
       ~Swaption.valuation_date
       ~Swaption.vega
 

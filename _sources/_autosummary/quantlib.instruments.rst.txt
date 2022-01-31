@@ -36,11 +36,15 @@ quantlib.instruments
    quantlib.instruments.instrument
    quantlib.instruments.make_cds
    quantlib.instruments.make_cms
+   quantlib.instruments.make_ois
    quantlib.instruments.make_swaption
    quantlib.instruments.make_vanilla_swap
    quantlib.instruments.option
+   quantlib.instruments.overnightindexedswap
+   quantlib.instruments.overnightindexfuture
    quantlib.instruments.payoffs
    quantlib.instruments.swap
    quantlib.instruments.swaption
+   quantlib.instruments.vanillaswap
    quantlib.instruments.variance_swap
 

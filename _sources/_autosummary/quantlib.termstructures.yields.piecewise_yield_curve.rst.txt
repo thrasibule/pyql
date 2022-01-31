@@ -27,7 +27,6 @@ quantlib.termstructures.yields.piecewise\_yield\_curve
       ForwardRateCubicPiecewiseYieldCurve
       ForwardRateLinearPiecewiseYieldCurve
       ForwardRateLogLinearPiecewiseYieldCurve
-      Meta
       PiecewiseYieldCurve
       ZeroYieldBackwardFlatPiecewiseYieldCurve
       ZeroYieldCubicPiecewiseYieldCurve

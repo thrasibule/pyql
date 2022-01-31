@@ -18,6 +18,7 @@ quantlib.termstructures.yields.rate\_helpers.RateHelper
 
    
       ~RateHelper.__init__
+      ~RateHelper.update
    
    
 
@@ -28,8 +29,10 @@ quantlib.termstructures.yields.rate\_helpers.RateHelper
    .. autosummary::
 
    
+      ~RateHelper.earliest_date
       ~RateHelper.implied_quote
       ~RateHelper.latest_date
+      ~RateHelper.maturity_date
       ~RateHelper.quote
 
    

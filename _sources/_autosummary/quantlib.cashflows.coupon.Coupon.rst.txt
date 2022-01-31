@@ -18,6 +18,7 @@ quantlib.cashflows.coupon.Coupon
 
    
       ~Coupon.__init__
+      ~Coupon.accrued_amount
       ~Coupon.accrued_days
       ~Coupon.accrued_period
       ~Coupon.has_occured

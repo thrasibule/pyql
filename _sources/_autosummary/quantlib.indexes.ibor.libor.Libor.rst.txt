@@ -19,9 +19,11 @@ quantlib.indexes.ibor.libor.Libor
    
       ~Libor.__init__
       ~Libor.add_fixing
+      ~Libor.add_fixings
       ~Libor.clear_fixings
       ~Libor.fixing
       ~Libor.fixing_date
+      ~Libor.forecast_fixing
       ~Libor.from_name
       ~Libor.is_valid_fixing_date
       ~Libor.maturity_date
@@ -43,6 +45,7 @@ quantlib.indexes.ibor.libor.Libor
       ~Libor.family_name
       ~Libor.fixing_calendar
       ~Libor.fixing_days
+      ~Libor.forwarding_term_structure
       ~Libor.joint_calendar
       ~Libor.name
       ~Libor.tenor

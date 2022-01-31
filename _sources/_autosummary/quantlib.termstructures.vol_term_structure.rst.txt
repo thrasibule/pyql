@@ -19,6 +19,7 @@ quantlib.termstructures.vol\_term\_structure
       :toctree:
       :template: custom-class-template.rst
    
+      HandleVolatilityTermStructure
       VolatilityTermStructure
    
    

@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.observable" href="quantlib.observable.html" />
@@ -39,11 +40,12 @@
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Vasicek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">b=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">Lambda=0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.vasicek.Vasicek" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.models.shortrate.onefactor_model.OneFactorAffineModel.html#quantlib.models.shortrate.onefactor_model.OneFactorAffineModel" title="quantlib.models.shortrate.onefactor_model.OneFactorAffineModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.models.shortrate.onefactor_model.OneFactorAffineModel</span></code></a></p>
-<p>Vasicek model defined by
-.. math::
-dr_t = a(b - r_t)dt + sigma dW_t</p>
-<p>where a, b and sigma are constants.
-A risk premium lambda can also be specified.</p>
+<p>Vasicek model</p>
+<p>defined by</p>
+<div class="math">
+<p><span class="math">dr_t = a(b - r_t)dt + \sigma dW_t</span></p>
+</div><p>where <span class="math">a</span>, <span class="math">b</span> and <span class="math">\sigma</span> are constants.
+A risk premium <span class="math">\lambda</span> can also be specified.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.vasicek.Vasicek.__init__" title="Permalink to this definition">¶</a></dt>

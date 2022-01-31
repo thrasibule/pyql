@@ -18,10 +18,13 @@ quantlib.instruments.swap.Swap
 
    
       ~Swap.__init__
+      ~Swap.endDiscounts
       ~Swap.leg
       ~Swap.leg_BPS
       ~Swap.leg_NPV
+      ~Swap.npvDateDiscount
       ~Swap.set_pricing_engine
+      ~Swap.startDiscounts
    
    
 

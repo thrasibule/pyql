@@ -19,6 +19,7 @@ quantlib.index.Index
    
       ~Index.__init__
       ~Index.add_fixing
+      ~Index.add_fixings
       ~Index.clear_fixings
       ~Index.fixing
       ~Index.is_valid_fixing_date

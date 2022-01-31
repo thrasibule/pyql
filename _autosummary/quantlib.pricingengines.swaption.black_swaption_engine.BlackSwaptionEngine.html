@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.pricingengines.swaption.jamshidian_swaption_engine" href="quantlib.pricingengines.swaption.jamshidian_swaption_engine.html" />
@@ -40,8 +41,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlackSwaptionEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">discount_curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">dc=Actual365Fixed()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">displacement=0.</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CashAnnuityModel</span> <span class="pre">model=DiscountCurve</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.swaption.black_swaption_engine.BlackSwaptionEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.pricingengines.engine.PricingEngine.html#quantlib.pricingengines.engine.PricingEngine" title="quantlib.pricingengines.engine.PricingEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.pricingengines.engine.PricingEngine</span></code></a></p>
 <p>Shifted Lognormal Black-formula swaption engine</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>The engine assumes that the exercise date lies before the
 start date of the passed swap.</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.pricingengines.swaption.black_swaption_engine.BlackSwaptionEngine.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.swaption.black_swaption_engine.BlackSwaptionEngine.__init__" title="Permalink to this definition">¶</a></dt>

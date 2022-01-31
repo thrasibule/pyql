@@ -29,8 +29,10 @@ quantlib.termstructures.yields.rate\_helpers.RelativeDateRateHelper
    .. autosummary::
 
    
+      ~RelativeDateRateHelper.earliest_date
       ~RelativeDateRateHelper.implied_quote
       ~RelativeDateRateHelper.latest_date
+      ~RelativeDateRateHelper.maturity_date
       ~RelativeDateRateHelper.quote
 
    

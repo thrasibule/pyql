@@ -19,6 +19,7 @@ quantlib.indexes.inflation\_index.ZeroInflationIndex
    
       ~ZeroInflationIndex.__init__
       ~ZeroInflationIndex.add_fixing
+      ~ZeroInflationIndex.add_fixings
       ~ZeroInflationIndex.clear_fixings
       ~ZeroInflationIndex.fixing
       ~ZeroInflationIndex.is_valid_fixing_date

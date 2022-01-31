@@ -18,6 +18,7 @@ quantlib.cashflows.cap\_floored\_coupon.CappedFlooredCoupon
 
    
       ~CappedFlooredCoupon.__init__
+      ~CappedFlooredCoupon.accrued_amount
       ~CappedFlooredCoupon.accrued_days
       ~CappedFlooredCoupon.accrued_period
       ~CappedFlooredCoupon.has_occured

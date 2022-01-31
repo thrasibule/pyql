@@ -19,6 +19,7 @@ quantlib.indexes.inflation\_index.AUCPI
    
       ~AUCPI.__init__
       ~AUCPI.add_fixing
+      ~AUCPI.add_fixings
       ~AUCPI.clear_fixings
       ~AUCPI.fixing
       ~AUCPI.is_valid_fixing_date

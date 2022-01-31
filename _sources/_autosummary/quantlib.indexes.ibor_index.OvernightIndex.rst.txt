@@ -19,9 +19,11 @@ quantlib.indexes.ibor\_index.OvernightIndex
    
       ~OvernightIndex.__init__
       ~OvernightIndex.add_fixing
+      ~OvernightIndex.add_fixings
       ~OvernightIndex.clear_fixings
       ~OvernightIndex.fixing
       ~OvernightIndex.fixing_date
+      ~OvernightIndex.forecast_fixing
       ~OvernightIndex.from_name
       ~OvernightIndex.is_valid_fixing_date
       ~OvernightIndex.maturity_date
@@ -43,6 +45,7 @@ quantlib.indexes.ibor\_index.OvernightIndex
       ~OvernightIndex.family_name
       ~OvernightIndex.fixing_calendar
       ~OvernightIndex.fixing_days
+      ~OvernightIndex.forwarding_term_structure
       ~OvernightIndex.name
       ~OvernightIndex.tenor
       ~OvernightIndex.time_series

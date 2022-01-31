@@ -19,9 +19,11 @@ quantlib.indexes.ibor.euribor.Euribor6M
    
       ~Euribor6M.__init__
       ~Euribor6M.add_fixing
+      ~Euribor6M.add_fixings
       ~Euribor6M.clear_fixings
       ~Euribor6M.fixing
       ~Euribor6M.fixing_date
+      ~Euribor6M.forecast_fixing
       ~Euribor6M.from_name
       ~Euribor6M.is_valid_fixing_date
       ~Euribor6M.maturity_date
@@ -43,6 +45,7 @@ quantlib.indexes.ibor.euribor.Euribor6M
       ~Euribor6M.family_name
       ~Euribor6M.fixing_calendar
       ~Euribor6M.fixing_days
+      ~Euribor6M.forwarding_term_structure
       ~Euribor6M.name
       ~Euribor6M.tenor
       ~Euribor6M.time_series

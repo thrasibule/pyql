@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.quote" href="quantlib.quote.html" />
@@ -39,12 +40,12 @@
 <dt class="sig sig-object py" id="quantlib.processes.hullwhite_process.HullWhiteProcess">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HullWhiteProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">risk_free_rate_ts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.processes.hullwhite_process.HullWhiteProcess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.stochastic_process.StochasticProcess1D.html#quantlib.stochastic_process.StochasticProcess1D" title="quantlib.stochastic_process.StochasticProcess1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.stochastic_process.StochasticProcess1D</span></code></a></p>
-<p>Hull-White process: a diffusion process for the short rate,
+<p>Hull-White process</p>
+<p>a diffusion process for the short rate,
 with mean-reverting stochastic variance.</p>
 <div class="math">
-<p><span class="math"></span></p>
-</div><p>dr_t &amp;=&amp; a(r_t-n) dt + sigma dW^r_t </p>
-<dl class="py method">
+<p><span class="math">dr_t = a(r_t-n) dt + \sigma dW^r_t</span></p>
+</div><dl class="py method">
 <dt class="sig sig-object py" id="quantlib.processes.hullwhite_process.HullWhiteProcess.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.processes.hullwhite_process.HullWhiteProcess.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>

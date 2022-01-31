@@ -33,6 +33,7 @@ quantlib.time.calendars
    quantlib.time.calendars.japan
    quantlib.time.calendars.jointcalendar
    quantlib.time.calendars.null_calendar
+   quantlib.time.calendars.poland
    quantlib.time.calendars.switzerland
    quantlib.time.calendars.target
    quantlib.time.calendars.united_kingdom

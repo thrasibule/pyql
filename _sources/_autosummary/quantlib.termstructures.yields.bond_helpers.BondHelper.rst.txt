@@ -18,6 +18,7 @@ quantlib.termstructures.yields.bond\_helpers.BondHelper
 
    
       ~BondHelper.__init__
+      ~BondHelper.update
    
    
 
@@ -28,8 +29,10 @@ quantlib.termstructures.yields.bond\_helpers.BondHelper
    .. autosummary::
 
    
+      ~BondHelper.earliest_date
       ~BondHelper.implied_quote
       ~BondHelper.latest_date
+      ~BondHelper.maturity_date
       ~BondHelper.quote
 
    

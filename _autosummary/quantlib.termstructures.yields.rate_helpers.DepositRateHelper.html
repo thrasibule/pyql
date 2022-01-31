@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.termstructures.yields.rate_helpers.FraRateHelper" href="quantlib.termstructures.yields.rate_helpers.FraRateHelper.html" />
@@ -37,7 +38,7 @@
 <h1>quantlib.termstructures.yields.rate_helpers.DepositRateHelper<a class="headerlink" href="#quantlib-termstructures-yields-rate-helpers-depositratehelper" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.termstructures.yields.rate_helpers.DepositRateHelper">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DepositRateHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">tenor=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">fixing_days=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">calendar=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">convention=ModifiedFollowing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">end_of_month=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">deposit_day_counter=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IborIndex</span> <span class="pre">index=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.rate_helpers.DepositRateHelper" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DepositRateHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">tenor=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">fixing_days=2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">calendar=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">convention=ModifiedFollowing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">end_of_month=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">deposit_day_counter=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IborIndex</span> <span class="pre">index=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.rate_helpers.DepositRateHelper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper.html#quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper" title="quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.termstructures.yields.rate_helpers.RelativeDateRateHelper</span></code></a></p>
 <p>Rate helper for bootstrapping over deposit rates.</p>
 <dl class="py method">
@@ -67,10 +68,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">earliest_date</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">implied_quote</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">latest_date</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">quote</span></code></p></td>

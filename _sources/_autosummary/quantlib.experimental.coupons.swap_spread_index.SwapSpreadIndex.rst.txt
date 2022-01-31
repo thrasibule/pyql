@@ -19,9 +19,11 @@ quantlib.experimental.coupons.swap\_spread\_index.SwapSpreadIndex
    
       ~SwapSpreadIndex.__init__
       ~SwapSpreadIndex.add_fixing
+      ~SwapSpreadIndex.add_fixings
       ~SwapSpreadIndex.clear_fixings
       ~SwapSpreadIndex.fixing
       ~SwapSpreadIndex.fixing_date
+      ~SwapSpreadIndex.forecast_fixing
       ~SwapSpreadIndex.is_valid_fixing_date
       ~SwapSpreadIndex.maturity_date
       ~SwapSpreadIndex.value_date

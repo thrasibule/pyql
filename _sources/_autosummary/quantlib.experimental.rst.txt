@@ -30,4 +30,5 @@ quantlib.experimental
 
    quantlib.experimental.coupons
    quantlib.experimental.risk
+   quantlib.experimental.termstructures
 

@@ -30,8 +30,10 @@ quantlib.termstructures.yields.rate\_helpers.FraRateHelper
    .. autosummary::
 
    
+      ~FraRateHelper.earliest_date
       ~FraRateHelper.implied_quote
       ~FraRateHelper.latest_date
+      ~FraRateHelper.maturity_date
       ~FraRateHelper.quote
 
    

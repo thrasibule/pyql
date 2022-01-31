@@ -13,6 +13,7 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.models.shortrate.onefactormodels.vasicek" href="quantlib.models.shortrate.onefactormodels.vasicek.html" />
@@ -39,11 +40,16 @@
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HullWhite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">term_structure=YieldTermStructure()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma=0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek.html#quantlib.models.shortrate.onefactormodels.vasicek.Vasicek" title="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.models.shortrate.onefactormodels.vasicek.Vasicek</span></code></a></p>
-<p>Single-factor Hull-White (extended Vasicek) model.
-The standard single-factor Hull-White model is defined by
-.. math::
-dr_t = (    heta(t) - lpha r_t)dt + sigma dW_t</p>
-<p>where lpha and sigma are constants.</p>
+<p>Single-factor Hull-White (extended Vasicek) model.</p>
+<p>The standard single-factor Hull-White model is defined by</p>
+<div class="math">
+<p><span class="math">dr_t = (\theta(t) - \alpha r_t)dt + \sigma dW_t</span></p>
+</div><p>where <span class="math">\alpha</span> and <span class="math">\sigma</span> are constants.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When the term structure is relinked the <span class="math">r_0</span> parameter
+of the underlying Vasicek model is not updated:</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.__init__" title="Permalink to this definition">¶</a></dt>
@@ -62,16 +68,19 @@ dr_t = (    heta(t) - lpha r_t)dt + sigma dW_t</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.calibrate" title="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.calibrate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calibrate</span></code></a>(self, list helpers, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discount_bound</span></code>(self, Time now, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.convexity_bias" title="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.convexity_bias"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convexity_bias</span></code></a>(Real future_price, Time t, ...)</p></td>
+<td><p>Futures convexity bias</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">discount_bound</span></code>(self, Time now, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code>(self)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code>(self)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code>(self, Array params)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code>(self, Array params)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -101,6 +110,34 @@ dr_t = (    heta(t) - lpha r_t)dt + sigma dW_t</p>
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.calibrate">
 <span class="sig-name descname"><span class="pre">calibrate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">helpers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptimizationMethod</span> <span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EndCriteria</span> <span class="pre">end_criteria</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Constraint</span> <span class="pre">constraint=Constraint()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Real]</span> <span class="pre">weights=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[bool]</span> <span class="pre">fix_parameters=[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.calibrate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.convexity_bias">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convexity_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">future_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Time</span> <span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Time</span> <span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.convexity_bias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Futures convexity bias</p>
+<p>i.e., the difference between futures implied rate and forward rate
+calculated as in <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t</strong> (<em>float</em>) – maturity date of the futures contract</p></li>
+<li><p><strong>T</strong> (<em>float</em>) – maturity of the underlying Libor deposit</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annual volatility of the short rate</p></li>
+<li><p><strong>a</strong> – mean-reversion parameter</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p><cite>t</cite> and <cite>T</cite> should be expressed in yearfraction using deposit day counter,
+<cite>future_price</cite> is futures’ market price.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><ol class="upperalpha simple" start="7">
+<li><p>Kirikos, D. Novak, “Convexity Conundrums”, Risk Magazine, March 1997.</p></li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

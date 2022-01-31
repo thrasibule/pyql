@@ -29,8 +29,10 @@ quantlib.termstructures.yields.rate\_helpers.DepositRateHelper
    .. autosummary::
 
    
+      ~DepositRateHelper.earliest_date
       ~DepositRateHelper.implied_quote
       ~DepositRateHelper.latest_date
+      ~DepositRateHelper.maturity_date
       ~DepositRateHelper.quote
 
    
