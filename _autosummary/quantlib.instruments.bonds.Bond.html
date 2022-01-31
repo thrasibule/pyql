@@ -41,6 +41,13 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bond</span></span><a class="headerlink" href="#quantlib.instruments.bonds.Bond" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.instrument.Instrument</span></code></a></p>
 <p>Base bond class</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Most methods assume that the cash flows are stored
+sorted by date, the redemption(s) being after any
+cash flow at the same date. In particular, if there’s
+one single redemption, it must be the last cash flow,</p>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.Bond.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.Bond.__init__" title="Permalink to this definition">¶</a></dt>
@@ -81,7 +88,7 @@
 <td><p>cash flow stream as a Leg</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.clean_price" title="quantlib.instruments.bonds.Bond.clean_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_price</span></code></a></p></td>
-<td><p>Bond clena price.</p></td>
+<td><p>Bond clean price.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.dirty_price" title="quantlib.instruments.bonds.Bond.dirty_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dirty_price</span></code></a></p></td>
 <td><p>Bond dirty price.</p></td>
@@ -121,7 +128,7 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.Bond.clean_price">
 <span class="sig-name descname"><span class="pre">clean_price</span></span><a class="headerlink" href="#quantlib.instruments.bonds.Bond.clean_price" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bond clena price.</p>
+<dd><p>Bond clean price.</p>
 </dd></dl>
 
 <dl class="py method">

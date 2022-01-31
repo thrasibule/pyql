@@ -41,9 +41,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FixedRateBond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">face_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Schedule</span> <span class="pre">schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Rate]</span> <span class="pre">coupons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">accrual_day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">payment_convention=Following</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">redemption=100.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">issue_date=Date()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">payment_calendar=Calendar()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">ex_coupon_period=Period()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">ex_coupon_calendar=Calendar()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">ex_coupon_convention=Unadjusted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">ex_coupon_end_of_month=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.FixedRateBond" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.instruments.bonds.Bond.html#quantlib.instruments.bonds.Bond" title="quantlib.instruments.bonds.Bond"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.bonds.Bond</span></code></a></p>
 <p>Fixed rate bond.</p>
-<p>Support:
-- simple annual compounding coupon rates</p>
 <dl class="simple">
+<dt>Support:</dt><dd><ul class="simple">
+<li><p>simple annual compounding coupon rates</p></li>
+</ul>
+</dd>
 <dt>Unsupported: (needs interfacing)</dt><dd><ul class="simple">
 <li><p>simple annual compounding coupon rates with internal schedule calculation</p></li>
 <li><p>generic compounding and frequency InterestRate coupons</p></li>
@@ -59,12 +61,12 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>settlement_days</strong> (<em>int</em>) – Number of days before bond settles</p></li>
 <li><p><strong>face_amount</strong> (<em>float</em><em> (</em><em>C double in python</em><em>)</em>) – Amount of face value of bond</p></li>
-<li><p><strong>schedule</strong> (<em>Quantlib::Schedule</em>) – Schedule of payments for bond</p></li>
+<li><p><strong>schedule</strong> (<a class="reference internal" href="quantlib.time.schedule.Schedule.html#quantlib.time.schedule.Schedule" title="quantlib.time.schedule.Schedule"><em>Schedule</em></a>) – Schedule of payments for bond</p></li>
 <li><p><strong>coupons</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Interest[s] to be acquired for bond.</p></li>
-<li><p><strong>accrual_day_counter</strong> (<em>Quantlib::DayCounter</em>) – dayCounter for Bond</p></li>
-<li><p><strong>payment_convention</strong> (<em>Quantlib::BusinessDayConvention</em>) – The business day convention for the payment schedule</p></li>
+<li><p><strong>accrual_day_counter</strong> (<a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><em>DayCounter</em></a>) – dayCounter for Bond</p></li>
+<li><p><strong>payment_convention</strong> (<em>BusinessDayConvention</em>) – The business day convention for the payment schedule</p></li>
 <li><p><strong>redemption</strong> (<em>float</em>) – Amount at redemption</p></li>
-<li><p><strong>issue_date</strong> (<em>Quantlib::Date</em>) – Date bond was issued</p></li>
+<li><p><strong>issue_date</strong> (<a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><em>Date</em></a>) – Date bond was issued</p></li>
 </ul>
 </dd>
 </dl>
@@ -105,7 +107,7 @@
 <td><p>cash flow stream as a Leg</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_price</span></code></p></td>
-<td><p>Bond clena price.</p></td>
+<td><p>Bond clean price.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dirty_price</span></code></p></td>
 <td><p>Bond dirty price.</p></td>

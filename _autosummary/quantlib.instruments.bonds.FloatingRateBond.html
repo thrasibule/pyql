@@ -44,24 +44,24 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.FloatingRateBond.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.FloatingRateBond.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Floating rate bond (constructor)</p>
+<dd><p>Floating rate bond</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>settlement_days</strong> (<em>int</em>) – Number of days before bond settles</p></li>
 <li><p><strong>face_amount</strong> (<em>float</em><em> (</em><em>C double in python</em><em>)</em>) – Amount of face value of bond</p></li>
-<li><p><strong>float_schedule</strong> (<em>Quantlib::Schedule</em>) – Schedule of payments for bond</p></li>
-<li><p><strong>ibor_index</strong> (<em>Quantlib::IborIndex</em>) – Ibor index</p></li>
-<li><p><strong>accrual_day_counter</strong> (<em>Quantlib::DayCounter</em>) – dayCounter for Bond</p></li>
+<li><p><strong>float_schedule</strong> (<a class="reference internal" href="quantlib.time.schedule.Schedule.html#quantlib.time.schedule.Schedule" title="quantlib.time.schedule.Schedule"><em>Schedule</em></a>) – Schedule of payments for bond</p></li>
+<li><p><strong>ibor_index</strong> (<a class="reference internal" href="quantlib.indexes.ibor_index.IborIndex.html#quantlib.indexes.ibor_index.IborIndex" title="quantlib.indexes.ibor_index.IborIndex"><em>IborIndex</em></a>) – Ibor index</p></li>
+<li><p><strong>accrual_day_counter</strong> (<a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><em>DayCounter</em></a>) – dayCounter for Bond</p></li>
 <li><p><strong>fixing_days</strong> (<em>int</em>) – Number of fixing days for bond</p></li>
 <li><p><strong>gearings</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – Gearings defaulted to [1.]</p></li>
 <li><p><strong>spreads</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – Spread on ibor index, default to [0.]</p></li>
 <li><p><strong>caps</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – Caps on the spread</p></li>
 <li><p><strong>floors</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – Floors on the spread</p></li>
-<li><p><strong>payment_convention</strong> (<em>Quantlib::BusinessDayConvention</em>) – The business day convention for the payment schedule</p></li>
+<li><p><strong>payment_convention</strong> (<em>BusinessDayConvention</em>) – The business day convention for the payment schedule</p></li>
 <li><p><strong>in_arrears</strong> (<em>bool</em>) – </p></li>
 <li><p><strong>redemption</strong> (<em>float</em>) – Amount at redemption</p></li>
-<li><p><strong>issue_date</strong> (<em>Quantlib::Date</em>) – Date bond was issued</p></li>
+<li><p><strong>issue_date</strong> (<a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><em>Date</em></a>) – Date bond was issued</p></li>
 </ul>
 </dd>
 </dl>
@@ -75,7 +75,7 @@
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.FloatingRateBond.__init__" title="quantlib.instruments.bonds.FloatingRateBond.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p>Floating rate bond (constructor)</p></td>
+<td><p>Floating rate bond</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">accrued_amount</span></code>(self, Date date=Date)</p></td>
 <td><p>Returns the bond accrued amount at the given date.</p></td>
@@ -102,7 +102,7 @@
 <td><p>cash flow stream as a Leg</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_price</span></code></p></td>
-<td><p>Bond clena price.</p></td>
+<td><p>Bond clean price.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dirty_price</span></code></p></td>
 <td><p>Bond dirty price.</p></td>
