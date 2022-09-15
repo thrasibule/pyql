@@ -44,6 +44,7 @@ quantlib.termstructures.yields.piecewise\_yield\_curve.ForwardRateCubicPiecewise
       ~ForwardRateCubicPiecewiseYieldCurve.reference_date
       ~ForwardRateCubicPiecewiseYieldCurve.settlement_days
       ~ForwardRateCubicPiecewiseYieldCurve.times
+      ~ForwardRateCubicPiecewiseYieldCurve.trait
 
    
    

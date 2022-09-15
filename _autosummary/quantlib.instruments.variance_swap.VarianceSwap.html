@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.instruments.variance_swap.VarianceSwap &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,11 +36,11 @@
           <div class="body" role="main">
             
   <section id="quantlib-instruments-variance-swap-varianceswap">
-<h1>quantlib.instruments.variance_swap.VarianceSwap<a class="headerlink" href="#quantlib-instruments-variance-swap-varianceswap" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.instruments.variance_swap.VarianceSwap<a class="headerlink" href="#quantlib-instruments-variance-swap-varianceswap" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">VarianceSwap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">SwapType</span> <span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">notional</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">maturity_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.instrument.Instrument</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instrument</span></code></a></p>
 <p>Variance swap
 warning This class does not manage seasoned variance swaps.
 ingroup instruments</p>
@@ -47,7 +48,7 @@ ingroup instruments</p>
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap.position">
 <span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap.position" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>SwapType</p>
 </dd>
 </dl>
@@ -57,7 +58,7 @@ ingroup instruments</p>
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap.strik">
 <span class="sig-name descname"><span class="pre">strik</span></span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap.strik" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Real</p>
 </dd>
 </dl>
@@ -67,7 +68,7 @@ ingroup instruments</p>
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap.notional">
 <span class="sig-name descname"><span class="pre">notional</span></span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap.notional" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Real</p>
 </dd>
 </dl>
@@ -77,7 +78,7 @@ ingroup instruments</p>
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap.start_date">
 <span class="sig-name descname"><span class="pre">start_date</span></span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap.start_date" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date">Date</a></p>
 </dd>
 </dl>
@@ -87,7 +88,7 @@ ingroup instruments</p>
 <dt class="sig sig-object py" id="quantlib.instruments.variance_swap.VarianceSwap.maturity_date">
 <span class="sig-name descname"><span class="pre">maturity_date</span></span><a class="headerlink" href="#quantlib.instruments.variance_swap.VarianceSwap.maturity_date" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date">Date</a></p>
 </dd>
 </dl>
@@ -99,11 +100,7 @@ ingroup instruments</p>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.variance_swap.VarianceSwap.__init__" title="quantlib.instruments.variance_swap.VarianceSwap.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -114,11 +111,7 @@ ingroup instruments</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_expired</span></code></p></td>
 <td><p></p></td>
@@ -212,7 +205,7 @@ ingroup instruments</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -229,7 +222,7 @@ ingroup instruments</p>
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.instruments.bonds.Bond &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,11 +36,11 @@
           <div class="body" role="main">
             
   <section id="quantlib-instruments-bonds-bond">
-<h1>quantlib.instruments.bonds.Bond<a class="headerlink" href="#quantlib-instruments-bonds-bond" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.instruments.bonds.Bond<a class="headerlink" href="#quantlib-instruments-bonds-bond" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.Bond">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Bond</span></span><a class="headerlink" href="#quantlib.instruments.bonds.Bond" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.instruments.instrument.Instrument</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instrument</span></code></a></p>
 <p>Base bond class</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -54,11 +55,7 @@ one single redemption, it must be the last cash flow,</p>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.__init__" title="quantlib.instruments.bonds.Bond.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -69,20 +66,19 @@ one single redemption, it must be the last cash flow,</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.clean_yield" title="quantlib.instruments.bonds.Bond.clean_yield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_yield</span></code></a>(self, Real clean_price, ...)</p></td>
 <td><p>Return the yield given a (clean) price and settlement date</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code>(self, PricingEngine engine)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.notional" title="quantlib.instruments.bonds.Bond.notional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notional</span></code></a>(self, Date date=Date)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code>(self, PricingEngine engine)</p></td>
 <td><p>Sets the pricing engine.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.settlement_date" title="quantlib.instruments.bonds.Bond.settlement_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settlement_date</span></code></a>(self, Date from_date=Date)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.settlement_date" title="quantlib.instruments.bonds.Bond.settlement_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settlement_date</span></code></a>(self, Date from_date=Date)</p></td>
 <td><p>Returns the bond settlement date after the given date.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.bonds.Bond.cashflows" title="quantlib.instruments.bonds.Bond.cashflows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cashflows</span></code></a></p></td>
 <td><p>cash flow stream as a Leg</p></td>
@@ -159,6 +155,11 @@ Python does not allow us to use the yield statement as a method name.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="quantlib.instruments.bonds.Bond.notional">
+<span class="sig-name descname"><span class="pre">notional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">date=Date()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.Bond.notional" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.Bond.settlement_date">
 <span class="sig-name descname"><span class="pre">settlement_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">from_date=Date()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.Bond.settlement_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the bond settlement date after the given date.</p>
@@ -230,7 +231,7 @@ Python does not allow us to use the yield statement as a method name.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -247,7 +248,7 @@ Python does not allow us to use the yield statement as a method name.</p>
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -20,11 +20,18 @@ quantlib.models.shortrate.onefactor\_model.OneFactorAffineModel
       ~OneFactorAffineModel.__init__
       ~OneFactorAffineModel.discount_bound
       ~OneFactorAffineModel.params
-      ~OneFactorAffineModel.process
       ~OneFactorAffineModel.set_params
    
    
 
    
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+   
+      ~OneFactorAffineModel.dynamics
+
    
    

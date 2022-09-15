@@ -20,6 +20,7 @@ quantlib.instruments.bonds.ZeroCouponBond
       ~ZeroCouponBond.__init__
       ~ZeroCouponBond.accrued_amount
       ~ZeroCouponBond.clean_yield
+      ~ZeroCouponBond.notional
       ~ZeroCouponBond.set_pricing_engine
       ~ZeroCouponBond.settlement_date
    

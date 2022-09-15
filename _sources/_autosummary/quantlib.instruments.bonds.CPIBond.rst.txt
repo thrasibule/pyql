@@ -20,6 +20,7 @@ quantlib.instruments.bonds.CPIBond
       ~CPIBond.__init__
       ~CPIBond.accrued_amount
       ~CPIBond.clean_yield
+      ~CPIBond.notional
       ~CPIBond.set_pricing_engine
       ~CPIBond.settlement_date
    

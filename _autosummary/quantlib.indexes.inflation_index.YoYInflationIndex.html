@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.indexes.inflation_index.YoYInflationIndex &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,22 +36,18 @@
           <div class="body" role="main">
             
   <section id="quantlib-indexes-inflation-index-yoyinflationindex">
-<h1>quantlib.indexes.inflation_index.YoYInflationIndex<a class="headerlink" href="#quantlib-indexes-inflation-index-yoyinflationindex" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.indexes.inflation_index.YoYInflationIndex<a class="headerlink" href="#quantlib-indexes-inflation-index-yoyinflationindex" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.indexes.inflation_index.YoYInflationIndex">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">YoYInflationIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Region</span> <span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">revised</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">interpolated</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">ratio</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Frequency</span> <span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">availability_lag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YoYInflationTermStructure</span> <span class="pre">ts=YoYInflationTermStructure()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.indexes.inflation_index.YoYInflationIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="quantlib.indexes.inflation_index.ZeroInflationIndex.html#quantlib.indexes.inflation_index.ZeroInflationIndex" title="quantlib.indexes.inflation_index.ZeroInflationIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.indexes.inflation_index.ZeroInflationIndex</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="quantlib.indexes.inflation_index.ZeroInflationIndex.html#quantlib.indexes.inflation_index.ZeroInflationIndex" title="quantlib.indexes.inflation_index.ZeroInflationIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZeroInflationIndex</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.indexes.inflation_index.YoYInflationIndex.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.indexes.inflation_index.YoYInflationIndex.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.indexes.inflation_index.YoYInflationIndex.__init__" title="quantlib.indexes.inflation_index.YoYInflationIndex.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -67,7 +64,7 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fixing</span></code>(self, Date fixingDate, ...)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code>(self, Date fixingDate)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code>(self, Date fixing_date)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero_inflation_term_structure</span></code>(self)</p></td>
@@ -76,11 +73,7 @@
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">availability_lag</span></code></p></td>
 <td><p></p></td>
@@ -171,7 +164,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -188,7 +181,7 @@
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

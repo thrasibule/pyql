@@ -9,6 +9,13 @@ quantlib.time.schedule
 
    
    
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      previous_twentieth
+   
    
 
    

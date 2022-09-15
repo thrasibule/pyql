@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.experimental.risk.sensitivityanalysis.parallel_analysis &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="quantlib-experimental-risk-sensitivityanalysis-parallel-analysis">
-<h1>quantlib.experimental.risk.sensitivityanalysis.parallel_analysis<a class="headerlink" href="#quantlib-experimental-risk-sensitivityanalysis-parallel-analysis" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.experimental.risk.sensitivityanalysis.parallel_analysis<a class="headerlink" href="#quantlib-experimental-risk-sensitivityanalysis-parallel-analysis" title="Permalink to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="quantlib.experimental.risk.sensitivityanalysis.parallel_analysis">
 <span class="sig-name descname"><span class="pre">parallel_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">quotes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">instruments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Real]</span> <span class="pre">quantities=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">shift=0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SensitivityAnalysis</span> <span class="pre">type=Centered</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">reference_npv=QL_NULL_REAL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.experimental.risk.sensitivityanalysis.parallel_analysis" title="Permalink to this definition">¶</a></dt>
@@ -45,7 +46,7 @@ is not available if type is OneSide.</p>
 <p>Empty quantities vector is considered as unit vector. The same if the
 vector is just one single element equal to one.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>quotes</strong> (<em>list</em><em>[</em><a class="reference internal" href="quantlib.quotes.simplequote.SimpleQuote.html#quantlib.quotes.simplequote.SimpleQuote" title="quantlib.quotes.simplequote.SimpleQuote"><em>SimpleQuote</em></a><em>]</em>) – </p></li>
 <li><p><strong>instrument</strong> (<em>list</em><em>[</em><a class="reference internal" href="quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument" title="quantlib.instruments.instrument.Instrument"><em>Instrument</em></a><em>]</em>) – </p></li>
@@ -117,7 +118,7 @@ vector is just one single element equal to one.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -134,7 +135,7 @@ vector is just one single element equal to one.</p>
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

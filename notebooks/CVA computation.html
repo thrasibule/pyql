@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Example of CVA computation &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -249,6 +250,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -257,10 +259,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -272,22 +278,25 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
 <section id="Example-of-CVA-computation">
-<h1>Example of CVA computation<a class="headerlink" href="#Example-of-CVA-computation" title="Permalink to this headline">¶</a></h1>
+<h1>Example of CVA computation<a class="headerlink" href="#Example-of-CVA-computation" title="Permalink to this heading">¶</a></h1>
 <p>This example is taken from the following website: <a class="reference external" href="http://www.pricederivatives.com/en/derivatives-cva-example-monte-carlo-python/">http://www.pricederivatives.com/en/derivatives-cva-example-monte-carlo-python/</a>. We’ve taken advantage of some functionalities provided by pyql to simplify the computations.</p>
 <p>Here we’ll show an example of code for CVA calculation (credit valuation adjustment) with Python and Quantlib using a simple Monte-Carlo method for a portfolio consisting solely of a single interest rate swap. It’s easy to generalize this code to include more financial instruments.</p>
 <section id="CVA-calculation-algorithm">
-<h2>CVA calculation algorithm<a class="headerlink" href="#CVA-calculation-algorithm" title="Permalink to this headline">¶</a></h2>
+<h2>CVA calculation algorithm<a class="headerlink" href="#CVA-calculation-algorithm" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Simulate yield curve at future dates.</p></li>
 <li><p>Calculate your derivatives portfolio NPV (net present value) at each time point for each scenario.</p></li>
@@ -299,7 +308,7 @@ div.rendered_html tbody tr:hover {
 </ol>
 </section>
 <section id="Outline">
-<h2>Outline<a class="headerlink" href="#Outline" title="Permalink to this headline">¶</a></h2>
+<h2>Outline<a class="headerlink" href="#Outline" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In this simple example, we will use the Hull White model to generate future yield curves. In practice, many banks use some yield curve evolution models based on historical simulations. In the Hull White model, the short rate <img class="math" src="../_images/math/e92d0a0db81eb0ed078e9e553863167bf026f303.png" alt="r_t"/> is distributed normally with known mean and variance.</p></li>
 <li><p>For each point of time we will generate whole yield curve based on short rate. Then we will price our interest rate swap on each of these curves.</p></li>
@@ -311,7 +320,7 @@ div.rendered_html tbody tr:hover {
 </ol>
 </section>
 <section id="Hull-White-model-for-future-yield-curve-simulations">
-<h2>Hull-White model for future yield curve simulations<a class="headerlink" href="#Hull-White-model-for-future-yield-curve-simulations" title="Permalink to this headline">¶</a></h2>
+<h2>Hull-White model for future yield curve simulations<a class="headerlink" href="#Hull-White-model-for-future-yield-curve-simulations" title="Permalink to this heading">¶</a></h2>
 <p>the model is given by dynamics:</p>
 <div class="math">
 <p><img src="../_images/math/2dfac42e3c189583d729237e37e7fbc0c4e667b7.png" alt="dr_t=(\theta_t-ar_t)dt+\sigma dW_t"/></p>
@@ -758,7 +767,7 @@ CVA= 40722.15743027281
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -775,7 +784,7 @@ CVA= 40722.15743027281
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.indexes.swap_index.SwapIndex &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,12 +12,13 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="quantlib.instruments" href="quantlib.instruments.html" />
-    <link rel="prev" title="quantlib.indexes.swap_index" href="quantlib.indexes.swap_index.html" />
+    <link rel="prev" title="quantlib.indexes.swap_index.OvernightIndexedSwapIndex" href="quantlib.indexes.swap_index.OvernightIndexedSwapIndex.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,22 +36,18 @@
           <div class="body" role="main">
             
   <section id="quantlib-indexes-swap-index-swapindex">
-<h1>quantlib.indexes.swap_index.SwapIndex<a class="headerlink" href="#quantlib-indexes-swap-index-swapindex" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.indexes.swap_index.SwapIndex<a class="headerlink" href="#quantlib-indexes-swap-index-swapindex" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.indexes.swap_index.SwapIndex">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SwapIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span> <span class="pre">family_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">tenor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">calendar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">fixed_leg_tenor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int</span> <span class="pre">fixed_leg_convention</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">fixed_leg_daycounter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IborIndex</span> <span class="pre">ibor_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.indexes.swap_index.SwapIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="quantlib.indexes.interest_rate_index.InterestRateIndex.html#quantlib.indexes.interest_rate_index.InterestRateIndex" title="quantlib.indexes.interest_rate_index.InterestRateIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.indexes.interest_rate_index.InterestRateIndex</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="quantlib.indexes.interest_rate_index.InterestRateIndex.html#quantlib.indexes.interest_rate_index.InterestRateIndex" title="quantlib.indexes.interest_rate_index.InterestRateIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">InterestRateIndex</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.indexes.swap_index.SwapIndex.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.indexes.swap_index.SwapIndex.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.indexes.swap_index.SwapIndex.__init__" title="quantlib.indexes.swap_index.SwapIndex.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -73,7 +70,7 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">forecast_fixing</span></code>(self, Date fixing_date)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code>(self, Date fixingDate)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_fixing_date</span></code>(self, Date fixing_date)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code>(self, Date valueDate)</p></td>
@@ -88,11 +85,7 @@
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">currency</span></code></p></td>
 <td><p></p></td>
@@ -176,7 +169,7 @@
   <li><a href="quantlib.html">quantlib</a><ul>
   <li><a href="quantlib.indexes.html">quantlib.indexes</a><ul>
   <li><a href="quantlib.indexes.swap_index.html">quantlib.indexes.swap_index</a><ul>
-      <li>Previous: <a href="quantlib.indexes.swap_index.html" title="previous chapter">quantlib.indexes.swap_index</a></li>
+      <li>Previous: <a href="quantlib.indexes.swap_index.OvernightIndexedSwapIndex.html" title="previous chapter">quantlib.indexes.swap_index.OvernightIndexedSwapIndex</a></li>
       <li>Next: <a href="quantlib.instruments.html" title="next chapter">quantlib.instruments</a></li>
   </ul></li>
   </ul></li>
@@ -194,7 +187,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -211,7 +204,7 @@
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

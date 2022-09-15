@@ -44,6 +44,7 @@ quantlib.termstructures.yields.piecewise\_yield\_curve.ZeroYieldLogLinearPiecewi
       ~ZeroYieldLogLinearPiecewiseYieldCurve.reference_date
       ~ZeroYieldLogLinearPiecewiseYieldCurve.settlement_days
       ~ZeroYieldLogLinearPiecewiseYieldCurve.times
+      ~ZeroYieldLogLinearPiecewiseYieldCurve.trait
 
    
    

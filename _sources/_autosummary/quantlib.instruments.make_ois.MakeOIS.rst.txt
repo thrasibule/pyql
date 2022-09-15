@@ -26,7 +26,7 @@ quantlib.instruments.make\_ois.MakeOIS
       ~MakeOIS.with_fixed_leg_day_count
       ~MakeOIS.with_nominal
       ~MakeOIS.with_overnight_leg_spread
-      ~MakeOIS.with_payment_adjustmend
+      ~MakeOIS.with_payment_adjustment
       ~MakeOIS.with_payment_calendar
       ~MakeOIS.with_payment_frequency
       ~MakeOIS.with_payment_lag

@@ -20,6 +20,7 @@ quantlib.instruments.bonds.FloatingRateBond
       ~FloatingRateBond.__init__
       ~FloatingRateBond.accrued_amount
       ~FloatingRateBond.clean_yield
+      ~FloatingRateBond.notional
       ~FloatingRateBond.set_pricing_engine
       ~FloatingRateBond.settlement_date
    

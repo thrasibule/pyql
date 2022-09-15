@@ -44,6 +44,7 @@ quantlib.termstructures.yields.piecewise\_yield\_curve.DiscountLogLinearPiecewis
       ~DiscountLogLinearPiecewiseYieldCurve.reference_date
       ~DiscountLogLinearPiecewiseYieldCurve.settlement_days
       ~DiscountLogLinearPiecewiseYieldCurve.times
+      ~DiscountLogLinearPiecewiseYieldCurve.trait
 
    
    

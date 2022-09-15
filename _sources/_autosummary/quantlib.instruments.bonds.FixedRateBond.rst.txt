@@ -20,6 +20,7 @@ quantlib.instruments.bonds.FixedRateBond
       ~FixedRateBond.__init__
       ~FixedRateBond.accrued_amount
       ~FixedRateBond.clean_yield
+      ~FixedRateBond.notional
       ~FixedRateBond.set_pricing_engine
       ~FixedRateBond.settlement_date
    

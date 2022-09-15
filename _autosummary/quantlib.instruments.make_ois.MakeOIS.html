@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.instruments.make_ois.MakeOIS &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,7 +36,7 @@
           <div class="body" role="main">
             
   <section id="quantlib-instruments-make-ois-makeois">
-<h1>quantlib.instruments.make_ois.MakeOIS<a class="headerlink" href="#quantlib-instruments-make-ois-makeois" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.instruments.make_ois.MakeOIS<a class="headerlink" href="#quantlib-instruments-make-ois-makeois" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.instruments.make_ois.MakeOIS">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MakeOIS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">swap_tenor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OvernightIndex</span> <span class="pre">overnight_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">fixed_rate=QL_NULL_REAL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">forward_start=Period(0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Days)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_ois.MakeOIS" title="Permalink to this definition">¶</a></dt>
@@ -46,16 +47,12 @@
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.__init__" title="quantlib.instruments.make_ois.MakeOIS.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.receive_fixed" title="quantlib.instruments.make_ois.MakeOIS.receive_fixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">receive_fixed</span></code></a>(self, bool flag)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.receive_fixed" title="quantlib.instruments.make_ois.MakeOIS.receive_fixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">receive_fixed</span></code></a>(self, bool flag=True)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.with_averaging_method" title="quantlib.instruments.make_ois.MakeOIS.with_averaging_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_averaging_method</span></code></a>(self, ...)</p></td>
@@ -79,7 +76,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.with_overnight_leg_spread" title="quantlib.instruments.make_ois.MakeOIS.with_overnight_leg_spread"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_overnight_leg_spread</span></code></a>(self, Spread sp)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustmend" title="quantlib.instruments.make_ois.MakeOIS.with_payment_adjustmend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_payment_adjustmend</span></code></a>(self, ...)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustment" title="quantlib.instruments.make_ois.MakeOIS.with_payment_adjustment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_payment_adjustment</span></code></a>(self, ...)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.instruments.make_ois.MakeOIS.with_payment_calendar" title="quantlib.instruments.make_ois.MakeOIS.with_payment_calendar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">with_payment_calendar</span></code></a>(self, Calendar cal)</p></td>
@@ -113,7 +110,7 @@
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.make_ois.MakeOIS.receive_fixed">
-<span class="sig-name descname"><span class="pre">receive_fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">flag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_ois.MakeOIS.receive_fixed" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">receive_fixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">flag=True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_ois.MakeOIS.receive_fixed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -152,8 +149,8 @@
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="quantlib.instruments.make_ois.MakeOIS.with_payment_adjustmend">
-<span class="sig-name descname"><span class="pre">with_payment_adjustmend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">convention</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustmend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="quantlib.instruments.make_ois.MakeOIS.with_payment_adjustment">
+<span class="sig-name descname"><span class="pre">with_payment_adjustment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">convention</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustment" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -261,7 +258,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -278,7 +275,7 @@
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

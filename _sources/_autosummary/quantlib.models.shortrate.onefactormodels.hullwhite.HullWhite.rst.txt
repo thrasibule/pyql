@@ -22,7 +22,6 @@ quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite
       ~HullWhite.convexity_bias
       ~HullWhite.discount_bound
       ~HullWhite.params
-      ~HullWhite.process
       ~HullWhite.set_params
    
    
@@ -37,6 +36,7 @@ quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite
       ~HullWhite.Lambda
       ~HullWhite.a
       ~HullWhite.b
+      ~HullWhite.dynamics
       ~HullWhite.sigma
 
    

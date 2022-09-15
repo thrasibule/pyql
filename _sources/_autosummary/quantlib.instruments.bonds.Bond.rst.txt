@@ -20,6 +20,7 @@ quantlib.instruments.bonds.Bond
       ~Bond.__init__
       ~Bond.accrued_amount
       ~Bond.clean_yield
+      ~Bond.notional
       ~Bond.set_pricing_engine
       ~Bond.settlement_date
    

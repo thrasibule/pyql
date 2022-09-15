@@ -39,6 +39,7 @@ quantlib.instruments.overnightindexedswap.OvernightIndexedSwap
       ~OvernightIndexedSwap.fair_rate
       ~OvernightIndexedSwap.fair_spread
       ~OvernightIndexedSwap.fixed_day_count
+      ~OvernightIndexedSwap.fixed_leg
       ~OvernightIndexedSwap.fixed_leg_BPS
       ~OvernightIndexedSwap.fixed_leg_NPV
       ~OvernightIndexedSwap.fixed_rate
@@ -49,12 +50,13 @@ quantlib.instruments.overnightindexedswap.OvernightIndexedSwap
       ~OvernightIndexedSwap.nominals
       ~OvernightIndexedSwap.npv
       ~OvernightIndexedSwap.overnight_index
+      ~OvernightIndexedSwap.overnight_leg
       ~OvernightIndexedSwap.overnight_leg_BPS
       ~OvernightIndexedSwap.overnight_leg_NPV
       ~OvernightIndexedSwap.payment_frequency
       ~OvernightIndexedSwap.spread
       ~OvernightIndexedSwap.start_date
-      ~OvernightIndexedSwap.swap_type
+      ~OvernightIndexedSwap.type
       ~OvernightIndexedSwap.valuation_date
 
    

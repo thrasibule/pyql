@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>User’s guide &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -35,13 +36,13 @@
           <div class="body" role="main">
             
   <section id="user-s-guide">
-<h1>User’s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this headline">¶</a></h1>
+<h1>User’s guide<a class="headerlink" href="#user-s-guide" title="Permalink to this heading">¶</a></h1>
 <section id="business-dates">
-<h2>Business dates<a class="headerlink" href="#business-dates" title="Permalink to this headline">¶</a></h2>
+<h2>Business dates<a class="headerlink" href="#business-dates" title="Permalink to this heading">¶</a></h2>
 <p>Business dates handling capabilities is provided by the quantlib.time
 subpackage. The three core components are Date, Period and Calendar.</p>
 <section id="date">
-<h3>Date<a class="headerlink" href="#date" title="Permalink to this headline">¶</a></h3>
+<h3>Date<a class="headerlink" href="#date" title="Permalink to this heading">¶</a></h3>
 <p>A date in QuantLib can be constructed with the following syntax:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">(</span><span class="n">serial_number</span><span class="p">)</span>
 </pre></div>
@@ -94,7 +95,7 @@ given year and month? (e.g. date of the 3rd Wednesday in July 2010)</p></li>
 </div></blockquote>
 </section>
 <section id="calendars">
-<h3>Calendars<a class="headerlink" href="#calendars" title="Permalink to this headline">¶</a></h3>
+<h3>Calendars<a class="headerlink" href="#calendars" title="Permalink to this heading">¶</a></h3>
 <p>One of the crucial objects in the daily business is a calendar for different countries which shows the holidays, business days and weekends for the respective country. In QuantLib, a calendar can be set up easily via:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uk_calendar</span> <span class="o">=</span> <span class="n">UnitedKingdom</span><span class="p">()</span>
 </pre></div>
@@ -202,7 +203,7 @@ the initial/final dates.</p></li>
 </div>
 </section>
 <section id="day-counters">
-<h3>Day counters<a class="headerlink" href="#day-counters" title="Permalink to this headline">¶</a></h3>
+<h3>Day counters<a class="headerlink" href="#day-counters" title="Permalink to this heading">¶</a></h3>
 <p>Daycount conventions are crucial in financial markets. QuantLib offers :</p>
 <blockquote>
 <div><ul class="simple">
@@ -227,7 +228,7 @@ the initial/final dates.</p></li>
 <p>TODO : add example</p>
 </section>
 <section id="date-generation">
-<h3>Date generation<a class="headerlink" href="#date-generation" title="Permalink to this headline">¶</a></h3>
+<h3>Date generation<a class="headerlink" href="#date-generation" title="Permalink to this heading">¶</a></h3>
 <p>An often needed functionality is a schedule of payments, for example for coupon payments of a bond. The task is to produce a series of dates from a start to an end date following a given frequency(e.g. annual, quarterly…). We might want the dates to follow a certain business day convention. And we might want the schedule to go backwards (e.g. start the frequency going backwards from the last date).</p>
 <p>For example:</p>
 <blockquote>
@@ -284,7 +285,7 @@ reference date.</p></li>
 </div></blockquote>
 </section>
 <section id="performance-considerations">
-<h3>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this headline">¶</a></h3>
+<h3>Performance considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this heading">¶</a></h3>
 <p>In [3]: %timeit QuantLib.Date.todaysDate() + QuantLib.Period(10, QuantLib.Days)
 100000 loops, best of 3: 9.71 us per loop</p>
 <p>In [4]: %timeit datetime.date.today() + datetime.timedelta(days=10)
@@ -294,11 +295,11 @@ reference date.</p></li>
 </section>
 </section>
 <section id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">¶</a></h2>
 <p>The mlab module provides high-level functions suitable for easily performing common quantitative finance calculations. These functions use as input standardized data structures that are provided to limit the amount of data transformation needed to string functions together.</p>
 <p>The mlab functions often use pandas data frames as inputs. In order to encourage inter-operability between functions, we have defined a number of standard data structures. The column names of these data frames are defined in the ‘’names’’ module. The standardized data structures should be created with the functions provided in the ‘’data_structures’’ module.</p>
 <section id="names">
-<h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
+<h3>Names<a class="headerlink" href="#names" title="Permalink to this heading">¶</a></h3>
 <p>The column names of all datasets are defined in names.py. A column name should always be referenced by the corresponding variable name,
 and not by a character string. For example, refer to the ‘Strike’ column of an option_quotes data
 set by:</p>
@@ -312,7 +313,7 @@ set by:</p>
 </div>
 </section>
 <section id="data-structures-templates">
-<h3>Data Structures Templates<a class="headerlink" href="#data-structures-templates" title="Permalink to this headline">¶</a></h3>
+<h3>Data Structures Templates<a class="headerlink" href="#data-structures-templates" title="Permalink to this heading">¶</a></h3>
 <p>These data structures are defined to facilitate the inter-operability of the high level functions found in the ‘mlab’ module.</p>
 <p><strong>Option Quotes</strong></p>
 <p>This data structure contains the necessary data for calibrating a stochastic model for the underlying asset, also known as volatility model.</p>
@@ -326,23 +327,23 @@ set by:</p>
 </section>
 </section>
 <section id="mlab">
-<h2>Mlab<a class="headerlink" href="#mlab" title="Permalink to this headline">¶</a></h2>
+<h2>Mlab<a class="headerlink" href="#mlab" title="Permalink to this heading">¶</a></h2>
 <p>The mlab module provides high-level functions suitable for easily performing common
 quantitative finance calculations. These functions use as input standardized data structures
 that are provided to limit the amount of data
 transformation needed to string functions together.</p>
 <section id="standardized-data-structures">
-<h3>Standardized data structures<a class="headerlink" href="#standardized-data-structures" title="Permalink to this headline">¶</a></h3>
+<h3>Standardized data structures<a class="headerlink" href="#standardized-data-structures" title="Permalink to this heading">¶</a></h3>
 </section>
 <section id="curve-building">
-<h3>Curve building<a class="headerlink" href="#curve-building" title="Permalink to this headline">¶</a></h3>
+<h3>Curve building<a class="headerlink" href="#curve-building" title="Permalink to this heading">¶</a></h3>
 </section>
 <section id="asset-pricing">
-<h3>Asset pricing<a class="headerlink" href="#asset-pricing" title="Permalink to this headline">¶</a></h3>
+<h3>Asset pricing<a class="headerlink" href="#asset-pricing" title="Permalink to this heading">¶</a></h3>
 </section>
 </section>
 <section id="notebooks">
-<h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
+<h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this heading">¶</a></h2>
 <p>The notebooks and scripts folder provide sample calculations performed with
 QuantLib.</p>
 <div class="toctree-wrapper compound">
@@ -352,7 +353,7 @@ QuantLib.</p>
 </ul>
 </div>
 <section id="getting-started">
-<h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h3>
 <p>In order to use the notebooks, you need to install:</p>
 <ul class="simple">
 <li><p>Ipython 0.13</p></li>
@@ -430,7 +431,7 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -447,7 +448,7 @@ As of October 2012, you should see 8 notebooks, as shown below:</p>
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

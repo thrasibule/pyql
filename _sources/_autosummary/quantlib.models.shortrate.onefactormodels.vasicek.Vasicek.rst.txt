@@ -20,7 +20,6 @@ quantlib.models.shortrate.onefactormodels.vasicek.Vasicek
       ~Vasicek.__init__
       ~Vasicek.discount_bound
       ~Vasicek.params
-      ~Vasicek.process
       ~Vasicek.set_params
    
    
@@ -35,6 +34,7 @@ quantlib.models.shortrate.onefactormodels.vasicek.Vasicek
       ~Vasicek.Lambda
       ~Vasicek.a
       ~Vasicek.b
+      ~Vasicek.dynamics
       ~Vasicek.sigma
 
    

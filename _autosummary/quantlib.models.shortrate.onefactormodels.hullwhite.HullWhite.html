@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -35,11 +36,11 @@
           <div class="body" role="main">
             
   <section id="quantlib-models-shortrate-onefactormodels-hullwhite-hullwhite">
-<h1>quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite<a class="headerlink" href="#quantlib-models-shortrate-onefactormodels-hullwhite-hullwhite" title="Permalink to this headline">¶</a></h1>
+<h1>quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite<a class="headerlink" href="#quantlib-models-shortrate-onefactormodels-hullwhite-hullwhite" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HullWhite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">term_structure=YieldTermStructure()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma=0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek.html#quantlib.models.shortrate.onefactormodels.vasicek.Vasicek" title="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek"><code class="xref py py-class docutils literal notranslate"><span class="pre">quantlib.models.shortrate.onefactormodels.vasicek.Vasicek</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek.html#quantlib.models.shortrate.onefactormodels.vasicek.Vasicek" title="quantlib.models.shortrate.onefactormodels.vasicek.Vasicek"><code class="xref py py-class docutils literal notranslate"><span class="pre">Vasicek</span></code></a></p>
 <p>Single-factor Hull-White (extended Vasicek) model.</p>
 <p>The standard single-factor Hull-White model is defined by</p>
 <div class="math">
@@ -56,11 +57,7 @@ of the underlying Vasicek model is not updated:</p>
 <dd></dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.__init__" title="quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(*args, **kwargs)</p></td>
 <td><p></p></td>
@@ -77,20 +74,13 @@ of the underlying Vasicek model is not updated:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">params</span></code>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">process</span></code>(self)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code>(self, Array params)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code>(self, Array params)</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Lambda</span></code></p></td>
 <td><p></p></td>
@@ -101,7 +91,10 @@ of the underlying Vasicek model is not updated:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dynamics</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigma</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -116,9 +109,9 @@ of the underlying Vasicek model is not updated:</p>
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convexity_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">future_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Time</span> <span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Time</span> <span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.models.shortrate.onefactormodels.hullwhite.HullWhite.convexity_bias" title="Permalink to this definition">¶</a></dt>
 <dd><p>Futures convexity bias</p>
 <p>i.e., the difference between futures implied rate and forward rate
-calculated as in <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+calculated as in <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>t</strong> (<em>float</em>) – maturity date of the futures contract</p></li>
 <li><p><strong>T</strong> (<em>float</em>) – maturity of the underlying Libor deposit</p></li>
@@ -130,13 +123,14 @@ calculated as in <a class="footnote-reference brackets" href="#id2" id="id1">1</
 <p class="rubric">Notes</p>
 <p><cite>t</cite> and <cite>T</cite> should be expressed in yearfraction using deposit day counter,
 <cite>future_price</cite> is futures’ market price.</p>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><ol class="upperalpha simple" start="7">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<ol class="upperalpha simple" start="7">
 <li><p>Kirikos, D. Novak, “Convexity Conundrums”, Risk Magazine, March 1997.</p></li>
 </ol>
-</dd>
-</dl>
+</aside>
+</aside>
 </dd></dl>
 
 </dd></dl>
@@ -203,7 +197,7 @@ calculated as in <a class="footnote-reference brackets" href="#id2" id="id1">1</
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -220,7 +214,7 @@ calculated as in <a class="footnote-reference brackets" href="#id2" id="id1">1</
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

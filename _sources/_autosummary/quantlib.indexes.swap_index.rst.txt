@@ -19,6 +19,7 @@ quantlib.indexes.swap\_index
       :toctree:
       :template: custom-class-template.rst
    
+      OvernightIndexedSwapIndex
       SwapIndex
    
    

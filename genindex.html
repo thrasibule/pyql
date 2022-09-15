@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="#" />
@@ -492,11 +493,15 @@
 </li>
         <li><a href="_autosummary/quantlib.instruments.overnightindexedswap.OvernightIndexedSwap.html#quantlib.instruments.overnightindexedswap.OvernightIndexedSwap.__init__">(OvernightIndexedSwap method)</a>
 </li>
+        <li><a href="_autosummary/quantlib.indexes.swap_index.OvernightIndexedSwapIndex.html#quantlib.indexes.swap_index.OvernightIndexedSwapIndex.__init__">(OvernightIndexedSwapIndex method)</a>
+</li>
         <li><a href="_autosummary/quantlib.instruments.overnightindexfuture.OvernightIndexFuture.html#quantlib.instruments.overnightindexfuture.OvernightIndexFuture.__init__">(OvernightIndexFuture method)</a>
 </li>
         <li><a href="_autosummary/quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureHelper.html#quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureHelper.__init__">(OvernightIndexFutureHelper method)</a>
 </li>
         <li><a href="_autosummary/quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureRateHelper.html#quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureRateHelper.__init__">(OvernightIndexFutureRateHelper method)</a>
+</li>
+        <li><a href="_autosummary/quantlib.cashflows.overnight_indexed_coupon.OvernightLeg.html#quantlib.cashflows.overnight_indexed_coupon.OvernightLeg.__init__">(OvernightLeg method)</a>
 </li>
         <li><a href="_autosummary/quantlib.instruments.payoffs.Payoff.html#quantlib.instruments.payoffs.Payoff.__init__">(Payoff method)</a>
 </li>
@@ -541,6 +546,8 @@
         <li><a href="_autosummary/quantlib.cashflows.linear_tsr_pricer.Settings.html#quantlib.cashflows.linear_tsr_pricer.Settings.__init__">(Settings method)</a>, <a href="_autosummary/quantlib.settings.Settings.html#quantlib.settings.Settings.__init__">[1]</a>
 </li>
         <li><a href="_autosummary/quantlib.currency.currencies.SGDCurrency.html#quantlib.currency.currencies.SGDCurrency.__init__">(SGDCurrency method)</a>
+</li>
+        <li><a href="_autosummary/quantlib.models.shortrate.onefactor_model.ShortRateDynamics.html#quantlib.models.shortrate.onefactor_model.ShortRateDynamics.__init__">(ShortRateDynamics method)</a>
 </li>
         <li><a href="_autosummary/quantlib.cashflow.SimpleCashFlow.html#quantlib.cashflow.SimpleCashFlow.__init__">(SimpleCashFlow method)</a>
 </li>
@@ -2260,6 +2267,8 @@
 </li>
       <li><a href="_autosummary/quantlib.instruments.variance_swap.VarianceSwap.html#quantlib.instruments.variance_swap.VarianceSwap.notional">notional (VarianceSwap attribute)</a>
 </li>
+      <li><a href="_autosummary/quantlib.instruments.bonds.Bond.html#quantlib.instruments.bonds.Bond.notional">notional() (Bond method)</a>
+</li>
       <li><a href="_autosummary/quantlib.instruments.instrument.Instrument.html#quantlib.instruments.instrument.Instrument.npv">npv (Instrument attribute)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.swap.Swap.html#quantlib.instruments.swap.Swap.npvDateDiscount">npvDateDiscount() (Swap method)</a>
@@ -2298,10 +2307,10 @@
 </li>
       <li><a href="_autosummary/quantlib.termstructures.vol_term_structure.VolatilityTermStructure.html#quantlib.termstructures.vol_term_structure.VolatilityTermStructure.option_date_from_tenor">option_date_from_tenor() (VolatilityTermStructure method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_autosummary/quantlib.termstructures.volatility.smilesection.SmileSection.html#quantlib.termstructures.volatility.smilesection.SmileSection.option_price">option_price() (SmileSection method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_autosummary/quantlib.reference.data_structures.option_quotes_template.html#quantlib.reference.data_structures.option_quotes_template">option_quotes_template() (in module quantlib.reference.data_structures)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.payoffs.PlainVanillaPayoff.html#quantlib.instruments.payoffs.PlainVanillaPayoff.option_type">option_type (PlainVanillaPayoff attribute)</a>
@@ -2316,11 +2325,15 @@
 </li>
       <li><a href="_autosummary/quantlib.instruments.overnightindexedswap.OvernightIndexedSwap.html#quantlib.instruments.overnightindexedswap.OvernightIndexedSwap">OvernightIndexedSwap (class in quantlib.instruments.overnightindexedswap)</a>
 </li>
+      <li><a href="_autosummary/quantlib.indexes.swap_index.OvernightIndexedSwapIndex.html#quantlib.indexes.swap_index.OvernightIndexedSwapIndex">OvernightIndexedSwapIndex (class in quantlib.indexes.swap_index)</a>
+</li>
       <li><a href="_autosummary/quantlib.instruments.overnightindexfuture.OvernightIndexFuture.html#quantlib.instruments.overnightindexfuture.OvernightIndexFuture">OvernightIndexFuture (class in quantlib.instruments.overnightindexfuture)</a>
 </li>
       <li><a href="_autosummary/quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureHelper.html#quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureHelper">OvernightIndexFutureHelper (class in quantlib.termstructures.yields.overnightindexfutureratehelper)</a>
 </li>
       <li><a href="_autosummary/quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureRateHelper.html#quantlib.termstructures.yields.overnightindexfutureratehelper.OvernightIndexFutureRateHelper">OvernightIndexFutureRateHelper (class in quantlib.termstructures.yields.overnightindexfutureratehelper)</a>
+</li>
+      <li><a href="_autosummary/quantlib.cashflows.overnight_indexed_coupon.OvernightLeg.html#quantlib.cashflows.overnight_indexed_coupon.OvernightLeg">OvernightLeg (class in quantlib.cashflows.overnight_indexed_coupon)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -2364,6 +2377,8 @@
 </li>
       <li><a href="_autosummary/quantlib.time.schedule.Schedule.html#quantlib.time.schedule.Schedule.previous_date">previous_date() (Schedule method)</a>
 </li>
+      <li><a href="_autosummary/quantlib.time.schedule.previous_twentieth.html#quantlib.time.schedule.previous_twentieth">previous_twentieth() (in module quantlib.time.schedule)</a>
+</li>
       <li><a href="_autosummary/quantlib.pricingengines.engine.PricingEngine.html#quantlib.pricingengines.engine.PricingEngine">PricingEngine (class in quantlib.pricingengines.engine)</a>
 </li>
       <li><a href="_autosummary/quantlib.pricingengines.forward.replicating_variance_swap_engine.ReplicatingVarianceSwapEngine.html#quantlib.pricingengines.forward.replicating_variance_swap_engine.ReplicatingVarianceSwapEngine.process">process (ReplicatingVarianceSwapEngine attribute)</a>
@@ -2372,8 +2387,6 @@
 
       <ul>
         <li><a href="_autosummary/quantlib.models.equity.heston_model.HestonModel.html#quantlib.models.equity.heston_model.HestonModel.process">(HestonModel method)</a>
-</li>
-        <li><a href="_autosummary/quantlib.models.shortrate.onefactor_model.OneFactorAffineModel.html#quantlib.models.shortrate.onefactor_model.OneFactorAffineModel.process">(OneFactorAffineModel method)</a>
 </li>
       </ul></li>
       <li><a href="_autosummary/quantlib.math.matrixutilities.pseudosqrt.pseudo_sqrt.html#quantlib.math.matrixutilities.pseudosqrt.pseudo_sqrt">pseudo_sqrt() (in module quantlib.math.matrixutilities.pseudosqrt)</a>
@@ -4255,7 +4268,11 @@
 </li>
       <li><a href="_autosummary/quantlib.termstructures.volatility.sabr.shifted_sabr_volatility.html#quantlib.termstructures.volatility.sabr.shifted_sabr_volatility">shifted_sabr_volatility() (in module quantlib.termstructures.volatility.sabr)</a>
 </li>
+      <li><a href="_autosummary/quantlib.models.shortrate.onefactor_model.ShortRateDynamics.html#quantlib.models.shortrate.onefactor_model.ShortRateDynamics.short_rate">short_rate() (ShortRateDynamics method)</a>
+</li>
       <li><a href="_autosummary/quantlib.termstructures.volatility.swaption.swaption_vol_cube.SwaptionVolatilityCube.html#quantlib.termstructures.volatility.swaption.swaption_vol_cube.SwaptionVolatilityCube.short_swap_index_base">short_swap_index_base() (SwaptionVolatilityCube method)</a>
+</li>
+      <li><a href="_autosummary/quantlib.models.shortrate.onefactor_model.ShortRateDynamics.html#quantlib.models.shortrate.onefactor_model.ShortRateDynamics">ShortRateDynamics (class in quantlib.models.shortrate.onefactor_model)</a>
 </li>
       <li><a href="_autosummary/quantlib.cashflow.SimpleCashFlow.html#quantlib.cashflow.SimpleCashFlow">SimpleCashFlow (class in quantlib.cashflow)</a>
 </li>
@@ -4273,10 +4290,10 @@
       </ul></li>
       <li><a href="_autosummary/quantlib.math.randomnumbers.sobol_rsg.SobolRsg.html#quantlib.math.randomnumbers.sobol_rsg.SobolRsg.skip_to">skip_to() (SobolRsg method)</a>
 </li>
-      <li><a href="_autosummary/quantlib.termstructures.volatility.swaption.swaption_vol_structure.SwaptionVolatilityStructure.html#quantlib.termstructures.volatility.swaption.swaption_vol_structure.SwaptionVolatilityStructure.smile_section">smile_section() (SwaptionVolatilityStructure method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/quantlib.termstructures.volatility.swaption.swaption_vol_structure.SwaptionVolatilityStructure.html#quantlib.termstructures.volatility.swaption.swaption_vol_structure.SwaptionVolatilityStructure.smile_section">smile_section() (SwaptionVolatilityStructure method)</a>
+</li>
       <li><a href="_autosummary/quantlib.termstructures.volatility.smilesection.SmileSection.html#quantlib.termstructures.volatility.smilesection.SmileSection">SmileSection (class in quantlib.termstructures.volatility.smilesection)</a>
 </li>
       <li><a href="_autosummary/quantlib.math.randomnumbers.sobol_rsg.SobolRsg.html#quantlib.math.randomnumbers.sobol_rsg.SobolRsg">SobolRsg (class in quantlib.math.randomnumbers.sobol_rsg)</a>
@@ -4453,9 +4470,11 @@
 </li>
       <li><a href="_autosummary/quantlib.indexes.inflation.ukrpi.UKRPI.html#quantlib.indexes.inflation.ukrpi.UKRPI">UKRPI (class in quantlib.indexes.inflation.ukrpi)</a>
 </li>
-      <li><a href="_autosummary/quantlib.indexes.swap_index.SwapIndex.html#quantlib.indexes.swap_index.SwapIndex.underlying_swap">underlying_swap() (SwapIndex method)</a>
+      <li><a href="_autosummary/quantlib.indexes.swap_index.OvernightIndexedSwapIndex.html#quantlib.indexes.swap_index.OvernightIndexedSwapIndex.underlying_swap">underlying_swap() (OvernightIndexedSwapIndex method)</a>
 
       <ul>
+        <li><a href="_autosummary/quantlib.indexes.swap_index.SwapIndex.html#quantlib.indexes.swap_index.SwapIndex.underlying_swap">(SwapIndex method)</a>
+</li>
         <li><a href="_autosummary/quantlib.instruments.swaption.Swaption.html#quantlib.instruments.swaption.Swaption.underlying_swap">(Swaption method)</a>
 </li>
       </ul></li>
@@ -4467,10 +4486,10 @@
 </li>
       <li><a href="_autosummary/quantlib.observable.Observer.html#quantlib.observable.Observer.unregister_with">unregister_with() (Observer method)</a>
 </li>
-      <li><a href="_autosummary/quantlib.termstructures.volatility.sabr.unsafe_sabr_volatility.html#quantlib.termstructures.volatility.sabr.unsafe_sabr_volatility">unsafe_sabr_volatility() (in module quantlib.termstructures.volatility.sabr)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/quantlib.termstructures.volatility.sabr.unsafe_sabr_volatility.html#quantlib.termstructures.volatility.sabr.unsafe_sabr_volatility">unsafe_sabr_volatility() (in module quantlib.termstructures.volatility.sabr)</a>
+</li>
       <li><a href="_autosummary/quantlib.termstructures.volatility.sabr.unsafe_shifted_sabr_volatility.html#quantlib.termstructures.volatility.sabr.unsafe_shifted_sabr_volatility">unsafe_shifted_sabr_volatility() (in module quantlib.termstructures.volatility.sabr)</a>
 </li>
       <li><a href="_autosummary/quantlib.termstructures.yields.rate_helpers.RateHelper.html#quantlib.termstructures.yields.rate_helpers.RateHelper.update">update() (RateHelper method)</a>
@@ -4506,6 +4525,8 @@
       <li><a href="_autosummary/quantlib.pricingengines.vanilla.vanilla.VanillaOptionEngine.html#quantlib.pricingengines.vanilla.vanilla.VanillaOptionEngine">VanillaOptionEngine (class in quantlib.pricingengines.vanilla.vanilla)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.vanillaswap.VanillaSwap.html#quantlib.instruments.vanillaswap.VanillaSwap">VanillaSwap (class in quantlib.instruments.vanillaswap)</a>
+</li>
+      <li><a href="_autosummary/quantlib.models.shortrate.onefactor_model.ShortRateDynamics.html#quantlib.models.shortrate.onefactor_model.ShortRateDynamics.variable">variable() (ShortRateDynamics method)</a>
 </li>
       <li><a href="_autosummary/quantlib.stochastic_process.StochasticProcess1D.html#quantlib.stochastic_process.StochasticProcess1D.variance">variance() (StochasticProcess1D method)</a>
 </li>
@@ -4547,6 +4568,8 @@
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_cms.MakeCms.html#quantlib.instruments.make_cms.MakeCms.with_cms_leg_tenor">with_cms_leg_tenor() (MakeCms method)</a>
 </li>
+      <li><a href="_autosummary/quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.html#quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.with_coupon_rates">with_coupon_rates() (FixedRateLeg method)</a>
+</li>
       <li><a href="_autosummary/quantlib.instruments.make_cds.MakeCreditDefaultSwap.html#quantlib.instruments.make_cds.MakeCreditDefaultSwap.with_date_generation_rule">with_date_generation_rule() (MakeCreditDefaultSwap method)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_cms.MakeCms.html#quantlib.instruments.make_cms.MakeCms.with_discounting_term_structure">with_discounting_term_structure() (MakeCms method)</a>
@@ -4583,6 +4606,8 @@
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.html#quantlib.instruments.make_vanilla_swap.MakeVanillaSwap.with_floating_leg_tenor">with_floating_leg_tenor() (MakeVanillaSwap method)</a>
 </li>
+      <li><a href="_autosummary/quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.html#quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.with_last_period_day_counter">with_last_period_day_counter() (FixedRateLeg method)</a>
+</li>
       <li><a href="_autosummary/quantlib.instruments.make_cds.MakeCreditDefaultSwap.html#quantlib.instruments.make_cds.MakeCreditDefaultSwap.with_last_period_daycounter">with_last_period_daycounter() (MakeCreditDefaultSwap method)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_cms.MakeCms.html#quantlib.instruments.make_cms.MakeCms.with_nominal">with_nominal() (MakeCms method)</a>
@@ -4599,14 +4624,24 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.html#quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.with_notional">with_notional() (FixedRateLeg method)</a>
+</li>
       <li><a href="_autosummary/quantlib.instruments.make_swaption.MakeSwaption.html#quantlib.instruments.make_swaption.MakeSwaption.with_option_convention">with_option_convention() (MakeSwaption method)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_overnight_leg_spread">with_overnight_leg_spread() (MakeOIS method)</a>
 </li>
-      <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustmend">with_payment_adjustmend() (MakeOIS method)</a>
+      <li><a href="_autosummary/quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.html#quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.with_payment_adjustment">with_payment_adjustment() (FixedRateLeg method)</a>
+
+      <ul>
+        <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_adjustment">(MakeOIS method)</a>
 </li>
-      <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_calendar">with_payment_calendar() (MakeOIS method)</a>
+      </ul></li>
+      <li><a href="_autosummary/quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.html#quantlib.cashflows.fixed_rate_coupon.FixedRateLeg.with_payment_calendar">with_payment_calendar() (FixedRateLeg method)</a>
+
+      <ul>
+        <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_calendar">(MakeOIS method)</a>
 </li>
+      </ul></li>
       <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_frequency">with_payment_frequency() (MakeOIS method)</a>
 </li>
       <li><a href="_autosummary/quantlib.instruments.make_ois.MakeOIS.html#quantlib.instruments.make_ois.MakeOIS.with_payment_lag">with_payment_lag() (MakeOIS method)</a>
@@ -4781,7 +4816,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
 
 
 
@@ -4798,7 +4833,7 @@
       &copy;2011, Didrik Pinte, Patrick Henaff.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>
