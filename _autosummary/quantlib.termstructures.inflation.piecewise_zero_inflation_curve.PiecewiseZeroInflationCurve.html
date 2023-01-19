@@ -37,7 +37,7 @@
 <h1>quantlib.termstructures.inflation.piecewise_zero_inflation_curve.PiecewiseZeroInflationCurve<a class="headerlink" href="#quantlib-termstructures-inflation-piecewise-zero-inflation-curve-piecewisezeroinflationcurve" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="quantlib.termstructures.inflation.piecewise_zero_inflation_curve.PiecewiseZeroInflationCurve">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PiecewiseZeroInflationCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Interpolator</span> <span class="pre">interpolator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">reference_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">calendar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">lag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Frequency</span> <span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">index_is_interpolated</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">base_zero_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">instruments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">accuracy=1e-12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.inflation.piecewise_zero_inflation_curve.PiecewiseZeroInflationCurve" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PiecewiseZeroInflationCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Interpolator</span> <span class="pre">interpolator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">reference_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">calendar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">lag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Frequency</span> <span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rate</span> <span class="pre">base_zero_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list</span> <span class="pre">instruments</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">accuracy=1e-12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.inflation.piecewise_zero_inflation_curve.PiecewiseZeroInflationCurve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.inflation.interpolated_zero_inflation_curve.InterpolatedZeroInflationCurve.html#quantlib.termstructures.inflation.interpolated_zero_inflation_curve.InterpolatedZeroInflationCurve" title="quantlib.termstructures.inflation.interpolated_zero_inflation_curve.InterpolatedZeroInflationCurve"><code class="xref py py-class docutils literal notranslate"><span class="pre">InterpolatedZeroInflationCurve</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.termstructures.inflation.piecewise_zero_inflation_curve.PiecewiseZeroInflationCurve.__init__">
@@ -70,16 +70,13 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">base_rate</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_is_interpolated</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_date</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_date</span></code></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observation_lag</span></code></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observation_lag</span></code></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reference_date</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reference_date</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
