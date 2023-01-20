@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>quantlib.pricingengines.blackformula &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <title>quantlib.pricingengines.blackformula.bachelier_black_formula &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="quantlib.pricingengines.blackformula.bachelier_black_formula" href="quantlib.pricingengines.blackformula.bachelier_black_formula.html" />
-    <link rel="prev" title="quantlib.pricingengines.asian.analyticdiscrgeomavprice.AnalyticDiscreteGeometricAveragePriceAsianEngine" href="quantlib.pricingengines.asian.analyticdiscrgeomavprice.AnalyticDiscreteGeometricAveragePriceAsianEngine.html" />
+    <link rel="next" title="quantlib.pricingengines.blackformula.blackFormula" href="quantlib.pricingengines.blackformula.blackFormula.html" />
+    <link rel="prev" title="quantlib.pricingengines.blackformula" href="quantlib.pricingengines.blackformula.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,22 +33,31 @@
 
           <div class="body" role="main">
             
-  <section id="module-quantlib.pricingengines.blackformula">
-<span id="quantlib-pricingengines-blackformula"></span><h1>quantlib.pricingengines.blackformula<a class="headerlink" href="#module-quantlib.pricingengines.blackformula" title="Permalink to this heading">¶</a></h1>
-<p class="rubric">Functions</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.pricingengines.blackformula.bachelier_black_formula.html#quantlib.pricingengines.blackformula.bachelier_black_formula" title="quantlib.pricingengines.blackformula.bachelier_black_formula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bachelier_black_formula</span></code></a>(Type option_type, ...)</p></td>
-<td><p>Black style formula when forward is normal rather than</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="quantlib.pricingengines.blackformula.blackFormula.html#quantlib.pricingengines.blackformula.blackFormula" title="quantlib.pricingengines.blackformula.blackFormula"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackFormula</span></code></a>(Type option_type, Real strike, ...)</p></td>
-<td><p>Black 1976 formula</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev.html#quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev" title="quantlib.pricingengines.blackformula.blackFormulaImpliedStdDev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blackFormulaImpliedStdDev</span></code></a>(Type cp, ...[, guess])</p></td>
-<td><p>Implied volatility calculation</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="quantlib-pricingengines-blackformula-bachelier-black-formula">
+<h1>quantlib.pricingengines.blackformula.bachelier_black_formula<a class="headerlink" href="#quantlib-pricingengines-blackformula-bachelier-black-formula" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="quantlib.pricingengines.blackformula.bachelier_black_formula">
+<span class="sig-name descname"><span class="pre">bachelier_black_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Type</span> <span class="pre">option_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">stdDev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">discount=1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.blackformula.bachelier_black_formula" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Black style formula when forward is normal rather than</dt><dd><p>log-normal. This is essentially the model of Bachelier.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>option_type</strong> (<em>str</em><em> or </em><em>option.Call/Put</em>) – </p></li>
+<li><p><strong>strike</strong> (<em>float</em>) – </p></li>
+<li><p><strong>forward</strong> (<em>float</em>) – </p></li>
+<li><p><strong>std_dev</strong> (<em>float</em>) – </p></li>
+<li><p><strong>discount</strong> (<em>float</em>) – </p></li>
+<li><p><strong>warning::</strong> (<em>..</em>) – Bachelier model needs absolute volatility, not
+percentage volatility. Standard deviation is
+absoluteVolatility*sqrt(timeToMaturity)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -88,8 +97,10 @@
   <li><a href="../reference_guide.html">Reference guide</a><ul>
   <li><a href="quantlib.html">quantlib</a><ul>
   <li><a href="quantlib.pricingengines.html">quantlib.pricingengines</a><ul>
-      <li>Previous: <a href="quantlib.pricingengines.asian.analyticdiscrgeomavprice.AnalyticDiscreteGeometricAveragePriceAsianEngine.html" title="previous chapter">quantlib.pricingengines.asian.analyticdiscrgeomavprice.AnalyticDiscreteGeometricAveragePriceAsianEngine</a></li>
-      <li>Next: <a href="quantlib.pricingengines.blackformula.bachelier_black_formula.html" title="next chapter">quantlib.pricingengines.blackformula.bachelier_black_formula</a></li>
+  <li><a href="quantlib.pricingengines.blackformula.html">quantlib.pricingengines.blackformula</a><ul>
+      <li>Previous: <a href="quantlib.pricingengines.blackformula.html" title="previous chapter">quantlib.pricingengines.blackformula</a></li>
+      <li>Next: <a href="quantlib.pricingengines.blackformula.blackFormula.html" title="next chapter">quantlib.pricingengines.blackformula.blackFormula</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>
@@ -126,7 +137,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
-      <a href="../_sources/_autosummary/quantlib.pricingengines.blackformula.rst.txt"
+      <a href="../_sources/_autosummary/quantlib.pricingengines.blackformula.bachelier_black_formula.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
