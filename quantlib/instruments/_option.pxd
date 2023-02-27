@@ -50,10 +50,10 @@ cdef extern from 'ql/instruments/vanillaoption.hpp' namespace 'QuantLib':
         Volatility impliedVolatility(
                 Real price,
                 shared_ptr[GeneralizedBlackScholesProcess]& process,
-                Real accuracy,
-                Size maxEvaluations,
-                Volatility minVol,
-                Volatility maxVol
+                Real accuracy, # 1.0e-4
+                Size maxEvaluations, #100
+                Volatility minVol, # 1.0e-7
+                Volatility maxVol # 4.0
         ) except +
         Volatility impliedVolatility(
                 Real price,
