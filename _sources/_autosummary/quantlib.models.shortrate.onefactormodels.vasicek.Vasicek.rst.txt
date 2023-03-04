@@ -35,7 +35,6 @@ quantlib.models.shortrate.onefactormodels.vasicek.Vasicek
       ~Vasicek.a
       ~Vasicek.b
       ~Vasicek.dynamics
-      ~Vasicek.r0
       ~Vasicek.sigma
 
    
