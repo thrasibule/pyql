@@ -38,10 +38,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="quantlib.pricingengines.blackformula.bachelier_black_formula">
 <span class="sig-name descname"><span class="pre">bachelier_black_formula</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Type</span> <span class="pre">option_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">strike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">stdDev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">discount=1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.pricingengines.blackformula.bachelier_black_formula" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Black style formula when forward is normal rather than</dt><dd><p>log-normal. This is essentially the model of Bachelier.</p>
-</dd>
-</dl>
+<dd><p>Black style formula when forward is normal rather than log-normal.</p>
+<p>This is essentially the model of Bachelier.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -50,12 +48,15 @@
 <li><p><strong>forward</strong> (<em>float</em>) – </p></li>
 <li><p><strong>std_dev</strong> (<em>float</em>) – </p></li>
 <li><p><strong>discount</strong> (<em>float</em>) – </p></li>
-<li><p><strong>warning::</strong> (<em>..</em>) – Bachelier model needs absolute volatility, not
-percentage volatility. Standard deviation is
-absoluteVolatility*sqrt(timeToMaturity)</p></li>
 </ul>
 </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Bachelier model needs absolute volatility, not
+percentage volatility. Standard deviation is
+absoluteVolatility*sqrt(timeToMaturity)</p>
+</div>
 </dd></dl>
 
 </section>
