@@ -6,8 +6,6 @@ from quantlib.time_series cimport TimeSeries
 cimport quantlib._time_series as _ts
 
 cdef class IndexManager:
-    cdef has_history(self, string name):
-        _im.IndexManager.instance().hasHistory(name)
 
     @staticmethod
     def histories():
@@ -30,3 +28,7 @@ cdef class IndexManager:
     @staticmethod
     def clear_histories():
         _im.IndexManager.instance().clearHistories()
+
+    @staticmethod
+    def has_history(string name):
+        return _im.IndexManager.instance().hasHistory(name)
