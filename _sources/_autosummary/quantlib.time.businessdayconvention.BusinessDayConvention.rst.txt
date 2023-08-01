@@ -11,20 +11,6 @@ quantlib.time.businessdayconvention.BusinessDayConvention
    .. automethod:: __init__
 
    
-   .. rubric:: Methods
-
-   .. autosummary::
-
-
-   
-      ~BusinessDayConvention.__init__
-      ~BusinessDayConvention.as_integer_ratio
-      ~BusinessDayConvention.bit_length
-      ~BusinessDayConvention.conjugate
-      ~BusinessDayConvention.from_bytes
-      ~BusinessDayConvention.from_name
-      ~BusinessDayConvention.to_bytes
-   
    
 
    
@@ -34,10 +20,13 @@ quantlib.time.businessdayconvention.BusinessDayConvention
    .. autosummary::
 
    
-      ~BusinessDayConvention.denominator
-      ~BusinessDayConvention.imag
-      ~BusinessDayConvention.numerator
-      ~BusinessDayConvention.real
+      ~BusinessDayConvention.Following
+      ~BusinessDayConvention.ModifiedFollowing
+      ~BusinessDayConvention.Preceding
+      ~BusinessDayConvention.ModifiedPreceding
+      ~BusinessDayConvention.Unadjusted
+      ~BusinessDayConvention.HalfMonthModifiedFollowing
+      ~BusinessDayConvention.Nearest
 
    
    
