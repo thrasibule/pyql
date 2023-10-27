@@ -1,30 +1,20 @@
+wheel:
+	python -m build --wheel -n -C--global-option=build_ext -C--global-option=-j6
+
 build:
 	python setup.py build_ext --inplace -j 8
-
-build2:
-	python2 setup.py build_ext --inplace -j 8
 
 docs:
 	make -C docs html
 
 install:
-	pip install . --global-option build_ext --global-option -j6
+	pip install . -C--global-option=build_ext -C--global-option=-j6
 
 uninstall:
 	pip uninstall quantlib
 
-tests-preload:
-	LD_PRELOAD=/opt/QuantLib-1.1/lib/libQuantLib.so nosetests -v quantlib/test
-
 tests: build
 	python -m unittest discover -v
-
-tests2: build2
-	python2 -m unittest discover -v
-
-build_ex:
-	g++ -m32 -I/opt/local/include/ -I/opt/local/include/boost quantlib_test2.cpp \
-    -o test2 -L/opt/local/lib/ -lQuantLib
 
 clean:
 	find quantlib -name \*.so -exec rm {} +
@@ -36,4 +26,4 @@ clean:
 	rm -rf build
 	rm -rf dist
 
-.PHONY: build build2 docs clean
+.PHONY: build docs clean
