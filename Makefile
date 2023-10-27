@@ -29,7 +29,7 @@ build_ex:
 clean:
 	find quantlib -name \*.so -exec rm {} +
 	find quantlib -name \*.pyc -exec rm {} +
-	find quantlib -name \*.cpp -exec rm {} +
+	find quantlib -path quantlib/cpp_layer -prune -o -name \*.cpp -exec rm {} +
 	find quantlib -name \*.c -exec rm {} +
 	find quantlib -name \*.h -exec rm {} +
 	-rm quantlib/termstructures/yields/{piecewise_yield_curve,discount_curve,forward_curve,zero_curve}.{pxd,pyx}
