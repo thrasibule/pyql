@@ -1,3 +1,4 @@
+# distutils: sources = quantlib/cpp_layer/constraint_support_code.cpp
 """
  Copyright (C) 2015, Enthought Inc
  Copyright (C) 2015, Patrick Henaff
