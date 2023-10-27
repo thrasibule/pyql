@@ -6,6 +6,7 @@ quantlib.egg-info/*
 QuantLib.dll
 symbol_win*.def
 *.cpp
+!quantlib/cpp_layer/*.cpp
 *.so
 *.h
 *.pyc
