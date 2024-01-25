@@ -3,15 +3,10 @@ from setuptools import find_packages, setup, Extension
 
 import os
 
-from Cython.Distutils import build_ext
 from Cython.Build import cythonize
 from Cython.Tempita import Template
 
 import numpy
-
-DEBUG = False
-
-SUPPORT_CODE_INCLUDE = './cpp_layer'
 
 QL_LIBRARY = 'QuantLib'
 
@@ -57,25 +52,10 @@ def collect_extensions():
 
     return collected_extensions
 
-class pyql_build_ext(build_ext):
-    """
-    Custom build command for quantlib that on Windows copies the quantlib dll
-    and optionally c runtime dlls to the quantlib package.
-    """
-    def build_extensions(self):
-        build_ext.build_extensions(self)
-
-
 if __name__ == '__main__':
     setup(
-        name = 'quantlib',
-        version = '0.1',
-        author = 'Didrik Pinte,Patrick Henaff',
-        license = 'BSD',
         package_data = {"": ["**.pxd", "types.pxi", "cpp_layer/observable.hpp"]},
         packages=find_packages(include=["quantlib*"]),
         ext_modules = collect_extensions(),
-        cmdclass = {'build_ext': pyql_build_ext},
-        install_requires = ['tabulate', 'pandas'],
         zip_safe = False
     )
