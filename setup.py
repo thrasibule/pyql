@@ -68,14 +68,9 @@ class pyql_build_ext(build_ext):
 
 if __name__ == '__main__':
     setup(
-        name = 'quantlib',
-        version = '0.1',
-        author = 'Didrik Pinte,Patrick Henaff',
-        license = 'BSD',
         package_data = {"": ["**.pxd", "types.pxi", "cpp_layer/observable.hpp"]},
         packages=find_packages(include=["quantlib*"]),
         ext_modules = collect_extensions(),
         cmdclass = {'build_ext': pyql_build_ext},
-        install_requires = ['tabulate', 'pandas'],
         zip_safe = False
     )
