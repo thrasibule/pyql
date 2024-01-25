@@ -1,2 +1,21 @@
 [build-system]
-requires=["setuptools", "cython", "wheel"]
+requires=["setuptools", "Cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyql"
+authors = [
+    {name = "Didrik Pinte"},
+    {name = "Patrick Henaff"},
+]
+dependencies = [
+    "pandas",
+    "tabulate",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
+version = "0.0.1"
+
+[tool.setuptools]
+packages = ["quantlib"]
