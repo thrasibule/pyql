@@ -98,16 +98,21 @@ cdef class ZeroInflationIndex(InflationIndex):
             zeroInflationTermStructure().currentLink())
 
 cdef class YoYInflationIndex(ZeroInflationIndex):
-    def __init__(self, family_name, Region region, bool revised,
+    def __init__(self, str family_name, Region region, bool revised,
                  bool ratio, Frequency frequency,
                  Period availability_lag, Currency currency,
                  YoYInflationTermStructure ts=YoYInflationTermStructure()):
 
         cdef string c_family_name = family_name.encode('utf-8')
 
-        self._thisptr = shared_ptr[_in.Index](
+        self._thisptr.reset(
             new _ii.YoYInflationIndex(
-                c_family_name, deref(region._thisptr), revised,
-                ratio, frequency,
+                c_family_name,
+                deref(region._thisptr),
+                revised,
+                ratio,
+                frequency,
                 deref(availability_lag._thisptr),
-                deref(currency._thisptr), ts._handle))
+                deref(currency._thisptr),
+                ts._handle)
+        )
