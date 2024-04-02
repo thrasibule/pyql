@@ -1,4 +1,4 @@
-from quantlib.types cimport Real, Size
+from quantlib.types cimport Rate, Real, Size
 from . cimport _bond
 cimport quantlib.time._date as _date
 
@@ -64,10 +64,10 @@ cdef class Bond(Instrument):
         """ Returns the bond settlement date after the given date."""
         return date_from_qldate(self.as_ptr().settlementDate(deref(from_date._thisptr)))
 
-    @property
-    def clean_price(self):
-        """ Bond clean price. """
-        return self.as_ptr().cleanPrice()
+    def clean_price(self, Rate y, DayCounter dc, Compounding comp, Frequency freq, Date settlement_date=Date()):
+        return self.as_ptr().cleanPrice(
+            y, deref(dc._thisptr), comp, freq, deref(settlement_date._thisptr)
+        )
 
     @property
     def dirty_price(self):
