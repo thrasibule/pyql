@@ -1,5 +1,4 @@
-include '../types.pxi'
-
+from quantlib.types cimport Real, Size, Volatility
 from libcpp cimport bool
 from libcpp.vector cimport vector
 
@@ -13,13 +12,13 @@ from quantlib.processes._black_scholes_process cimport GeneralizedBlackScholesPr
 from quantlib.pricingengines._pricing_engine cimport PricingEngine
 
 
-cdef extern from 'ql/option.hpp' namespace 'QuantLib':
+cdef extern from 'ql/option.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass Option(Instrument):
         shared_ptr[Payoff] payoff()
         shared_ptr[Exercise] exercise()
 
-cdef extern from 'ql/instruments/oneassetoption.hpp' namespace 'QuantLib':
+cdef extern from 'ql/instruments/oneassetoption.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass OneAssetOption(Option):
         OneAssetOption(
@@ -40,7 +39,7 @@ cdef extern from 'ql/instruments/oneassetoption.hpp' namespace 'QuantLib':
         Real itmCashProbability() except +
 
 
-cdef extern from 'ql/instruments/vanillaoption.hpp' namespace 'QuantLib':
+cdef extern from 'ql/instruments/vanillaoption.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass VanillaOption(OneAssetOption):
         VanillaOption(
@@ -66,7 +65,7 @@ cdef extern from 'ql/instruments/vanillaoption.hpp' namespace 'QuantLib':
         ) except +
 
 
-cdef extern from 'ql/instruments/europeanoption.hpp' namespace 'QuantLib':
+cdef extern from 'ql/instruments/europeanoption.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass EuropeanOption(VanillaOption):
         EuropeanOption(
@@ -74,7 +73,7 @@ cdef extern from 'ql/instruments/europeanoption.hpp' namespace 'QuantLib':
             shared_ptr[Exercise]& exercise
         )
 
-cdef extern from 'ql/instruments/dividendvanillaoption.hpp' namespace 'QuantLib':
+cdef extern from 'ql/instruments/dividendvanillaoption.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass DividendVanillaOption(OneAssetOption):
         cppclass engine(PricingEngine):
