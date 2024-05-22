@@ -73,11 +73,11 @@ cdef class Bond(Instrument):
 
     def settlement_date(self, Date from_date=Date()):
         """ Returns the bond settlement date after the given date."""
-        return date_from_qldate(self.as_ptr().settlementDate(deref(from_date._thisptr)))
+        return date_from_qldate(self.as_ptr().settlementDate(from_date._thisptr))
 
-    def clean_price(self, Rate y, DayCounter dc, Compounding comp, Frequency freq, Date settlement_date=Date()):
+    def clean_price(self, Rate y, DayCounter dc, Compounding comp, Frequency freq, Date settlement_date=Date.null()):
         return self.as_ptr().cleanPrice(
-            y, deref(dc._thisptr), comp, freq, deref(settlement_date._thisptr)
+            y, deref(dc._thisptr), comp, freq, settlement_date._thisptr
         )
 
     @property
@@ -99,13 +99,13 @@ cdef class Bond(Instrument):
         """
         return self.as_ptr().bond_yield(
                 price._this, deref(dc._thisptr), comp,
-                freq, deref(settlement_date._thisptr),
+                freq, settlement_date._thisptr,
                 accuracy, max_evaluations, guess
             )
 
     def accrued_amount(self, Date date=Date()):
         """ Returns the bond accrued amount at the given date"""
-        return self.as_ptr().accruedAmount(deref(date._thisptr))
+        return self.as_ptr().accruedAmount(date._thisptr)
 
     @property
     def cashflows(self):
@@ -115,4 +115,4 @@ cdef class Bond(Instrument):
         return leg
 
     def notional(self, Date date=Date()):
-        return self.as_ptr().notional(deref(date._thisptr))
+        return self.as_ptr().notional(date._thisptr)

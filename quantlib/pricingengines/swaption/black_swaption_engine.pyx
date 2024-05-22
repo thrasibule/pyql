@@ -40,8 +40,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     deref(dc._thisptr),
                     displacement,
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         elif isinstance(vol, Quote):
@@ -52,8 +52,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     deref(dc._thisptr),
                     displacement,
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         else:
@@ -62,8 +62,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     discount_curve._thisptr,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
 
@@ -92,8 +92,8 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     <Volatility>vol,
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         elif isinstance(vol, Quote):
@@ -103,8 +103,8 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     (<Quote>vol).handle(),
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         else:
@@ -113,7 +113,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     discount_curve._thisptr,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
-                    deref(settlement_date._thisptr),
-                    deref(npv_date._thisptr)
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )

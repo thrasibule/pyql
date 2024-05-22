@@ -22,14 +22,14 @@ cdef class InterpolatedZeroInflationCurve(ZeroInflationTermStructure):
 
         cdef vector[_date.Date] _dates
         for date in dates:
-            _dates.push_back(deref((<Date?>date)._thisptr))
+            _dates.push_back((<Date?>date)._thisptr)
 
         self._trait = interpolator
 
         if interpolator == Linear:
 
             self._thisptr.reset(new _izic.InterpolatedZeroInflationCurve[intpl.Linear](
-                    deref(reference_date._thisptr), calendar._thisptr,
+                    reference_date._thisptr, calendar._thisptr,
                     deref(day_counter._thisptr),
                     deref(lag._thisptr), frequency,
                     _dates, rates))
@@ -37,7 +37,7 @@ cdef class InterpolatedZeroInflationCurve(ZeroInflationTermStructure):
         elif interpolator == LogLinear:
             self._thisptr.reset(
                 new _izic.InterpolatedZeroInflationCurve[intpl.LogLinear](
-                    deref(reference_date._thisptr), calendar._thisptr,
+                    reference_date._thisptr, calendar._thisptr,
                     deref(day_counter._thisptr),
                     deref(lag._thisptr), frequency,
                     _dates, rates))
@@ -45,7 +45,7 @@ cdef class InterpolatedZeroInflationCurve(ZeroInflationTermStructure):
         elif interpolator == BackwardFlat:
             self._thisptr.reset(
                 new _izic.InterpolatedZeroInflationCurve[intpl.BackwardFlat](
-                    deref(reference_date._thisptr), calendar._thisptr,
+                    reference_date._thisptr, calendar._thisptr,
                     deref(day_counter._thisptr),
                     deref(lag._thisptr), frequency,
                     _dates, rates))

@@ -20,7 +20,7 @@ cdef class VolatilityTermStructure:
             raise TypeError("vol needs to be either a VolatilityTermStructure or a HandleVolatilityTermStructure")
 
     def time_from_reference(self, Date date not None):
-        return self.as_ptr().timeFromReference(deref(date._thisptr))
+        return self.as_ptr().timeFromReference(date._thisptr)
 
     @property
     def reference_date(self):
