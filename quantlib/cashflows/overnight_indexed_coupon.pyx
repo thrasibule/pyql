@@ -52,7 +52,6 @@ cdef class OvernightIndexedCoupon(FloatingRateCoupon):
     def value_dates(self):
         cdef:
             vector[QlDate].const_iterator it = (<_oic.OvernightIndexedCoupon*>self._thisptr.get()).valueDates().const_begin()
-            QlDate d
             Date date
             list l = []
 
@@ -62,7 +61,8 @@ cdef class OvernightIndexedCoupon(FloatingRateCoupon):
             l.append(date)
             preinc(it)
         return l
-
+    
+        
 cdef class OvernightLeg(Leg):
 
     def __iter__(self):
