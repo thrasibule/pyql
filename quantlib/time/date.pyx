@@ -437,7 +437,7 @@ cdef class Date:
     @classmethod
     def from_string(cls, str s, str fmt=None):
         cdef Date instance = Date.__new__(Date)
-        if format is None:
+        if fmt is None:
             instance._thisptr = _date.parseISO(s.encode())
         else:
             instance._thisptr = _date.parseFormatted(s.encode(), fmt.encode())

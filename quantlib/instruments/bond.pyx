@@ -75,7 +75,7 @@ cdef class Bond(Instrument):
         """ Returns the bond settlement date after the given date."""
         return date_from_qldate(self.as_ptr().settlementDate(from_date._thisptr))
 
-    def clean_price(self, Rate y, DayCounter dc, Compounding comp, Frequency freq, Date settlement_date=Date.null()):
+    def clean_price(self, Rate y, DayCounter dc, Compounding comp, Frequency freq, Date settlement_date=Date()):
         return self.as_ptr().cleanPrice(
             y, deref(dc._thisptr), comp, freq, settlement_date._thisptr
         )

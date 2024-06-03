@@ -2,7 +2,7 @@ include '../../types.pxi'
 from cython.operator cimport dereference as deref
 from quantlib.pricingengines.engine cimport PricingEngine
 cimport quantlib.pricingengines._pricing_engine as _pe
-from quantlib.termstructures.yield_term_structure cimport YieldTermStructure
+from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure
 from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
 from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter
@@ -23,7 +23,7 @@ cdef class BlackSwaptionEngine(PricingEngine):
        The engine assumes that the exercise date lies before the
        start date of the passed swap.
     """
-    def __init__(self, YieldTermStructure discount_curve not None,
+    def __init__(self, HandleYieldTermStructure discount_curve not None,
                  vol,
                  DayCounter dc=Actual365Fixed(),
                  Real displacement=0.,
@@ -35,7 +35,7 @@ cdef class BlackSwaptionEngine(PricingEngine):
         if isinstance(vol, float):
             self._thisptr.reset(
                 new _BlackSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     <Volatility>vol,
                     deref(dc._thisptr),
                     displacement,
@@ -47,7 +47,7 @@ cdef class BlackSwaptionEngine(PricingEngine):
         elif isinstance(vol, Quote):
             self._thisptr.reset(
                 new _BlackSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     (<Quote>vol).handle(),
                     deref(dc._thisptr),
                     displacement,
@@ -59,7 +59,7 @@ cdef class BlackSwaptionEngine(PricingEngine):
         else:
             self._thisptr.reset(
                 new _BlackSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
                     settlement_date._thisptr,
@@ -77,7 +77,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
     """
     def __init__(
             self,
-            YieldTermStructure discount_curve not None,
+            HandleYieldTermStructure discount_curve not None,
             vol,
             DayCounter dc=Actual365Fixed(),
             CashAnnuityModel model=DiscountCurve,
@@ -88,7 +88,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
         if isinstance(vol, float):
             self._thisptr.reset(
                 new _BachelierSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     <Volatility>vol,
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
@@ -99,7 +99,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
         elif isinstance(vol, Quote):
             self._thisptr.reset(
                 new _BachelierSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     (<Quote>vol).handle(),
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
@@ -110,7 +110,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
         else:
             self._thisptr.reset(
                 new _BachelierSwaptionEngine(
-                    discount_curve._thisptr,
+                    discount_curve.handle,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
                     settlement_date._thisptr,
