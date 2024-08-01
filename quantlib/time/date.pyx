@@ -19,7 +19,6 @@ from enum import IntEnum
 
 # Python imports
 import_datetime()
-import six
 
 cpdef enum Month:
     January   = _date.January
@@ -94,7 +93,7 @@ cdef class Period:
         cdef int tu
         if len(args) == 1:
             tenor = args[0]
-            if(isinstance(tenor, six.string_types)):
+            if(isinstance(tenor, str)):
                 self._thisptr.reset(new QlPeriod(parse(tenor.encode('utf-8'))))
             else:
                 self._thisptr.reset(new QlPeriod(<_period.Frequency>args[0]))
@@ -273,7 +272,7 @@ cdef class Date:
             arg = args[0]
             if isinstance(arg, int):
                 self._thisptr.reset(new QlDate(<serial_type> arg))
-            elif isinstance(arg, six.string_types):
+            elif isinstance(arg, str):
                 self._thisptr.reset(new QlDate(_date.parseISO(arg.encode())))
             else:
                 raise TypeError("needs to be a string or an integer")
