@@ -1,3 +1,4 @@
+from .assetswap import AssetSwap
 from .bonds import FixedRateBond, ZeroCouponBond, FloatingRateBond
 from .credit_default_swap import CreditDefaultSwap, PricingModel
 from ..default import Protection
