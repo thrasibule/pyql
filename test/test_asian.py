@@ -96,10 +96,9 @@ class AsianOptionTestCase(unittest.TestCase):
 
         self.payoff = PlainVanillaPayoff(self.option_type, self.strike)
 
-
     def test_analytic_cont_geom_av_price(self):
         """
-        "Testing analytic continuous geometric average-price Asians...")
+        Testing analytic continuous geometric average-price Asians
 
         data from "Option Pricing Formulas", Haug, pag.96-97
         """
