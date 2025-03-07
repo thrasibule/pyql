@@ -18,17 +18,10 @@ quantlib.math.array.Array
 
    
       ~Array.__init__
+      ~Array.to_ndarray
    
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-
-   
-      ~Array.size
-
    
    

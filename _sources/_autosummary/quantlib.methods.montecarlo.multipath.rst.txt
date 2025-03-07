@@ -1,7 +1,7 @@
-quantlib.math.randomnumbers.rngtraits
+quantlib.methods.montecarlo.multipath
 =====================================
 
-.. automodule:: quantlib.math.randomnumbers.rngtraits
+.. automodule:: quantlib.methods.montecarlo.multipath
 
    
    
@@ -19,9 +19,7 @@ quantlib.math.randomnumbers.rngtraits
       :toctree:
       :template: custom-class-template.rst
    
-      FastPseudoRandom
-      LowDiscrepancy
-      PseudoRandom
+      MultiPath
    
    
 
