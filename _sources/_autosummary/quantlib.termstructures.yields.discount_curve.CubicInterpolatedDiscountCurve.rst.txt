@@ -20,6 +20,7 @@ quantlib.termstructures.yields.discount\_curve.CubicInterpolatedDiscountCurve
       ~CubicInterpolatedDiscountCurve.__init__
       ~CubicInterpolatedDiscountCurve.discount
       ~CubicInterpolatedDiscountCurve.forward_rate
+      ~CubicInterpolatedDiscountCurve.link_to
       ~CubicInterpolatedDiscountCurve.time_from_reference
       ~CubicInterpolatedDiscountCurve.zero_rate
    

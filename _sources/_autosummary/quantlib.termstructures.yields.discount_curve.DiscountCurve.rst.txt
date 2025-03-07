@@ -20,6 +20,7 @@ quantlib.termstructures.yields.discount\_curve.DiscountCurve
       ~DiscountCurve.__init__
       ~DiscountCurve.discount
       ~DiscountCurve.forward_rate
+      ~DiscountCurve.link_to
       ~DiscountCurve.time_from_reference
       ~DiscountCurve.zero_rate
    

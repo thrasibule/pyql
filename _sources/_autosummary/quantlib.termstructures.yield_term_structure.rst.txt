@@ -19,7 +19,6 @@ quantlib.termstructures.yield\_term\_structure
       :toctree:
       :template: custom-class-template.rst
    
-      HandleYieldTermStructure
       YieldTermStructure
    
    

@@ -20,6 +20,7 @@ quantlib.termstructures.yields.discount\_curve.LogLinearInterpolatedDiscountCurv
       ~LogLinearInterpolatedDiscountCurve.__init__
       ~LogLinearInterpolatedDiscountCurve.discount
       ~LogLinearInterpolatedDiscountCurve.forward_rate
+      ~LogLinearInterpolatedDiscountCurve.link_to
       ~LogLinearInterpolatedDiscountCurve.time_from_reference
       ~LogLinearInterpolatedDiscountCurve.zero_rate
    

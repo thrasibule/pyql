@@ -36,9 +36,7 @@ quantlib.termstructures.credit.flat\_hazard\_rate.FlatHazardRate
       ~FlatHazardRate.jump_dates
       ~FlatHazardRate.jump_times
       ~FlatHazardRate.max_date
-      ~FlatHazardRate.max_time
       ~FlatHazardRate.reference_date
-      ~FlatHazardRate.settlement_days
 
    
    
