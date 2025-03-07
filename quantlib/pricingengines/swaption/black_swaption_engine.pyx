@@ -4,6 +4,7 @@ from quantlib.pricingengines.engine cimport PricingEngine
 cimport quantlib.pricingengines._pricing_engine as _pe
 from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure
 from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
+from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.time.daycounters.simple cimport Actual365Fixed
 from quantlib.quote cimport Quote
@@ -27,6 +28,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                  DayCounter dc=Actual365Fixed(),
                  Real displacement=0.,
                  CashAnnuityModel model=DiscountCurve,
+                 Date settlement_date=Date(),
+                 Date npv_date=Date()
     ):
 
         if isinstance(vol, float):
@@ -37,6 +40,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     deref(dc._thisptr),
                     displacement,
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         elif isinstance(vol, Quote):
@@ -47,6 +52,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     deref(dc._thisptr),
                     displacement,
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         else:
@@ -55,6 +62,8 @@ cdef class BlackSwaptionEngine(PricingEngine):
                     discount_curve.handle,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BlackSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
 
@@ -72,6 +81,8 @@ cdef class BachelierSwaptionEngine(PricingEngine):
             vol,
             DayCounter dc=Actual365Fixed(),
             CashAnnuityModel model=DiscountCurve,
+            Date settlement_date=Date(),
+            Date npv_date=Date()
     ):
 
         if isinstance(vol, float):
@@ -81,6 +92,8 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     <Volatility>vol,
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         elif isinstance(vol, Quote):
@@ -90,6 +103,8 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     (<Quote>vol).handle(),
                     deref(dc._thisptr),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
         else:
@@ -98,5 +113,7 @@ cdef class BachelierSwaptionEngine(PricingEngine):
                     discount_curve.handle,
                     SwaptionVolatilityStructure.swaption_vol_handle(vol),
                     <_BachelierSwaptionEngine.CashAnnuityModel>model,
+                    settlement_date._thisptr,
+                    npv_date._thisptr
                 )
             )
