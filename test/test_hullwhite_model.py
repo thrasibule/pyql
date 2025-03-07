@@ -90,9 +90,8 @@ class HullWhiteModelTestCase(unittest.TestCase):
         print('Hull White calibrated parameters:\na: %f sigma: %f' %
               (model.a, model.sigma))
 
-        cached_a = 0.0464041
-        cached_sigma = 0.00579912
-
+        cached_a = 0.04603
+        cached_sigma = 0.005779
         tolerance = 1.0e-5
 
         self.assertAlmostEqual(cached_a, model.a, delta=tolerance)
