@@ -19,9 +19,7 @@ quantlib.math.randomnumbers.rngtraits
       :toctree:
       :template: custom-class-template.rst
    
-      FastPseudoRandom
       LowDiscrepancy
-      PseudoRandom
    
    
 
