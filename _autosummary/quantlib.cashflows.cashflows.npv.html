@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>quantlib.util.options &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
+    <title>quantlib.cashflows.cashflows.npv &#8212; Quantlib cython wrapper 0.1.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=686e5160" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=fc5e2428" />
@@ -15,8 +15,8 @@
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="quantlib.util.options.heston_pricer" href="quantlib.util.options.heston_pricer.html" />
-    <link rel="prev" title="quantlib.util.object_registry.ObjectRegistry" href="quantlib.util.object_registry.ObjectRegistry.html" />
+    <link rel="next" title="quantlib.cashflows.cashflows.npvbps" href="quantlib.cashflows.cashflows.npvbps.html" />
+    <link rel="prev" title="quantlib.cashflows.cashflows.next_cash_flow_amount" href="quantlib.cashflows.cashflows.next_cash_flow_amount.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -34,24 +34,13 @@
 
           <div class="body" role="main">
             
-  <section id="module-quantlib.util.options">
-<span id="quantlib-util-options"></span><h1>quantlib.util.options<a class="headerlink" href="#module-quantlib.util.options" title="Link to this heading">¶</a></h1>
-<p>Copyright (C) 2012, Enthought Inc
-Copyright (C) 2012, Patrick Henaff</p>
-<p>This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the license for more details.</p>
-<p class="rubric">Functions</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="quantlib.util.options.heston_pricer.html#quantlib.util.options.heston_pricer" title="quantlib.util.options.heston_pricer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heston_pricer</span></code></a>(trade_date, options, params, ...)</p></td>
-<td><p>Price a list of European options with heston model.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="quantlib.util.options.options_to_rates.html#quantlib.util.options.options_to_rates" title="quantlib.util.options.options_to_rates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">options_to_rates</span></code></a>(options[, t_min, n_min])</p></td>
-<td><p>Extract implied risk-free rates and dividend yield from standard European option quote file.</p></td>
-</tr>
-</tbody>
-</table>
+  <section id="quantlib-cashflows-cashflows-npv">
+<h1>quantlib.cashflows.cashflows.npv<a class="headerlink" href="#quantlib-cashflows-cashflows-npv" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="quantlib.cashflows.cashflows.npv">
+<span class="sig-name descname"><span class="pre">npv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Leg</span> <span class="pre">leg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">YieldTermStructure</span> <span class="pre">discount_curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">include_settlement_date_flows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">settlement_date=Date()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">npv_date=Date()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.cashflows.cashflows.npv" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 
 
@@ -90,9 +79,11 @@ FOR A PARTICULAR PURPOSE.  See the license for more details.</p>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../reference_guide.html">Reference guide</a><ul>
   <li><a href="quantlib.html">quantlib</a><ul>
-  <li><a href="quantlib.util.html">quantlib.util</a><ul>
-      <li>Previous: <a href="quantlib.util.object_registry.ObjectRegistry.html" title="previous chapter">quantlib.util.object_registry.ObjectRegistry</a></li>
-      <li>Next: <a href="quantlib.util.options.heston_pricer.html" title="next chapter">quantlib.util.options.heston_pricer</a></li>
+  <li><a href="quantlib.cashflows.html">quantlib.cashflows</a><ul>
+  <li><a href="quantlib.cashflows.cashflows.html">quantlib.cashflows.cashflows</a><ul>
+      <li>Previous: <a href="quantlib.cashflows.cashflows.next_cash_flow_amount.html" title="previous chapter">quantlib.cashflows.cashflows.next_cash_flow_amount</a></li>
+      <li>Next: <a href="quantlib.cashflows.cashflows.npvbps.html" title="next chapter">quantlib.cashflows.cashflows.npvbps</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>
@@ -129,7 +120,7 @@ FOR A PARTICULAR PURPOSE.  See the license for more details.</p>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/_autosummary/quantlib.util.options.rst.txt"
+      <a href="../_sources/_autosummary/quantlib.cashflows.cashflows.npv.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
