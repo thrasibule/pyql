@@ -12,9 +12,7 @@ dependencies = [
     "pandas",
     "tabulate",
 ]
-classifiers = [
-    "License :: OSI Approved :: MIT License",
-]
+license = "MIT"
 version = "0.0.1"
 
 [tool.setuptools]
