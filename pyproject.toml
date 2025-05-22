@@ -12,7 +12,7 @@ dependencies = [
     "pandas",
     "tabulate",
 ]
-license = "MIT"
+license = {file = "LICENSE.txt"}
 version = "0.0.1"
 
 [tool.setuptools]
