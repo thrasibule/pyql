@@ -29,9 +29,7 @@ from quantlib.pricingengines.engine cimport PricingEngine
 from quantlib.quote cimport Quote
 from quantlib.time.calendar cimport Calendar
 from quantlib.time.date cimport Period
-from quantlib.termstructures.yield_term_structure cimport (
-    HandleYieldTermStructure
-)
+from quantlib.handle cimport HandleYieldTermStructure
 from quantlib.models.calibration_helper cimport BlackCalibrationHelper, CalibrationErrorType
 
 
@@ -57,8 +55,8 @@ cdef class HestonModelHelper(BlackCalibrationHelper):
                 s0,
                 strike_price,
                 volatility.handle(),
-                risk_free_rate.handle,
-                dividend_yield.handle,
+                risk_free_rate.handle(),
+                dividend_yield.handle(),
                 error_type
             )
         )
