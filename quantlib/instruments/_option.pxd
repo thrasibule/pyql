@@ -6,7 +6,7 @@ from .._instrument cimport Instrument
 from ._dividendschedule cimport DividendSchedule
 from ._payoffs cimport Payoff, StrikedTypePayoff
 from ._exercise cimport Exercise
-from quantlib.handle cimport shared_ptr
+from quantlib.ext cimport shared_ptr
 from quantlib.time._date cimport Date
 from quantlib.processes._black_scholes_process cimport GeneralizedBlackScholesProcess
 from quantlib.pricingengines._pricing_engine cimport PricingEngine

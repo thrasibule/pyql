@@ -12,7 +12,7 @@ cimport quantlib.time._date as _date
 cimport quantlib.pricingengines._pricing_engine as _pe
 cimport quantlib.processes._black_scholes_process as _bsp
 
-from quantlib.handle cimport shared_ptr, static_pointer_cast
+from quantlib.ext cimport shared_ptr, static_pointer_cast
 from quantlib.instruments.payoffs cimport Payoff, StrikedTypePayoff
 from quantlib.pricingengines.engine cimport PricingEngine
 from quantlib.processes.black_scholes_process cimport GeneralizedBlackScholesProcess
