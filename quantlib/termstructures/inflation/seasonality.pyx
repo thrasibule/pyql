@@ -8,7 +8,7 @@
 """
 
 from quantlib.types cimport Rate
-from quantlib.handle cimport shared_ptr
+from quantlib.ext cimport shared_ptr
 from cython.operator cimport dereference as deref
 from libcpp.vector cimport vector
 
