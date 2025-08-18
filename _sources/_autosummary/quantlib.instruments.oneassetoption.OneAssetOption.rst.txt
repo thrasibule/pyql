@@ -35,7 +35,6 @@ OneAssetOption
          OneAssetOption.delta_forward
          OneAssetOption.dividend_rho
          OneAssetOption.elasticity
-         OneAssetOption.error_estimate
          OneAssetOption.exercise
          OneAssetOption.gamma
          OneAssetOption.is_expired

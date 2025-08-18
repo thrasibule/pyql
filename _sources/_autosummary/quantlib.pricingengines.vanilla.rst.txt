@@ -13,6 +13,5 @@ quantlib.pricingengines.vanilla
    analytic_heston_engine
    fdblackscholesvanillaengine
    mceuropeanhestonengine
-   mchestonhullwhiteengine
    mcvanillaengine
    vanilla

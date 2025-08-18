@@ -31,7 +31,6 @@ Forward
       .. autosummary::
          :toctree:
       
-         Forward.error_estimate
          Forward.forward_value
          Forward.is_expired
          Forward.net_present_value

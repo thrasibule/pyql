@@ -36,7 +36,6 @@ VanillaOption
          VanillaOption.delta_forward
          VanillaOption.dividend_rho
          VanillaOption.elasticity
-         VanillaOption.error_estimate
          VanillaOption.exercise
          VanillaOption.gamma
          VanillaOption.is_expired

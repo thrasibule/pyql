@@ -29,7 +29,6 @@ OvernightIndexFuture
       .. autosummary::
          :toctree:
       
-         OvernightIndexFuture.error_estimate
          OvernightIndexFuture.is_expired
          OvernightIndexFuture.net_present_value
          OvernightIndexFuture.npv
