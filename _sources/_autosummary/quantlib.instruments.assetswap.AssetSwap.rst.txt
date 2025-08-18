@@ -40,6 +40,7 @@ AssetSwap
          AssetSwap.Payer
          AssetSwap.Receiver
          AssetSwap.bond_leg
+         AssetSwap.error_estimate
          AssetSwap.fair_clean_price
          AssetSwap.fair_non_par_repayment
          AssetSwap.fair_spread

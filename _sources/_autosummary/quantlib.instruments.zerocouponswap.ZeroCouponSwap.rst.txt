@@ -39,6 +39,7 @@ ZeroCouponSwap
       
          ZeroCouponSwap.Payer
          ZeroCouponSwap.Receiver
+         ZeroCouponSwap.error_estimate
          ZeroCouponSwap.is_expired
          ZeroCouponSwap.maturity_date
          ZeroCouponSwap.net_present_value
