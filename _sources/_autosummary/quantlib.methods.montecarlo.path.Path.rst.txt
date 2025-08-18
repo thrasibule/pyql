@@ -1,27 +1,30 @@
-quantlib.methods.montecarlo.path.Path
+.. raw:: html
+
+   <div class="prename">quantlib.methods.montecarlo.path.</div>
+   <div class="empty"></div>
+
+Path
 =====================================
 
 .. currentmodule:: quantlib.methods.montecarlo.path
 
 .. autoclass:: Path
-   :members:
    :show-inheritance:
+   :no-members:
+   :no-inherited-members:
+   :no-special-members:
 
-   
-   .. automethod:: __init__
+  
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+         Path.__getitem__
+         Path.__len__
+         Path.to_ndarray
+      
+  
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-
-
-   
-      ~Path.__init__
-      ~Path.to_ndarray
-   
-   
-
-   
-   
-   
+  
+  
+  

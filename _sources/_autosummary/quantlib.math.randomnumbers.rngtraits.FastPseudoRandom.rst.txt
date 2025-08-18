@@ -1,34 +1,33 @@
-quantlib.math.randomnumbers.rngtraits.FastPseudoRandom
+.. raw:: html
+
+   <div class="prename">quantlib.math.randomnumbers.rngtraits.</div>
+   <div class="empty"></div>
+
+FastPseudoRandom
 ======================================================
 
 .. currentmodule:: quantlib.math.randomnumbers.rngtraits
 
 .. autoclass:: FastPseudoRandom
-   :members:
    :show-inheritance:
+   :no-members:
+   :no-inherited-members:
+   :no-special-members:
 
-   
-   .. automethod:: __init__
+  
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+      
+  
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-
-
-   
-      ~FastPseudoRandom.__init__
-   
-   
-
-   
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-
-   
-      ~FastPseudoRandom.dimension
-
-   
-   
+  
+  
+   .. HACK -- the point here is that we don't want this to appear in the output, but the autosummary should still generate the pages.
+      .. autosummary::
+         :toctree:
+      
+         FastPseudoRandom.dimension
+  
+  
