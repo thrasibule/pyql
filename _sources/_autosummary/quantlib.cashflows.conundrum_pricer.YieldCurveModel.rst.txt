@@ -31,9 +31,9 @@ YieldCurveModel
          YieldCurveModel.__getitem__
       
          YieldCurveModel.__len__
-         YieldCurveModel.__pow__
-         YieldCurveModel.__getitem__
          YieldCurveModel.__mul__
+         YieldCurveModel.__getitem__
+         YieldCurveModel.__pow__
   
 
   
