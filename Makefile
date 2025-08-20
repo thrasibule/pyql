@@ -5,6 +5,7 @@ build:
 	python setup.py build_ext --inplace -j 8
 
 docs:
+	-rm -rf docs/source/_autosummary
 	make -C docs html
 
 install:
