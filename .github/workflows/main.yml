@@ -60,6 +60,7 @@ jobs:
         run: |
           pip install sphinx nbsphinx scikit-learn ipython numpydoc
           sudo apt-get install pandoc texlive texlive-latex-extra dvipng
+          rm -rf docs/source/_autosummary
           make docs
 
       - uses: actions/upload-artifact@v4
