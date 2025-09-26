@@ -32,27 +32,37 @@ cimport quantlib.currency._currency as _cu
 cimport quantlib.indexes._region as _region
 
 cdef class InflationIndex(Index):
+    """Base class for inflation-rate indexes."""
 
     def __cinit__(self):
         pass
 
     property family_name:
+        """The family name of the inflation index."""
         def __get__(self):
             cdef _ii.InflationIndex* ref = <_ii.InflationIndex*>self._thisptr.get()
             return ref.familyName()
 
     property frequency:
+        """The publication frequency of the inflation index."""
         def __get__(self):
             cdef _ii.InflationIndex* ref = <_ii.InflationIndex*>self._thisptr.get()
             return ref.frequency()
 
     property availability_lag:
+        """The availability lag of the index.
+
+        The availability lag describes when the index might be
+        available; for instance, the inflation value for January
+        may only be available in April.
+        """
         def __get__(self):
             cdef _ii.InflationIndex* ref = <_ii.InflationIndex*>self._thisptr.get()
             return period_from_qlperiod(ref.availabilityLag())
 
 
     property currency:
+        """The currency of the inflation index."""
         def __get__(self):
             cdef _ii.InflationIndex* ref = <_ii.InflationIndex*>self._thisptr.get()
             cdef Currency c = Currency.__new__(Currency)
@@ -61,12 +71,14 @@ cdef class InflationIndex(Index):
 
     @property
     def region(self):
+        """The region of the index."""
         cdef _ii.InflationIndex* ref = <_ii.InflationIndex*>self._thisptr.get()
         cdef Region region = Region.__new__(Region)
         region._thisptr = new _region.Region(ref.region())
         return region
 
 cdef class ZeroInflationIndex(InflationIndex):
+    """Base class for zero-inflation indexes."""
     def __init__(self, str family_name,
                  Region region,
                  bool revised,
@@ -74,7 +86,24 @@ cdef class ZeroInflationIndex(InflationIndex):
                  Period availabilityLag,
                  Currency currency,
                  ZeroInflationTermStructure ts=ZeroInflationTermStructure()):
-
+        """
+        Parameters
+        ----------
+        family_name : str
+            The family name of the index.
+        region : :class:`~quantlib.indexes.region.Region`
+            The region of the index.
+        revised : bool
+            Whether the index is revised.
+        frequency : :class:`~quantlib.time.frequency.Frequency`
+            The frequency of the index.
+        availabilityLag : :class:`~quantlib.time.date.Period`
+            The availability lag of the index.
+        currency : :class:`~quantlib.currency.currency.Currency`
+            The currency of the index.
+        ts : :class:`~quantlib.termstructures.inflation_term_structure.ZeroInflationTermStructure`, optional
+            The zero-inflation term structure.
+        """
         # convert the Python str to C++ string
         cdef string c_family_name = family_name.encode('utf-8')
 
@@ -89,6 +118,7 @@ cdef class ZeroInflationIndex(InflationIndex):
                 ts._handle))
 
     def zero_inflation_term_structure(self):
+        """Returns the zero-inflation term structure associated with the index."""
         cdef ZeroInflationTermStructure r = \
                 ZeroInflationTermStructure.__new__(ZeroInflationTermStructure)
         r._thisptr = static_pointer_cast[_its.InflationTermStructure](
@@ -97,17 +127,40 @@ cdef class ZeroInflationIndex(InflationIndex):
 
     @property
     def last_fixing_date(self):
+        """Returns the last date for which a fixing was provided."""
         return date_from_qldate(
             (<_ii.ZeroInflationIndex*>(self._thisptr.get())).lastFixingDate()
         )
 
 
 cdef class YoYInflationIndex(ZeroInflationIndex):
+    """Base class for year-on-year inflation indexes.
+
+    These may be quoted indices published on, say, Bloomberg, or can be
+    defined as the ratio of an index at different time points.
+    """
     def __init__(self, family_name, Region region, bool revised,
                  Frequency frequency,
                  Period availability_lag, Currency currency,
                  YoYInflationTermStructure ts=YoYInflationTermStructure()):
-
+        """
+        Parameters
+        ----------
+        family_name : str
+            The family name of the index.
+        region : :class:`~quantlib.indexes.region.Region`
+            The region of the index.
+        revised : bool
+            Whether the index is revised.
+        frequency : :class:`~quantlib.time.frequency.Frequency`
+            The frequency of the index.
+        availability_lag : :class:`~quantlib.time.date.Period`
+            The availability lag of the index.
+        currency : :class:`~quantlib.currency.currency.Currency`
+            The currency of the index.
+        ts : :class:`~quantlib.termstructures.inflation_term_structure.YoYInflationTermStructure`, optional
+            The year-on-year inflation term structure.
+        """
         cdef string c_family_name = family_name.encode('utf-8')
 
         self._thisptr = shared_ptr[_in.Index](
