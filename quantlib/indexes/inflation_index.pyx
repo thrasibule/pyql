@@ -78,7 +78,25 @@ cdef class InflationIndex(Index):
         return region
 
 cdef class ZeroInflationIndex(InflationIndex):
-    """Base class for zero-inflation indexes."""
+    """Base class for zero-inflation indexes.
+
+    Parameters
+    ----------
+    family_name : str
+        The family name of the index.
+    region : :class:`~quantlib.indexes.region.Region`
+        The region of the index.
+    revised : bool
+        Whether the index is revised.
+    frequency : :class:`~quantlib.time.frequency.Frequency`
+        The frequency of the index.
+    availabilityLag : :class:`~quantlib.time.date.Period`
+        The availability lag of the index.
+    currency : :class:`~quantlib.currency.currency.Currency`
+        The currency of the index.
+    ts : :class:`~quantlib.termstructures.inflation_term_structure.ZeroInflationTermStructure`, optional
+        The zero-inflation term structure.
+    """
     def __init__(self, str family_name,
                  Region region,
                  bool revised,
@@ -86,24 +104,6 @@ cdef class ZeroInflationIndex(InflationIndex):
                  Period availabilityLag,
                  Currency currency,
                  ZeroInflationTermStructure ts=ZeroInflationTermStructure()):
-        """
-        Parameters
-        ----------
-        family_name : str
-            The family name of the index.
-        region : :class:`~quantlib.indexes.region.Region`
-            The region of the index.
-        revised : bool
-            Whether the index is revised.
-        frequency : :class:`~quantlib.time.frequency.Frequency`
-            The frequency of the index.
-        availabilityLag : :class:`~quantlib.time.date.Period`
-            The availability lag of the index.
-        currency : :class:`~quantlib.currency.currency.Currency`
-            The currency of the index.
-        ts : :class:`~quantlib.termstructures.inflation_term_structure.ZeroInflationTermStructure`, optional
-            The zero-inflation term structure.
-        """
         # convert the Python str to C++ string
         cdef string c_family_name = family_name.encode('utf-8')
 
@@ -138,29 +138,28 @@ cdef class YoYInflationIndex(ZeroInflationIndex):
 
     These may be quoted indices published on, say, Bloomberg, or can be
     defined as the ratio of an index at different time points.
+
+    Parameters
+    ----------
+    family_name : str
+        The family name of the index.
+    region : :class:`~quantlib.indexes.region.Region`
+        The region of the index.
+    revised : bool
+        Whether the index is revised.
+    frequency : :class:`~quantlib.time.frequency.Frequency`
+        The frequency of the index.
+    availability_lag : :class:`~quantlib.time.date.Period`
+        The availability lag of the index.
+    currency : :class:`~quantlib.currency.currency.Currency`
+        The currency of the index.
+    ts : :class:`~quantlib.termstructures.inflation_term_structure.YoYInflationTermStructure`, optional
+        The year-on-year inflation term structure.
     """
     def __init__(self, family_name, Region region, bool revised,
                  Frequency frequency,
                  Period availability_lag, Currency currency,
                  YoYInflationTermStructure ts=YoYInflationTermStructure()):
-        """
-        Parameters
-        ----------
-        family_name : str
-            The family name of the index.
-        region : :class:`~quantlib.indexes.region.Region`
-            The region of the index.
-        revised : bool
-            Whether the index is revised.
-        frequency : :class:`~quantlib.time.frequency.Frequency`
-            The frequency of the index.
-        availability_lag : :class:`~quantlib.time.date.Period`
-            The availability lag of the index.
-        currency : :class:`~quantlib.currency.currency.Currency`
-            The currency of the index.
-        ts : :class:`~quantlib.termstructures.inflation_term_structure.YoYInflationTermStructure`, optional
-            The year-on-year inflation term structure.
-        """
         cdef string c_family_name = family_name.encode('utf-8')
 
         self._thisptr = shared_ptr[_in.Index](

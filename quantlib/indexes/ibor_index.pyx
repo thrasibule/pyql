@@ -22,34 +22,34 @@ from quantlib.market.conventions.swap import params as swap_params
 from quantlib.indexes.interest_rate_index cimport InterestRateIndex
 
 cdef class IborIndex(InterestRateIndex):
-    """Base class for Inter-Bank-Offered-Rate indexes (e.g. Libor, etc.)."""
+    """Base class for Inter-Bank-Offered-Rate indexes (e.g. Libor, etc.).
+
+    Parameters
+    ----------
+    family_name : str
+        The family name of the index.
+    tenor : :class:`~quantlib.time.date.Period`
+        The tenor of the index.
+    settlement_days : int
+        The number of settlement days.
+    currency : :class:`~quantlib.currency.currency.Currency`
+        The currency of the index.
+    fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
+        The calendar used for fixing dates.
+    convention : int
+        The business day convention.
+    end_of_month : bool
+        Whether the end-of-month rule applies.
+    day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        The day counter for the index.
+    yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
+        The yield term structure handle.
+    """
 
     def __init__(self, str family_name, Period tenor not None, Natural settlement_days,
                  Currency currency, Calendar fixing_calendar, int convention,
                  bool end_of_month, DayCounter day_counter not None,
                  HandleYieldTermStructure yts=HandleYieldTermStructure()):
-        """
-        Parameters
-        ----------
-        family_name : str
-            The family name of the index.
-        tenor : :class:`~quantlib.time.date.Period`
-            The tenor of the index.
-        settlement_days : int
-            The number of settlement days.
-        currency : :class:`~quantlib.currency.currency.Currency`
-            The currency of the index.
-        fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
-            The calendar used for fixing dates.
-        convention : int
-            The business day convention.
-        end_of_month : bool
-            Whether the end-of-month rule applies.
-        day_counter : :class:`~quantlib.time.daycounter.DayCounter`
-            The day counter for the index.
-        yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
-            The yield term structure handle.
-        """
         self._thisptr = shared_ptr[_in.Index](
             new _ib.IborIndex(family_name.encode('utf-8'),
                               deref(tenor._thisptr),
@@ -120,27 +120,27 @@ cdef class IborIndex(InterestRateIndex):
 
 
 cdef class OvernightIndex(IborIndex):
-    """Base class for overnight indexes."""
+    """Base class for overnight indexes.
+
+    Parameters
+    ----------
+    family_name : str
+        The family name of the index.
+    settlement_days : int
+        The number of settlement days.
+    currency : :class:`~quantlib.currency.currency.Currency`
+        The currency of the index.
+    fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
+        The calendar used for fixing dates.
+    day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        The day counter for the index.
+    yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
+        The yield term structure handle.
+    """
     def __init__(self, str family_name, Natural settlement_days,
                  Currency currency, Calendar fixing_calendar,
                  DayCounter day_counter not None,
                  HandleYieldTermStructure yts=HandleYieldTermStructure()):
-        """
-        Parameters
-        ----------
-        family_name : str
-            The family name of the index.
-        settlement_days : int
-            The number of settlement days.
-        currency : :class:`~quantlib.currency.currency.Currency`
-            The currency of the index.
-        fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
-            The calendar used for fixing dates.
-        day_counter : :class:`~quantlib.time.daycounter.DayCounter`
-            The day counter for the index.
-        yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
-            The yield term structure handle.
-        """
         self._thisptr = shared_ptr[_in.Index](
             new _ib.OvernightIndex(family_name.encode('utf-8'),
                               settlement_days,

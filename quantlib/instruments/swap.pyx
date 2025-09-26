@@ -23,7 +23,18 @@ cdef inline _swap.Swap* get_swap(Swap swap) noexcept:
 
 
 cdef class Swap(Instrument):
-    """Interest rate swap."""
+    """Interest rate swap.
+
+    The cash flows belonging to the first leg are paid; the ones belonging to
+    the second leg are received.
+
+    Parameters
+    ----------
+    first_leg : :class:`~quantlib.cashflow.Leg`
+        The first leg of the swap.
+    second_leg : :class:`~quantlib.cashflow.Leg`
+        The second leg of the swap.
+    """
     Payer = Type.Payer
     Receiver = Type.Receiver
 
@@ -31,13 +42,6 @@ cdef class Swap(Instrument):
         """
         The cash flows belonging to the first leg are paid; the ones belonging
         to the second leg are received.
-
-        Parameters
-        ----------
-        first_leg : :class:`~quantlib.cashflow.Leg`
-            The first leg of the swap.
-        second_leg : :class:`~quantlib.cashflow.Leg`
-            The second leg of the swap.
         """
         self._thisptr.reset(new _swap.Swap(first_leg._thisptr, second_leg._thisptr))
 
