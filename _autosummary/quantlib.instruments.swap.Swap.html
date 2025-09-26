@@ -42,22 +42,32 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Swap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Leg</span> <span class="pre">first_leg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Leg</span> <span class="pre">second_leg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.swap.Swap" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.instrument.Instrument.html#quantlib.instrument.Instrument" title="quantlib.instrument.Instrument"><code class="xref py py-class docutils literal notranslate"><span class="pre">Instrument</span></code></a></p>
 <p>Interest rate swap.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<p>The cash flows belonging to the first leg are paid; the ones belonging to
+the second leg are received.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>first_leg</strong><span class="classifier"><a class="reference internal" href="quantlib.cashflow.Leg.html#quantlib.cashflow.Leg" title="quantlib.cashflow.Leg"><code class="xref py py-class docutils literal notranslate"><span class="pre">Leg</span></code></a></span></dt><dd><p>The first leg of the swap.</p>
+</dd>
+<dt><strong>second_leg</strong><span class="classifier"><a class="reference internal" href="quantlib.cashflow.Leg.html#quantlib.cashflow.Leg" title="quantlib.cashflow.Leg"><code class="xref py py-class docutils literal notranslate"><span class="pre">Leg</span></code></a></span></dt><dd><p>The second leg of the swap.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
 <dt><a class="reference internal" href="quantlib.instruments.swap.Swap.error_estimate.html#quantlib.instruments.swap.Swap.error_estimate" title="quantlib.instruments.swap.Swap.error_estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">error_estimate</span></code></a></dt><dd><p>Instrument.error_estimate: Real</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.swap.Swap.is_expired.html#quantlib.instruments.swap.Swap.is_expired" title="quantlib.instruments.swap.Swap.is_expired"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_expired</span></code></a></dt><dd><p>Instrument.is_expired: bool</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.swap.Swap.maturity_date.html#quantlib.instruments.swap.Swap.maturity_date" title="quantlib.instruments.swap.Swap.maturity_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code></a></dt><dd><p>The maturity date of the swap.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.net_present_value.html#quantlib.instruments.swap.Swap.net_present_value" title="quantlib.instruments.swap.Swap.net_present_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">net_present_value</span></code></a></dt><dd><p>Instrument net present value.</p>
+<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.net_present_value.html#quantlib.instruments.swap.Swap.net_present_value" title="quantlib.instruments.swap.Swap.net_present_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">net_present_value</span></code></a></dt><dd><p>The net present value of the instrument.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.npv.html#quantlib.instruments.swap.Swap.npv" title="quantlib.instruments.swap.Swap.npv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></a></dt><dd><p>Shortcut to the net_present_value property.</p>
+<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.npv.html#quantlib.instruments.swap.Swap.npv" title="quantlib.instruments.swap.Swap.npv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></a></dt><dd><p>A shortcut to the net_present_value property.</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.swap.Swap.start_date.html#quantlib.instruments.swap.Swap.start_date" title="quantlib.instruments.swap.Swap.start_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_date</span></code></a></dt><dd><p>The start date of the swap.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.valuation_date.html#quantlib.instruments.swap.Swap.valuation_date" title="quantlib.instruments.swap.Swap.valuation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">valuation_date</span></code></a></dt><dd><p>the date the net present value refers to.</p>
+<dt><a class="reference internal" href="quantlib.instruments.swap.Swap.valuation_date.html#quantlib.instruments.swap.Swap.valuation_date" title="quantlib.instruments.swap.Swap.valuation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">valuation_date</span></code></a></dt><dd><p>The date the net present value refers to.</p>
 </dd>
 </dl>
 </dd>
@@ -81,7 +91,7 @@
 <td><p>The discount factor at the NPV date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.swap.Swap.set_pricing_engine.html#quantlib.instruments.swap.Swap.set_pricing_engine" title="quantlib.instruments.swap.Swap.set_pricing_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code></a>(self, PricingEngine engine)</p></td>
-<td><p>Sets the pricing engine.</p></td>
+<td><p>Sets the pricing engine to be used.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.swap.Swap.startDiscounts.html#quantlib.instruments.swap.Swap.startDiscounts" title="quantlib.instruments.swap.Swap.startDiscounts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">startDiscounts</span></code></a>(self, Size j)</p></td>
 <td><p>The discount factor at the start of the j-th leg of the swap.</p></td>

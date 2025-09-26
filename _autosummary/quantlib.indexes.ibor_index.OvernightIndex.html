@@ -42,9 +42,25 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OvernightIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span> <span class="pre">family_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Currency</span> <span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">fixing_calendar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HandleYieldTermStructure</span> <span class="pre">yts=HandleYieldTermStructure()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.indexes.ibor_index.OvernightIndex" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.indexes.ibor_index.IborIndex.html#quantlib.indexes.ibor_index.IborIndex" title="quantlib.indexes.ibor_index.IborIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">IborIndex</span></code></a></p>
 <p>Base class for overnight indexes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>family_name</strong><span class="classifier">str</span></dt><dd><p>The family name of the index.</p>
+</dd>
+<dt><strong>settlement_days</strong><span class="classifier">int</span></dt><dd><p>The number of settlement days.</p>
+</dd>
+<dt><strong>currency</strong><span class="classifier"><a class="reference internal" href="quantlib.currency.currency.Currency.html#quantlib.currency.currency.Currency" title="quantlib.currency.currency.Currency"><code class="xref py py-class docutils literal notranslate"><span class="pre">Currency</span></code></a></span></dt><dd><p>The currency of the index.</p>
+</dd>
+<dt><strong>fixing_calendar</strong><span class="classifier"><a class="reference internal" href="quantlib.time.calendar.Calendar.html#quantlib.time.calendar.Calendar" title="quantlib.time.calendar.Calendar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Calendar</span></code></a></span></dt><dd><p>The calendar used for fixing dates.</p>
+</dd>
+<dt><strong>day_counter</strong><span class="classifier"><a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DayCounter</span></code></a></span></dt><dd><p>The day counter for the index.</p>
+</dd>
+<dt><strong>yts</strong><span class="classifier"><a class="reference internal" href="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure.html#quantlib.termstructures.yield_term_structure.HandleYieldTermStructure" title="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">HandleYieldTermStructure</span></code></a>, optional</span></dt><dd><p>The yield term structure handle.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
 <dt><a class="reference internal" href="quantlib.indexes.ibor_index.OvernightIndex.business_day_convention.html#quantlib.indexes.ibor_index.OvernightIndex.business_day_convention" title="quantlib.indexes.ibor_index.OvernightIndex.business_day_convention"><code class="xref py py-obj docutils literal notranslate"><span class="pre">business_day_convention</span></code></a></dt><dd><p>The business day convention.</p>
 </dd>
 <dt><strong>currency</strong></dt><dd></dd>
