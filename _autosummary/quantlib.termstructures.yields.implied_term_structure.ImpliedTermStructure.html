@@ -41,9 +41,21 @@
 <dt class="sig sig-object py" id="quantlib.termstructures.yields.implied_term_structure.ImpliedTermStructure">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ImpliedTermStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">HandleYieldTermStructure</span> <span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">reference_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.implied_term_structure.ImpliedTermStructure" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html#quantlib.termstructures.yield_term_structure.YieldTermStructure" title="quantlib.termstructures.yield_term_structure.YieldTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">YieldTermStructure</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<p>Implied term structure at a given date in the future.</p>
+<p>The given date will be the implied reference date.</p>
+<p>This term structure will remain linked to the original structure; any
+changes in the latter will be reflected in this structure as well.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>h</strong><span class="classifier"><a class="reference internal" href="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure.html#quantlib.termstructures.yield_term_structure.HandleYieldTermStructure" title="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">HandleYieldTermStructure</span></code></a></span></dt><dd><p>The handle to the original yield term structure.</p>
+</dd>
+<dt><strong>reference_date</strong><span class="classifier"><a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a></span></dt><dd><p>The new reference date for the implied curve.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>day_counter</strong></dt><dd></dd>
 <dt><strong>extrapolation</strong></dt><dd></dd>
 <dt><strong>max_date</strong></dt><dd></dd>
