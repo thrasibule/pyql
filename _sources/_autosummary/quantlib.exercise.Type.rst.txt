@@ -31,8 +31,8 @@ Type
          Type.__len__
       
          Type.__pow__
-         Type.__len__
          Type.__mul__
+         Type.__len__
          Type.__getitem__
   
 

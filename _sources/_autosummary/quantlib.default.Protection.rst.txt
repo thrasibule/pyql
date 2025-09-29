@@ -31,8 +31,8 @@ Protection
          Protection.__len__
       
          Protection.__pow__
-         Protection.__len__
          Protection.__mul__
+         Protection.__len__
          Protection.__getitem__
   
 

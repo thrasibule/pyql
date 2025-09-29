@@ -31,8 +31,8 @@ AverageType
          AverageType.__len__
       
          AverageType.__pow__
-         AverageType.__len__
          AverageType.__mul__
+         AverageType.__len__
          AverageType.__getitem__
   
 

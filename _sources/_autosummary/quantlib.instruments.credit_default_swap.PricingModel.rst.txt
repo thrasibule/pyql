@@ -31,8 +31,8 @@ PricingModel
          PricingModel.__len__
       
          PricingModel.__pow__
-         PricingModel.__len__
          PricingModel.__mul__
+         PricingModel.__len__
          PricingModel.__getitem__
   
 

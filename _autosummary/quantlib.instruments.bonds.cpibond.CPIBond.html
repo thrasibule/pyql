@@ -41,31 +41,73 @@
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.cpibond.CPIBond">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CPIBond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Natural</span> <span class="pre">settlement_days</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">face_amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">growth_only</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">baseCPI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">observation_lag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ZeroInflationIndex</span> <span class="pre">cpi_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InterpolationType</span> <span class="pre">observation_interpolation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Schedule</span> <span class="pre">schedule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector[Rate]</span> <span class="pre">coupons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">accrual_day_counter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">payment_convention=Following</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">issue_date=Date()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">payment_calendar=Calendar()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Period</span> <span class="pre">ex_coupon_period=Period()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Calendar</span> <span class="pre">ex_coupon_calendar=Calendar()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BusinessDayConvention</span> <span class="pre">ex_coupon_convention=Unadjusted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool</span> <span class="pre">ex_coupon_end_of_month=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.cpibond.CPIBond" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.instruments.bond.Bond.html#quantlib.instruments.bond.Bond" title="quantlib.instruments.bond.Bond"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bond</span></code></a></p>
-<p>CPI bond</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>calendar</strong></dt><dd></dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.cashflows.html#quantlib.instruments.bonds.cpibond.CPIBond.cashflows" title="quantlib.instruments.bonds.cpibond.CPIBond.cashflows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cashflows</span></code></a></dt><dd><p>cash flow stream as a <a class="reference internal" href="quantlib.cashflow.Leg.html#quantlib.cashflow.Leg" title="quantlib.cashflow.Leg"><code class="xref py py-class docutils literal notranslate"><span class="pre">Leg</span></code></a>.</p>
+<p>CPI-linked bond.</p>
+<p>This class represents a CPI-linked bond, also known as an
+inflation-indexed bond.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>settlement_days</strong><span class="classifier">int</span></dt><dd><p>The number of settlement days.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.clean_price.html#quantlib.instruments.bonds.cpibond.CPIBond.clean_price" title="quantlib.instruments.bonds.cpibond.CPIBond.clean_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_price</span></code></a></dt><dd><p>Bond clean price.</p>
+<dt><strong>face_amount</strong><span class="classifier">float</span></dt><dd><p>The face amount of the bond.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.dirty_price.html#quantlib.instruments.bonds.cpibond.CPIBond.dirty_price" title="quantlib.instruments.bonds.cpibond.CPIBond.dirty_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dirty_price</span></code></a></dt><dd><p>Bond dirty price</p>
+<dt><strong>growth_only</strong><span class="classifier">bool</span></dt><dd><p>Whether the bond has growth-only coupons.</p>
+</dd>
+<dt><strong>baseCPI</strong><span class="classifier">float</span></dt><dd><p>The base CPI value.</p>
+</dd>
+<dt><strong>observation_lag</strong><span class="classifier"><a class="reference internal" href="quantlib.time.date.Period.html#quantlib.time.date.Period" title="quantlib.time.date.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">Period</span></code></a></span></dt><dd><p>The observation lag for the CPI index.</p>
+</dd>
+<dt><strong>cpi_index</strong><span class="classifier"><a class="reference internal" href="quantlib.indexes.inflation_index.ZeroInflationIndex.html#quantlib.indexes.inflation_index.ZeroInflationIndex" title="quantlib.indexes.inflation_index.ZeroInflationIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">ZeroInflationIndex</span></code></a></span></dt><dd><p>The CPI index.</p>
+</dd>
+<dt><strong>observation_interpolation</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">InterpolationType</span></code></span></dt><dd><p>The observation interpolation type.</p>
+</dd>
+<dt><strong>schedule</strong><span class="classifier"><a class="reference internal" href="quantlib.time.schedule.Schedule.html#quantlib.time.schedule.Schedule" title="quantlib.time.schedule.Schedule"><code class="xref py py-class docutils literal notranslate"><span class="pre">Schedule</span></code></a></span></dt><dd><p>The bond’s schedule.</p>
+</dd>
+<dt><strong>coupons</strong><span class="classifier">list of float</span></dt><dd><p>The coupon rates.</p>
+</dd>
+<dt><strong>accrual_day_counter</strong><span class="classifier"><a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DayCounter</span></code></a></span></dt><dd><p>The accrual day counter.</p>
+</dd>
+<dt><strong>payment_convention</strong><span class="classifier"><a class="reference internal" href="quantlib.time.businessdayconvention.BusinessDayConvention.html#quantlib.time.businessdayconvention.BusinessDayConvention" title="quantlib.time.businessdayconvention.BusinessDayConvention"><code class="xref py py-class docutils literal notranslate"><span class="pre">BusinessDayConvention</span></code></a>, optional</span></dt><dd><p>The payment business day convention.</p>
+</dd>
+<dt><strong>issue_date</strong><span class="classifier"><a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a>, optional</span></dt><dd><p>The issue date of the bond.</p>
+</dd>
+<dt><strong>payment_calendar</strong><span class="classifier"><a class="reference internal" href="quantlib.time.calendar.Calendar.html#quantlib.time.calendar.Calendar" title="quantlib.time.calendar.Calendar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Calendar</span></code></a>, optional</span></dt><dd><p>The payment calendar.</p>
+</dd>
+<dt><strong>ex_coupon_period</strong><span class="classifier"><a class="reference internal" href="quantlib.time.date.Period.html#quantlib.time.date.Period" title="quantlib.time.date.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">Period</span></code></a>, optional</span></dt><dd><p>The ex-coupon period.</p>
+</dd>
+<dt><strong>ex_coupon_calendar</strong><span class="classifier"><a class="reference internal" href="quantlib.time.calendar.Calendar.html#quantlib.time.calendar.Calendar" title="quantlib.time.calendar.Calendar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Calendar</span></code></a>, optional</span></dt><dd><p>The ex-coupon calendar.</p>
+</dd>
+<dt><strong>ex_coupon_convention</strong><span class="classifier"><a class="reference internal" href="quantlib.time.businessdayconvention.BusinessDayConvention.html#quantlib.time.businessdayconvention.BusinessDayConvention" title="quantlib.time.businessdayconvention.BusinessDayConvention"><code class="xref py py-class docutils literal notranslate"><span class="pre">BusinessDayConvention</span></code></a>, optional</span></dt><dd><p>The ex-coupon business day convention.</p>
+</dd>
+<dt><strong>ex_coupon_end_of_month</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to use the end-of-month rule for ex-coupon dates.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.calendar.html#quantlib.instruments.bonds.cpibond.CPIBond.calendar" title="quantlib.instruments.bonds.cpibond.CPIBond.calendar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calendar</span></code></a></dt><dd><p>The calendar for the bond.</p>
+</dd>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.cashflows.html#quantlib.instruments.bonds.cpibond.CPIBond.cashflows" title="quantlib.instruments.bonds.cpibond.CPIBond.cashflows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cashflows</span></code></a></dt><dd><p>The bond’s cash flow stream as a <a class="reference internal" href="quantlib.cashflow.Leg.html#quantlib.cashflow.Leg" title="quantlib.cashflow.Leg"><code class="xref py py-class docutils literal notranslate"><span class="pre">Leg</span></code></a>.</p>
+</dd>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.clean_price.html#quantlib.instruments.bonds.cpibond.CPIBond.clean_price" title="quantlib.instruments.bonds.cpibond.CPIBond.clean_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_price</span></code></a></dt><dd><p>The bond’s clean price.</p>
+</dd>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.dirty_price.html#quantlib.instruments.bonds.cpibond.CPIBond.dirty_price" title="quantlib.instruments.bonds.cpibond.CPIBond.dirty_price"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dirty_price</span></code></a></dt><dd><p>The bond’s dirty price.</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.error_estimate.html#quantlib.instruments.bonds.cpibond.CPIBond.error_estimate" title="quantlib.instruments.bonds.cpibond.CPIBond.error_estimate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">error_estimate</span></code></a></dt><dd><p>Instrument.error_estimate: Real</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.is_expired.html#quantlib.instruments.bonds.cpibond.CPIBond.is_expired" title="quantlib.instruments.bonds.cpibond.CPIBond.is_expired"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_expired</span></code></a></dt><dd><p>Instrument.is_expired: bool</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.issue_date.html#quantlib.instruments.bonds.cpibond.CPIBond.issue_date" title="quantlib.instruments.bonds.cpibond.CPIBond.issue_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issue_date</span></code></a></dt><dd><p>Bond issue date</p>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.issue_date.html#quantlib.instruments.bonds.cpibond.CPIBond.issue_date" title="quantlib.instruments.bonds.cpibond.CPIBond.issue_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issue_date</span></code></a></dt><dd><p>The bond’s issue date.</p>
 </dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.maturity_date.html#quantlib.instruments.bonds.cpibond.CPIBond.maturity_date" title="quantlib.instruments.bonds.cpibond.CPIBond.maturity_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code></a></dt><dd><p>Bond maturity date</p>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.maturity_date.html#quantlib.instruments.bonds.cpibond.CPIBond.maturity_date" title="quantlib.instruments.bonds.cpibond.CPIBond.maturity_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maturity_date</span></code></a></dt><dd><p>The bond’s maturity date.</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.net_present_value.html#quantlib.instruments.bonds.cpibond.CPIBond.net_present_value" title="quantlib.instruments.bonds.cpibond.CPIBond.net_present_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">net_present_value</span></code></a></dt><dd><p>The net present value of the instrument.</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.npv.html#quantlib.instruments.bonds.cpibond.CPIBond.npv" title="quantlib.instruments.bonds.cpibond.CPIBond.npv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></a></dt><dd><p>A shortcut to the net_present_value property.</p>
 </dd>
-<dt><strong>settlement_days</strong></dt><dd></dd>
-<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.start_date.html#quantlib.instruments.bonds.cpibond.CPIBond.start_date" title="quantlib.instruments.bonds.cpibond.CPIBond.start_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_date</span></code></a></dt><dd><p>Bond start date</p>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.settlement_days.html#quantlib.instruments.bonds.cpibond.CPIBond.settlement_days" title="quantlib.instruments.bonds.cpibond.CPIBond.settlement_days"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settlement_days</span></code></a></dt><dd><p>The number of settlement days for the bond.</p>
+</dd>
+<dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.start_date.html#quantlib.instruments.bonds.cpibond.CPIBond.start_date" title="quantlib.instruments.bonds.cpibond.CPIBond.start_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start_date</span></code></a></dt><dd><p>The bond’s start date.</p>
 </dd>
 <dt><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.valuation_date.html#quantlib.instruments.bonds.cpibond.CPIBond.valuation_date" title="quantlib.instruments.bonds.cpibond.CPIBond.valuation_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">valuation_date</span></code></a></dt><dd><p>The date the net present value refers to.</p>
 </dd>
@@ -76,19 +118,19 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.accrued_amount.html#quantlib.instruments.bonds.cpibond.CPIBond.accrued_amount" title="quantlib.instruments.bonds.cpibond.CPIBond.accrued_amount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accrued_amount</span></code></a>(self, Date date=Date)</p></td>
-<td><p>Returns the bond accrued amount at the given date</p></td>
+<td><p>Returns the bond's accrued amount at the given date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.bond_yield.html#quantlib.instruments.bonds.cpibond.CPIBond.bond_yield" title="quantlib.instruments.bonds.cpibond.CPIBond.bond_yield"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bond_yield</span></code></a>(self, Price price, DayCounter dc, ...)</p></td>
-<td><p>Return the yield given a price and settlement date</p></td>
+<td><p>Returns the yield given a price and settlement date.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.notional.html#quantlib.instruments.bonds.cpibond.CPIBond.notional" title="quantlib.instruments.bonds.cpibond.CPIBond.notional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notional</span></code></a>(self, Date date=Date)</p></td>
-<td><p></p></td>
+<td><p>Returns the bond's notional at the given date.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.set_pricing_engine.html#quantlib.instruments.bonds.cpibond.CPIBond.set_pricing_engine" title="quantlib.instruments.bonds.cpibond.CPIBond.set_pricing_engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_pricing_engine</span></code></a>(self, PricingEngine engine)</p></td>
 <td><p>Sets the pricing engine to be used.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="quantlib.instruments.bonds.cpibond.CPIBond.settlement_date.html#quantlib.instruments.bonds.cpibond.CPIBond.settlement_date" title="quantlib.instruments.bonds.cpibond.CPIBond.settlement_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">settlement_date</span></code></a>(self, Date from_date=Date)</p></td>
-<td><p>Returns the bond settlement date after the given date.</p></td>
+<td><p>Returns the bond's settlement date after the given date.</p></td>
 </tr>
 </tbody>
 </table>
