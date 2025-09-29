@@ -15,7 +15,49 @@ from quantlib.utilities.null cimport Null
 from . cimport _floatingratebond as _frb
 
 cdef class FloatingRateBond(Bond):
-    """ Floating rate bond """
+    """Floating-rate bond.
+
+    This class represents a floating-rate bond, possibly with caps and/or floors.
+
+    Parameters
+    ----------
+    settlement_days : int
+        The number of settlement days.
+    face_amount : float
+        The face amount of the bond.
+    schedule : :class:`~quantlib.time.schedule.Schedule`
+        The bond's schedule.
+    ibor_index : :class:`~quantlib.indexes.ibor_index.IborIndex`
+        The underlying IBOR index.
+    accrual_day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        The accrual day counter.
+    fixing_days : int, optional
+        The number of fixing days.
+    gearings : list of float, optional
+        The gearing factors.
+    spreads : list of float, optional
+        The spreads over the index.
+    caps : list of float, optional
+        The caps on the coupon rate.
+    floors : list of float, optional
+        The floors on the coupon rate.
+    payment_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The payment business day convention.
+    in_arrears : bool, optional
+        Whether the coupon fixes in arrears.
+    redemption : float, optional
+        The redemption value.
+    issue_date : :class:`~quantlib.time.date.Date`, optional
+        The issue date of the bond.
+    ex_coupon_period : :class:`~quantlib.time.date.Period`, optional
+        The ex-coupon period.
+    ex_coupon_calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+        The ex-coupon calendar.
+    ex_coupon_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The ex-coupon business day convention.
+    ex_coupon_end_of_month : bool, optional
+        Whether to use the end-of-month rule for ex-coupon dates.
+    """
     def __init__(self, Natural settlement_days, Real face_amount,
                  Schedule schedule, IborIndex ibor_index,
                  DayCounter accrual_day_counter, Natural fixing_days=Null[Natural](),
@@ -29,42 +71,6 @@ cdef class FloatingRateBond(Bond):
                  BusinessDayConvention ex_coupon_convention=Unadjusted,
                  bool ex_coupon_end_of_month=False
         ):
-        """ Floating rate bond
-
-        Parameters
-        ----------
-        settlement_days : int
-            Number of days before bond settles
-        face_amount : float (C double in python)
-            Amount of face value of bond
-        float_schedule : Schedule
-            Schedule of payments for bond
-        ibor_index : IborIndex
-            Ibor index
-        accrual_day_counter: DayCounter
-            dayCounter for Bond
-        fixing_days : int
-            Number of fixing days for bond
-        gearings: list [float]
-            Gearings defaulted to [1.]
-        spreads: list [float]
-            Spread on ibor index, default to [0.]
-        caps: list [float]
-            Caps on the spread
-        floors: list[float]
-            Floors on the spread
-        payment_convention: BusinessDayConvention
-            The business day convention for the payment schedule
-        in_arrears: bool
-        redemption : float
-            Amount at redemption
-        issue_date : Date
-            Date bond was issued
-        ex_coupon_period : Period
-        ex_coupon_calendar : Calendar
-        ex_coupon_convention: BusinessDayConvention
-        ex_coupon_end_of_month: bool
-        """
 
         self._thisptr.reset(
             new _frb.FloatingRateBond(

@@ -12,14 +12,38 @@ from libcpp.vector cimport vector
 from . cimport _fixedratebond as _frb
 
 cdef class FixedRateBond(Bond):
-    """ Fixed rate bond.
+    """Fixed-rate bond.
 
-    Support:
-        - simple annual compounding coupon rates
-
-    Unsupported: (needs interfacing)
-        - simple annual compounding coupon rates with internal schedule calculation
-        - generic compounding and frequency InterestRate coupons
+    Parameters
+    ----------
+    settlement_days : int
+        The number of settlement days.
+    face_amount : float
+        The face amount of the bond.
+    schedule : :class:`~quantlib.time.schedule.Schedule`
+        The bond's schedule.
+    coupons : list of float
+        The coupon rates.
+    accrual_day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        The accrual day counter.
+    payment_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The payment business day convention.
+    redemption : float, optional
+        The redemption value.
+    issue_date : :class:`~quantlib.time.date.Date`, optional
+        The issue date of the bond.
+    payment_calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+        The payment calendar.
+    ex_coupon_period : :class:`~quantlib.time.date.Period`, optional
+        The ex-coupon period.
+    ex_coupon_calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+        The ex-coupon calendar.
+    ex_coupon_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The ex-coupon business day convention.
+    ex_coupon_end_of_month : bool, optional
+        Whether to use the end-of-month rule for ex-coupon dates.
+    first_period_day_counter : :class:`~quantlib.time.daycounter.DayCounter`, optional
+        The day counter for the first coupon period.
     """
 
     def __init__(self, Natural settlement_days, Real face_amount,
@@ -33,27 +57,6 @@ cdef class FixedRateBond(Bond):
                  BusinessDayConvention ex_coupon_convention=Unadjusted,
                  bool ex_coupon_end_of_month=False,
                  DayCounter first_period_day_counter=DayCounter()):
-        """ Fixed rate bond
-
-        Parameters
-        ----------
-        settlement_days : int
-           Number of days before bond settles
-        face_amount : float (C double in python)
-           Amount of face value of bond
-        schedule : Schedule
-           Schedule of payments for bond
-        coupons : list[float]
-           Interest[s] to be acquired for bond.
-        accrual_day_counter: DayCounter
-           dayCounter for Bond
-        payment_convention: BusinessDayConvention
-           The business day convention for the payment schedule
-        redemption : float
-           Amount at redemption
-        issue_date : Date
-           Date bond was issued
-        """
 
         self._thisptr.reset(
             new _frb.FixedRateBond(

@@ -14,7 +14,48 @@ from quantlib.time.date cimport Date, Period
 from quantlib.time.daycounter cimport DayCounter
 
 cdef class CPIBond(Bond):
-    """ CPI bond """
+    """CPI-linked bond.
+
+    This class represents a CPI-linked bond, also known as an
+    inflation-indexed bond.
+
+    Parameters
+    ----------
+    settlement_days : int
+        The number of settlement days.
+    face_amount : float
+        The face amount of the bond.
+    growth_only : bool
+        Whether the bond has growth-only coupons.
+    baseCPI : float
+        The base CPI value.
+    observation_lag : :class:`~quantlib.time.date.Period`
+        The observation lag for the CPI index.
+    cpi_index : :class:`~quantlib.indexes.inflation_index.ZeroInflationIndex`
+        The CPI index.
+    observation_interpolation : :class:`~quantlib.cashflows.cpicoupon.InterpolationType`
+        The observation interpolation type.
+    schedule : :class:`~quantlib.time.schedule.Schedule`
+        The bond's schedule.
+    coupons : list of float
+        The coupon rates.
+    accrual_day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        The accrual day counter.
+    payment_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The payment business day convention.
+    issue_date : :class:`~quantlib.time.date.Date`, optional
+        The issue date of the bond.
+    payment_calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+        The payment calendar.
+    ex_coupon_period : :class:`~quantlib.time.date.Period`, optional
+        The ex-coupon period.
+    ex_coupon_calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+        The ex-coupon calendar.
+    ex_coupon_convention : :class:`~quantlib.time.businessdayconvention.BusinessDayConvention`, optional
+        The ex-coupon business day convention.
+    ex_coupon_end_of_month : bool, optional
+        Whether to use the end-of-month rule for ex-coupon dates.
+    """
     def __init__(self, Natural settlement_days, Real face_amount, bool growth_only,
                  Real baseCPI, Period observation_lag not None,
                  ZeroInflationIndex cpi_index not None,
