@@ -3,7 +3,7 @@ from libcpp cimport bool
 from libcpp.vector cimport vector
 from quantlib.time.date cimport Date, date_from_qldate
 cimport quantlib.time._date as _date
-from quantlib.handle cimport static_pointer_cast
+from quantlib.ext cimport static_pointer_cast
 
 cdef class DefaultProbabilityTermStructure(TermStructure):
 
@@ -11,22 +11,49 @@ cdef class DefaultProbabilityTermStructure(TermStructure):
         return <_dts.DefaultProbabilityTermStructure*>self._thisptr.get()
 
     def survival_probability(self, d, bool extrapolate = False):
+        """Survival probability
+
+        This returns the survival probability from the reference
+        date until a given date or time.  In the former case, the time
+        is calculated as a fraction of year from the reference date.
+
+        Parameters
+        ----------
+        d : :class:`~quantlib.time.date.Date` or float
+        extrapolate : bool
+
+        """
+
         if isinstance(d, Date):
             return self.as_dts_ptr().survivalProbability(
                 (<Date>d)._thisptr, extrapolate)
         elif isinstance(d, float) or isinstance(d, int):
             return self.as_dts_ptr().survivalProbability(<Time>d, extrapolate)
         else:
-            raise ValueError('d must be a Date or a float')
+            raise TypeError('d must be a Date or a float')
 
     def hazard_rate(self, d, bool extrapolate = False):
+        """Hazard rate
+
+        This returns the hazard rate at a given date or time.
+        In the former case, the time is calculated as a fraction of
+        year from the reference date.
+
+        Hazard rates are defined with annual frequency and continuous compounding.
+
+        Parameters
+        ----------
+        d : :class:`~quantlib.time.date.Date` or float
+        extrapolate : bool
+
+        """
         if isinstance(d, Date):
             return self.as_dts_ptr().hazardRate(
                 (<Date>d)._thisptr, extrapolate)
         elif isinstance(d, float) or isinstance(d, int):
             return self.as_dts_ptr().hazardRate(<Time>d, extrapolate)
         else:
-            raise ValueError('d must be a Date or a float')
+            raise TypeError('d must be a Date or a float')
 
     @property
     def jump_times(self):
@@ -40,10 +67,3 @@ cdef class DefaultProbabilityTermStructure(TermStructure):
         for d in jd:
             l.append(date_from_qldate(d))
         return l
-
-cdef class HandleDefaultProbabilityTermStructure:
-    def __init__(self, DefaultProbabilityTermStructure ts=None, bool register_as_observer=False):
-        if ts is not None:
-            self.handle = RelinkableHandle[_dts.DefaultProbabilityTermStructure](
-                static_pointer_cast[_dts.DefaultProbabilityTermStructure](ts._thisptr),
-                register_as_observer)

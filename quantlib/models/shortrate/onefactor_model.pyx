@@ -8,7 +8,7 @@
 
 from quantlib.types cimport Rate, Real, Time
 
-from quantlib.handle cimport static_pointer_cast
+from quantlib.ext cimport static_pointer_cast
 from quantlib.option cimport OptionType
 cimport quantlib.models.shortrate._onefactor_model as _ofm
 cimport quantlib._stochastic_process as _sp
@@ -32,7 +32,7 @@ cdef class ShortRateDynamics:
         return self._thisptr.get().shortRate(t, variable)
 
 cdef class OneFactorModel(ShortRateModel):
-
+    """Single-factor short-rate model abstract class"""
     @property
     def dynamics(self):
         """short-rate dynamics

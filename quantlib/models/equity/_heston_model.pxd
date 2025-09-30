@@ -2,7 +2,8 @@ include '../../types.pxi'
 
 from libcpp.vector cimport vector
 
-from quantlib.handle cimport Handle, shared_ptr
+from quantlib._handle cimport Handle
+from quantlib.ext cimport shared_ptr
 
 from quantlib.processes._heston_process cimport HestonProcess
 from quantlib.pricingengines._pricing_engine cimport PricingEngine
@@ -16,7 +17,7 @@ cimport quantlib._quote as _qt
 from quantlib.time._calendar cimport Calendar
 from quantlib.time._period cimport Period
 
-cdef extern from 'ql/models/equity/hestonmodelhelper.hpp' namespace 'QuantLib':
+cdef extern from 'ql/models/equity/hestonmodelhelper.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass HestonModelHelper(BlackCalibrationHelper):
 

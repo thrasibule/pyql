@@ -11,7 +11,7 @@ from quantlib.types cimport *
 from libcpp cimport bool
 from libcpp.vector cimport vector
 
-from quantlib.handle cimport shared_ptr, Handle, RelinkableHandle
+from quantlib._handle cimport Handle
 from quantlib.time._calendar cimport Calendar
 from quantlib.time._date cimport Date
 from quantlib.time._daycounter cimport DayCounter
@@ -21,7 +21,7 @@ from quantlib.compounding cimport Compounding
 
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 
-cdef extern from 'ql/termstructures/yield/flatforward.hpp' namespace 'QuantLib':
+cdef extern from 'ql/termstructures/yield/flatforward.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass FlatForward(YieldTermStructure):
 
@@ -52,14 +52,14 @@ cdef extern from 'ql/termstructures/yield/flatforward.hpp' namespace 'QuantLib':
                     Handle[_qt.Quote]& forward,
                     DayCounter& dayCounter,
         ) except +
-        
+
         FlatForward(Natural settlementDays,
                     Calendar& calendar,
                     Handle[_qt.Quote]& forward,
                     DayCounter& dayCounter,
                     Compounding compounding,
         ) except +
-        
+
         FlatForward(Natural settlementDays,
                     Calendar& calendar,
                     Handle[_qt.Quote]& forward,
@@ -67,7 +67,7 @@ cdef extern from 'ql/termstructures/yield/flatforward.hpp' namespace 'QuantLib':
                     Compounding compounding,
                     Frequency frequency
         ) except +
-        
+
         # from date and forward
         FlatForward(Date& referenceDate,
                     Handle[_qt.Quote]& forward,

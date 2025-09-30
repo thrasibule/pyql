@@ -3,13 +3,13 @@ from cython.operator cimport dereference as deref
 from libcpp.string cimport string
 from libcpp cimport bool
 
-from quantlib.handle cimport shared_ptr, Handle
+from quantlib.ext cimport shared_ptr
 from quantlib.time.date cimport Period
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.currency.currency cimport Currency
 from quantlib.time.calendar cimport Calendar
 from quantlib.time.businessdayconvention cimport ModifiedFollowing, BusinessDayConvention
-from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure
+from quantlib.handle cimport Handle, HandleYieldTermStructure
 cimport quantlib.termstructures._yield_term_structure as _yts
 
 cimport quantlib._index as _in
@@ -22,29 +22,6 @@ from quantlib.market.conventions.swap import params as swap_params
 from quantlib.indexes.interest_rate_index cimport InterestRateIndex
 
 cdef class IborIndex(InterestRateIndex):
-    """Base class for Inter-Bank-Offered-Rate indexes (e.g. Libor, etc.).
-
-    Parameters
-    ----------
-    family_name : str
-        The family name of the index.
-    tenor : :class:`~quantlib.time.date.Period`
-        The tenor of the index.
-    settlement_days : int
-        The number of settlement days.
-    currency : :class:`~quantlib.currency.currency.Currency`
-        The currency of the index.
-    fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
-        The calendar used for fixing dates.
-    convention : int
-        The business day convention.
-    end_of_month : bool
-        Whether the end-of-month rule applies.
-    day_counter : :class:`~quantlib.time.daycounter.DayCounter`
-        The day counter for the index.
-    yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
-        The yield term structure handle.
-    """
 
     def __init__(self, str family_name, Period tenor not None, Natural settlement_days,
                  Currency currency, Calendar fixing_calendar, int convention,
@@ -59,44 +36,31 @@ cdef class IborIndex(InterestRateIndex):
                               <BusinessDayConvention> convention,
                               end_of_month,
                               deref(day_counter._thisptr),
-                              yts.handle)
+                              yts.handle())
             )
 
     property business_day_convention:
-        """The business day convention."""
         def __get__(self):
             cdef _ib.IborIndex* ref = <_ib.IborIndex*>self._thisptr.get()
             return ref.businessDayConvention()
 
     property end_of_month:
-        """Whether the end-of-month rule applies."""
         def __get__(self):
             cdef _ib.IborIndex* ref = <_ib.IborIndex*>self._thisptr.get()
             return ref.endOfMonth()
 
     @property
     def forwarding_term_structure(self):
-        """The curve used to forecast fixings."""
         cdef:
             _ib.IborIndex* ref = <_ib.IborIndex*>self._thisptr.get()
             HandleYieldTermStructure yts = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
-            Handle[_yts.YieldTermStructure] _yts = ref.forwardingTermStructure()
-        if not _yts.empty():
-            yts.handle.linkTo(_yts.currentLink())
+        yts._handle = new Handle[_yts.YieldTermStructure](ref.forwardingTermStructure())
         return yts
 
     @staticmethod
     def from_name(market, term_structure=HandleYieldTermStructure(), **kwargs):
-        """Create a default IBOR index for the given market.
-
-        Parameters
-        ----------
-        market : str
-            The market name (e.g., 'USDLibor', 'Euribor').
-        term_structure : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
-            The yield term structure handle.
-        **kwargs :
-            Additional keyword arguments to override default parameters.
+        """
+        Create default IBOR for the market, modify attributes if provided
         """
 
         row = swap_params(market)
@@ -120,23 +84,6 @@ cdef class IborIndex(InterestRateIndex):
 
 
 cdef class OvernightIndex(IborIndex):
-    """Base class for overnight indexes.
-
-    Parameters
-    ----------
-    family_name : str
-        The family name of the index.
-    settlement_days : int
-        The number of settlement days.
-    currency : :class:`~quantlib.currency.currency.Currency`
-        The currency of the index.
-    fixing_calendar : :class:`~quantlib.time.calendar.Calendar`
-        The calendar used for fixing dates.
-    day_counter : :class:`~quantlib.time.daycounter.DayCounter`
-        The day counter for the index.
-    yts : :class:`~quantlib.termstructures.yield_term_structure.HandleYieldTermStructure`, optional
-        The yield term structure handle.
-    """
     def __init__(self, str family_name, Natural settlement_days,
                  Currency currency, Calendar fixing_calendar,
                  DayCounter day_counter not None,
@@ -147,5 +94,5 @@ cdef class OvernightIndex(IborIndex):
                               deref(currency._thisptr),
                               fixing_calendar._thisptr,
                               deref(day_counter._thisptr),
-                                   yts.handle)
+                                   yts.handle())
             )

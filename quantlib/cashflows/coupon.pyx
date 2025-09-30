@@ -1,5 +1,5 @@
 from cython.operator cimport dereference as deref
-from quantlib.handle cimport shared_ptr
+from quantlib.ext cimport shared_ptr
 from quantlib.time.date cimport Date, date_from_qldate
 cimport quantlib.time._date as _date
 from quantlib.time.daycounter cimport DayCounter
@@ -8,7 +8,7 @@ cimport quantlib._cashflow as _cf
 
 cdef class Coupon(CashFlow):
 
-    cdef inline _coupon.Coupon* _get_coupon(self):
+    cdef inline _coupon.Coupon* _get_coupon(self) noexcept:
         return <_coupon.Coupon*>self._thisptr.get()
 
     @property
@@ -61,3 +61,8 @@ cdef class Coupon(CashFlow):
         cdef DayCounter dc = DayCounter.__new__(DayCounter)
         dc._thisptr = new _dc.DayCounter(self._get_coupon().dayCounter())
         return dc
+
+def as_coupon(CashFlow cf):
+    cdef Coupon coupon = Coupon.__new__(Coupon)
+    coupon._thisptr = cf._thisptr
+    return coupon

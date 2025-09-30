@@ -9,15 +9,12 @@ cdef inline _payoffs.PlainVanillaPayoff* _get_payoff(PlainVanillaPayoff payoff):
 
 cdef class Payoff:
 
-    def __repr__(self):
-        if self._thisptr:
-            return self._thisptr.get().description().decode('utf-8')
-        else:
-            raise ValueError("Abstract Payoff")
 
     def __str__(self):
         if self._thisptr:
-            return self._thisptr.get().name().decode('utf-8')
+            return self._thisptr.get().description().decode('utf-8')
+        else:
+            raise ValueError("empty payoff")
 
     def __call__(self, Real price):
         return deref(self._thisptr)(price)
@@ -32,10 +29,9 @@ cdef class PlainVanillaPayoff(StrikedTypePayoff):
 
     Parameters
     ----------
-
-    option_type: :class:`~quantlib.option.OptionType`
+    option_type : :class:`~quantlib.option.OptionType`
         The type of option, can be either `Call` or `Put`
-    strike: double
+    strike : double
         The strike value
 
     """
@@ -48,14 +44,10 @@ cdef class PlainVanillaPayoff(StrikedTypePayoff):
             )
         )
 
-    property option_type:
-        """ Exposes the internal option type.
-
-        The type can be converted to str using the OptionType enum.
-
-        """
-        def __get__(self):
-            return _get_payoff(self).optionType()
+    @property
+    def option_type(self):
+        """:class:`~quantlib.option.OptionType`"""
+        return _get_payoff(self).optionType()
 
     property strike:
         def __get__(self):
