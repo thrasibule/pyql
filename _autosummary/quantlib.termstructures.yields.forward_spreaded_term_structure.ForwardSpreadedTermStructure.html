@@ -41,20 +41,16 @@
 <dt class="sig sig-object py" id="quantlib.termstructures.yields.forward_spreaded_term_structure.ForwardSpreadedTermStructure">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ForwardSpreadedTermStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">HandleYieldTermStructure</span> <span class="pre">yts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quote</span> <span class="pre">spread</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.termstructures.yields.forward_spreaded_term_structure.ForwardSpreadedTermStructure" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="quantlib.termstructures.yield_term_structure.YieldTermStructure.html#quantlib.termstructures.yield_term_structure.YieldTermStructure" title="quantlib.termstructures.yield_term_structure.YieldTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">YieldTermStructure</span></code></a></p>
-<p>Term structure with an added spread on the instantaneous forward rate.</p>
-<p>This term structure remains linked to the original structure; any changes
-in the latter will be reflected in this structure.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>yts</strong><span class="classifier"><a class="reference internal" href="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure.html#quantlib.termstructures.yield_term_structure.HandleYieldTermStructure" title="quantlib.termstructures.yield_term_structure.HandleYieldTermStructure"><code class="xref py py-class docutils literal notranslate"><span class="pre">HandleYieldTermStructure</span></code></a></span></dt><dd><p>The handle to the original yield term structure.</p>
-</dd>
-<dt><strong>spread</strong><span class="classifier"><a class="reference internal" href="quantlib.quote.Quote.html#quantlib.quote.Quote" title="quantlib.quote.Quote"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quote</span></code></a></span></dt><dd><p>The spread to be added to the forward rate.</p>
+<dl class="simple">
+<dt>Constructor Inputs:</dt><dd><ol class="arabic simple">
+<li><p>YieldTermStructure</p></li>
+<li><p>Quote</p></li>
+</ol>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">Attributes<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>day_counter</strong></dt><dd></dd>
 <dt><strong>extrapolation</strong></dt><dd></dd>
 <dt><strong>max_date</strong></dt><dd></dd>

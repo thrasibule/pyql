@@ -39,32 +39,10 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="quantlib.instruments.bonds.fixedratebond.FixedRateBond.bond_yield">
 <span class="sig-prename descclassname"><span class="pre">FixedRateBond.</span></span><span class="sig-name descname"><span class="pre">bond_yield</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Price</span> <span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DayCounter</span> <span class="pre">dc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Compounding</span> <span class="pre">comp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Frequency</span> <span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Date</span> <span class="pre">settlement_date=Date()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">accuracy=1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span> <span class="pre">max_evaluations=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Real</span> <span class="pre">guess=0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#quantlib.instruments.bonds.fixedratebond.FixedRateBond.bond_yield" title="Link to this definition">¶</a></dt>
-<dd><p>Returns the yield given a price and settlement date.</p>
+<dd><p>Return the yield given a price and settlement date</p>
 <p>The default bond settlement is used if no date is given.</p>
 <p>This method is the original Bond.yield method in C++.
-Python does not allow <cite>yield</cite> as a method name.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl>
-<dt><strong>price</strong><span class="classifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Price</span></code></span></dt><dd><p>The price to be used for the yield calculation.</p>
-</dd>
-<dt><strong>dc</strong><span class="classifier"><a class="reference internal" href="quantlib.time.daycounter.DayCounter.html#quantlib.time.daycounter.DayCounter" title="quantlib.time.daycounter.DayCounter"><code class="xref py py-class docutils literal notranslate"><span class="pre">DayCounter</span></code></a></span></dt><dd><p>The day counter.</p>
-</dd>
-<dt><strong>comp</strong><span class="classifier"><a class="reference internal" href="quantlib.compounding.Compounding.html#quantlib.compounding.Compounding" title="quantlib.compounding.Compounding"><code class="xref py py-class docutils literal notranslate"><span class="pre">Compounding</span></code></a></span></dt><dd><p>The compounding convention.</p>
-</dd>
-<dt><strong>freq</strong><span class="classifier"><a class="reference internal" href="quantlib.time.frequency.Frequency.html#quantlib.time.frequency.Frequency" title="quantlib.time.frequency.Frequency"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frequency</span></code></a></span></dt><dd><p>The frequency.</p>
-</dd>
-<dt><strong>settlement_date</strong><span class="classifier"><a class="reference internal" href="quantlib.time.date.Date.html#quantlib.time.date.Date" title="quantlib.time.date.Date"><code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code></a>, optional</span></dt><dd><p>The settlement date.</p>
-</dd>
-<dt><strong>accuracy</strong><span class="classifier">float, optional</span></dt><dd><p>The desired accuracy.</p>
-</dd>
-<dt><strong>max_evaluations</strong><span class="classifier">int, optional</span></dt><dd><p>The maximum number of evaluations.</p>
-</dd>
-<dt><strong>guess</strong><span class="classifier">float, optional</span></dt><dd><p>The initial guess for the yield.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+Python does not allow us to use the yield statement as a method name.</p>
 </dd></dl>
 
 </section>
