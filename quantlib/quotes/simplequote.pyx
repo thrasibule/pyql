@@ -4,14 +4,8 @@ from quantlib.utilities.null cimport Null
 from . cimport _simplequote as _sq
 
 cdef class SimpleQuote(Quote):
-    """Market element returning a stored value.
-
-    Parameters
-    ----------
-    value : float, optional
-        The value of the quote. Defaults to a null value.
-    """
     def __init__(self, Real value=Null[Real]()):
+        """ Market element returning a stored value"""
         self._thisptr.reset(new _sq.SimpleQuote(value))
 
     def __str__(self):
@@ -27,7 +21,6 @@ cdef class SimpleQuote(Quote):
             return "SimpleQuote()"
 
     property value:
-        """The value of the quote."""
         def __get__(self):
             return self._thisptr.get().value()
 
@@ -35,5 +28,4 @@ cdef class SimpleQuote(Quote):
             (<_sq.SimpleQuote*>self._thisptr.get()).setValue(value)
 
     def reset(self):
-        """Resets the quote to a null value."""
         (<_sq.SimpleQuote*>self._thisptr.get()).reset()
