@@ -1,6 +1,6 @@
 from cython.operator cimport dereference as deref
 
-from quantlib.handle cimport static_pointer_cast, shared_ptr
+from quantlib.ext cimport static_pointer_cast, shared_ptr
 from quantlib.pricingengines._pricing_engine cimport PricingEngine as QlPricingEngine
 cimport quantlib.pricingengines.asian._analyticdiscrgeomavprice as _adgap
 from quantlib.processes.black_scholes_process cimport GeneralizedBlackScholesProcess

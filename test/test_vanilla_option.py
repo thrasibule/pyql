@@ -17,7 +17,7 @@ from quantlib.instruments.implied_volatility import ImpliedVolatilityHelper
 from quantlib.processes.black_scholes_process import BlackScholesMertonProcess
 from quantlib.settings import Settings
 from quantlib.time.api import Date, TARGET, May, Actual365Fixed
-from quantlib.termstructures.yield_term_structure import HandleYieldTermStructure
+from quantlib.handle import HandleYieldTermStructure, HandleBlackVolTermStructure
 from quantlib.termstructures.yields.flat_forward import FlatForward
 from quantlib.quotes import SimpleQuote
 from quantlib.methods.finitedifferences.solvers.fdmbackwardsolver import FdmSchemeDesc
@@ -70,11 +70,13 @@ class VanillaOptionTestCase(unittest.TestCase):
             )
         )
 
-        self.flat_vol_ts = BlackConstantVol(
-            self.settlement_date,
-            self.calendar,
-            self.volatility,
-            self.daycounter
+        self.flat_vol_ts = HandleBlackVolTermStructure(
+            BlackConstantVol(
+                self.settlement_date,
+                self.calendar,
+                self.volatility,
+                self.daycounter
+            )
         )
 
         self.black_scholes_merton_process = BlackScholesMertonProcess(
@@ -103,7 +105,7 @@ class VanillaOptionTestCase(unittest.TestCase):
         quote_str = str(self.underlyingH)
         self.assertEqual('Simple Quote: 36.000000', quote_str)
 
-        payoff_str = repr(self.payoff)
+        payoff_str = str(self.payoff)
         self.assertEqual('Vanilla Put, 40 strike', payoff_str)
 
         exercise = EuropeanExercise(self.maturity)
@@ -113,8 +115,8 @@ class VanillaOptionTestCase(unittest.TestCase):
         option = VanillaOption(self.payoff, exercise)
         self.assertEqual('Exercise type: European', str(option.exercise))
         vanilla_str = str(option)
-        self.assertEqual('VanillaOption Exercise type: European ' +
-                         'Vanilla', vanilla_str)
+        self.assertEqual(" ".join(["VanillaOption", str(option.exercise), str(option.payoff)]),
+                         vanilla_str)
 
     def test_european_vanilla_option_usage(self):
 

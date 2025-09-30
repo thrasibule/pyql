@@ -1,6 +1,6 @@
 from quantlib.types cimport Real, Spread
 from libcpp cimport bool
-from quantlib.handle cimport shared_ptr
+from quantlib.ext cimport shared_ptr
 from quantlib.indexes._swap_index cimport SwapIndex
 from quantlib.indexes._ibor_index cimport IborIndex
 from quantlib.instruments._swap cimport Swap
@@ -14,7 +14,7 @@ from quantlib.time.dategeneration cimport DateGeneration
 from quantlib.handle cimport Handle
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 
-cdef extern from 'ql/instruments/makecms.hpp' namespace 'QuantLib':
+cdef extern from 'ql/instruments/makecms.hpp' namespace 'QuantLib' nogil:
     cdef cppclass MakeCms:
         MakeCms(const Period& swapTenor,
                 const shared_ptr[SwapIndex]& swapIndex,

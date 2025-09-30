@@ -1,12 +1,13 @@
 include '../../types.pxi'
 from libcpp cimport bool
 
-from quantlib.handle cimport Handle, optional
+from quantlib.handle cimport Handle
+from quantlib.ext cimport optional
 from quantlib.termstructures._default_term_structure cimport DefaultProbabilityTermStructure
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 from quantlib.pricingengines._pricing_engine cimport PricingEngine
 
-cdef extern from 'ql/pricingengines/credit/midpointcdsengine.hpp' namespace 'QuantLib':
+cdef extern from 'ql/pricingengines/credit/midpointcdsengine.hpp' namespace 'QuantLib' nogil:
 
     cdef cppclass MidPointCdsEngine(PricingEngine):
         MidPointCdsEngine(

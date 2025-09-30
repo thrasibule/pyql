@@ -4,7 +4,7 @@ from cython.operator cimport dereference as deref
 from libcpp cimport bool
 
 from quantlib.utilities.null cimport Null
-from quantlib.handle cimport shared_ptr, static_pointer_cast
+from quantlib.ext cimport shared_ptr, static_pointer_cast
 from quantlib.pricingengines.engine cimport PricingEngine
 from quantlib.pricingengines._pricing_engine cimport PricingEngine as _PricingEngine
 from quantlib.processes.black_scholes_process cimport GeneralizedBlackScholesProcess

@@ -8,14 +8,12 @@
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 
-from quantlib.handle cimport optional
+from quantlib.ext cimport optional
 from . cimport _midpoint_cds_engine as _mce
 
 from quantlib.pricingengines.engine cimport PricingEngine
 
-cimport quantlib.termstructures._default_term_structure as _dts
-from quantlib.termstructures.default_term_structure cimport HandleDefaultProbabilityTermStructure
-from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure
+from quantlib.handle cimport HandleDefaultProbabilityTermStructure, HandleYieldTermStructure
 
 
 cdef class MidPointCdsEngine(PricingEngine):
@@ -34,7 +32,7 @@ cdef class MidPointCdsEngine(PricingEngine):
         if include_settlement_date_flows is not None:
             include_settlement_date_flows_opt = <bool>include_settlement_date_flows
         self._thisptr.reset(
-            new _mce.MidPointCdsEngine(ts.handle, recovery_rate, discount_curve.handle,
+            new _mce.MidPointCdsEngine(ts.handle(), recovery_rate, discount_curve.handle(),
                 include_settlement_date_flows_opt,
                 )
         )
