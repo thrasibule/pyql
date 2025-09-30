@@ -5,5 +5,9 @@ cdef extern from 'ql/termstructures/volatility/equityfx/blackvariancesurface.hpp
         ConstantExtrapolation
         InterpolatorDefaultExtrapolation
 
+cpdef enum Interpolator:
+    Bilinear
+    Bicubic
+
 cdef class BlackVarianceSurface(BlackVarianceTermStructure):
     pass

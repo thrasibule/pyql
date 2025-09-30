@@ -1,6 +1,6 @@
 include '../types.pxi'
 from libcpp cimport bool
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport shared_ptr
 from quantlib.indexes._ibor_index cimport IborIndex
 from quantlib.indexes._swap_index cimport SwapIndex
 from quantlib.time._date cimport Date
@@ -8,7 +8,7 @@ from quantlib.time._daycounter cimport DayCounter
 from ._floating_rate_coupon cimport FloatingRateCoupon
 from ._coupon_pricer cimport FloatingRateCouponPricer
 
-cdef extern from 'ql/cashflows/capflooredcoupon.hpp' namespace 'QuantLib' nogil:
+cdef extern from 'ql/cashflows/capflooredcoupon.hpp' namespace 'QuantLib':
     # Capped and/or floored floating-rate coupon
     # The payoff $P$ of a capped floating-rate coupon is:
     # \[ P = N \times T \times \min(a L + b, C). \]

@@ -11,8 +11,7 @@
 include '../../types.pxi'
 from libcpp cimport bool
 
-from quantlib.ext cimport shared_ptr
-from quantlib.handle cimport Handle
+from quantlib.handle cimport Handle, shared_ptr
 from quantlib._quote cimport Quote
 from quantlib.time._calendar cimport BusinessDayConvention, Calendar
 from quantlib.time._date cimport Date

@@ -1,8 +1,7 @@
 from quantlib.types cimport Natural, Rate, Real
 
 from libcpp cimport bool
-from quantlib.ext cimport optional, shared_ptr
-from quantlib.handle cimport Handle
+from quantlib.handle cimport optional, Handle, shared_ptr
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 from .._instrument cimport Instrument
 from quantlib._cashflow cimport CashFlow, Leg

@@ -1,10 +1,12 @@
 include '../../types.pxi'
 
 from cython.operator cimport dereference as deref
+from quantlib.handle cimport shared_ptr
 
 from quantlib.termstructures.default_term_structure cimport DefaultProbabilityTermStructure
 
 cimport quantlib.termstructures.credit._flat_hazardrate as _fhr
+cimport quantlib.termstructures._default_term_structure as _dts
 from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.time.calendar cimport Calendar
@@ -14,28 +16,29 @@ from quantlib.quote cimport Quote
 cdef class FlatHazardRate(DefaultProbabilityTermStructure):
     """Flat hazard rate curve
 
-       Parameters
-       ----------
-       settlement_days : int
-           number of days from evaluation date
-       calendar : :class:`~quantlib.time.calendar.Calendar`
-           calendar used to compute the reference date
-       hazard_rate : float or :class:`~quantlib.quote.Quote`
-           the flat hazard rate
-       day_counter : :class:`~quantlib.time.daycounter.DayCounter`
+        Parameters
+        ----------
+
+        settlement_days : int
+            number of days from evaluation date
+        calendar: :class:`~quantlib.time.calendar.Calendar`
+            calendar used to compute the reference date
+        hazard_rate: float or :class:`~quantlib.quote.Quote`
+            the flat hazard rate
+        day_counter: :class:`~quantlib.time.daycounter.DayCounter`
             DayCounter for the curve
 
         """
     def __init__(self, int settlement_days,  Calendar calendar not None,
                  hazard_rate, DayCounter day_counter not None):
         if isinstance(hazard_rate, float):
-            self._thisptr.reset(
+            self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
                 new _fhr.FlatHazardRate(settlement_days,
                                         calendar._thisptr,
                                         <Rate>hazard_rate,
                                         deref(day_counter._thisptr)))
         elif isinstance(hazard_rate, Quote):
-            self._thisptr.reset(
+            self._thisptr = shared_ptr[_dts.DefaultProbabilityTermStructure](
                 new _fhr.FlatHazardRate(
                     settlement_days,
                     calendar._thisptr,
@@ -62,12 +65,12 @@ cdef class FlatHazardRate(DefaultProbabilityTermStructure):
 
         cdef FlatHazardRate instance = cls.__new__(cls)
         if isinstance(hazard_rate, float):
-            instance._thisptr.reset(
+            instance._thisptr =  shared_ptr[_dts.DefaultProbabilityTermStructure](
                 new _fhr.FlatHazardRate(reference_date._thisptr,
                                         <Rate>hazard_rate,
                                         deref(day_counter._thisptr)))
         elif isinstance(hazard_rate, Quote):
-             instance._thisptr.reset(
+             instance._thisptr =  shared_ptr[_dts.DefaultProbabilityTermStructure](
                 new _fhr.FlatHazardRate(
                     reference_date._thisptr,
                     ((<Quote>hazard_rate).handle()),

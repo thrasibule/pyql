@@ -7,6 +7,10 @@ from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter
 
 
+cdef class OptionletVolatilityStructure:
+    pass
+
+
 cdef class ConstantOptionletVolatility(OptionletVolatilityStructure):
 
     def __init__(self,

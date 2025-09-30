@@ -1,7 +1,7 @@
-from quantlib.types cimport Natural, Real
+include '../types.pxi'
 from libcpp cimport bool
 from cython.operator cimport dereference as deref
-from quantlib.ext cimport shared_ptr, static_pointer_cast
+from quantlib.handle cimport shared_ptr, static_pointer_cast
 from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.indexes.swap_index cimport SwapIndex

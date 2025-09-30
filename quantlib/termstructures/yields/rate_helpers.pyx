@@ -13,8 +13,7 @@ cimport quantlib._instrument as _ins
 from quantlib.instruments.vanillaswap cimport VanillaSwap
 cimport quantlib.instruments._vanillaswap as _vs
 
-from quantlib.ext cimport shared_ptr, static_pointer_cast
-from quantlib.handle cimport HandleYieldTermStructure
+from quantlib.handle cimport shared_ptr, Handle, static_pointer_cast
 cimport quantlib.indexes._ibor_index as _ib
 cimport quantlib.indexes._swap_index as _si
 from quantlib.instruments.futures cimport FuturesType
@@ -32,6 +31,7 @@ from quantlib.indexes.ibor_index cimport IborIndex
 from quantlib.indexes.swap_index cimport SwapIndex
 from ..helpers cimport Pillar
 from quantlib.utilities.null cimport Null
+from ..yield_term_structure cimport HandleYieldTermStructure
 
 cdef class RateHelper:
 
@@ -157,7 +157,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
                     spread.handle(),
                     deref(fwdStart._thisptr),
-                    discounting_curve.handle(),
+                    discounting_curve.handle,
                     settlement_days,
                     pillar,
                     custom_pillar_date._thisptr,
@@ -176,7 +176,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     static_pointer_cast[_ib.IborIndex](iborIndex._thisptr),
                     spread.handle(),
                     deref(fwdStart._thisptr),
-                    discounting_curve.handle(),
+                    discounting_curve.handle,
                     settlement_days,
                     pillar,
                     custom_pillar_date._thisptr,
@@ -205,7 +205,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     static_pointer_cast[_si.SwapIndex](index._thisptr),
                     spread.handle(),
                     deref(fwdStart._thisptr),
-                    discounting_curve.handle(),
+                    discounting_curve.handle,
                     pillar,
                     custom_pillar_date._thisptr,
                     end_of_month
@@ -218,7 +218,7 @@ cdef class SwapRateHelper(RelativeDateRateHelper):
                     static_pointer_cast[_si.SwapIndex](index._thisptr),
                     spread.handle(),
                     deref(fwdStart._thisptr),
-                    discounting_curve.handle(),
+                    discounting_curve.handle,
                     pillar,
                     custom_pillar_date._thisptr,
                     end_of_month
@@ -448,7 +448,7 @@ cdef class FxSwapRateHelper(RelativeDateRateHelper):
                 <_rh.BusinessDayConvention>convention,
                 end_of_month,
                 is_fx_base_currency_collateral_currency,
-                collateral_curve.handle(),
+                collateral_curve.handle,
                 trading_calendar._thisptr,
             )
         )

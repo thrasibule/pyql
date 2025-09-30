@@ -1,5 +1,6 @@
 from cython.operator cimport dereference as deref
 
+from quantlib.handle cimport shared_ptr
 from quantlib.time.calendar cimport Calendar
 from quantlib.time.date cimport Date
 from quantlib.time.daycounter cimport DayCounter

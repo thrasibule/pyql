@@ -3,14 +3,13 @@ from libcpp.vector cimport vector
 from libcpp cimport bool
 from ._swaption_vol_discrete cimport SwaptionVolatilityDiscrete
 from ._swaption_vol_structure cimport SwaptionVolatilityStructure
-from quantlib._handle cimport Handle
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport Handle, shared_ptr
 from quantlib._quote cimport Quote
 from quantlib.indexes._swap_index cimport SwapIndex
 from quantlib.time._date cimport Date
 from quantlib.time._period cimport Period
 
-cdef extern from 'ql/termstructures/volatility/swaption/swaptionvolcube.hpp' namespace 'QuantLib' nogil:
+cdef extern from 'ql/termstructures/volatility/swaption/swaptionvolcube.hpp' namespace 'QuantLib':
     cdef cppclass SwaptionVolatilityCube(SwaptionVolatilityDiscrete):
         SwaptionVolatilityCube(
             const Handle[SwaptionVolatilityStructure]& atmVolStructure,

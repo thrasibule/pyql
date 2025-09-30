@@ -12,8 +12,7 @@ from libcpp cimport bool
 from libcpp.string cimport string
 
 from quantlib.currency._currency cimport Currency
-from quantlib.handle cimport Handle
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport shared_ptr, Handle
 from quantlib.indexes._interest_rate_index cimport InterestRateIndex
 from quantlib.indexes._ibor_index cimport IborIndex, OvernightIndex
 from quantlib.instruments._vanillaswap cimport VanillaSwap
@@ -50,8 +49,8 @@ cdef extern from 'ql/indexes/swapindex.hpp' namespace 'QuantLib' nogil:
                   const Handle[YieldTermStructure]& discountingTermStructure)
         shared_ptr[VanillaSwap] underlyingSwap(const Date& fixingDate)
         shared_ptr[IborIndex] iborIndex()
-        Handle[YieldTermStructure] forwardingTermStructure()
-        Handle[YieldTermStructure] discountingTermStructure()
+        Handle[YieldTermStructure] forwardingTermStructure() except +
+        Handle[YieldTermStructure] discountingTermStructure() except +
 
     cdef cppclass OvernightIndexedSwapIndex(SwapIndex):
         OvernightIndexedSwapIndex(string& familyName,

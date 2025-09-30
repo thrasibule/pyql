@@ -4,10 +4,13 @@
 # This program is distributed in the hope that it will be useful, but WITHOUT
 # ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
-from quantlib.types cimport Rate, Real, Time
+
+include 'types.pxi'
+
 from cython.operator cimport dereference as deref
 
-from quantlib.time.date cimport Date
+from quantlib.handle cimport shared_ptr
+
 from quantlib.time.daycounter cimport DayCounter
 cimport quantlib.time._daycounter as _daycounter
 from quantlib.compounding cimport Compounding
@@ -22,11 +25,12 @@ cdef class InterestRate:
 
     """
 
-    def __init__(self, Rate rate, DayCounter dc not None, Compounding compounding,
-                 Frequency frequency):
+    def __init__(self, double rate, DayCounter dc not None, Compounding compounding,
+                 int frequency):
 
         self._thisptr = _ir.InterestRate(
-            rate, deref(dc._thisptr), compounding, frequency
+            <Rate>rate, deref(dc._thisptr), compounding,
+            <_ir.Frequency>frequency
         )
 
 
@@ -64,11 +68,8 @@ cdef class InterestRate:
         ss << self._thisptr
         return ss.str().decode()
 
-    def compound_factor(self, Date d1, Date d2, Date ref_start=Date(), Date ref_end=Date()):
-        return self._thisptr.compoundFactor(d1._thisptr, d2._thisptr, ref_start._thisptr, ref_end._thisptr)
-
-    def discount_factor(self, Date d1, Date d2, Date ref_start=Date(), Date ref_end=Date()):
-        return self._thisptr.discountFactor(d1._thisptr, d2._thisptr, ref_start._thisptr, ref_end._thisptr)
+    def compound_factor(self, Time t):
+        return self._thisptr.compoundFactor(t)
 
     def implied_rate(self, Real compound,
                      DayCounter result_dc not None,

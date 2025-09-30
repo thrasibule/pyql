@@ -1,8 +1,8 @@
 from quantlib.types cimport DiscountFactor, Rate, Real, Time
 from quantlib.math._array cimport Array
 from quantlib.models._model cimport ShortRateModel, AffineModel
-from quantlib.ext cimport shared_ptr
-from quantlib._stochastic_process cimport StochasticProcess, StochasticProcess1D
+from quantlib.handle cimport shared_ptr
+from quantlib._stochastic_process cimport StochasticProcess1D
 
 cdef extern from 'ql/models/shortrate/twofactormodel.hpp' namespace 'QuantLib' nogil:
 
@@ -11,9 +11,7 @@ cdef extern from 'ql/models/shortrate/twofactormodel.hpp' namespace 'QuantLib' n
             ShortRateDynamics(shared_ptr[StochasticProcess1D]& xProcess,
                               shared_ptr[StochasticProcess1D]& yProcess,
                               Real correlation)
-            Real correlation()
             Rate shortRate(Time t, Real x, Real y)
             shared_ptr[StochasticProcess1D]& xProcess()
             shared_ptr[StochasticProcess1D]& yProcess()
-            shared_ptr[StochasticProcess]& process()
         shared_ptr[ShortRateDynamics] dynamics()

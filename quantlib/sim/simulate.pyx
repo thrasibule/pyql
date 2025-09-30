@@ -1,8 +1,7 @@
-# distutils: sources = quantlib/cpp_layer/simulate_support_code.cpp
 include '../types.pxi'
 
 from cython.operator cimport dereference as deref
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport shared_ptr
 from libcpp cimport bool
 
 cimport quantlib._stochastic_process as _sp
@@ -14,7 +13,7 @@ cimport quantlib._time_grid as _tg
 import numpy as np
 cimport numpy as cnp
 
-cdef extern from "quantlib/cpp_layer/simulate_support_code.hpp" namespace 'PyQL' nogil:
+cdef extern from "simulate_support_code.hpp" namespace 'PyQL':
 
     void simulateMP(const shared_ptr[_sp.StochasticProcess]& process,
                     int nbPaths, _tg.TimeGrid& grid, BigNatural seed,

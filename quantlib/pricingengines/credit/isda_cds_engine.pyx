@@ -1,7 +1,7 @@
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
 from libcpp.vector cimport vector
-from quantlib.ext cimport optional
+from quantlib.handle cimport optional
 
 from quantlib.pricingengines.engine cimport PricingEngine
 
@@ -10,7 +10,8 @@ from . cimport _isda_cds_engine as _ice
 
 cimport quantlib.termstructures._default_term_structure as _dts
 cimport quantlib.termstructures._yield_term_structure as _yts
-from quantlib.handle cimport Handle, HandleDefaultProbabilityTermStructure, HandleYieldTermStructure
+from quantlib.termstructures.default_term_structure cimport DefaultProbabilityTermStructure, HandleDefaultProbabilityTermStructure
+from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure, YieldTermStructure
 from quantlib.termstructures.yields.rate_helpers cimport RateHelper
 from quantlib.termstructures.credit.default_probability_helpers cimport CdsHelper
 
@@ -45,8 +46,8 @@ cdef class IsdaCdsEngine(PricingEngine):
             settlement_flows = <bool>include_settlement_date_flows
 
         self._thisptr.reset(
-            new _ice.IsdaCdsEngine(ts.handle(), recovery_rate,
-                                   discount_curve.handle(),
+            new _ice.IsdaCdsEngine(ts.handle, recovery_rate,
+                                   discount_curve.handle,
                                    settlement_flows,
                                    <_ice.NumericalFix>numerical_fix,
                                    <_ice.AccrualBias>accrual_bias,
@@ -58,14 +59,12 @@ cdef class IsdaCdsEngine(PricingEngine):
 
     @property
     def isda_rate_curve(self):
-        cdef HandleYieldTermStructure yts = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
-        yts._handle = new Handle[_yts.YieldTermStructure](self._get_cds_engine().isdaRateCurve())
+        cdef YieldTermStructure yts = YieldTermStructure.__new__(YieldTermStructure)
+        yts._thisptr.reset(self._get_cds_engine().isdaRateCurve().currentLink().get())
         return yts
 
     @property
     def isda_credit_curve(self):
-        cdef HandleDefaultProbabilityTermStructure dts = HandleDefaultProbabilityTermStructure.__new__(HandleDefaultProbabilityTermStructure)
-        dts._handle = new Handle[_dts.DefaultProbabilityTermStructure](
-            self._get_cds_engine().isdaCreditCurve()
-        )
+        cdef DefaultProbabilityTermStructure dts = DefaultProbabilityTermStructure.__new__(DefaultProbabilityTermStructure)
+        dts._thisptr = self._get_cds_engine().isdaCreditCurve().currentLink()
         return dts

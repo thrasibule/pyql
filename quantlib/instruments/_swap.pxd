@@ -11,6 +11,7 @@ from quantlib.types cimport DiscountFactor, Real, Size
 from libcpp.vector cimport vector
 from libcpp cimport bool
 
+from quantlib.handle cimport shared_ptr, Handle
 from .._instrument cimport Instrument
 from quantlib.time._calendar cimport BusinessDayConvention, Calendar
 from quantlib.time._date cimport Date

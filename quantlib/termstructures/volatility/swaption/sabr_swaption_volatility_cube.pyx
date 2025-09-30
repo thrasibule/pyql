@@ -3,8 +3,7 @@ include '../../../types.pxi'
 from libcpp cimport bool
 from libcpp.vector cimport vector
 from cython.operator cimport dereference as deref
-from quantlib.ext cimport make_shared, static_pointer_cast
-from quantlib.handle cimport Handle, HandleSwaptionVolatilityStructure
+from quantlib.handle cimport Handle, make_shared, static_pointer_cast
 from quantlib.math.optimization cimport OptimizationMethod, EndCriteria
 from quantlib.indexes.swap_index cimport SwapIndex
 from quantlib.utilities.null cimport Null
@@ -21,7 +20,7 @@ from ..._vol_term_structure cimport VolatilityTermStructure
 
 cdef class SabrSwaptionVolatilityCube(SwaptionVolatilityCube):
 
-    def __init__(self, HandleSwaptionVolatilityStructure atm_vol_structure not None,
+    def __init__(self, atm_vol_structure not None,
                  list option_tenors not None,
                  list swap_tenors not None,
                  vector[Spread] strike_spreads,
@@ -66,8 +65,8 @@ cdef class SabrSwaptionVolatilityCube(SwaptionVolatilityCube):
         for p in swap_tenors:
             swap_tenors_vec.push_back(deref(p._thisptr))
 
-        self._thisptr = make_shared[_ssvc.SabrSwaptionVolatilityCube](
-            atm_vol_structure.handle(),
+        self._derived_ptr = make_shared[_ssvc.SabrSwaptionVolatilityCube](
+            SwaptionVolatilityStructure.swaption_vol_handle(atm_vol_structure),
             option_tenors_vec,
             swap_tenors_vec,
             strike_spreads,
@@ -87,3 +86,4 @@ cdef class SabrSwaptionVolatilityCube(SwaptionVolatilityCube):
             backward_flat,
             cutoff_strike
         )
+        self._thisptr = self._derived_ptr

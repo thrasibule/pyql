@@ -20,15 +20,13 @@ cdef class Option(Instrument):
         )
 
     @property
-    def exercise(self):
-        """:class:`~quantlib.exercise.Exercise`"""
+    def exercise(self) -> Exercise:
         cdef Exercise ex = Exercise.__new__(Exercise)
         ex._thisptr = (<_option.Option*>self._thisptr.get()).exercise()
         return ex
 
     @property
-    def payoff(self):
-        """:class:`~quantlib.payoffs.Payoff`"""
+    def payoff(self) -> Payoff:
         cdef Payoff po = Payoff.__new__(Payoff)
         po._thisptr = (<_option.Option*>self._thisptr.get()).payoff()
         return po

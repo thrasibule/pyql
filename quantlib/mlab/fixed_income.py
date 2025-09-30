@@ -27,7 +27,7 @@ from quantlib.time.schedule import Schedule
 from quantlib.time.dategeneration import DateGeneration
 from quantlib.settings import Settings
 from quantlib.termstructures.yields.api import (
-    FlatForward, RelinkableHandleYieldTermStructure
+    FlatForward, HandleYieldTermStructure
 )
 
 from quantlib.time.daycounter import DayCounter
@@ -135,7 +135,7 @@ def _bndprice(bond_yield, coupon_rate, pricing_date, maturity_date,
                 issue_date
     )
 
-    discounting_term_structure = RelinkableHandleYieldTermStructure()
+    discounting_term_structure = HandleYieldTermStructure()
 
     cnt_yield = DayCounter.from_name('Actual/Actual (Historical)')
 
@@ -153,7 +153,7 @@ def _bndprice(bond_yield, coupon_rate, pricing_date, maturity_date,
 
     bond.set_pricing_engine(engine)
 
-    price = bond.clean_price()
+    price = bond.clean_price
     ac = bond.accrued_amount(pydate_to_qldate(settlement_date))
 
     return (price, ac)

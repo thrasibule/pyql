@@ -1,3 +1,4 @@
+from __future__ import print_function
 # -*- coding: utf-8 -*-
 # <nbformat>3</nbformat>
 
@@ -33,8 +34,8 @@
 
 # <codecell>
 
-import pandas as pd
-import dateutil
+import pandas
+import dateutil, datetime
 import re
 
 def ExpiryMonth(s):
@@ -57,19 +58,19 @@ def parseSPX(s):
     """
     Parse an SPX quote string, return expiry date and strike
     """
-    tokens = spx_symbol.split(s.iloc[0])
+    tokens = spx_symbol.split(s)
 
     if len(tokens) == 1:
-        return {'Strike': -1, 'dtExpiry': None}
+        return {'dtExpiry': None, 'strike': -1}
 
     year = 2000 + int(tokens[1])
     day = int(tokens[2])
     month = ExpiryMonth(tokens[3])
     strike = float(tokens[4])
 
-    dtExpiry = pd.Timestamp(year=year, month=month, day=day)
+    dtExpiry = datetime.date(year, month, day)
 
-    return {'Strike': strike, 'dtExpiry': dtExpiry}
+    return ({'dtExpiry': dtExpiry, 'strike': strike})
 
 
 # <markdowncell>
@@ -92,12 +93,12 @@ def read_SPX_file(option_data_file):
 
         lineTwo = fid.readline()
         dt = lineTwo.split('@')[0]
-        dtTrade = pd.to_datetime(dt)
+        dtTrade = dateutil.parser.parse(dt).date()
 
         print('Dt Calc: %s Spot: %f' % (dtTrade, spot))
 
     # read all option price records as a data frame
-    df = pd.read_csv(option_data_file, header=0, sep=',', skiprows=[0,1])
+    df = pandas.io.parsers.read_csv(option_data_file, header=0, sep=',', skiprows=[0,1])
 
     # split and stack calls and puts
     call_df = df[['Calls', 'Bid', 'Ask']]
@@ -108,13 +109,16 @@ def read_SPX_file(option_data_file):
     put_df = put_df.rename(columns = {'Puts':'Spec', 'Bid.1':'PBid',
     'Ask.1':'PAsk'})
     put_df['Type'] = 'P'
-    df_all = pd.concat([call_df, put_df],  ignore_index=True)
+
+    df_all = call_df.append(put_df,  ignore_index=True)
 
     # parse Calls and Puts columns for strike and contract month
     # insert into data frame
-    df_all = pd.concat([df_all,
-                        df_all[["Spec"]].apply(parseSPX, axis="columns", result_type="expand")],
-                        axis=1)
+
+    cp = [parseSPX(s) for s in df_all['Spec']]
+    df_all['Strike'] = [x['strike'] for x in cp]
+    df_all['dtExpiry'] = [x['dtExpiry'] for x in cp]
+
     del df_all['Spec']
 
     df_all = df_all[(df_all['Strike'] > 0) & (df_all['PBid']>0) \
@@ -122,14 +126,17 @@ def read_SPX_file(option_data_file):
 
     df_all['dtTrade'] = dtTrade
     df_all['Spot'] = spot
+
     return df_all
 
+option_data_file = \
+    '../data/SPX-Options-24jan2011.csv'
+
 if __name__ == '__main__':
-    option_data_file = '../data/SPX-Options-24jan2011.csv'
     df_SPX = read_SPX_file(option_data_file)
     print('%d records processed' % len(df_SPX))
 
     # save a csv file and pickled data frame
     df_SPX.to_csv('../data/df_SPX_24jan2011.csv', index=False)
-    df_SPX.to_pickle('../data/df_SPX_24jan2011.pkl')
+    df_SPX.to_pickle('../data/df_SPX_24jan2011.pkl', protocol=4)
     print('File saved')

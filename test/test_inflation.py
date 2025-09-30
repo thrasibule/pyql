@@ -17,7 +17,8 @@ from quantlib.time.dategeneration import DateGeneration
 from quantlib.instruments.bonds.cpibond import CPIBond, InterpolationType
 from quantlib.pricingengines.bond import DiscountingBondEngine
 from quantlib.settings import Settings
-from quantlib.handle import RelinkableHandleZeroInflationTermStructure
+from quantlib.termstructures.inflation_term_structure import \
+    ZeroInflationTermStructure
 from quantlib.termstructures.yields.api import FlatForward, HandleYieldTermStructure
 from quantlib.indexes.inflation.ukrpi import UKRPI
 from quantlib.indexes.inflation_index import InterpolationType
@@ -48,7 +49,7 @@ class TestCPIBond(unittest.TestCase):
                                           Period(1, Months),
                                           self.calendar,
                                           ModifiedFollowing)
-        self.cpi_ts = RelinkableHandleZeroInflationTermStructure()
+        self.cpi_ts = ZeroInflationTermStructure()
         self.yts = HandleYieldTermStructure(FlatForward(evaluation_date, 0.05, day_counter))
         self.ii = UKRPI(self.cpi_ts)
         fix_data = [206.1, 207.3, 208.0, 208.9, 209.7, 210.9,
@@ -139,7 +140,7 @@ class TestCPIBond(unittest.TestCase):
         cpi_bond.set_pricing_engine(engine)
         set_coupon_pricer(cpi_bond.cashflows, CPICouponPricer(self.yts))
         storedPrice = 383.04297558
-        calculated = cpi_bond.clean_price()
+        calculated = cpi_bond.clean_price
         self.assertAlmostEqual(storedPrice, calculated)
 
 if __name__ == '__main__':

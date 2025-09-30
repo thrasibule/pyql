@@ -1,6 +1,5 @@
 from libcpp.string cimport string
-from quantlib._handle cimport Handle
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport Handle, shared_ptr
 from quantlib.types cimport Real
 from quantlib.time._date cimport Date
 from quantlib.indexes._ibor_index cimport IborIndex

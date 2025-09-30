@@ -17,7 +17,7 @@ from quantlib.pricingengines.asian.analyticdiscrgeomavprice import (
 from quantlib.processes.black_scholes_process import BlackScholesMertonProcess
 from quantlib.settings import Settings
 from quantlib.time.api import Date, NullCalendar, June, Actual360, Years
-from quantlib.handle import HandleYieldTermStructure, HandleBlackVolTermStructure
+from quantlib.termstructures.yield_term_structure import HandleYieldTermStructure
 from quantlib.termstructures.yields.flat_forward import FlatForward
 from quantlib.quotes import SimpleQuote
 from quantlib.termstructures.volatility.api import BlackConstantVol
@@ -83,13 +83,11 @@ class AsianOptionTestCase(unittest.TestCase):
             )
             )
 
-        self.flat_vol_ts = HandleBlackVolTermStructure(
-            BlackConstantVol(
-                self.today,
-                self.calendar,
-                self.volatility,
-                self.daycounter
-            )
+        self.flat_vol_ts = BlackConstantVol(
+            self.today,
+            self.calendar,
+            self.volatility,
+            self.daycounter
         )
 
         self.black_scholes_merton_process = BlackScholesMertonProcess(
@@ -172,9 +170,7 @@ class AsianOptionTestCase(unittest.TestCase):
 
         q_ts = HandleYieldTermStructure(flat_rate(q_rate, self.daycounter), True)
         r_ts =  HandleYieldTermStructure(flat_rate(r_rate, self.daycounter), True)
-        vol_ts = HandleBlackVolTermStructure(
-            BlackConstantVol(self.today, self.calendar, vol, self.daycounter)
-        )
+        vol_ts = BlackConstantVol(self.today, self.calendar, vol, self.daycounter)
 
         process = BlackScholesMertonProcess(spot, q_ts, r_ts, vol_ts)
 

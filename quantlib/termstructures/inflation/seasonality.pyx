@@ -6,7 +6,7 @@
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
 from quantlib.types cimport Rate
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport shared_ptr
 from cython.operator cimport dereference as deref
 from libcpp.vector cimport vector
 
@@ -35,8 +35,7 @@ cdef class Seasonality:
         return self._thisptr.get().correctZeroRate(
             d._thisptr,
             r,
-            deref(<_if.InflationTermStructure*>iTS._thisptr.get())
-        )
+            deref(iTS._thisptr))
 
     def correctYoYRate(self,
 		    Date d,
@@ -46,14 +45,13 @@ cdef class Seasonality:
         return self._thisptr.get().correctYoYRate(
             d._thisptr,
             r,
-            deref(<_if.InflationTermStructure*>iTS._thisptr.get()))
+            deref(iTS._thisptr))
 
     def isConsistent(self,
 		    InflationTermStructure iTS):
 
         return self._thisptr.get().isConsistent(
-        deref(<_if.InflationTermStructure*>iTS._thisptr.get())
-        )
+            deref(iTS._thisptr))
 
 
 cdef class MultiplicativePriceSeasonality(Seasonality):
@@ -94,5 +92,4 @@ cdef class MultiplicativePriceSeasonality(Seasonality):
     def isConsistent(self, InflationTermStructure iTS):
 
         return self._thisptr.get().isConsistent(
-            deref(<_if.InflationTermStructure*>iTS._thisptr.get())
-        )
+            deref(iTS._thisptr))

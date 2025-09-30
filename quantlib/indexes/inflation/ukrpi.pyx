@@ -1,8 +1,9 @@
 from . cimport _ukrpi
 
 from quantlib.indexes.inflation_index cimport ZeroInflationIndex
-from quantlib.handle cimport HandleZeroInflationTermStructure
+from quantlib.termstructures.inflation_term_structure \
+    cimport ZeroInflationTermStructure
 
 cdef class UKRPI(ZeroInflationIndex):
-    def __init__(self, HandleZeroInflationTermStructure ts=HandleZeroInflationTermStructure()):
-        self._thisptr.reset(new _ukrpi.UKRPI(ts.handle()))
+    def __init__(self, ZeroInflationTermStructure ts=ZeroInflationTermStructure()):
+        self._thisptr.reset(new _ukrpi.UKRPI(ts._handle))

@@ -1,6 +1,5 @@
 from quantlib.types cimport Natural, Real, Rate, Spread
-from quantlib.ext cimport shared_ptr
-from quantlib.handle cimport Handle
+from quantlib.handle cimport shared_ptr, Handle
 from libcpp cimport bool
 from quantlib.time.businessdayconvention cimport BusinessDayConvention
 from quantlib.time._schedule cimport DateGeneration
@@ -14,7 +13,7 @@ from quantlib.indexes._ibor_index cimport OvernightIndex
 from quantlib.cashflows.rateaveraging cimport RateAveraging
 from ._overnightindexedswap cimport OvernightIndexedSwap
 
-cdef extern from 'ql/instruments/makeois.hpp' namespace 'QuantLib' nogil:
+cdef extern from 'ql/instruments/makeois.hpp' namespace 'QuantLib':
     cdef cppclass MakeOIS:
         MakeOIS(const Period& swapTenor,
                 const shared_ptr[OvernightIndex]& overnightIndex,

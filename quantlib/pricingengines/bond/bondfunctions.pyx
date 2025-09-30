@@ -7,7 +7,7 @@ from quantlib.types cimport Rate, Real, Size
 from quantlib.time.frequency cimport Frequency
 from . cimport _bondfunctions as _bf
 
-from quantlib.ext cimport static_pointer_cast
+from quantlib.handle cimport static_pointer_cast
 from cython.operator cimport dereference as deref
 from quantlib.instruments.bond cimport Bond, Price
 from quantlib.time.date cimport date_from_qldate, Date
@@ -20,37 +20,13 @@ def start_date(Bond bond):
     return date_from_qldate(_bf.startDate(deref(bond.as_ptr())))
 
 def previous_cash_flow(Bond bond, Date ref_date=Date()):
-    cdef Leg.const_reverse_iterator it = _bf.previousCashFlow(deref(bond.as_ptr()), ref_date._thisptr)
+    cdef Leg.const_reverse_iterator it  = _bf.previousCashFlow(deref(bond.as_ptr()), ref_date._thisptr)
     cdef CashFlow cf = CashFlow.__new__(CashFlow)
-    while it != bond.as_ptr().cashflows().const_rend():
+    while it != bond.as_ptr().cashflows().const_rbegin():
         cf._thisptr = deref(it)
         yield cf
         preinc(it)
 
-def next_cash_flow(Bond bond, Date ref_date=Date()):
-    cdef Leg.const_iterator it = _bf.nextCashFlow(deref(bond.as_ptr()), ref_date._thisptr)
-    cdef CashFlow cf = CashFlow.__new__(CashFlow)
-    while it != bond.as_ptr().cashflows().const_end():
-        cf._thisptr = deref(it)
-        yield cf
-        preinc(it)
-
-
-def previous_cash_flow_date(Bond bond, Date ref_date=Date()):
-    cdef Date d = Date.__new__(Date)
-    d._thisptr = _bf.previousCashFlowDate(deref(bond.as_ptr()), ref_date._thisptr)
-    return d
-
-def next_cash_flow_date(Bond bond, Date ref_date=Date()):
-    cdef Date d = Date.__new__(Date)
-    d._thisptr = _bf.nextCashFlowDate(deref(bond.as_ptr()), ref_date._thisptr)
-    return d
-
-def previous_cash_flow_amount(Bond bond, Date ref_date=Date()):
-    return _bf.previousCashFlowAmount(deref(bond.as_ptr()), ref_date._thisptr)
-
-def next_cash_flow_amount(Bond bond, Date ref_date=Date()):
-    return _bf.nextCashFlowAmount(deref(bond.as_ptr()), ref_date._thisptr)
 
 def duration(Bond bond not None,
              Rate yld,

@@ -6,10 +6,10 @@
 # FOR A PARTICULAR PURPOSE.  See the license for more details.
 
 from quantlib.types cimport Real
-from quantlib.ext cimport shared_ptr, static_pointer_cast
+from quantlib.handle cimport Handle, shared_ptr, static_pointer_cast
 from cython.operator cimport dereference as deref
 
-from quantlib.handle cimport HandleYieldTermStructure
+from quantlib.termstructures.yield_term_structure cimport HandleYieldTermStructure
 from quantlib.termstructures.volatility.volatilitytype cimport VolatilityType
 from quantlib.time.daycounter cimport DayCounter
 from quantlib.indexes.ibor_index cimport IborIndex
@@ -55,7 +55,7 @@ cdef class SwaptionHelper(BlackCalibrationHelper):
                     deref(fixed_leg_tenor._thisptr),
                     deref(fixed_leg_daycounter._thisptr),
                     deref(floating_leg_daycounter._thisptr),
-                    ts.handle(),
+                    ts.handle,
                     error_type,
                     strike,
                     nominal,
@@ -73,7 +73,7 @@ cdef class SwaptionHelper(BlackCalibrationHelper):
                     deref(fixed_leg_tenor._thisptr),
                     deref(fixed_leg_daycounter._thisptr),
                     deref(floating_leg_daycounter._thisptr),
-                    ts.handle(),
+                    ts.handle,
                     error_type,
                     strike,
                     nominal,
@@ -91,7 +91,7 @@ cdef class SwaptionHelper(BlackCalibrationHelper):
                     deref(fixed_leg_tenor._thisptr),
                     deref(fixed_leg_daycounter._thisptr),
                     deref(floating_leg_daycounter._thisptr),
-                    ts.handle(),
+                    ts.handle,
                     error_type,
                     strike,
                     nominal,

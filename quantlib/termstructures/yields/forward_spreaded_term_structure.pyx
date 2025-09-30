@@ -1,7 +1,6 @@
 cimport quantlib.termstructures.yields._forward_spreaded_term_structure as _fsts
 
-from quantlib.handle cimport HandleYieldTermStructure
-from ..yield_term_structure cimport YieldTermStructure
+from quantlib.termstructures.yield_term_structure cimport YieldTermStructure, HandleYieldTermStructure
 from quantlib.quote cimport Quote
 
 cdef class ForwardSpreadedTermStructure(YieldTermStructure):
@@ -15,7 +14,7 @@ cdef class ForwardSpreadedTermStructure(YieldTermStructure):
 
         self._thisptr.reset(
             new _fsts.ForwardSpreadedTermStructure(
-                yts.handle(),
+                yts.handle,
                 spread.handle()
             )
         )

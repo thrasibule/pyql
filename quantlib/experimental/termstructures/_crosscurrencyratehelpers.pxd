@@ -1,7 +1,6 @@
 from quantlib.types cimport Natural
 from libcpp cimport bool
-from quantlib._handle cimport Handle
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport Handle, shared_ptr
 from quantlib._quote cimport Quote
 from quantlib.time.businessdayconvention cimport BusinessDayConvention
 from quantlib.time._calendar cimport Calendar

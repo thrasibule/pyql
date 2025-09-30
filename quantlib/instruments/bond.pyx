@@ -1,4 +1,4 @@
-from quantlib.types cimport Rate, Real, Size
+from quantlib.types cimport Real, Size
 from . cimport _bond
 cimport quantlib.time._date as _date
 
@@ -47,62 +47,38 @@ cdef class Bond(Instrument):
 
     @property
     def settlement_days(self):
-        """:obj:`int`"""
         return self.as_ptr().settlementDays()
 
     @property
     def calendar(self):
-        """:class:`quantlib.time.date.calendar.Calendar`"""
         cdef Calendar c = Calendar.__new__(Calendar)
         c._thisptr = self.as_ptr().calendar()
         return c
 
     @property
     def start_date(self):
-        """:class:`~quantlib.time.date.Date`: Bond start date"""
+        """ Bond start date"""
         return date_from_qldate(self.as_ptr().startDate())
 
 
     @property
     def maturity_date(self):
-        """:class:`~quantlib.time.date.Date`: Bond maturity date"""
+        """ Bond maturity date"""
         return date_from_qldate(self.as_ptr().maturityDate())
 
     @property
     def issue_date(self):
-        """:class:`~quantlib.time.date.Date`: Bond issue date"""
+        """ Bond issue date"""
         return date_from_qldate(self.as_ptr().issueDate())
 
     def settlement_date(self, Date from_date=Date()):
-        """Returns the bond settlement date after the given date.
-
-        Parameters
-        ----------
-        from_date : :class:`quantlib.time.date.Date`
-
-        Returns
-        -------
-        :class:`quantlib.time.date.Date`
-        """
+        """ Returns the bond settlement date after the given date."""
         return date_from_qldate(self.as_ptr().settlementDate(from_date._thisptr))
 
-    def clean_price(self, *args):
-        cdef:
-            Rate y
-            DayCounter dc
-            Compounding comp
-            Frequency freq
-            Date settlement_date = Date()
-        if len(args) == 0:
-            return self.as_ptr().cleanPrice()
-        else:
-               if len(args) == 4:
-                   y, dc, comp, freq = args
-               else:
-                   y, dc, comp, freq, settlement_date = args
-               return self.as_ptr().cleanPrice(
-                   y, deref(dc._thisptr), comp, freq, settlement_date._thisptr
-               )
+    @property
+    def clean_price(self):
+        """ Bond clean price. """
+        return self.as_ptr().cleanPrice()
 
     @property
     def dirty_price(self):
@@ -133,7 +109,7 @@ cdef class Bond(Instrument):
 
     @property
     def cashflows(self):
-        """:class:`~quantlib.cashflow.Leg`: cash flow stream"""
+        """ cash flow stream as a :class:`~quantlib.cashflow.Leg`."""
         cdef Leg leg = Leg.__new__(Leg)
         leg._thisptr = self.as_ptr().cashflows()
         return leg

@@ -8,7 +8,7 @@
 """
 
 from . cimport _seasonality as _se
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport shared_ptr
 
 cdef class Seasonality:
     cdef shared_ptr[_se.Seasonality] _thisptr

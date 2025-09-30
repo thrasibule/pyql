@@ -2,8 +2,7 @@ from libcpp cimport bool
 from libcpp.vector cimport vector
 from quantlib.types cimport DiscountFactor, Real, Size, Time
 
-from quantlib.ext cimport shared_ptr
-from quantlib.handle cimport Handle
+from quantlib.handle cimport shared_ptr, Handle
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 from quantlib.option cimport OptionType
 from quantlib._numericalmethod cimport Lattice

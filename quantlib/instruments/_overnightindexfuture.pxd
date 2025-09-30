@@ -1,8 +1,7 @@
 from libcpp cimport bool
 from quantlib.types cimport Real
 from quantlib.cashflows.rateaveraging cimport RateAveraging
-from quantlib._handle cimport Handle
-from quantlib.ext cimport shared_ptr
+from quantlib.handle cimport Handle, shared_ptr
 from quantlib.indexes._ibor_index cimport OvernightIndex
 from quantlib._instrument cimport Instrument
 from quantlib._quote cimport Quote

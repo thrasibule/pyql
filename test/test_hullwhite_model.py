@@ -1,3 +1,6 @@
+from __future__ import division
+from __future__ import print_function
+
 import unittest
 
 from quantlib.models.shortrate.onefactormodels.hullwhite import HullWhite
@@ -8,7 +11,7 @@ from quantlib.time.api import (Date, Years, Actual365Fixed,
                                February, NullCalendar)
 
 from quantlib.termstructures.yields.flat_forward import FlatForward
-from quantlib.handle import HandleYieldTermStructure
+from quantlib.termstructures.yield_term_structure import HandleYieldTermStructure
 from quantlib.indexes.ibor.euribor import Euribor6M
 from quantlib.pricingengines.swaption.jamshidian_swaption_engine import JamshidianSwaptionEngine
 from quantlib.quotes import SimpleQuote
@@ -56,7 +59,7 @@ class HullWhiteModelTestCase(unittest.TestCase):
                         )
         )
 
-        model = HullWhite(yield_ts, a=0.1, sigma=.01)
+        model = HullWhite(yield_ts, a=0.05, sigma=.005)
 
         data = [[1, 5, 0.1148 ],
                 [2, 4, 0.1108 ],
@@ -90,8 +93,9 @@ class HullWhiteModelTestCase(unittest.TestCase):
         print('Hull White calibrated parameters:\na: %f sigma: %f' %
               (model.a, model.sigma))
 
-        cached_a = 0.04603
-        cached_sigma = 0.005779
+        cached_a = 0.0464041
+        cached_sigma = 0.00579912
+
         tolerance = 1.0e-5
 
         self.assertAlmostEqual(cached_a, model.a, delta=tolerance)
