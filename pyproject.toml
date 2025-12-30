@@ -19,3 +19,6 @@ version = "0.0.1"
 
 [tool.setuptools]
 packages = ["quantlib"]
+
+[tool.uv]
+config-settings = { "--build-option" = "build_ext -j6" }
