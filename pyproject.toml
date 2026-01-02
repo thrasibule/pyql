@@ -17,8 +17,11 @@ classifiers = [
 ]
 version = "0.0.1"
 
-[tool.setuptools]
-packages = ["quantlib"]
+[tool.setuptools.packages.find]
+include = ["quantlib*"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["**.cpp", "**.pyx"]
 
 [tool.uv]
 config-settings = { "--build-option" = "build_ext -j6" }
