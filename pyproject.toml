@@ -3,7 +3,7 @@ requires=["setuptools", "Cython", "numpy"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyql"
+name = "quantlib-cython"
 authors = [
     {name = "Didrik Pinte"},
     {name = "Patrick Henaff"},
@@ -12,10 +12,9 @@ dependencies = [
     "pandas",
     "tabulate",
 ]
-classifiers = [
-    "License :: OSI Approved :: MIT License",
-]
-version = "0.0.1"
+license = {file = "LICENSE.txt"}
+readme  = "README.md"
+version = "1.40"
 
 [tool.setuptools.packages.find]
 include = ["quantlib*"]
@@ -25,3 +24,8 @@ include = ["quantlib*"]
 
 [tool.uv]
 config-settings = { "--build-option" = "build_ext -j6" }
+
+[[tool.uv.index]]
+name = "serenitas"
+publish-url = "http://dev.serenitas/api/packages/Serenitas/pypi"
+url = "http://dev.serenitas/api/packages/Serenitas/pypi/simple"
