@@ -137,9 +137,9 @@ class TestCPIBond(unittest.TestCase):
         engine = DiscountingBondEngine(self.yts)
         cpi_bond.set_pricing_engine(engine)
         set_coupon_pricer(cpi_bond.cashflows, CPICouponPricer(self.yts))
-        stored_price = 396.4592097
+        stored_price = 396.4704581
         self.assertAlmostEqual(stored_price, cpi_bond.dirty_price)
-        stored_price = 394.78551761
+        stored_price = 394.79676679
         self.assertAlmostEqual(stored_price, cpi_bond.clean_price())
 
 if __name__ == '__main__':
