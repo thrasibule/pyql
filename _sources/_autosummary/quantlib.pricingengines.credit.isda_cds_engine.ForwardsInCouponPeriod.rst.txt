@@ -31,8 +31,8 @@ ForwardsInCouponPeriod
          ForwardsInCouponPeriod.__getitem__
       
          ForwardsInCouponPeriod.__getitem__
-         ForwardsInCouponPeriod.__pow__
          ForwardsInCouponPeriod.__len__
+         ForwardsInCouponPeriod.__pow__
          ForwardsInCouponPeriod.__mul__
   
 

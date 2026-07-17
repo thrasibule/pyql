@@ -31,8 +31,8 @@ Weekday
          Weekday.__getitem__
       
          Weekday.__getitem__
-         Weekday.__pow__
          Weekday.__len__
+         Weekday.__pow__
          Weekday.__mul__
   
 

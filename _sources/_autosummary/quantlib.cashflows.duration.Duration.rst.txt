@@ -31,8 +31,8 @@ Duration
          Duration.__getitem__
       
          Duration.__getitem__
-         Duration.__pow__
          Duration.__len__
+         Duration.__pow__
          Duration.__mul__
   
 
