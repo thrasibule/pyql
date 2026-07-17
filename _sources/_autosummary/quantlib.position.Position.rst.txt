@@ -32,8 +32,8 @@ Position
       
          Position.__pow__
          Position.__getitem__
-         Position.__mul__
          Position.__len__
+         Position.__mul__
   
 
   
