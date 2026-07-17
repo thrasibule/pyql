@@ -31,8 +31,8 @@ InterpolationType
          InterpolationType.__getitem__
       
          InterpolationType.__pow__
-         InterpolationType.__getitem__
          InterpolationType.__len__
+         InterpolationType.__getitem__
          InterpolationType.__mul__
   
 
@@ -46,7 +46,6 @@ InterpolationType
          InterpolationType.imag
          InterpolationType.numerator
          InterpolationType.denominator
-         InterpolationType.AsIndex
          InterpolationType.Flat
          InterpolationType.Linear
   

@@ -31,8 +31,8 @@ Extrapolation
          Extrapolation.__getitem__
       
          Extrapolation.__pow__
-         Extrapolation.__getitem__
          Extrapolation.__len__
+         Extrapolation.__getitem__
          Extrapolation.__mul__
   
 

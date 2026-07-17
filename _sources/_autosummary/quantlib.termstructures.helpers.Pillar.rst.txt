@@ -31,8 +31,8 @@ Pillar
          Pillar.__getitem__
       
          Pillar.__pow__
-         Pillar.__getitem__
          Pillar.__len__
+         Pillar.__getitem__
          Pillar.__mul__
   
 

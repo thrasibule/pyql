@@ -31,8 +31,8 @@ SalvagingAlgorithm
          SalvagingAlgorithm.__getitem__
       
          SalvagingAlgorithm.__pow__
-         SalvagingAlgorithm.__getitem__
          SalvagingAlgorithm.__len__
+         SalvagingAlgorithm.__getitem__
          SalvagingAlgorithm.__mul__
   
 

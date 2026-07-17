@@ -31,8 +31,8 @@ DirectionIntegers
          DirectionIntegers.__getitem__
       
          DirectionIntegers.__pow__
-         DirectionIntegers.__getitem__
          DirectionIntegers.__len__
+         DirectionIntegers.__getitem__
          DirectionIntegers.__mul__
   
 

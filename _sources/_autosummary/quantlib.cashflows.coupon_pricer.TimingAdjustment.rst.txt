@@ -31,8 +31,8 @@ TimingAdjustment
          TimingAdjustment.__getitem__
       
          TimingAdjustment.__pow__
-         TimingAdjustment.__getitem__
          TimingAdjustment.__len__
+         TimingAdjustment.__getitem__
          TimingAdjustment.__mul__
   
 

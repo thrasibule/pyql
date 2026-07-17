@@ -31,8 +31,8 @@ Interpolator
          Interpolator.__getitem__
       
          Interpolator.__pow__
-         Interpolator.__getitem__
          Interpolator.__len__
+         Interpolator.__getitem__
          Interpolator.__mul__
   
 

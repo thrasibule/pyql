@@ -31,8 +31,8 @@ NumericalFix
          NumericalFix.__getitem__
       
          NumericalFix.__pow__
-         NumericalFix.__getitem__
          NumericalFix.__len__
+         NumericalFix.__getitem__
          NumericalFix.__mul__
   
 
