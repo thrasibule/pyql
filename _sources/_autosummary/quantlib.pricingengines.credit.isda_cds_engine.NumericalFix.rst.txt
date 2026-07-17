@@ -30,9 +30,9 @@ NumericalFix
          NumericalFix.__len__
          NumericalFix.__getitem__
       
-         NumericalFix.__len__
          NumericalFix.__getitem__
          NumericalFix.__mul__
+         NumericalFix.__len__
          NumericalFix.__pow__
   
 

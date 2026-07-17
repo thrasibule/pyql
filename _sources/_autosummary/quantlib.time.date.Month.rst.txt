@@ -30,9 +30,9 @@ Month
          Month.__len__
          Month.__getitem__
       
-         Month.__len__
          Month.__getitem__
          Month.__mul__
+         Month.__len__
          Month.__pow__
   
 
