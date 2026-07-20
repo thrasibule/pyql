@@ -13,7 +13,3 @@ cpdef enum Interpolator:
 
 cdef class InterpolatedHazardRateCurve(DefaultProbabilityTermStructure):
     cdef readonly Interpolator _trait
-
-
-cdef class InterpolatedZeroInflationCurve(ZeroInflationTermStructure):
-    cdef readonly Interpolator _trait
