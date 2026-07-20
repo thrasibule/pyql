@@ -20,7 +20,21 @@ from .date cimport date_from_qldate, Date, Period
 import warnings
 
 cdef class Schedule:
-    """ Payment schedule. """
+    """Payment schedule.
+
+    A Schedule is a series of dates that determines the payment or
+    accrual dates of financial instruments. It can be constructed from
+    a rule (backward or forward generation) or from an explicit list of
+    dates.
+
+    The Schedule class provides methods to inspect the generated dates,
+    to iterate over them, and to determine previous/next dates relative
+    to a reference date.
+
+    .. note::
+        Prefer using the :meth:`from_rule` or :meth:`from_dates`
+        class methods instead of the deprecated constructor.
+    """
 
     def __init__(self, Date effective_date not None, Date termination_date not None,
             Period tenor not None, Calendar calendar not None,
@@ -28,7 +42,9 @@ cdef class Schedule:
             BusinessDayConvention termination_date_convention=Following,
             DateGeneration date_generation_rule=DateGeneration.Forward, bool end_of_month=False,
            ):
-
+        """.. deprecated::
+            Use :meth:`from_rule` instead.
+        """
         warnings.warn("Deprecated: use class method from_rule instead",
             DeprecationWarning)
 
@@ -53,6 +69,35 @@ cdef class Schedule:
             rule=None,
             end_of_month=None,
             vector[bool] is_regular=[]):
+        """Construct a Schedule from an explicit list of dates.
+
+        Parameters
+        ----------
+        dates : list of :class:`~quantlib.time.date.Date`
+            The list of dates. Neither the list nor the meta information
+            is checked for plausibility.
+        calendar : :class:`~quantlib.time.calendar.Calendar`, optional
+            The calendar used to adjust dates. Defaults to
+            :class:`~quantlib.time.calendars.null_calendar.NullCalendar`.
+        business_day_convention : int, optional
+            Business day convention for adjusting dates. Defaults to
+            ``Unadjusted``.
+        termination_date_convention : int, optional
+            Specific business day convention for the termination date.
+        tenor : :class:`~quantlib.time.date.Period`, optional
+            The tenor (period) between dates.
+        rule : :class:`~quantlib.time.dategeneration.DateGeneration`, optional
+            The date generation rule used to generate the schedule.
+        end_of_month : bool, optional
+            Whether to use end-of-month rule for dates.
+        is_regular : list of bool, optional
+            A list indicating whether each date is regular.
+
+        Returns
+        -------
+        :class:`Schedule`
+            A new Schedule instance.
+        """
         # convert lists to vectors
         cdef vector[_date.Date] _dates
         cdef Date date
@@ -93,6 +138,38 @@ cdef class Schedule:
                   BusinessDayConvention termination_date_convention=Following,
                   DateGeneration rule=DateGeneration.Forward, bool end_of_month=False,
                   Date first_date=Date(), Date next_to_lastdate=Date()):
+        """Construct a Schedule from a date generation rule.
+
+        Parameters
+        ----------
+        effective_date : :class:`~quantlib.time.date.Date`
+            The first date of the schedule (e.g., start of the swap).
+        termination_date : :class:`~quantlib.time.date.Date`
+            The last date of the schedule (e.g., maturity).
+        tenor : :class:`~quantlib.time.date.Period`
+            The regular tenor (period) between dates.
+        calendar : :class:`~quantlib.time.calendar.Calendar`
+            The calendar used to adjust dates.
+        business_day_convention : int, optional
+            Business day convention for adjusting regular dates.
+            Defaults to ``Following``.
+        termination_date_convention : int, optional
+            Business day convention for adjusting the termination date.
+            Defaults to ``Following``.
+        rule : :class:`~quantlib.time.dategeneration.DateGeneration`, optional
+            The date generation rule. Defaults to ``Forward``.
+        end_of_month : bool, optional
+            Whether to use end-of-month rule for dates.
+        first_date : :class:`~quantlib.time.date.Date`, optional
+            Optional first date (used for short/long stub).
+        next_to_lastdate : :class:`~quantlib.time.date.Date`, optional
+            Optional next-to-last date (used for short/long stub).
+
+        Returns
+        -------
+        :class:`Schedule`
+            A new Schedule instance.
+        """
 
         cdef Schedule instance = Schedule.__new__(Schedule)
         instance._thisptr = move(_schedule.Schedule(
@@ -108,6 +185,12 @@ cdef class Schedule:
         return instance
 
     def dates(self):
+        """Returns the list of dates of the schedule.
+
+        Returns
+        -------
+        list of :class:`~quantlib.time.date.Date`
+        """
         cdef vector[_date.Date] dates = self._thisptr.dates()
         cdef list t = []
         cdef _date.Date d
@@ -127,21 +210,65 @@ cdef class Schedule:
         return dates.view('M8[D]')
 
     def next_date(self, Date reference_date):
+        """Returns the first schedule date after the given reference date.
+
+        Parameters
+        ----------
+        reference_date : :class:`~quantlib.time.date.Date`
+            The reference date.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+        """
         cdef _date.Date dt = self._thisptr.nextDate(
             reference_date._thisptr
         )
         return date_from_qldate(dt)
 
     def previous_date(self, Date reference_date):
+        """Returns the last schedule date before the given reference date.
+
+        Parameters
+        ----------
+        reference_date : :class:`~quantlib.time.date.Date`
+            The reference date.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+        """
         cdef _date.Date dt = self._thisptr.previousDate(
             reference_date._thisptr
         )
         return date_from_qldate(dt)
 
     def size(self):
+        """Returns the number of dates in the schedule.
+
+        Returns
+        -------
+        int
+        """
         return self._thisptr.size()
 
     def at(self, int index):
+        """Returns the date at the given index.
+
+        Parameters
+        ----------
+        index : int
+            The index of the date to retrieve.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+
+        Raises
+        ------
+        IndexError
+            If the index is out of bounds.
+        """
         cdef _date.Date date = self._thisptr.at(index)
         return date_from_qldate(date)
 
@@ -169,5 +296,19 @@ cdef class Schedule:
             raise TypeError('index needs to be an integer or a slice')
 
 def previous_twentieth(Date d not None, DateGeneration rule):
+    """Returns the date on or before date ``d`` that is the 20th of the
+    month and observes the given date generation rule if relevant.
+
+    Parameters
+    ----------
+    d : :class:`~quantlib.time.date.Date`
+        The reference date.
+    rule : :class:`~quantlib.time.dategeneration.DateGeneration`
+        The date generation rule.
+
+    Returns
+    -------
+    :class:`~quantlib.time.date.Date`
+    """
     cdef _date.Date date = _schedule.previousTwentieth(d._thisptr, rule)
     return date_from_qldate(date)
