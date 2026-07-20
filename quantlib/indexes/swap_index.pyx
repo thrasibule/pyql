@@ -34,6 +34,35 @@ from . cimport _swap_index as _si
 from . cimport _ibor_index as _ii
 
 cdef class SwapIndex(InterestRateIndex):
+    """Base class for swap-rate indexes.
+
+    A SwapIndex represents an interest rate swap index (such as the
+    ISDA fixing or the CMS rate) used for bootstrapping yield curves
+    and pricing swap-related derivatives.
+
+    Parameters
+    ----------
+    family_name : str
+        The family name of the index (e.g., ``"EuriborSwapIsdaFix"``).
+    tenor : :class:`~quantlib.time.date.Period`
+        The swap tenor (e.g., 5Y, 10Y).
+    settlement_days : int
+        Number of settlement days.
+    currency : :class:`~quantlib.currency.currency.Currency`
+        The currency of the swap.
+    calendar : :class:`~quantlib.time.calendar.Calendar`
+        The fixing calendar.
+    fixed_leg_tenor : :class:`~quantlib.time.date.Period`
+        The tenor of the fixed leg (e.g., 6M or 1Y).
+    fixed_leg_convention : int
+        The business day convention for the fixed leg.
+    fixed_leg_daycounter : :class:`~quantlib.time.daycounter.DayCounter`
+        The day counter for the fixed leg.
+    ibor_index : :class:`~quantlib.indexes.ibor_index.IborIndex`
+        The Ibor index used for the floating leg.
+    discounting_term_structure : :class:`HandleYieldTermStructure`, optional
+        An optional discounting curve (for dual-curve bootstrapping).
+    """
 
     def __str__(self):
         return 'Swap index %s' % self.name
@@ -76,6 +105,17 @@ cdef class SwapIndex(InterestRateIndex):
             )
 
     def underlying_swap(self, Date fixing_date not None):
+        """Returns the underlying vanilla swap for a given fixing date.
+
+        Parameters
+        ----------
+        fixing_date : :class:`~quantlib.time.date.Date`
+            The fixing date.
+
+        Returns
+        -------
+        :class:`~quantlib.instruments.vanillaswap.VanillaSwap`
+        """
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()
         cdef VanillaSwap swap = VanillaSwap.__new__(VanillaSwap)
         swap._thisptr = static_pointer_cast[_instrument.Instrument](
@@ -84,6 +124,12 @@ cdef class SwapIndex(InterestRateIndex):
 
     @property
     def ibor_index(self):
+        """Returns the Ibor index used for the floating leg.
+
+        Returns
+        -------
+        :class:`~quantlib.indexes.ibor_index.IborIndex`
+        """
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()
         cdef IborIndex ibor_index = IborIndex.__new__(IborIndex)
         ibor_index._thisptr = static_pointer_cast[_in.Index](swap_index.iborIndex())
@@ -91,6 +137,12 @@ cdef class SwapIndex(InterestRateIndex):
 
     @property
     def forwarding_term_structure(self):
+        """Returns the forwarding term structure.
+
+        Returns
+        -------
+        :class:`HandleYieldTermStructure`
+        """
         cdef HandleYieldTermStructure h = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()
         h._handle = new Handle[_yts.YieldTermStructure](
@@ -100,6 +152,12 @@ cdef class SwapIndex(InterestRateIndex):
 
     @property
     def discounting_term_structure(self):
+        """Returns the discounting term structure.
+
+        Returns
+        -------
+        :class:`HandleYieldTermStructure`
+        """
         cdef HandleYieldTermStructure h = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()
         h._handle = new Handle[_yts.YieldTermStructure](
