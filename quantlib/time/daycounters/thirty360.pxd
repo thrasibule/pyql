@@ -21,12 +21,12 @@ cdef extern from 'ql/time/daycounters/thirty360.hpp' namespace 'QuantLib::Thirty
         NASD            NASD convention (same as USA)
         ==============  =============================================
         """
-         USA
-         BondBasis
-         European
-         EurobondBasis
-         Italian
-         German
-         ISMA
-         ISDA
-         NASD
+        USA
+        BondBasis
+        European
+        EurobondBasis
+        Italian
+        German
+        ISMA
+        ISDA
+        NASD
