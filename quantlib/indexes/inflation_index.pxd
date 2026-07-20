@@ -11,8 +11,5 @@ cdef class InflationIndex(Index):
 cdef class ZeroInflationIndex(InflationIndex):
     pass
 
-cdef class AUCPI(ZeroInflationIndex):
-    pass
-
 cdef class YoYInflationIndex(ZeroInflationIndex):
     pass
