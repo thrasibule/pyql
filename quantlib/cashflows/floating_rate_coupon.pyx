@@ -176,7 +176,7 @@ cdef class FloatingRateCoupon(Coupon):
 
         Parameters
         ----------
-        discountingCurve : :class:`HandleYieldTermStructure`
+        discountingCurve : :class:`~quantlib.handle.HandleYieldTermStructure`
             The discounting curve used for pricing.
 
         Returns

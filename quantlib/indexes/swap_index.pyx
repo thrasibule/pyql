@@ -60,7 +60,7 @@ cdef class SwapIndex(InterestRateIndex):
         The day counter for the fixed leg.
     ibor_index : :class:`~quantlib.indexes.ibor_index.IborIndex`
         The Ibor index used for the floating leg.
-    discounting_term_structure : :class:`HandleYieldTermStructure`, optional
+    discounting_term_structure : :class:`~quantlib.handle.HandleYieldTermStructure`, optional
         An optional discounting curve (for dual-curve bootstrapping).
     """
 
@@ -141,7 +141,7 @@ cdef class SwapIndex(InterestRateIndex):
 
         Returns
         -------
-        :class:`HandleYieldTermStructure`
+        :class:`~quantlib.handle.HandleYieldTermStructure`
         """
         cdef HandleYieldTermStructure h = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()
@@ -156,7 +156,7 @@ cdef class SwapIndex(InterestRateIndex):
 
         Returns
         -------
-        :class:`HandleYieldTermStructure`
+        :class:`~quantlib.handle.HandleYieldTermStructure`
         """
         cdef HandleYieldTermStructure h = HandleYieldTermStructure.__new__(HandleYieldTermStructure)
         cdef _si.SwapIndex* swap_index = <_si.SwapIndex*>self._thisptr.get()

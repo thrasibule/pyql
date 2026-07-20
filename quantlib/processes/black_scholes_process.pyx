@@ -43,9 +43,9 @@ cdef class BlackScholesProcess(GeneralizedBlackScholesProcess):
     ----------
     x0 : :class:`~quantlib.quote.Quote`
         The initial value of the underlying asset.
-    risk_free_ts : :class:`HandleYieldTermStructure`
+    risk_free_ts : :class:`~quantlib.handle.HandleYieldTermStructure`
         The risk-free rate term structure.
-    black_vol_ts : :class:`HandleBlackVolTermStructure`
+    black_vol_ts : :class:`~quantlib.handle.HandleBlackVolTermStructure`
         The Black volatility term structure.
     """
 
@@ -74,11 +74,11 @@ cdef class BlackScholesMertonProcess(GeneralizedBlackScholesProcess):
     ----------
     x0 : :class:`~quantlib.quote.Quote`
         The initial value of the underlying asset.
-    dividend_ts : :class:`HandleYieldTermStructure`
+    dividend_ts : :class:`~quantlib.handle.HandleYieldTermStructure`
         The dividend yield term structure.
-    risk_free_ts : :class:`HandleYieldTermStructure`
+    risk_free_ts : :class:`~quantlib.handle.HandleYieldTermStructure`
         The risk-free rate term structure.
-    black_vol_ts : :class:`HandleBlackVolTermStructure`
+    black_vol_ts : :class:`~quantlib.handle.HandleBlackVolTermStructure`
         The Black volatility term structure.
     """
 

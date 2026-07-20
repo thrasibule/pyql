@@ -37,9 +37,9 @@ cdef class BatesProcess(HestonProcess):
 
     Parameters
     ----------
-    risk_free_rate_ts : :class:`HandleYieldTermStructure`
+    risk_free_rate_ts : :class:`~quantlib.handle.HandleYieldTermStructure`
         Risk-free rate term structure.
-    dividend_ts : :class:`HandleYieldTermStructure`
+    dividend_ts : :class:`~quantlib.handle.HandleYieldTermStructure`
         Dividend yield term structure.
     s0 : :class:`~quantlib.quote.Quote`
         Initial asset price.

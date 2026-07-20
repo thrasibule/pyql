@@ -15,11 +15,11 @@ cdef class Coupon(CashFlow):
 
     This is the base class for concrete coupon types:
 
-    - :class:`FixedRateCoupon` — fixed rate coupons
-    - :class:`FloatingRateCoupon` — floating rate coupons
-    - :class:`IborCoupon` — Ibor-indexed coupons
-    - :class:`CmsCoupon` — CMS-indexed coupons
-    - :class:`CpiCoupon` — CPI-linked coupons
+    - :class:`~quantlib.cashflows.fixed_rate_coupon.FixedRateCoupon` — fixed rate coupons
+    - :class:`~quantlib.cashflows.floating_rate_coupon.FloatingRateCoupon` — floating rate coupons
+    - :class:`~quantlib.cashflows.ibor_coupon.IborCoupon` — Ibor-indexed coupons
+    - :class:`~quantlib.cashflows.cms_coupon.CmsCoupon` — CMS-indexed coupons
+    - :class:`~quantlib.cashflows.cpi_coupon_pricer.CPICouponPricer` — CPI-linked coupons
     """
 
     cdef inline _coupon.Coupon* _get_coupon(self) noexcept:
