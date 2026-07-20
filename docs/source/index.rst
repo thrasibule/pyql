@@ -6,17 +6,28 @@
 Welcome to PyQL's documentation
 ===============================
 
+PyQL is a Python wrapper for the QuantLib_ quantitative finance library,
+built on Cython_. It provides a Pythonic interface to QuantLib classes
+while preserving the original C++ module hierarchy.
 
-Contents:
+.. _QuantLib: http://www.quantlib.org
+.. _Cython: http://www.cython.org
 
 .. toctree::
    :maxdepth: 2
+   :caption: For users
 
    getting_started
    tutorial
    users_guide
    reference_guide
    roadmap
+
+.. toctree::
+   :maxdepth: 2
+   :caption: For developers
+
+   developer_guide
 
 Indices and tables
 ==================

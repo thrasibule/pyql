@@ -1,12 +1,14 @@
 User's guide
 ************
 
-.. include:: business_dates.rst
+The user's guide covers the main features of PyQL, from basic date
+and calendar handling to market conventions and high-level analytics.
 
-.. include:: reference.rst
+.. toctree::
+   :maxdepth: 2
 
-.. include:: mlab.rst
-
-.. include:: notebooks.rst
-
-
+   business_dates
+   market
+   reference
+   mlab
+   notebooks
