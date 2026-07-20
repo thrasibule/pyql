@@ -19,7 +19,7 @@
       .. autosummary::
          :toctree:
       {% for item in all_methods %}
-         {%- if not item.startswith('_') or item in ['__call__', '__mul__', '__getitem__', '__len__', '__pow__'] %}
+         {%- if item not in inherited_members and (not item.startswith('_') or item in ['__call__', '__mul__', '__getitem__', '__len__', '__pow__']) %}
          {{ name }}.{{ item }}
          {%- endif -%}
       {%- endfor %}
