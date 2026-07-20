@@ -26,6 +26,25 @@ cpdef enum ForwardsInCouponPeriod:
     Flat = _ice.Flat
     Piecewise = _ice.Piecewise
 
+NumericalFix.__doc__ = """\
+Numerical fix for ISDA CDS pricing.
+
+- **No**:     No numerical fix applied
+- **Taylor**: Taylor expansion approximation
+"""
+AccrualBias.__doc__ = """\
+Accrual bias for ISDA CDS pricing.
+
+- **HalfDayBias**: Half-day accrual bias
+- **NoBias**:      No accrual bias
+"""
+ForwardsInCouponPeriod.__doc__ = """\
+Forward rate interpolation within coupon periods for ISDA CDS pricing.
+
+- **Flat**:      Flat forward rate within coupon period
+- **Piecewise**: Piecewise constant forward rate
+"""
+
 cdef class IsdaCdsEngine(PricingEngine):
 
     def __init__(self, HandleDefaultProbabilityTermStructure ts not None,

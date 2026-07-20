@@ -15,6 +15,20 @@ from quantlib.ext cimport shared_ptr
 cdef extern from 'ql/time/weekday.hpp' namespace "QuantLib" nogil:
 
     cpdef enum Weekday:
+        """Weekday enumeration.
+
+        =========  ==========
+        Value      Description
+        =========  ==========
+        Sunday     Sunday (1)
+        Monday     Monday (2)
+        Tuesday    Tuesday (3)
+        Wednesday  Wednesday (4)
+        Thursday   Thursday (5)
+        Friday     Friday (6)
+        Saturday   Saturday (7)
+        =========  ==========
+        """
         Sunday    = 1
         Monday    = 2
         Tuesday   = 3
@@ -33,6 +47,25 @@ cdef extern from 'ql/time/weekday.hpp' namespace "QuantLib" nogil:
 cdef extern from "ql/time/date.hpp" namespace "QuantLib" nogil:
 
     cpdef enum Month:
+        """Month enumeration.
+
+        =========  ===========
+        Value      Description
+        =========  ===========
+        January    January (1)
+        February   February (2)
+        March      March (3)
+        April      April (4)
+        May        May (5)
+        June       June (6)
+        July       July (7)
+        August     August (8)
+        September  September (9)
+        October    October (10)
+        November   November (11)
+        December   December (12)
+        =========  ===========
+        """
         January   = 1
         February  = 2
         March     = 3

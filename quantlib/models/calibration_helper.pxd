@@ -11,6 +11,19 @@ from . cimport _calibration_helper as _ch
 from quantlib.ext cimport shared_ptr
 
 cpdef enum CalibrationErrorType:
+    """Calibration error metric.
+
+    ================  ==========================================
+    Value             Description
+    ================  ==========================================
+    RelativePriceError  Relative difference between model and
+                        market prices
+    PriceError          Absolute difference between model and
+                        market prices
+    ImpliedVolError     Difference between implied and market
+                        volatilities
+    ================  ==========================================
+    """
     RelativePriceError = _ch.RelativePriceError
     PriceError = _ch.PriceError
     ImpliedVolError = _ch.ImpliedVolError

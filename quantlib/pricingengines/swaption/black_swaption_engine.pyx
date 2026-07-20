@@ -13,6 +13,13 @@ cpdef enum CashAnnuityModel:
     SwapRate = 0
     DiscountCurve = 1
 
+CashAnnuityModel.__doc__ = """\
+Cash annuity model for swaption pricing.
+
+- **SwapRate**:      Use swap rate to compute annuity
+- **DiscountCurve**: Use discount curve to compute annuity
+"""
+
 cdef class BlackSwaptionEngine(PricingEngine):
     """Shifted Lognormal Black-formula swaption engine
 

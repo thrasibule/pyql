@@ -47,6 +47,13 @@ cpdef enum TimingAdjustment:
     Black76 = _cp.Black76
     BivariateLognormal = _cp.BivariateLognormal
 
+TimingAdjustment.__doc__ = """\
+Timing adjustment for convexity correction in floating-rate coupons.
+
+- **Black76**:             Black-76 model adjustment
+- **BivariateLognormal**:  Bivariate log-normal adjustment
+"""
+
 cdef class BlackIborCouponPricer(IborCouponPricer):
 
     def __init__(self,

@@ -14,27 +14,8 @@ cimport quantlib.time._imm as _imm
 from quantlib.time.date cimport Date
 from quantlib.time.date cimport date_from_qldate
 
+# See runtime __doc__ assignment below for documentation.
 cpdef enum Month:
-    """Main cycle of the International Money Market (a.k.a. IMM) months.
-
-    The IMM months are designated by letter codes:
-
-    - F = January
-    - G = February
-    - H = March
-    - J = April
-    - K = May
-    - M = June
-    - N = July
-    - Q = August
-    - U = September
-    - V = October
-    - X = November
-    - Z = December
-
-    These codes are used to identify futures contracts on the Chicago
-    Mercantile Exchange (CME).
-    """
     F = _imm.F
     G = _imm.G
     H = _imm.H
@@ -47,6 +28,30 @@ cpdef enum Month:
     V = _imm.V
     X = _imm.X
     Z = _imm.Z
+
+# cpdef enum in Cython drops docstrings at compile time,
+# so we set it at runtime.
+Month.__doc__ = """\
+Main cycle of the International Money Market (a.k.a. IMM) months.
+
+The IMM months are designated by letter codes:
+
+- F = January
+- G = February
+- H = March
+- J = April
+- K = May
+- M = June
+- N = July
+- Q = August
+- U = September
+- V = October
+- X = November
+- Z = December
+
+These codes are used to identify futures contracts on the Chicago
+Mercantile Exchange (CME).
+"""
 
 def is_IMM_date(Date dt, bool main_cycle=True):
     """Returns whether or not the given date is an IMM date.

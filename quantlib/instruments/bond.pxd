@@ -3,6 +3,7 @@ from . cimport _bond
 
 cdef extern from "ql/instruments/bond.hpp" namespace "QuantLib::Bond::Price" nogil:
     cpdef enum Type:
+        """Bond price type: Clean (without accrued interest) or Dirty (with accrued interest)."""
         Dirty
         Clean
 

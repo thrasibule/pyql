@@ -36,7 +36,7 @@
       .. autosummary::
          :toctree:
       {% for item in all_attributes %}
-         {%- if not item.startswith('_') %}
+         {%- if not item.startswith('_') and item not in ['real', 'imag', 'numerator', 'denominator', 'name', 'value'] %}
          {{ name }}.{{ item }}
          {%- endif -%}
       {%- endfor %}
