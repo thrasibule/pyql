@@ -31,6 +31,39 @@ nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'svg', 'pdf'}",
     "--InlineBackend.rc=figure.dpi=96",
 ]
+
+
+def _enum_dotted_names(package_name='quantlib'):
+    """Fully qualified names of every Enum subclass in the package.
+
+    numpydoc's automatic Methods/Attributes tables otherwise pull in
+    int's members (conjugate, is_integer, to_bytes, ...) for every
+    IntEnum. Those need show_inherited_class_members forced off
+    individually, while ordinary classes keep it on since their
+    inherited methods (e.g. on term-structure subclasses) are part of
+    the documented API.
+    """
+    import enum
+    import importlib
+    import pkgutil
+
+    names = {}
+    package = importlib.import_module(package_name)
+    for _, modname, _ in pkgutil.walk_packages(package.__path__, package_name + '.'):
+        try:
+            module = importlib.import_module(modname)
+        except Exception:
+            continue
+        for attr_name in dir(module):
+            obj = getattr(module, attr_name, None)
+            if (isinstance(obj, type) and issubclass(obj, enum.Enum)
+                    and obj.__module__ == modname):
+                names[f'{modname}.{attr_name}'] = False
+    return names
+
+
+numpydoc_show_class_members = True
+numpydoc_show_inherited_class_members = _enum_dotted_names()
 autosummary_generate = True
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
