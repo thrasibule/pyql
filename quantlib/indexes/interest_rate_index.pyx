@@ -32,25 +32,60 @@ cdef inline _iri.InterestRateIndex* get_iri(InterestRateIndex index):
     return <_iri.InterestRateIndex*>index._thisptr.get()
 
 cdef class InterestRateIndex(Index):
+    """Base class for interest rate indexes.
+
+    An InterestRateIndex represents a market interest rate benchmark
+    (such as LIBOR, EURIBOR, SOFR, or a swap rate index) that can be
+    used to forecast future fixings and to bootstrap yield curves.
+
+    Concrete implementations include:
+
+    - :class:`~quantlib.indexes.ibor_index.IborIndex` — Ibor indexes (LIBOR, EURIBOR, etc.)
+    - :class:`~quantlib.indexes.swap_index.SwapIndex` — swap rate indexes
+    """
 
     def __str__(self):
         return 'Interest rate index %s' % self.name
 
 
     property family_name:
+        """Returns the family name of the index.
+
+        Returns
+        -------
+        str
+        """
         def __get__(self):
             return get_iri(self).familyName().decode('utf-8')
 
 
     property tenor:
+        """Returns the tenor of the index.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Period`
+        """
         def __get__(self):
             return period_from_qlperiod(get_iri(self).tenor())
 
     property fixing_days:
+        """Returns the number of fixing days.
+
+        Returns
+        -------
+        int
+        """
         def __get__(self):
             return int(get_iri(self).fixingDays())
 
     property day_counter:
+        """Returns the day counter of the index.
+
+        Returns
+        -------
+        :class:`~quantlib.time.daycounter.DayCounter`
+        """
         def __get__(self):
             cdef DayCounter dc = DayCounter.__new__(DayCounter)
             dc._thisptr = new _dc.DayCounter(get_iri(self).dayCounter())
@@ -58,26 +93,79 @@ cdef class InterestRateIndex(Index):
 
     @property
     def currency(self):
+        """Returns the currency of the index.
+
+        Returns
+        -------
+        :class:`~quantlib.currency.currency.Currency`
+        """
         cdef Currency curr = Currency.__new__(Currency)
         curr._thisptr = new _cu.Currency(get_iri(self).currency())
         return curr
 
     def fixing_date(self, Date valueDate not None):
+        """Returns the fixing date for a given value date.
+
+        Parameters
+        ----------
+        valueDate : :class:`~quantlib.time.date.Date`
+            The value date.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+        """
         cdef _dt.Date dt = valueDate._thisptr
         cdef _dt.Date fixing_date = get_iri(self).fixingDate(dt)
         return date_from_qldate(fixing_date)
 
 
     def value_date(self, Date fixingDate not None):
+        """Returns the value date for a given fixing date.
+
+        Parameters
+        ----------
+        fixingDate : :class:`~quantlib.time.date.Date`
+            The fixing date.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+        """
         cdef _dt.Date dt = fixingDate._thisptr
         cdef _dt.Date value_date = get_iri(self).valueDate(dt)
         return date_from_qldate(value_date)
 
     def maturity_date(self, Date valueDate not None):
+        """Returns the maturity date for a given value date.
+
+        Parameters
+        ----------
+        valueDate : :class:`~quantlib.time.date.Date`
+            The value date.
+
+        Returns
+        -------
+        :class:`~quantlib.time.date.Date`
+        """
         cdef _dt.Date dt = valueDate._thisptr
         cdef _dt.Date maturity_date = get_iri(self).maturityDate(dt)
         return date_from_qldate(maturity_date)
 
     def forecast_fixing(self, Date fixing_date not None):
+        """Forecasts the fixing for a given fixing date.
+
+        Uses the term structure associated with the index to forecast
+        the future fixing.
+
+        Parameters
+        ----------
+        fixing_date : :class:`~quantlib.time.date.Date`
+            The fixing date.
+
+        Returns
+        -------
+        float
+        """
         cdef _dt.Date dt = fixing_date._thisptr
         return get_iri(self).forecastFixing(dt)
