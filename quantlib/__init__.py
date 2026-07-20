@@ -1,4 +1,8 @@
-""" library for quantitative finance"""
+"""PyQL — Python bindings for the QuantLib quantitative finance library.
+
+PyQL provides a Pythonic interface to QuantLib C++ classes for pricing,
+risk management, and modeling of financial instruments.
+"""
 import sys
 import os
 
