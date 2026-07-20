@@ -104,9 +104,7 @@ cdef class SimpleCashFlow(CashFlow):
         )
 
 cdef list leg_items(const _cf.Leg& leg):
-    """
-    Returns a list of (amount, pydate)
-    """
+    """Internal helper: returns a list of ``(amount, pydate)`` tuples from a C++ Leg."""
     cdef list itemlist = []
     cdef vector[shared_ptr[_cf.CashFlow]].const_iterator it = leg.const_begin()
     while it != leg.end():

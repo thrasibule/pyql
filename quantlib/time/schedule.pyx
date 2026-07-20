@@ -98,7 +98,6 @@ cdef class Schedule:
         :class:`Schedule`
             A new Schedule instance.
         """
-        # convert lists to vectors
         cdef vector[_date.Date] _dates
         cdef Date date
         for date in dates:

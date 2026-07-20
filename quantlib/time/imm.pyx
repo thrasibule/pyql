@@ -14,7 +14,6 @@ cimport quantlib.time._imm as _imm
 from quantlib.time.date cimport Date
 from quantlib.time.date cimport date_from_qldate
 
-# IMM Months
 cpdef enum Month:
     """Main cycle of the International Money Market (a.k.a. IMM) months.
 

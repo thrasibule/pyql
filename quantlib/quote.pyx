@@ -1,4 +1,3 @@
-"""Purely virtual base class for market observables."""
 from quantlib.ext cimport static_pointer_cast
 from quantlib._observable cimport Observable as QlObservable
 

@@ -1,4 +1,3 @@
-# Cython imports
 from . cimport _option
 from .exercise cimport Exercise
 from .payoffs cimport Payoff

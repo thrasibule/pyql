@@ -1,7 +1,6 @@
 include 'types.pxi'
 from cython.operator import dereference as deref
 
-# cython imports
 from .option cimport OptionType
 
 cdef inline _payoffs.PlainVanillaPayoff* _get_payoff(PlainVanillaPayoff payoff):
