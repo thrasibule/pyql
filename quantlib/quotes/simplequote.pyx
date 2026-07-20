@@ -6,6 +6,9 @@ from . cimport _simplequote as _sq
 cdef class SimpleQuote(Quote):
     """Market element returning a stored value.
 
+    A SimpleQuote is a concrete Quote that stores a single floating-point
+    value and notifies observers when the value changes.
+
     Parameters
     ----------
     value : float, optional
@@ -27,7 +30,11 @@ cdef class SimpleQuote(Quote):
             return "SimpleQuote()"
 
     property value:
-        """The value of the quote."""
+        """The value of the quote.
+
+        When set, returns the difference between the new value and the
+        old value, and notifies observers.
+        """
         def __get__(self):
             return self._thisptr.get().value()
 
@@ -35,5 +42,5 @@ cdef class SimpleQuote(Quote):
             (<_sq.SimpleQuote*>self._thisptr.get()).setValue(value)
 
     def reset(self):
-        """Resets the quote to a null value."""
+        """Resets the quote to a null value and notifies observers."""
         (<_sq.SimpleQuote*>self._thisptr.get()).reset()
