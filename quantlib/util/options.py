@@ -109,9 +109,9 @@ def options_to_rates(options, t_min=1. / 12., n_min=6):
     return DataFrame({
         nm.INTEREST_RATE: implied_interest_rates,
         nm.DIVIDEND_YIELD: implied_dividend_yields,
-        },
-                         index=expiry_dates
-
+    },
+                     index=expiry_dates
+                     )
     return rates
 
 
