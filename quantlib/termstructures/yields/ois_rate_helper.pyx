@@ -6,7 +6,8 @@ from cython.operator cimport dereference as deref
 from quantlib.cashflows.rateaveraging cimport RateAveraging
 from quantlib.cashflows.coupon_pricer cimport FloatingRateCouponPricer
 from quantlib.termstructures.helpers cimport Pillar
-from quantlib.ext cimport shared_ptr, static_pointer_cast, optional
+from libcpp.optional cimport optional
+from quantlib.ext cimport shared_ptr, static_pointer_cast
 from quantlib.handle cimport HandleYieldTermStructure
 from quantlib.quote cimport Quote
 from quantlib.time.date cimport Date, Period

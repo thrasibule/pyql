@@ -1,6 +1,6 @@
 include '../types.pxi'
 
-from quantlib.ext cimport optional
+from libcpp.optional cimport optional
 from quantlib.handle cimport Handle
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure
 from libcpp cimport bool

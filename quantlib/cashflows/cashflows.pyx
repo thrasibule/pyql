@@ -1,6 +1,6 @@
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
-from quantlib.ext cimport optional, nullopt
+from libcpp.optional cimport optional, nullopt
 from quantlib.termstructures.yield_term_structure cimport YieldTermStructure
 from quantlib.time.date cimport Date, _pydate_from_qldate
 from quantlib.time._date cimport Date as QlDate

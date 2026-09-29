@@ -7,9 +7,10 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 """
 
+from libcpp.optional cimport optional
 from quantlib.types cimport Rate, Real, Spread
 
-from quantlib.ext cimport shared_ptr, optional
+from quantlib.ext cimport shared_ptr
 from quantlib.time._calendar cimport BusinessDayConvention, Calendar
 from quantlib.time._date cimport Date
 from quantlib.time._daycounter cimport DayCounter

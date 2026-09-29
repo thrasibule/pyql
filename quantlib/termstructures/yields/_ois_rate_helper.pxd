@@ -1,11 +1,12 @@
 from quantlib.types cimport Integer, Natural, Spread
 
 from libcpp cimport bool
+from libcpp.optional cimport optional
 
 from quantlib._quote cimport Quote
 from quantlib.cashflows.rateaveraging cimport RateAveraging
 from quantlib.cashflows._coupon_pricer cimport FloatingRateCouponPricer
-from quantlib.ext cimport shared_ptr, optional
+from quantlib.ext cimport shared_ptr
 from quantlib.handle cimport Handle
 from quantlib.time._date cimport Date
 from quantlib.time._period cimport Period, Frequency

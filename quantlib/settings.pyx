@@ -1,7 +1,8 @@
 from cython.operator cimport dereference as deref
 from libcpp cimport bool
+from libcpp.optional cimport optional, nullopt
 
-from quantlib.ext cimport optional, shared_ptr, nullopt
+from quantlib.ext cimport shared_ptr
 from quantlib.time._date cimport Date as QlDate
 from quantlib.time.date cimport Date, date_from_qldate
 from quantlib.observable cimport Observable

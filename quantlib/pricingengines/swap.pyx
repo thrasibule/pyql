@@ -1,7 +1,7 @@
 from cython.operator cimport dereference as deref
 
 from libcpp cimport bool
-from quantlib.ext cimport optional
+from libcpp.optional cimport optional
 from quantlib.pricingengines.vanilla.vanilla cimport PricingEngine
 from quantlib.handle cimport HandleYieldTermStructure
 

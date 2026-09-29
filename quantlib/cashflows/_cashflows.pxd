@@ -1,6 +1,6 @@
 from libcpp cimport bool
 from libcpp.pair cimport pair
-from quantlib.ext cimport optional
+from libcpp.optional cimport optional
 from quantlib.time._date cimport Date
 from quantlib.types cimport Rate, Real
 from quantlib.termstructures._yield_term_structure cimport YieldTermStructure

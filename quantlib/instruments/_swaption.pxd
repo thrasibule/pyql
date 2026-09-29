@@ -1,5 +1,6 @@
 include '../types.pxi'
-from quantlib.ext cimport shared_ptr, optional
+from libcpp.optional cimport optional
+from quantlib.ext cimport shared_ptr
 from ._fixedvsfloatingswap cimport FixedVsFloatingSwap
 from ._overnightindexedswap cimport OvernightIndexedSwap
 from .._option cimport Option

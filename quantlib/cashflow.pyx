@@ -11,11 +11,12 @@ cimport quantlib.time._date as _date
 
 from quantlib.time.date cimport (
     Date, _qldate_from_pydate, _pydate_from_qldate, date_from_qldate)
-from libcpp.vector cimport vector
 from libcpp cimport bool
+from libcpp.optional cimport optional
+from libcpp.vector cimport vector
 from cpython.datetime cimport date, import_datetime
 from cython.operator cimport dereference as deref, preincrement as preinc
-from quantlib.ext cimport shared_ptr, optional
+from quantlib.ext cimport shared_ptr
 
 import_datetime()
 

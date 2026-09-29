@@ -1,9 +1,10 @@
 from libcpp cimport bool
+from libcpp.optional cimport optional
 from quantlib.types cimport Rate
 from cython.operator cimport dereference as deref
 from quantlib.cashflow cimport Leg
 cimport quantlib.termstructures.volatility.swaption._swaption_vol_structure  as _svs
-from quantlib.ext cimport static_pointer_cast, optional
+from quantlib.ext cimport static_pointer_cast
 from quantlib.handle cimport Handle, HandleSwaptionVolatilityStructure, HandleOptionletVolatilityStructure
 from quantlib.time.calendar cimport Calendar
 from quantlib.time.date cimport Date

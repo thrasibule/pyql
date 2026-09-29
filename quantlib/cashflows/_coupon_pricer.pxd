@@ -1,7 +1,8 @@
 from libcpp cimport bool
+from libcpp.optional cimport optional
 from quantlib.types cimport Rate, Real
 
-from quantlib.ext cimport shared_ptr, optional
+from quantlib.ext cimport shared_ptr
 from quantlib.handle cimport Handle
 from quantlib.termstructures.volatility.optionlet._optionlet_volatility_structure cimport OptionletVolatilityStructure
 from quantlib.termstructures.volatility.swaption._swaption_vol_structure cimport SwaptionVolatilityStructure
