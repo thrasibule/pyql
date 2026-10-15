@@ -1,1 +1,1 @@
-"""Ibor indexes: LIBOR, EURIBOR, EONIA, Fed Funds, and SOFR."""
+"""Ibor indexes: LIBOR, EURIBOR, EONIA, ESTR, Fed Funds, and SOFR."""

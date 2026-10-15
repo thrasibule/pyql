@@ -12,8 +12,9 @@ import unittest
 from quantlib.currency.api import USDCurrency, EURCurrency
 from quantlib.index import Index
 from quantlib.indexes.interest_rate_index import InterestRateIndex
+from quantlib.indexes.ibor_index import OvernightIndex
 from quantlib.indexes.api import (
-    Libor, SwapIndex, IborIndex, Euribor6M, USDLibor,
+    Libor, SwapIndex, IborIndex, Euribor6M, USDLibor, Estr,
     UsdLiborSwapIsdaFixAm, IndexManager)
 from quantlib.settings import Settings
 from quantlib.time.api import (Days, Months, Years, Period, TARGET, Actual360,
@@ -102,6 +103,38 @@ class TestEuribor(unittest.TestCase):
 
         euribor_6m_index = Euribor6M()
         self.assertEqual(euribor_6m_index.name, 'Euribor6M Actual/360')
+
+class TestEstr(unittest.TestCase):
+
+    def test_empty_constructor(self):
+        """ESTR is an overnight index with the ECB conventions."""
+        index = Estr()
+        self.assertIsInstance(index, OvernightIndex)
+        self.assertEqual(index.name, 'ESTRON Actual/360')
+        self.assertEqual(index.family_name, 'ESTR')
+        self.assertEqual(index.fixing_days, 0)
+        self.assertEqual(index.currency, EURCurrency())
+        self.assertEqual(index.fixing_calendar, TARGET())
+        self.assertEqual(index.day_counter, Actual360())
+
+    def test_creation_with_curve(self):
+        term_structure = HandleYieldTermStructure(
+            FlatForward(Date(1, January, 2024), 0.03, Actual360())
+        )
+        # Makes sure the constructor does not segfault
+        index = Estr(term_structure)
+        self.assertEqual(index.name, 'ESTRON Actual/360')
+
+    def test_fixings(self):
+        index = Estr()
+        fixing_date = Date(2, January, 2024)
+        index.add_fixing(fixing_date, 0.0325)
+
+        self.assertTrue(index.has_historical_fixing(fixing_date))
+        self.assertAlmostEqual(index.fixing(fixing_date), 0.0325)
+
+        index.clear_fixings()
+        self.assertFalse(index.has_historical_fixing(fixing_date))
 
 class TestUSDLibor(unittest.TestCase):
 
