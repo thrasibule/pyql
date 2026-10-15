@@ -14,7 +14,7 @@ dependencies = [
 ]
 license = {file = "LICENSE.txt"}
 readme  = "README.md"
-version = "1.44"
+version = "1.44.post1"
 
 [tool.setuptools.packages.find]
 include = ["quantlib*"]
