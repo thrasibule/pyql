@@ -103,7 +103,7 @@ wheels = [
 
 [[package]]
 name = "quantlib-cython"
-version = "1.44.post1"
+version = "1.44.post2"
 source = { editable = "." }
 dependencies = [
     { name = "pandas" },
