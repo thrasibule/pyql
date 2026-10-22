@@ -1,6 +1,13 @@
-include '../types.pxi'
+from quantlib.types cimport Integer, Natural, Rate, Real, Spread
 
 from libcpp cimport bool
+from libcpp.optional cimport optional
+from libcpp.utility cimport move
+from libcpp.vector cimport vector
+from quantlib.time.businessdayconvention cimport BusinessDayConvention
+from quantlib.time.calendar cimport Calendar
+from quantlib.time.schedule cimport Schedule
+from .._cashflow cimport Leg as QlLeg
 from cython.operator cimport dereference as deref
 from quantlib.ext cimport shared_ptr, static_pointer_cast, dynamic_pointer_cast
 from quantlib.time.date cimport Date
@@ -54,6 +61,104 @@ cdef class IborCouponSettings:
         return _ic.Settings.instance().usingAtParCoupons()
 
 cdef class IborLeg(Leg):
+    """A leg of Ibor coupons on a schedule, built like QuantLib's IborLeg:
+
+    >>> leg = IborLeg(schedule, index).with_notionals(1.).with_spreads(0.02)()
+
+    the ``with_*`` methods set the coupons' terms, and calling the object
+    builds them. Capped or floored coupons need a pricer that can price
+    the optionlets, e.g. ``set_coupon_pricer(leg, BlackIborCouponPricer(v))``.
+    """
+
+    def __init__(self, Schedule schedule not None, IborIndex index not None):
+        self.leg = new _ic.IborLeg(schedule._thisptr,
+                                   static_pointer_cast[_ii.IborIndex](index._thisptr))
+
+    def __dealloc__(self):
+        if self.leg is not NULL:
+            del self.leg
+            self.leg = NULL
+
+    def with_notionals(self, Real notional):
+        self.leg.withNotionals(notional)
+        return self
+
+    def with_payment_day_counter(self, DayCounter dc not None):
+        self.leg.withPaymentDayCounter(deref(dc._thisptr))
+        return self
+
+    def with_payment_adjustment(self, BusinessDayConvention bdc):
+        self.leg.withPaymentAdjustment(bdc)
+        return self
+
+    def with_payment_lag(self, Integer lag):
+        self.leg.withPaymentLag(lag)
+        return self
+
+    def with_payment_calendar(self, Calendar cal not None):
+        self.leg.withPaymentCalendar(cal._thisptr)
+        return self
+
+    def with_fixing_days(self, Natural fixing_days):
+        self.leg.withFixingDays(fixing_days)
+        return self
+
+    def with_gearings(self, Real gearing):
+        self.leg.withGearings(gearing)
+        return self
+
+    def with_spreads(self, spreads):
+        cdef vector[Spread] c_spreads
+        if isinstance(spreads, list):
+            c_spreads = <list>spreads
+            self.leg.withSpreads(c_spreads)
+        else:
+            self.leg.withSpreads(<Spread>spreads)
+        return self
+
+    def with_caps(self, caps):
+        cdef vector[Rate] c_caps
+        if isinstance(caps, list):
+            c_caps = <list>caps
+            self.leg.withCaps(c_caps)
+        else:
+            self.leg.withCaps(<Rate>caps)
+        return self
+
+    def with_floors(self, floors):
+        cdef vector[Rate] c_floors
+        if isinstance(floors, list):
+            c_floors = <list>floors
+            self.leg.withFloors(c_floors)
+        else:
+            self.leg.withFloors(<Rate>floors)
+        return self
+
+    def in_arrears(self, bool flag=True):
+        self.leg.inArrears(flag)
+        return self
+
+    def with_zero_payments(self, bool flag=True):
+        self.leg.withZeroPayments(flag)
+        return self
+
+    def with_indexed_coupons(self, flag=True):
+        cdef optional[bool] b
+        if flag is not None:
+            b = <bool>flag
+        self.leg.withIndexedCoupons(b)
+        return self
+
+    def with_at_par_coupons(self, bool flag=True):
+        self.leg.withAtParCoupons(flag)
+        return self
+
+    def __call__(self):
+        if self.leg is NULL:
+            raise ValueError("this leg wasn't made with IborLeg(schedule, index)")
+        self._thisptr = move[QlLeg](_ic.ibor_to_leg(deref(self.leg)))
+        return self
+
     def __iter__(self):
         cdef shared_ptr[_cf.CashFlow] cf
         cdef IborCoupon ic = IborCoupon.__new__(IborCoupon)
