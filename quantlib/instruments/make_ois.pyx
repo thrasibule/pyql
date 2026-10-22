@@ -27,9 +27,9 @@ cdef class MakeOIS:
                  Period forward_start not None=Period(0, Days)):
         self._thisptr = new _make_ois.MakeOIS(
             deref(swap_tenor._thisptr),
-            static_pointer_cast[_ii.OvernightIndex](overnight_index._thisptr),
-            fixed_rate,
-            deref(forward_start._thisptr))
+            static_pointer_cast[_ii.OvernightIndex](overnight_index._thisptr))
+        self._thisptr.withFixedRate(fixed_rate)
+        self._thisptr.withForwardStart(deref(forward_start._thisptr))
 
     def __dealloc__(self):
         if self._thisptr is not NULL:
@@ -47,11 +47,19 @@ cdef class MakeOIS:
         return self
 
     def with_type(self, Type type):
-        self._thiptr.withType(type)
+        self._thisptr.withType(type)
         return self
 
     def with_nominal(self, Real n):
         self._thisptr.withNominal(n)
+        return self
+
+    def with_fixed_rate(self, Rate k):
+        self._thisptr.withFixedRate(k)
+        return self
+
+    def with_forward_start(self, Period f not None):
+        self._thisptr.withForwardStart(deref(f._thisptr))
         return self
 
     def with_settlement_days(self, Natural days):

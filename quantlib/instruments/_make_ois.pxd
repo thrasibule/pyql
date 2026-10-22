@@ -17,9 +17,7 @@ from ._overnightindexedswap cimport OvernightIndexedSwap
 cdef extern from 'ql/instruments/makeois.hpp' namespace 'QuantLib' nogil:
     cdef cppclass MakeOIS:
         MakeOIS(const Period& swapTenor,
-                const shared_ptr[OvernightIndex]& overnightIndex,
-                Rate fixedRate, #= Null<Rate>(),
-                const Period& fwdStart) # = 0*Days)
+                const shared_ptr[OvernightIndex]& overnightIndex)
 
         OvernightIndexedSwap operator()
         shared_ptr[OvernightIndexedSwap] operator()
@@ -27,6 +25,8 @@ cdef extern from 'ql/instruments/makeois.hpp' namespace 'QuantLib' nogil:
         MakeOIS& receiveFixed(bool flag) # = true)
         MakeOIS& withType(OvernightIndexedSwap.Type type)
         MakeOIS& withNominal(Real n)
+        MakeOIS& withFixedRate(Rate k)
+        MakeOIS& withForwardStart(const Period& f)
 
         MakeOIS& withSettlementDays(Natural settlementDays)
         MakeOIS& withEffectiveDate(const Date&)

@@ -18,16 +18,14 @@ cdef extern from 'ql/instruments/makecms.hpp' namespace 'QuantLib' nogil:
     cdef cppclass MakeCms:
         MakeCms(const Period& swapTenor,
                 const shared_ptr[SwapIndex]& swapIndex,
-                const shared_ptr[IborIndex]& iborIndex,
-                Spread iborSpread, # = 0.0,
-                const Period& forwardStart) # = 0*Days)
+                const shared_ptr[IborIndex]& iborIndex) # = {}
         MakeCms(const Period& swapTenor,
-                const shared_ptr[SwapIndex]& swapIndex,
-                Spread iborSpread, # = 0.0,
-                const Period& forwardStart) # = 0*Days)
+                const shared_ptr[SwapIndex]& swapIndex)
         shared_ptr[Swap] operator()
         MakeCms& receiveCms(bool flag = true);
         MakeCms& withNominal(Real n)
+        MakeCms& withIborSpread(Spread s)
+        MakeCms& withForwardStart(const Period& f)
         MakeCms& withEffectiveDate(const Date&)
 
         MakeCms& withCmsLegTenor(const Period& t)

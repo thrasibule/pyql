@@ -21,18 +21,16 @@ cdef class MakeCms:
         if ibor_index is None:
             self._thisptr = new _make_cms.MakeCms(
                 deref(swap_tenor._thisptr),
-                static_pointer_cast[_si.SwapIndex](swap_index._thisptr),
-                ibor_spread,
-                deref(forward_start._thisptr)
+                static_pointer_cast[_si.SwapIndex](swap_index._thisptr)
             )
         else:
             self._thisptr = new _make_cms.MakeCms(
                 deref(swap_tenor._thisptr),
                 static_pointer_cast[_si.SwapIndex](swap_index._thisptr),
-                static_pointer_cast[_ii.IborIndex](ibor_index._thisptr),
-                ibor_spread,
-                deref(forward_start._thisptr)
+                static_pointer_cast[_ii.IborIndex](ibor_index._thisptr)
             )
+        self._thisptr.withIborSpread(ibor_spread)
+        self._thisptr.withForwardStart(deref(forward_start._thisptr))
 
     def __dealloc__(self):
         if self._thisptr is not NULL:
@@ -47,6 +45,14 @@ cdef class MakeCms:
 
     def with_nominal(self, Real n):
         self._thisptr.withNominal(n)
+        return self
+
+    def with_ibor_spread(self, Spread s):
+        self._thisptr.withIborSpread(s)
+        return self
+
+    def with_forward_start(self, Period f not None):
+        self._thisptr.withForwardStart(deref(f._thisptr))
         return self
 
     def with_effective_date(self, Date effective_date not None):
