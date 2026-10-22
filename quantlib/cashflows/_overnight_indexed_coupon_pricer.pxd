@@ -19,3 +19,17 @@ cdef extern from 'ql/cashflows/overnightindexedcouponpricer.hpp' namespace 'Quan
             Handle[OptionletVolatilityStructure] v, # = Handle[OptionletVolatilityStructure]()
             const bool effective_volatility_input, # = False
         )
+
+cdef extern from 'ql/cashflows/blackovernightindexedcouponpricer.hpp' namespace 'QuantLib' nogil:
+
+    cdef cppclass BlackCompoundingOvernightIndexedCouponPricer(CompoundingOvernightIndexedCouponPricer):
+        BlackCompoundingOvernightIndexedCouponPricer(
+            Handle[OptionletVolatilityStructure] v, # = Handle[OptionletVolatilityStructure]()
+            bool effectiveVolatilityInput, # = False
+        )
+
+    cdef cppclass BlackAveragingOvernightIndexedCouponPricer(ArithmeticAveragedOvernightIndexedCouponPricer):
+        BlackAveragingOvernightIndexedCouponPricer(
+            Handle[OptionletVolatilityStructure] v, # = Handle[OptionletVolatilityStructure]()
+            bool effectiveVolatilityInput, # = False
+        )

@@ -9,3 +9,11 @@ cdef class CompoundingOvernightIndexedCouponPricer(OvernightIndexedCouponPricer)
 
 cdef class ArithmeticAveragedOvernightIndexedCouponPricer(OvernightIndexedCouponPricer):
     pass
+
+
+cdef class BlackCompoundingOvernightIndexedCouponPricer(CompoundingOvernightIndexedCouponPricer):
+    pass
+
+
+cdef class BlackAveragingOvernightIndexedCouponPricer(ArithmeticAveragedOvernightIndexedCouponPricer):
+    pass

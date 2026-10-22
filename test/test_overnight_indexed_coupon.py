@@ -124,3 +124,89 @@ class TestOvernightIndexedCoupon(unittest.TestCase):
         expected_rate = 0.001000043057
         expected_amount = self.notional * expected_rate * 31.0/360
         self.assertAlmostEqual(coupon.accrued_amount(accrual_date), expected_amount)
+
+
+class TestFlooredOvernightLeg(unittest.TestCase):
+
+    def test_floors_at_zero_volatility(self):
+        """Floored compounded coupons at zero volatility are the larger of
+        the coupon and the floor"""
+        from quantlib.cashflows.overnight_indexed_coupon import OvernightLeg
+        from quantlib.cashflows.overnight_indexed_coupon_pricer import (
+            BlackCompoundingOvernightIndexedCouponPricer)
+        from quantlib.handle import HandleOptionletVolatilityStructure
+        from quantlib.termstructures.volatility.optionlet.optionlet_volatility_structure import (
+            ConstantOptionletVolatility)
+        from quantlib.termstructures.volatility.volatilitytype import VolatilityType
+        from quantlib.termstructures.yields.api import HandleYieldTermStructure
+        from quantlib.time.api import (Actual365Fixed, DateGeneration, Following, Months,
+                                       Period, Schedule, Unadjusted, UnitedStates)
+        from quantlib.time.calendars.united_states import Market
+
+        today = Date(23, November, 2021)
+        Settings().evaluation_date = today
+        sofr = Sofr(HandleYieldTermStructure(flat_rate(0.02, Actual360())))
+        cal = UnitedStates(Market.GovernmentBond)
+        schedule = Schedule.from_rule(today, Date(23, November, 2023), Period(3, Months), cal,
+                                      Following, Unadjusted, DateGeneration.Forward, False)
+        vol = ConstantOptionletVolatility(0, cal, Following, 0.0, Actual365Fixed(),
+                                          VolatilityType.Normal)
+        pricer = BlackCompoundingOvernightIndexedCouponPricer(
+            HandleOptionletVolatilityStructure(vol))
+        spread = 0.01
+        plain = OvernightLeg(schedule, sofr).with_notionals(1.0).with_spreads(spread)()
+        for floor in (0.05, 0.0):  # above, and below the spread
+            floored = (OvernightLeg(schedule, sofr).with_notionals(1.0).with_spreads(spread)
+                       .with_floors(floor).with_coupon_pricer(pricer)())
+            for (a, d), (b, _), start, end in zip(plain.items(), floored.items(),
+                                                   schedule.dates()[:-1], schedule.dates()[1:]):
+                accrual = Actual360().year_fraction(start, end)
+                self.assertAlmostEqual(b, max(a, floor * accrual), places=12)
+
+    def test_constant_optionlet_volatility_type(self):
+        """ConstantOptionletVolatility is shifted lognormal by default, which
+        can't price a floor below the spread (a negative strike on the
+        index), unlike normal volatility"""
+        from quantlib.cashflows.overnight_indexed_coupon import OvernightLeg
+        from quantlib.cashflows.overnight_indexed_coupon_pricer import (
+            BlackCompoundingOvernightIndexedCouponPricer)
+        from quantlib.handle import HandleOptionletVolatilityStructure
+        from quantlib.termstructures.volatility.optionlet.optionlet_volatility_structure import (
+            ConstantOptionletVolatility)
+        from quantlib.termstructures.yields.api import HandleYieldTermStructure
+        from quantlib.time.api import (Actual365Fixed, DateGeneration, Following, Months,
+                                       Period, Schedule, Unadjusted, UnitedStates)
+        from quantlib.time.calendars.united_states import Market
+
+        today = Date(23, November, 2021)
+        Settings().evaluation_date = today
+        sofr = Sofr(HandleYieldTermStructure(flat_rate(0.02, Actual360())))
+        cal = UnitedStates(Market.GovernmentBond)
+        schedule = Schedule.from_rule(today, Date(23, November, 2022), Period(3, Months), cal,
+                                      Following, Unadjusted, DateGeneration.Forward, False)
+        vol = ConstantOptionletVolatility(0, cal, Following, 0.0, Actual365Fixed())
+        pricer = BlackCompoundingOvernightIndexedCouponPricer(
+            HandleOptionletVolatilityStructure(vol))
+        leg = (OvernightLeg(schedule, sofr).with_notionals(1.0).with_spreads(0.01)
+               .with_floors(0.0).with_coupon_pricer(pricer)())
+        with self.assertRaises(RuntimeError):
+            leg.items()
+
+
+class TestOptionletVolatilityType(unittest.TestCase):
+
+    def test_volatility_type(self):
+        """ConstantOptionletVolatility is shifted lognormal by default"""
+        from quantlib.termstructures.volatility.optionlet.optionlet_volatility_structure import (
+            ConstantOptionletVolatility)
+        from quantlib.termstructures.volatility.volatilitytype import VolatilityType
+        from quantlib.time.api import Actual365Fixed, Following, TARGET
+        lognormal = ConstantOptionletVolatility(0, TARGET(), Following, 0.2, Actual365Fixed())
+        shifted = ConstantOptionletVolatility(0, TARGET(), Following, 0.2, Actual365Fixed(),
+                                              VolatilityType.ShiftedLognormal, 0.01)
+        normal = ConstantOptionletVolatility(0, TARGET(), Following, 0.01, Actual365Fixed(),
+                                             VolatilityType.Normal)
+        self.assertEqual(lognormal.volatility_type, VolatilityType.ShiftedLognormal)
+        self.assertEqual(lognormal.displacement, 0.0)
+        self.assertEqual(shifted.displacement, 0.01)
+        self.assertEqual(normal.volatility_type, VolatilityType.Normal)

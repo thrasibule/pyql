@@ -24,3 +24,29 @@ cdef class ArithmeticAveragedOvernightIndexedCouponPricer(OvernightIndexedCoupon
                 effective_volatility_input
             )
         )
+
+cdef class BlackCompoundingOvernightIndexedCouponPricer(CompoundingOvernightIndexedCouponPricer):
+    def __init__(self, HandleOptionletVolatilityStructure v not None, bool effective_volatility_input=False):
+        """pricer for compounded overnight indexed coupons that can be capped
+        or floored, the optionlets priced with Black's formula (or Bachelier's
+        for normal volatilities) on the optionlet volatilities v
+
+        The caps and floors of the coupons of an :class:`OvernightLeg` need
+        it: the plain compounding pricer can't price them."""
+        self._thisptr.reset(
+            new _oicp.BlackCompoundingOvernightIndexedCouponPricer(
+                v.handle(), effective_volatility_input
+            )
+        )
+
+
+cdef class BlackAveragingOvernightIndexedCouponPricer(ArithmeticAveragedOvernightIndexedCouponPricer):
+    def __init__(self, HandleOptionletVolatilityStructure v not None, bool effective_volatility_input=False):
+        """pricer for arithmetically averaged overnight indexed coupons that
+        can be capped or floored, the optionlets priced on the optionlet
+        volatilities v"""
+        self._thisptr.reset(
+            new _oicp.BlackAveragingOvernightIndexedCouponPricer(
+                v.handle(), effective_volatility_input
+            )
+        )

@@ -4,6 +4,7 @@ from quantlib.time._calendar cimport Calendar, BusinessDayConvention
 from quantlib.time._date cimport Date
 from quantlib.time._daycounter cimport DayCounter
 from quantlib.termstructures._vol_term_structure cimport VolatilityTermStructure
+from quantlib.termstructures.volatility.volatilitytype cimport VolatilityType
 
 cdef extern from 'ql/termstructures/volatility/optionlet/optionletvolatilitystructure.hpp' namespace 'QuantLib':
 
@@ -14,6 +15,8 @@ cdef extern from 'ql/termstructures/volatility/optionlet/optionletvolatilitystru
             BusinessDayConvention bdc,
             DayCounter& dc
         ) except +
+        VolatilityType volatilityType()
+        Real displacement()
 
 cdef extern from 'ql/termstructures/volatility/optionlet/constantoptionletvol.hpp' namespace 'QuantLib':
 
@@ -28,4 +31,7 @@ cdef extern from 'ql/termstructures/volatility/optionlet/constantoptionletvol.hp
                          Calendar& cal,
                          BusinessDayConvention bdc,
                          Volatility volatility,
-                         DayCounter& dayCounter) except +
+                         DayCounter& dayCounter,
+                         VolatilityType type, # = ShiftedLognormal
+                         Real displacement, # = 0.0
+                         ) except +
